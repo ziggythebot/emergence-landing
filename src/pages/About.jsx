@@ -10,9 +10,9 @@ const About = () => {
           <h2 style={customStyles.explHeaderH2}>THE IDEA</h2>
         </div>
         <div style={customStyles.explContent}>
-          <p style={customStyles.explParagraph}>Traditional tech conferences put everyone in a dark room to listen to a single broadcast. Emergence shows you the whole city.</p>
-          <p style={customStyles.explParagraph}>London's tech scene is already distributed: offices, warehouses, cafes, studios. Events happen everywhere. We make them all discoverable in one place.</p>
-          <p style={customStyles.explParagraph}>You don't attend Emergence. You navigate it.</p>
+          <p style={customStyles.explParagraph}>Traditional tech conferences put everyone in a dark room. Emergence does the opposite.</p>
+          <p style={customStyles.explParagraph}>London's tech scene is distributed: offices, warehouses, cafes, studios. Events happen everywhere. We make them all easy to find.</p>
+          <p style={customStyles.explParagraph}>You don't attend one event. You navigate dozens.</p>
         </div>
       </section>
 

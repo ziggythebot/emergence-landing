@@ -30,9 +30,9 @@ const ExplanationSection = () => (
       <h2 style={customStyles.explHeaderH2}>WHY DISTRIBUTED?</h2>
     </div>
     <div style={customStyles.explContent}>
-      <p style={customStyles.explParagraph}>Traditional tech conferences put everyone in a dark room to listen to a single broadcast. Emergence inverts this architecture.</p>
-      <p style={customStyles.explParagraph}>For three days, offices, cafes, warehouses, and studios across London become active nodes in the network. Each node hosts autonomous programming: workshops, debates, hackathons, dinners, governed by the hosts but discoverable through the central protocol.</p>
-      <p style={customStyles.explParagraph}>This is not a top-down event. It's a peer-to-peer protocol for London's tech ecosystem to map itself, share bandwidth, and build unexpected connections. You don't just attend Emergence; you plug into it.</p>
+      <p style={customStyles.explParagraph}>Traditional tech conferences put everyone in a dark room. Emergence does the opposite.</p>
+      <p style={customStyles.explParagraph}>For three days, offices, cafes, and warehouses across London host events: workshops, talks, hackathons, dinners. Each host runs their own programming. We make them all easy to find.</p>
+      <p style={customStyles.explParagraph}>This isn't one event. It's dozens of events, all happening at once. You don't attend Emergence. You navigate it.</p>
     </div>
   </section>
 );
@@ -62,7 +62,7 @@ const MechanicsSection = () => (
         </svg>
       }
       title="HOST A NODE"
-      description="Have an office, a warehouse, or a living room? Turn your space into an active node. You control the format, the capacity, and the agenda. We provide the protocol and route the network to your door."
+      description="Have a space? Host an event. You control the format, capacity, and agenda. We list your event. People find it."
       btnStyle={{ background: '#00D27F' }}
       btnText="REGISTER VENUE"
       btnLink="/host"
@@ -77,7 +77,7 @@ const MechanicsSection = () => (
         </svg>
       }
       title="BUILD YOUR PATH"
-      description="No single ticket. Build your own journey through the city. Sync your calendar with nodes that match your frequency. Navigate between micro-summits, underground demos, and rooftop debates."
+      description="No single ticket. Choose your events across London. Add them to your calendar. Navigate between talks, demos, and dinners."
       btnStyle={{ background: '#FFD600' }}
       btnText="ACCESS MAP"
       btnLink="/map"
@@ -92,7 +92,7 @@ const MechanicsSection = () => (
         </svg>
       }
       title="POWER THE GRID"
-      description="Sponsors don't get logos on lanyards. They fund the ecosystem: supporting valuable programming, subsidizing costs for indie developers, and elevating the overall fidelity of the network."
+      description="Sponsors don't get logos on lanyards. They fund the platform: paying for events, covering costs for indie devs, making better programming possible."
       btnStyle={{ background: '#FFFFFF', color: '#251720' }}
       btnText="VIEW PACKAGES"
       btnLink="/sponsor"
@@ -137,7 +137,7 @@ const VenueSection = () => (
         <Pill active>STATUS: SECURED</Pill>
       </div>
       <p style={{ fontSize: '1.25rem', color: '#5A4C55', marginBottom: '32px' }}>
-        While the network is distributed, every system needs a central router. Located in the historic railway arches of Shoreditch, Kachette acts as the physical core. Come here to sync, collect credentials, and access the master schedule.
+        While events happen everywhere, every system needs a hub. Kachette is that hub. Located in Shoreditch's railway arches. Get your pass here. See the full schedule.
       </p>
       <div style={{ borderTop: '1px solid rgba(37, 23, 32, 0.15)', paddingTop: '16px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', color: '#251720' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>

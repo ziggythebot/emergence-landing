@@ -11,9 +11,9 @@ const Sponsor = () => {
           <h2 style={customStyles.explHeaderH2}>SPONSOR THE NETWORK</h2>
         </div>
         <div style={customStyles.explContent}>
-          <p style={customStyles.explParagraph}>Sponsors don't get logos on lanyards. They fund the infrastructure.</p>
-          <p style={customStyles.explParagraph}>Your support powers the discovery platform, makes visibility free for every host, and funds the closing party that brings the whole network together.</p>
-          <p style={customStyles.explParagraph}>Associate your brand with London's tech momentum. Be part of making the scene visible to itself.</p>
+          <p style={customStyles.explParagraph}>Sponsors don't get logos on lanyards. They fund the platform.</p>
+          <p style={customStyles.explParagraph}>Your support pays for the site, makes discovery free for every host, and funds the closing party.</p>
+          <p style={customStyles.explParagraph}>Associate your brand with London's tech scene. Help make it visible to itself.</p>
         </div>
       </section>
 
