@@ -1,4 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import Host from './pages/Host';
+import Events from './pages/Events';
+import Sponsor from './pages/Sponsor';
+import Map from './pages/Map';
+import About from './pages/About';
 
 const customStyles = {
   root: {
@@ -44,6 +51,8 @@ const customStyles = {
     display: 'flex',
     alignItems: 'center',
     gap: '12px',
+    color: '#251720',
+    textDecoration: 'none',
   },
   logoNode: {
     width: '24px',
@@ -94,21 +103,6 @@ const customStyles = {
     display: 'block',
     marginBottom: '0.5rem',
   },
-  pill: {
-    display: 'inline-flex',
-    alignItems: 'center',
-    padding: '4px 12px',
-    borderRadius: '999px',
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.7rem',
-    fontWeight: 700,
-    border: '2px solid #251720',
-    background: '#FFFFFF',
-    textTransform: 'uppercase',
-  },
-  pillActive: {
-    background: '#00D27F',
-  },
   h1: {
     fontFamily: "'Epilogue', sans-serif",
     textTransform: 'uppercase',
@@ -118,237 +112,191 @@ const customStyles = {
     marginBottom: '24px',
   },
   subtitle: {
-    fontSize: '1.25rem',
+    fontSize: '1.35rem',
     color: '#5A4C55',
-    maxWidth: '480px',
     marginBottom: '48px',
+    lineHeight: '1.4',
   },
   heroCtas: {
     display: 'flex',
-    gap: '24px',
-    flexWrap: 'wrap',
+    gap: '16px',
   },
   btn: {
-    display: 'inline-flex',
-    justifyContent: 'center',
-    alignItems: 'center',
     padding: '16px 32px',
-    fontFamily: "'Epilogue', sans-serif",
-    fontSize: '1.1rem',
-    fontWeight: 900,
-    textTransform: 'uppercase',
-    color: '#251720',
-    background: '#FFFFFF',
     border: '3px solid #251720',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.85rem',
+    fontWeight: 700,
+    textTransform: 'uppercase',
     cursor: 'pointer',
     textDecoration: 'none',
-    transition: 'all 0.1s ease',
-    boxShadow: '6px 6px 0px #251720',
+    display: 'inline-block',
+    boxShadow: '4px 4px 0px #251720',
   },
   btnPrimary: {
     background: '#00D27F',
+    color: '#251720',
   },
   btnSecondary: {
-    background: '#FFD600',
+    background: '#FFFFFF',
+    color: '#251720',
   },
   btnSmall: {
-    alignSelf: 'flex-start',
     padding: '12px 24px',
-    fontSize: '0.9rem',
-    boxShadow: '6px 6px 0px #251720',
+    fontSize: '0.75rem',
   },
   explanation: {
-    display: 'grid',
-    gridTemplateColumns: '300px 1fr',
+    padding: '80px 64px',
     borderBottom: '3px solid #251720',
   },
   explHeader: {
-    padding: '64px',
-    borderRight: '3px solid #251720',
-    background: '#251720',
-    color: '#FFFFFF',
+    marginBottom: '48px',
   },
   explHeaderH2: {
     fontFamily: "'Epilogue', sans-serif",
-    textTransform: 'uppercase',
-    lineHeight: '1.05',
-    letterSpacing: '-0.02em',
-    color: '#FFFFFF',
     fontSize: '3rem',
+    textTransform: 'uppercase',
+    lineHeight: '1.1',
+    letterSpacing: '-0.02em',
   },
   explContent: {
-    padding: '64px',
     display: 'grid',
-    gridTemplateColumns: '1fr',
-    gap: '32px',
-    background: '#FFFFFF',
+    gap: '24px',
   },
   explParagraph: {
-    fontSize: '1.5rem',
-    lineHeight: '1.6',
-    letterSpacing: '-0.01em',
-    maxWidth: '800px',
+    fontSize: '1.125rem',
+    lineHeight: '1.7',
+    color: '#251720',
   },
-  mechanics: {
+  stats: {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
     borderBottom: '3px solid #251720',
   },
-  mechCard: {
-    padding: '48px',
+  statItem: {
+    padding: '64px 40px',
+    textAlign: 'center',
     borderRight: '3px solid #251720',
-    background: '#FFFFFF',
-    position: 'relative',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  mechCardLast: {
-    borderRight: 'none',
-  },
-  mechIcon: {
-    width: '64px',
-    height: '64px',
-    border: '3px solid #251720',
-    borderRadius: '16px',
-    marginBottom: '32px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    boxShadow: '3px 3px 0px #251720',
-  },
-  mechH3: {
-    fontFamily: "'Epilogue', sans-serif",
-    textTransform: 'uppercase',
-    lineHeight: '1.05',
-    letterSpacing: '-0.02em',
-    fontSize: '2rem',
-    marginBottom: '16px',
-  },
-  mechP: {
-    color: '#5A4C55',
-    marginBottom: '32px',
-    flexGrow: 1,
-  },
-  statsSection: {
-    padding: '64px',
-    background: '#FFFFFF',
-    borderBottom: '3px solid #251720',
-  },
-  statsGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '32px',
-  },
-  statCard: {
-    padding: '32px',
-    border: '3px solid #251720',
-    background: '#EAF8F5',
-    boxShadow: '3px 3px 0px #251720',
   },
   statNumber: {
     fontFamily: "'Epilogue', sans-serif",
-    fontSize: '3rem',
+    fontSize: '4rem',
     fontWeight: 900,
-    lineHeight: '1',
-    marginBottom: '8px',
+    marginBottom: '12px',
+    color: '#00D27F',
   },
   statLabel: {
     fontFamily: "'JetBrains Mono', monospace",
     fontSize: '0.75rem',
     textTransform: 'uppercase',
+    letterSpacing: '0.1em',
     color: '#5A4C55',
   },
   venue: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
+    padding: '80px 64px',
     borderBottom: '3px solid #251720',
-    background: '#FFFFFF',
   },
-  venueInfo: {
-    padding: '64px',
-    borderRight: '3px solid #251720',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
+  venueHeader: {
+    marginBottom: '48px',
   },
   venueH2: {
     fontFamily: "'Epilogue', sans-serif",
+    fontSize: '3rem',
     textTransform: 'uppercase',
-    lineHeight: '1.05',
+    lineHeight: '1.1',
     letterSpacing: '-0.02em',
-    fontSize: '4rem',
-    marginBottom: '16px',
   },
-  venueMeta: {
+  venueContent: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: '64px',
+  },
+  venueLeft: {},
+  venueParagraph: {
+    fontSize: '1.125rem',
+    lineHeight: '1.7',
+    marginBottom: '24px',
+  },
+  venueDetails: {
+    marginTop: '48px',
+    display: 'grid',
+    gap: '24px',
+  },
+  venueDetailItem: {
     display: 'flex',
-    gap: '16px',
-    marginBottom: '32px',
-    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    padding: '16px 0',
+    borderBottom: '2px solid #251720',
   },
-  venueImageContainer: {
-    position: 'relative',
-    minHeight: '500px',
+  venueDetailLabel: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.75rem',
+    textTransform: 'uppercase',
+    letterSpacing: '0.1em',
+    color: '#5A4C55',
   },
-  venueImage: {
+  venueDetailValue: {
+    fontWeight: 600,
+  },
+  venueRight: {},
+  venueImagePlaceholder: {
     width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    position: 'absolute',
-    inset: 0,
-    filter: 'contrast(1.1) saturate(0.8)',
-  },
-  hudOverlay: {
-    position: 'absolute',
-    bottom: '24px',
-    right: '24px',
-    background: '#FFFFFF',
+    height: '400px',
+    background: '#EAF8F5',
     border: '3px solid #251720',
-    padding: '16px',
-    boxShadow: '3px 3px 0px #251720',
-    zIndex: 10,
-  },
-  footerCapture: {
-    padding: '120px 64px',
-    background: '#251720',
-    color: '#FFFFFF',
-    textAlign: 'center',
-    position: 'relative',
-    overflow: 'hidden',
-  },
-  footerH2: {
-    fontFamily: "'Epilogue', sans-serif",
-    textTransform: 'uppercase',
-    lineHeight: '1.05',
-    letterSpacing: '-0.02em',
-    fontSize: '4rem',
-    color: '#FFFFFF',
-    marginBottom: '48px',
-    position: 'relative',
-    zIndex: 2,
-  },
-  captureForm: {
     display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.85rem',
+    color: '#5A4C55',
+  },
+  emailCapture: {
+    padding: '80px 64px',
+    textAlign: 'center',
+  },
+  emailCaptureContent: {
     maxWidth: '600px',
     margin: '0 auto',
-    position: 'relative',
-    zIndex: 2,
   },
-  captureInput: {
-    flexGrow: 1,
-    padding: '24px 32px',
+  emailH2: {
+    fontFamily: "'Epilogue', sans-serif",
+    fontSize: '3rem',
+    textTransform: 'uppercase',
+    lineHeight: '1.1',
+    letterSpacing: '-0.02em',
+    marginBottom: '16px',
+  },
+  emailParagraph: {
+    fontSize: '1.125rem',
+    lineHeight: '1.7',
+    marginBottom: '32px',
+    color: '#5A4C55',
+  },
+  emailForm: {
+    display: 'flex',
+    gap: '16px',
+  },
+  emailInput: {
+    flex: 1,
+    padding: '16px',
+    border: '3px solid #251720',
+    fontFamily: "'DM Sans', sans-serif",
+    fontSize: '1rem',
+    background: '#FFFFFF',
+  },
+  footer: {
+    padding: '48px 64px',
+    borderTop: '3px solid #251720',
+    textAlign: 'center',
+  },
+  footerLinks: {
+    display: 'flex',
+    gap: '32px',
+    justifyContent: 'center',
+    marginBottom: '24px',
     fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '1.1rem',
-    border: '3px solid #00D27F',
-    background: '#251720',
-    color: '#FFFFFF',
-    outline: 'none',
-  },
-  footerGrid: {
-    position: 'absolute',
-    inset: 0,
-    backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-    backgroundSize: '40px 40px',
-    zIndex: 1,
+    fontSize: '0.85rem',
   },
 };
 
@@ -360,377 +308,102 @@ const LogoNode = () => (
       top: '-6px', right: '-6px', bottom: '-6px', left: '-6px',
       border: '2px solid #00D27F',
       borderRadius: '50%',
-    }} />
+    }}></div>
   </div>
 );
 
-const Pill = ({ children, active }) => (
-  <span style={{ ...customStyles.pill, ...(active ? customStyles.pillActive : {}) }}>
-    {children}
-  </span>
-);
-
-const NetworkSVG = () => (
-  <svg
-    style={{ width: '100%', height: '100%', maxHeight: '600px', overflow: 'visible' }}
-    viewBox="0 0 500 500"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path stroke="#251720" strokeWidth="2" fill="none" opacity="0.2" d="M100,50 L100,450 M200,50 L200,450 M300,50 L300,450 M400,50 L400,450" />
-    <path stroke="#251720" strokeWidth="2" fill="none" opacity="0.2" d="M50,100 L450,100 M50,200 L450,200 M50,300 L450,300 M50,400 L450,400" />
-    <path stroke="#251720" strokeWidth="3" fill="none" opacity="0.4" d="M100,200 L200,100 L400,100 L400,300 L300,400 L100,400 Z" />
-    <path stroke="#251720" strokeWidth="3" fill="none" opacity="0.4" d="M200,300 L300,200 L400,200" />
-    <path
-      stroke="#00D27F"
-      strokeWidth="4"
-      fill="none"
-      strokeDasharray="1000"
-      strokeDashoffset="1000"
-      d="M100,200 L200,300 L300,300 L400,200"
-      style={{ animation: 'drawLine 4s infinite alternate ease-in-out' }}
-    />
-    <path
-      stroke="#FFD600"
-      strokeWidth="4"
-      fill="none"
-      strokeDasharray="1000"
-      strokeDashoffset="1000"
-      d="M200,100 L200,300 L100,400"
-      style={{ animation: 'drawLine 4s infinite alternate ease-in-out', animationDelay: '1.5s' }}
-    />
-    <circle cx="100" cy="200" r="8" fill="#00D27F" stroke="#251720" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #00D27F)', animation: 'pulseNode 2s infinite' }} />
-    <circle cx="200" cy="100" r="10" fill="#FFFFFF" stroke="#251720" strokeWidth="3" />
-    <circle cx="400" cy="100" r="8" fill="#FFD600" stroke="#251720" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #00D27F)', animation: 'pulseNode 2s infinite' }} />
-    <circle cx="400" cy="300" r="12" fill="#00D27F" stroke="#251720" strokeWidth="3" />
-    <circle cx="300" cy="400" r="8" fill="#FFFFFF" stroke="#251720" strokeWidth="3" />
-    <circle cx="100" cy="400" r="10" fill="#FFD600" stroke="#251720" strokeWidth="3" />
-    <circle cx="200" cy="300" r="14" fill="#00D27F" stroke="#251720" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #00D27F)', animation: 'pulseNode 2s infinite' }} />
-    <circle cx="300" cy="300" r="6" fill="#FFFFFF" stroke="#251720" strokeWidth="3" />
-    <circle cx="300" cy="200" r="8" fill="#FFD600" stroke="#251720" strokeWidth="3" />
-    <circle cx="400" cy="200" r="10" fill="#FFFFFF" stroke="#251720" strokeWidth="3" />
-    <rect x="185" y="285" width="30" height="30" fill="none" stroke="#251720" strokeWidth="2" strokeDasharray="4" />
-    <text x="220" y="315" fontFamily="JetBrains Mono" fontSize="10" fill="#251720">KACHETTE</text>
-    <text x="85" y="195" fontFamily="JetBrains Mono" fontSize="8" fill="#251720">SHOREDITCH</text>
-  </svg>
-);
-
-const Header = ({ onNavClick }) => (
+const Header = () => (
   <header style={customStyles.header} className="header-responsive">
-    <div style={customStyles.logo}>
+    <Link to="/" style={customStyles.logo}>
       <LogoNode />
       EMERGENCE
-    </div>
+    </Link>
     <nav style={customStyles.navLinks}>
-      <a href="#about" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('about'); }}>[01] WHY</a>
-      <a href="#mechanics" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('mechanics'); }}>[02] HOW</a>
-      <a href="#venue" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('venue'); }}>[03] HUB</a>
+      <Link to="/about" style={customStyles.navLink}>ABOUT</Link>
+      <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
+      <Link to="/host" style={customStyles.navLink}>HOST</Link>
+      <Link to="/sponsor" style={customStyles.navLink}>SPONSOR</Link>
+      <Link to="/map" style={customStyles.navLink}>MAP</Link>
     </nav>
   </header>
 );
 
-const HeroSection = () => (
-  <section style={customStyles.hero} className="hero-responsive">
-    <div style={customStyles.heroContent}>
-      <span style={{ ...customStyles.monoLabel, marginBottom: '24px', display: 'flex', gap: '12px', alignItems: 'center' }}>
-        <Pill active>APRIL 28-30, 2026</Pill>
-        <span>LONDON</span>
-      </span>
-      <h1 style={customStyles.h1}>LONDON'S TECH SCENE, EMERGING.</h1>
-      <p style={customStyles.subtitle}>Three days. Fifty venues. One city finally seeing itself.</p>
-      <div style={customStyles.heroCtas}>
-        <a href="#host" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>HOST A NODE</a>
-        <a href="#sponsor" style={{ ...customStyles.btn, ...customStyles.btnSecondary }}>BECOME A SPONSOR</a>
-      </div>
+const Footer = () => (
+  <footer style={customStyles.footer}>
+    <div style={customStyles.footerLinks}>
+      <Link to="/about" style={customStyles.navLink}>ABOUT</Link>
+      <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
+      <Link to="/host" style={customStyles.navLink}>HOST</Link>
+      <Link to="/sponsor" style={customStyles.navLink}>SPONSOR</Link>
+      <Link to="/map" style={customStyles.navLink}>MAP</Link>
     </div>
-    <div style={customStyles.heroVisual}>
-      <NetworkSVG />
-    </div>
-  </section>
+    <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#5A4C55' }}>
+      EMERGENCE LONDON © 2026 / APRIL 28-30
+    </p>
+  </footer>
 );
 
-const ExplanationSection = () => (
-  <section id="about" style={customStyles.explanation} className="explanation-responsive">
-    <div style={customStyles.explHeader}>
-      <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>THE_THESIS // 01</span>
-      <h2 style={customStyles.explHeaderH2}>WHY DISTRIBUTED?</h2>
-    </div>
-    <div style={customStyles.explContent}>
-      <p style={customStyles.explParagraph}>Traditional tech conferences put everyone in a dark room to listen to a single broadcast. Emergence inverts this architecture.</p>
-      <p style={customStyles.explParagraph}>For three days, offices, cafes, warehouses, and studios across London become active nodes in the network. Each node hosts autonomous programming: workshops, debates, hackathons, dinners, governed by the hosts but discoverable through the central protocol.</p>
-      <p style={customStyles.explParagraph}>This is not a top-down event. It's a peer-to-peer protocol for London's tech ecosystem to map itself, share bandwidth, and build unexpected connections. You don't just attend Emergence; you plug into it.</p>
-    </div>
-  </section>
-);
-
-const MechCard = ({ accentColor, iconColor, label, icon, title, description, btnStyle, btnText, isLast }) => (
-  <div style={{ ...customStyles.mechCard, ...(isLast ? customStyles.mechCardLast : {}) }}>
-    <span style={{ ...customStyles.monoLabel, position: 'absolute', top: '16px', right: '16px' }}>{label}</span>
-    <div style={{ ...customStyles.mechIcon, background: accentColor, color: iconColor || '#251720' }}>
-      {icon}
-    </div>
-    <h3 style={customStyles.mechH3}>{title}</h3>
-    <p style={customStyles.mechP}>{description}</p>
-    <a href="#" style={{ ...customStyles.btn, ...customStyles.btnSmall, ...btnStyle }}>{btnText}</a>
-  </div>
-);
-
-const MechanicsSection = () => (
-  <section id="mechanics" style={customStyles.mechanics} className="mechanics-responsive">
-    <MechCard
-      accentColor="#00D27F"
-      label="// HOST"
-      icon={
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#251720" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <circle cx="12" cy="12" r="10" />
-          <circle cx="12" cy="12" r="6" />
-          <circle cx="12" cy="12" r="2" />
-        </svg>
-      }
-      title="HOST A NODE"
-      description="Have an office, a warehouse, or a living room? Turn your space into an active node. You control the format, the capacity, and the agenda. We provide the protocol and route the network to your door."
-      btnStyle={{ background: '#00D27F' }}
-      btnText="REGISTER VENUE"
-    />
-    <MechCard
-      accentColor="#FFD600"
-      label="// ATTEND"
-      icon={
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#251720" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          <polyline points="9 22 9 12 15 12 15 22" />
-        </svg>
-      }
-      title="BUILD YOUR PATH"
-      description="No single ticket. Build your own journey through the city. Sync your calendar with nodes that match your frequency. Navigate between micro-summits, underground demos, and rooftop debates."
-      btnStyle={{ background: '#FFD600' }}
-      btnText="ACCESS MAP"
-    />
-    <MechCard
-      accentColor="#251720"
-      iconColor="#FFFFFF"
-      label="// SPONSOR"
-      icon={
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-        </svg>
-      }
-      title="POWER THE GRID"
-      description="Sponsors don't get logos on lanyards. They fund the ecosystem: supporting valuable programming, subsidizing costs for indie developers, and elevating the overall fidelity of the network."
-      btnStyle={{ background: '#FFFFFF', color: '#251720' }}
-      btnText="VIEW PACKAGES"
-      isLast
-    />
-  </section>
-);
-
-const StatsSection = () => (
-  <section style={customStyles.statsSection}>
-    <span style={customStyles.monoLabel}>LONDON_TECH_ECOSYSTEM // BASELINE_METRICS</span>
-    <h2 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '2.5rem', textTransform: 'uppercase', marginBottom: '48px' }}>THE NETWORK IS REAL.</h2>
-    <div style={customStyles.statsGrid} className="stats-responsive">
-      <div style={customStyles.statCard}>
-        <div style={customStyles.statNumber}>50+</div>
-        <div style={customStyles.statLabel}>Active Venues</div>
-      </div>
-      <div style={customStyles.statCard}>
-        <div style={customStyles.statNumber}>12</div>
-        <div style={customStyles.statLabel}>Unicorns (2025)</div>
-      </div>
-      <div style={customStyles.statCard}>
-        <div style={customStyles.statNumber}>£2.3B</div>
-        <div style={customStyles.statLabel}>Funding Raised</div>
-      </div>
-      <div style={customStyles.statCard}>
-        <div style={customStyles.statNumber}>250+</div>
-        <div style={customStyles.statLabel}>Tech Companies</div>
-      </div>
-    </div>
-  </section>
-);
-
-const VenueSection = () => (
-  <section id="venue" style={customStyles.venue} className="venue-responsive">
-    <div style={customStyles.venueInfo}>
-      <span style={customStyles.monoLabel}>PHYSICAL_INFRASTRUCTURE // CENTRAL_ROUTER</span>
-      <h2 style={customStyles.venueH2}>KACHETTE.</h2>
-      <div style={customStyles.venueMeta}>
-        <Pill>EC1V 9LP</Pill>
-        <Pill>CAPACITY: 400</Pill>
-        <Pill active>STATUS: SECURED</Pill>
-      </div>
-      <p style={{ fontSize: '1.25rem', color: '#5A4C55', marginBottom: '32px' }}>
-        While the network is distributed, every system needs a central router. Located in the historic railway arches of Shoreditch, Kachette acts as the physical core. Come here to sync, collect credentials, and access the master schedule.
-      </p>
-      <div style={{ borderTop: '1px solid rgba(37, 23, 32, 0.15)', paddingTop: '16px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', color: '#251720' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-          <span>LAT/LONG:</span> <span>51.526° N, 0.078° W</span>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <span>ARCHITECTURE:</span> <span>EXPOSED BRICK / DUAL ARCH</span>
+function App() {
+  return (
+    <Router>
+      <div style={customStyles.body}>
+        <style>{`
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+          body {
+            font-family: 'DM Sans', sans-serif;
+          }
+          @media (max-width: 768px) {
+            .header-responsive {
+              flex-direction: column !important;
+              gap: 24px !important;
+            }
+            .hero-responsive {
+              grid-template-columns: 1fr !important;
+            }
+            .hero-responsive > div:first-child {
+              border-right: none !important;
+              border-bottom: 3px solid #251720 !important;
+            }
+            .stats-responsive {
+              grid-template-columns: 1fr !important;
+            }
+            .stats-responsive > div {
+              border-right: none !important;
+              border-bottom: 3px solid #251720 !important;
+            }
+            .stats-responsive > div:last-child {
+              border-bottom: none !important;
+            }
+            .mechanics-responsive {
+              grid-template-columns: 1fr !important;
+            }
+            .explanation-responsive,
+            .venue {
+              padding: 48px 24px !important;
+            }
+          }
+        `}</style>
+        <div style={customStyles.systemContainer}>
+          <Header />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home customStyles={customStyles} />} />
+              <Route path="/host" element={<Host customStyles={customStyles} />} />
+              <Route path="/events" element={<Events customStyles={customStyles} />} />
+              <Route path="/sponsor" element={<Sponsor customStyles={customStyles} />} />
+              <Route path="/map" element={<Map customStyles={customStyles} />} />
+              <Route path="/about" element={<About customStyles={customStyles} />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
       </div>
-    </div>
-    <div style={customStyles.venueImageContainer}>
-      <img
-        src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-        alt="Exposed brick arches of Kachette venue"
-        style={customStyles.venueImage}
-      />
-      <div style={customStyles.hudOverlay}>
-        <span style={{ ...customStyles.monoLabel, color: '#251720', marginBottom: '4px' }}>SYSTEM CAM // 01</span>
-        <div style={{ fontFamily: "'Epilogue', sans-serif", fontWeight: 900, fontSize: '1.2rem' }}>MAIN ARCHWAY</div>
-      </div>
-    </div>
-  </section>
-);
-
-const FooterCaptureSection = () => {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setEmail('');
-    }
-  };
-
-  return (
-    <section style={customStyles.footerCapture}>
-      <div style={customStyles.footerGrid} />
-      <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '16px', position: 'relative', zIndex: 2 }}>
-        {submitted ? 'CONNECTION ESTABLISHED' : 'JOIN THE NETWORK'}
-      </span>
-      <h2 style={customStyles.footerH2}>YOU'RE ALREADY PART OF THIS. NOW MAKE YOURSELF VISIBLE.</h2>
-      {submitted ? (
-        <p style={{ fontFamily: "'JetBrains Mono', monospace", color: '#00D27F', fontSize: '1.1rem', position: 'relative', zIndex: 2 }}>
-          ACCESS LINK SENT. CHECK YOUR EMAIL.
-        </p>
-      ) : (
-        <form style={customStyles.captureForm} onSubmit={handleSubmit} className="capture-form-responsive">
-          <input
-            type="email"
-            placeholder="YOUR EMAIL..."
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            style={customStyles.captureInput}
-          />
-          <button
-            type="submit"
-            style={{ ...customStyles.btn, ...customStyles.btnPrimary, boxShadow: 'none', borderLeft: 'none' }}
-          >
-            SYNC
-          </button>
-        </form>
-      )}
-    </section>
+    </Router>
   );
-};
-
-const App = () => {
-  useEffect(() => {
-    const style = document.createElement('style');
-    style.textContent = `
-      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Epilogue:wght@800;900&family=JetBrains+Mono:wght@400;700&display=swap');
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
-      body {
-        overflow-x: hidden;
-      }
-
-      ::selection {
-        background: #00D27F;
-        color: #251720;
-      }
-
-      @keyframes drawLine {
-        0% { stroke-dashoffset: 1000; }
-        100% { stroke-dashoffset: 0; }
-      }
-
-      @keyframes pulseNode {
-        0% { filter: drop-shadow(0px 0px 4px #00D27F); }
-        50% { filter: drop-shadow(0px 0px 16px #00D27F); }
-        100% { filter: drop-shadow(0px 0px 4px #00D27F); }
-      }
-
-      a:hover {
-        color: #00D27F !important;
-      }
-
-      button:hover {
-        transform: translate(2px, 2px);
-        box-shadow: 3px 3px 0px #251720 !important;
-      }
-
-      @media (max-width: 1024px) {
-        .hero-responsive {
-          grid-template-columns: 1fr !important;
-        }
-        .explanation-responsive {
-          grid-template-columns: 1fr !important;
-        }
-        .mechanics-responsive {
-          grid-template-columns: 1fr !important;
-        }
-        .venue-responsive {
-          grid-template-columns: 1fr !important;
-        }
-        .stats-responsive {
-          grid-template-columns: repeat(2, 1fr) !important;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .header-responsive {
-          flex-direction: column !important;
-          gap: 24px !important;
-        }
-        .capture-form-responsive {
-          flex-direction: column !important;
-        }
-        .system-container-responsive {
-          border-left: none !important;
-          border-right: none !important;
-        }
-        .stats-responsive {
-          grid-template-columns: 1fr !important;
-        }
-      }
-    `;
-    document.head.appendChild(style);
-    return () => document.head.removeChild(style);
-  }, []);
-
-  const scrollToSection = (id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  return (
-    <div style={customStyles.body}>
-      <div style={customStyles.systemContainer} className="system-container-responsive">
-        <Header onNavClick={scrollToSection} />
-        <HeroSection />
-        <ExplanationSection />
-        <MechanicsSection />
-        <StatsSection />
-        <VenueSection />
-        <FooterCaptureSection />
-      </div>
-    </div>
-  );
-};
+}
 
 export default App;
