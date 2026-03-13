@@ -456,7 +456,7 @@ const ExplanationSection = () => (
     </div>
     <div style={customStyles.explContent}>
       <p style={customStyles.explParagraph}>Traditional tech conferences put everyone in a dark room to listen to a single broadcast. Emergence inverts this architecture.</p>
-      <p style={customStyles.explParagraph}>For three days, offices, cafes, warehouses, and studios across London become active nodes in the network. Each node hosts autonomous programming—workshops, debates, hackathons, dinners—governed by the hosts but discoverable through the central protocol.</p>
+      <p style={customStyles.explParagraph}>For three days, offices, cafes, warehouses, and studios across London become active nodes in the network. Each node hosts autonomous programming: workshops, debates, hackathons, dinners, governed by the hosts but discoverable through the central protocol.</p>
       <p style={customStyles.explParagraph}>This is not a top-down event. It's a peer-to-peer protocol for London's tech ecosystem to map itself, share bandwidth, and build unexpected connections. You don't just attend Emergence; you plug into it.</p>
     </div>
   </section>
@@ -515,7 +515,7 @@ const MechanicsSection = () => (
         </svg>
       }
       title="POWER THE GRID"
-      description="Sponsors don't get logos on lanyards. They fund the ecosystem—supporting valuable programming, subsidizing costs for indie developers, and elevating the overall fidelity of the network."
+      description="Sponsors don't get logos on lanyards. They fund the ecosystem: supporting valuable programming, subsidizing costs for indie developers, and elevating the overall fidelity of the network."
       btnStyle={{ background: '#FFFFFF', color: '#251720' }}
       btnText="VIEW PACKAGES"
       isLast
