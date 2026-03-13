@@ -515,7 +515,7 @@ const MechanicsSection = () => (
         </svg>
       }
       title="POWER THE GRID"
-      description="Sponsors don't get logos on lanyards. They inject capital directly into nodes, subsidizing costs for indie developers and elevating the overall fidelity of the network."
+      description="Sponsors don't get logos on lanyards. They fund the ecosystem—supporting valuable programming, subsidizing costs for indie developers, and elevating the overall fidelity of the network."
       btnStyle={{ background: '#FFFFFF', color: '#251720' }}
       btnText="VIEW PACKAGES"
       isLast
