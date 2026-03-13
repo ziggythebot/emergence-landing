@@ -56,14 +56,37 @@ const App = () => {
         .hero-responsive {
           grid-template-columns: 1fr !important;
         }
+        .hero-responsive > div:first-child {
+          border-right: none !important;
+          border-bottom: 3px solid #251720 !important;
+        }
         .explanation-responsive {
           grid-template-columns: 1fr !important;
+        }
+        .explanation-responsive > div:first-child {
+          border-right: none !important;
+          border-bottom: 3px solid #251720 !important;
+          padding: 48px 32px !important;
+        }
+        .explanation-responsive > div:last-child {
+          padding: 48px 32px !important;
         }
         .mechanics-responsive {
           grid-template-columns: 1fr !important;
         }
+        .mechanics-responsive > div {
+          border-right: none !important;
+          border-bottom: 3px solid #251720 !important;
+        }
+        .mechanics-responsive > div:last-child {
+          border-bottom: none !important;
+        }
         .venue-responsive {
           grid-template-columns: 1fr !important;
+        }
+        .venue-responsive > div:first-child {
+          border-right: none !important;
+          padding: 48px 32px !important;
         }
         .stats-responsive {
           grid-template-columns: repeat(2, 1fr) !important;
@@ -73,10 +96,38 @@ const App = () => {
       @media (max-width: 768px) {
         .header-responsive {
           flex-direction: column !important;
-          gap: 24px !important;
+          gap: 16px !important;
+          padding: 20px 24px !important;
+        }
+        .header-responsive nav {
+          flex-wrap: wrap !important;
+          gap: 16px !important;
+          justify-content: center !important;
+        }
+        .header-responsive nav a {
+          font-size: 0.75rem !important;
+        }
+        .hero-responsive > div:first-child {
+          padding: 48px 24px !important;
+        }
+        .hero-responsive > div:last-child {
+          padding: 32px 24px !important;
+          min-height: 300px !important;
+        }
+        .explanation-responsive > div:first-child {
+          padding: 32px 24px !important;
+        }
+        .explanation-responsive > div:last-child {
+          padding: 32px 24px !important;
         }
         .capture-form-responsive {
           flex-direction: column !important;
+        }
+        .capture-form-responsive input {
+          border-left: 3px solid #00D27F !important;
+        }
+        .capture-form-responsive button {
+          border-top: none !important;
         }
         .system-container-responsive {
           border-left: none !important;
@@ -84,6 +135,24 @@ const App = () => {
         }
         .stats-responsive {
           grid-template-columns: 1fr !important;
+        }
+        .venue-responsive > div:first-child {
+          padding: 32px 24px !important;
+        }
+        .venue-responsive > div:last-child {
+          min-height: 400px !important;
+        }
+        h1 {
+          font-size: 2.5rem !important;
+        }
+        h2 {
+          font-size: 2rem !important;
+        }
+        p {
+          font-size: 1.125rem !important;
+        }
+        button, a[style*="btn"] {
+          white-space: nowrap !important;
         }
       }
     `;
