@@ -107,8 +107,8 @@ const StatsSection = () => (
     <h2 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '2.5rem', textTransform: 'uppercase', marginBottom: '48px' }}>THE NETWORK IS REAL.</h2>
     <div style={customStyles.statsGrid} className="stats-responsive">
       <div style={customStyles.statCard}>
-        <div style={customStyles.statNumber}>50+</div>
-        <div style={customStyles.statLabel}>Active Venues</div>
+        <div style={customStyles.statNumber}>250+</div>
+        <div style={customStyles.statLabel}>AI & Tech Companies</div>
       </div>
       <div style={customStyles.statCard}>
         <div style={customStyles.statNumber}>12</div>
@@ -119,8 +119,8 @@ const StatsSection = () => (
         <div style={customStyles.statLabel}>Funding Raised</div>
       </div>
       <div style={customStyles.statCard}>
-        <div style={customStyles.statNumber}>250+</div>
-        <div style={customStyles.statLabel}>Tech Companies</div>
+        <div style={customStyles.statNumber}>3 Days</div>
+        <div style={customStyles.statLabel}>April 28-30, 2026</div>
       </div>
     </div>
   </section>
