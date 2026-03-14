@@ -642,28 +642,102 @@ const App = () => {
     <>
       <style>{`
         @media (max-width: 768px) {
-          /* Titles */
-          .hero-grid h1 { font-size: 2rem !important; margin: 16px 0 !important; }
-          .hero-grid p { font-size: 1rem !important; line-height: 1.5 !important; }
+          /* Global mobile resets */
+          body { overflow-x: hidden !important; }
 
-          /* Buttons */
-          .hero-grid a {
-            padding: 14px 24px !important;
-            font-size: 0.85rem !important;
-            white-space: nowrap !important;
+          /* Hero section */
+          .hero-grid h1 {
+            font-size: 1.75rem !important;
+            margin: 12px 0 16px 0 !important;
+            line-height: 1.1 !important;
           }
 
-          /* Button container */
+          .hero-grid p {
+            font-size: 0.95rem !important;
+            line-height: 1.5 !important;
+            margin-bottom: 24px !important;
+            max-width: 100% !important;
+          }
+
+          .hero-grid a {
+            padding: 12px 20px !important;
+            font-size: 0.8rem !important;
+            white-space: nowrap !important;
+            box-shadow: 3px 3px 0px #251720 !important;
+          }
+
           .hero-grid > div:first-child > div:last-child {
             display: flex !important;
             flex-wrap: wrap !important;
-            gap: 12px !important;
+            gap: 10px !important;
           }
 
-          /* SVG container - make it proportional */
+          .hero-grid > div:last-child {
+            min-height: 200px !important;
+          }
+
           .hero-grid > div:last-child svg {
             max-width: 100% !important;
             height: auto !important;
+          }
+
+          /* Explanation section typography */
+          .explanation-section h2 {
+            font-size: 1.75rem !important;
+            margin: 8px 0 !important;
+          }
+
+          .explanation-section p {
+            font-size: 0.95rem !important;
+            line-height: 1.5 !important;
+            max-width: 100% !important;
+          }
+
+          /* Mechanics cards */
+          .mechanics-grid h3 {
+            font-size: 1.25rem !important;
+          }
+
+          .mechanics-grid p {
+            font-size: 0.9rem !important;
+            line-height: 1.4 !important;
+          }
+
+          .mechanics-grid svg {
+            width: 20px !important;
+            height: 20px !important;
+          }
+
+          .mechanics-grid button,
+          .mechanics-grid a {
+            padding: 10px 20px !important;
+            font-size: 0.8rem !important;
+            box-shadow: 3px 3px 0px #251720 !important;
+          }
+
+          /* Venue section */
+          .venue-grid h2 {
+            font-size: 1.5rem !important;
+          }
+
+          .venue-grid p {
+            font-size: 0.9rem !important;
+            line-height: 1.4 !important;
+          }
+
+          /* Footer capture */
+          .footer-section h2 {
+            font-size: 1.75rem !important;
+          }
+
+          .footer-section input {
+            font-size: 14px !important;
+            padding: 12px !important;
+          }
+
+          .footer-section button {
+            padding: 12px 24px !important;
+            font-size: 0.85rem !important;
           }
         }
       `}</style>
