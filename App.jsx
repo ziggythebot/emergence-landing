@@ -389,7 +389,7 @@ const Header = ({ onNavClick }) => (
   <header style={customStyles.header}>
     <div style={customStyles.logo}>
       <LogoNode />
-      VARIANT
+      EMERGENCE
     </div>
     <nav style={customStyles.navLinks}>
       <a href="#about" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('about'); }}>[01] ABOUT</a>
@@ -407,7 +407,7 @@ const HeroSection = () => (
         <span>LDN_TECH_ECO_V2</span>
       </span>
       <h1 style={customStyles.h1}>LONDON'S TECH ECOSYSTEM, SELF-AWARE.</h1>
-      <p style={customStyles.subtitle}>Variant is not a conference. It is a distributed moment in time where the city's fragmented tech nodes connect, sync, and emerge as a unified network.</p>
+      <p style={customStyles.subtitle}>Emergence is not a conference. It is a distributed moment in time where the city's fragmented tech nodes connect, sync, and emerge as a unified network.</p>
       <div style={customStyles.heroCtas}>
         <a href="#" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>HOST A NODE</a>
         <a href="#" style={{ ...customStyles.btn, ...customStyles.btnSecondary }}>SPONSOR THE GRID</a>
@@ -426,9 +426,9 @@ const ExplanationSection = () => (
       <h2 style={customStyles.explHeaderH2}>EMERGENCE.</h2>
     </div>
     <div style={customStyles.explContent}>
-      <p style={customStyles.explParagraph}>Traditional tech conferences put everyone in a dark room to listen to a single broadcast. Variant inverts this architecture. We are turning London itself into the venue, utilizing distributed spaces to facilitate a decentralized exchange of ideas.</p>
-      <p style={customStyles.explParagraph}>For three days, offices, cafes, warehouses, and studios across the city become active "Nodes" in the Variant network. Each node hosts autonomous programming—workshops, debates, hackathons, or dinners—governed entirely by the hosts but discoverable through the central protocol.</p>
-      <p style={customStyles.explParagraph}>This is not a top-down event. It is a peer-to-peer protocol for the ecosystem to map itself, share bandwidth, and build unexpected connections. You don't just attend Variant; you plug into it.</p>
+      <p style={customStyles.explParagraph}>Traditional tech conferences put everyone in a dark room to listen to a single broadcast. Emergence inverts this architecture. We are turning London itself into the venue, utilizing distributed spaces to facilitate a decentralized exchange of ideas.</p>
+      <p style={customStyles.explParagraph}>For three days, offices, cafes, warehouses, and studios across the city become active "Nodes" in the Emergence network. Each node hosts autonomous programming—workshops, debates, hackathons, or dinners—governed entirely by the hosts but discoverable through the central protocol.</p>
+      <p style={customStyles.explParagraph}>This is not a top-down event. It is a peer-to-peer protocol for the ecosystem to map itself, share bandwidth, and build unexpected connections. You don't just attend Emergence; you plug into it.</p>
     </div>
   </section>
 );
