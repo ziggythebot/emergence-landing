@@ -193,6 +193,18 @@ const customStyles = {
     boxShadow: '3px 3px 0px #251720',
     cursor: 'pointer',
   },
+  btnSmConfirmed: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.7rem',
+    fontWeight: 700,
+    padding: '8px 12px',
+    border: '3px solid #00D27F',
+    background: '#00D27F',
+    color: '#251720',
+    textTransform: 'uppercase',
+    boxShadow: '3px 3px 0px #251720',
+    cursor: 'default',
+  },
   liveLabel: {
     fontFamily: "'JetBrains Mono', monospace",
     fontSize: '0.75rem',
@@ -223,78 +235,65 @@ const allEvents = [
   {
     id: 1,
     date: 'APR 28',
-    time: '09:00',
-    topic: 'AI_GENETICS',
-    topicCategory: 'AI',
-    title: 'NEURAL SUBSTRATES IN SHOREDITCH',
-    desc: 'A breakfast workshop examining the convergence of LLMs and synthetic biology. Limited to 20 participants.',
-    location: 'TEA BUILDING, E1',
+    time: '19:00',
+    topic: 'WEB3_BUILDERS',
+    topicCategory: 'WEB3',
+    title: 'ENCODE CLUB: PROTOCOL BUILDERS',
+    desc: 'Web3 developer community meetup. Building the next generation of decentralized apps.',
+    location: 'SHOREDITCH, E1',
     locationArea: 'SHOREDITCH',
-    btnLabel: 'SYNC',
-    btnStyle: 'default',
+    btnLabel: 'CONFIRMED',
+    btnStyle: 'confirmed',
   },
   {
     id: 2,
-    date: 'APR 28',
-    time: '11:30',
-    topic: 'CRYPTO_PHYSICAL',
-    topicCategory: 'CRYPTO',
-    title: 'ZERO KNOWLEDGE WAREHOUSES',
-    desc: "Touring Hackney's newest distributed storage facility using ZK proofs for physical access control.",
-    location: 'HELMSLEY PL, E8',
-    locationArea: 'HACKNEY',
-    btnLabel: 'SYNC',
-    btnStyle: 'default',
+    date: 'APR 29',
+    time: '18:00',
+    topic: 'SPACE_TECH',
+    topicCategory: 'SPACE',
+    title: 'SPACE: ORBITAL INFRASTRUCTURE',
+    desc: 'Space tech founders and investors. New space economy, satellite networks, launch systems.',
+    location: 'KING\'S CROSS, N1C',
+    locationArea: "KING'S CROSS",
+    btnLabel: 'CONFIRMED',
+    btnStyle: 'confirmed',
   },
   {
     id: 3,
-    date: 'APR 28',
-    time: '14:00',
-    topic: 'HARDWARE_LAB',
-    topicCategory: 'HARDWARE',
-    title: 'THE SILICON RENAISSANCE',
-    desc: 'Live demonstration of local GPU clustering for decentralized inference. Hosted in a former textile mill.',
-    location: 'ARCH 402, N1',
+    date: 'APR 29',
+    time: '20:00',
+    topic: 'CREATIVE_TECH',
+    topicCategory: 'CREATIVE',
+    title: 'RAUM: DIGITAL FUTURES',
+    desc: 'Creative technologists, artists, and builders exploring new media and digital art.',
+    location: 'SHOREDITCH, E2',
     locationArea: 'SHOREDITCH',
-    btnLabel: 'SYNC',
-    btnStyle: 'default',
+    btnLabel: 'CONFIRMED',
+    btnStyle: 'confirmed',
   },
   {
     id: 4,
-    date: 'APR 29',
-    time: '10:00',
-    topic: 'SOCIAL_PROTOCOLS',
+    date: 'APR 30',
+    time: '22:00',
+    topic: 'NETWORK_SYNC',
     topicCategory: 'SOCIAL',
-    title: 'DECENTRALIZED URBANISM',
-    desc: "Can DAOs manage London's green spaces? A panel discussion between urban planners and protocol designers.",
-    location: 'KACHETTE, EC1',
+    title: 'EMERGENCE AFTER PARTY',
+    desc: 'Network consolidation. All nodes converge for final sync.',
+    location: 'COAL DROPS YARD, N1C',
     locationArea: "KING'S CROSS",
-    btnLabel: 'SYNC',
-    btnStyle: 'default',
+    btnLabel: 'CONFIRMED',
+    btnStyle: 'confirmed',
   },
   {
     id: 5,
-    date: 'APR 29',
-    time: '15:30',
-    topic: 'AI_ETHICS',
-    topicCategory: 'AI',
-    title: 'GHOST IN THE MACHINE ROOM',
-    desc: 'An immersive sound installation using real-time LLM feedback loops within the Soho underground.',
-    location: 'THE CRYPT, W1',
-    locationArea: 'SOHO',
-    btnLabel: 'SYNC',
-    btnStyle: 'default',
-  },
-  {
-    id: 6,
-    date: 'APR 30',
-    time: '18:00',
-    topic: 'NETWORK_FINALE',
-    topicCategory: 'CRYPTO',
-    title: 'EMERGENCE: THE LAST SYNC',
-    desc: 'The final consolidation of all 54 nodes into a single physical network. Data visualization & synthesis.',
-    location: 'COAL DROPS YARD, N1C',
-    locationArea: "KING'S CROSS",
+    date: 'TBA',
+    time: 'TBA',
+    topic: 'YOUR_EVENT',
+    topicCategory: 'OPEN',
+    title: 'CREATE YOUR EVENT',
+    desc: 'Add your event to the grid. Host a node. Join the protocol.',
+    location: 'YOUR SPACE',
+    locationArea: 'LONDON',
     btnLabel: 'JOIN',
     btnStyle: 'gold',
   },
@@ -340,8 +339,12 @@ const EventCard = ({ event, onSync }) => {
           {event.location}
         </div>
         <button
-          style={event.btnStyle === 'gold' ? customStyles.btnSmGold : customStyles.btnSm}
-          onClick={() => onSync(event)}
+          style={
+            event.btnStyle === 'gold' ? customStyles.btnSmGold :
+            event.btnStyle === 'confirmed' ? customStyles.btnSmConfirmed :
+            customStyles.btnSm
+          }
+          onClick={() => event.btnStyle !== 'confirmed' && onSync(event)}
         >
           {event.btnLabel}
         </button>
@@ -487,8 +490,8 @@ const Events = () => {
             <h1 style={customStyles.scheduleTitle}>THE GRID SCHEDULE.</h1>
           </div>
           <div style={customStyles.counterBox}>
-            <div style={{ fontSize: '2rem', fontWeight: 700, lineHeight: 1 }}>{filteredEvents.length * 9}</div>
-            <div style={{ fontSize: '0.6rem', opacity: 0.7 }}>ACTIVE NODES DETECTED</div>
+            <div style={{ fontSize: '2rem', fontWeight: 700, lineHeight: 1 }}>{filteredEvents.length}</div>
+            <div style={{ fontSize: '0.6rem', opacity: 0.7 }}>EVENTS ON GRID</div>
           </div>
         </div>
 
