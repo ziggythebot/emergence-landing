@@ -394,7 +394,7 @@ const HeroSection = () => (
         <span>LDN_TECH_ECO_V2</span>
       </span>
       <h1 style={customStyles.h1}>LONDON'S TECH ECOSYSTEM, SELF-AWARE.</h1>
-      <p style={customStyles.subtitle}>Emergence is not a conference. It is a distributed moment in time where the city's fragmented tech nodes connect, sync, and emerge as a unified network.</p>
+      <p style={customStyles.subtitle}>Three days. Distributed nodes. One protocol.</p>
       <div style={customStyles.heroCtas}>
         <a href="#" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>HOST A NODE</a>
         <a href="#" style={{ ...customStyles.btn, ...customStyles.btnSecondary }}>SPONSOR THE GRID</a>
@@ -413,9 +413,7 @@ const ExplanationSection = () => (
       <h2 style={customStyles.explHeaderH2}>EMERGENCE.</h2>
     </div>
     <div style={customStyles.explContent}>
-      <p style={customStyles.explParagraph}>Traditional tech conferences put everyone in a dark room to listen to a single broadcast. Emergence inverts this architecture. We are turning London itself into the venue, utilizing distributed spaces to facilitate a decentralized exchange of ideas.</p>
-      <p style={customStyles.explParagraph}>For three days, offices, cafes, warehouses, and studios across the city become active "Nodes" in the Emergence network. Each node hosts autonomous programming—workshops, debates, hackathons, or dinners—governed entirely by the hosts but discoverable through the central protocol.</p>
-      <p style={customStyles.explParagraph}>This is not a top-down event. It is a peer-to-peer protocol for the ecosystem to map itself, share bandwidth, and build unexpected connections. You don't just attend Emergence; you plug into it.</p>
+      <p style={customStyles.explParagraph}>Turn London into the venue. Offices, cafes, warehouses become nodes—each running autonomous programming. You don't attend; you plug in.</p>
     </div>
   </section>
 );
@@ -443,7 +441,7 @@ const MechanicsSection = () => (
         </svg>
       }
       title="HOST A NODE"
-      description="Have an office, a warehouse, or a living room? Turn your space into an active node. You control the format, the capacity, and the agenda. We provide the protocol and route the network to your door."
+      description="Your space becomes a node. You control format and agenda. We route the network."
       btnStyle={{ background: '#00D27F' }}
       btnText="INITIALIZE"
     />
@@ -457,7 +455,7 @@ const MechanicsSection = () => (
         </svg>
       }
       title="ATTEND & SYNC"
-      description="No single ticket. Build your own path through the city. Sync your calendar with nodes that match your frequency. Navigate between micro-summits, underground demos, and rooftop debates."
+      description="Build your path. Sync with nodes that match your frequency. Navigate the city."
       btnStyle={{ background: '#FFD600' }}
       btnText="ACCESS MAP"
     />
@@ -471,7 +469,7 @@ const MechanicsSection = () => (
         </svg>
       }
       title="POWER THE GRID"
-      description="Provide bandwidth. Sponsors don't get logos on lanyards; they inject capital directly into nodes, subsidizing costs for indie developers and elevating the overall fidelity of the network."
+      description="Inject capital directly into nodes. Subsidize indie developers. Elevate network fidelity."
       btnStyle={{ background: '#FFFFFF', color: '#251720' }}
       btnText="INJECT CAPITAL"
       isLast
@@ -490,7 +488,7 @@ const VenueSection = () => (
         <Pill>STATUS: SECURED</Pill>
       </div>
       <p style={{ fontSize: '1.25rem', color: '#5A4C55', marginBottom: '32px' }}>
-        While the network is distributed, every system needs a central router. Located in the historic railway arches of Shoreditch, Kachette acts as the physical core. Come here to sync, collect credentials, and access the master schedule.
+        Every system needs a router. Kachette is the physical core. Sync, collect credentials, access the schedule.
       </p>
       <div style={{ borderTop: '1px solid rgba(37, 23, 32, 0.15)', paddingTop: '16px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', color: '#251720' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>

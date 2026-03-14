@@ -293,7 +293,7 @@ const Sponsor = () => {
             <span style={styles.monoLabel}>TRANSMISSION // GRID_SPONSORSHIP</span>
             <h1 style={styles.h1}>FUEL THE RENAISSANCE.</h1>
             <p style={{ fontSize: '1.25rem', color: '#5A4C55', maxWidth: '500px' }}>
-              We are building the infrastructure for London's tech future. Sponsors don't just get visibility; they provide the bandwidth that powers every Node in the network.
+              Build London's tech infrastructure. Provide bandwidth, power the network.
             </p>
           </div>
           <div style={styles.visualWell}>
@@ -315,7 +315,7 @@ const Sponsor = () => {
             <div style={styles.pill}>FOUNDING_NODE</div>
             <div style={styles.priceTag}>£10,000</div>
             <p style={{ color: '#5A4C55', fontWeight: 500 }}>
-              Establish a presence within the distributed network. Perfect for scaling startups and community-led organisations.
+              Join the distributed network. For scaling startups and community orgs.
             </p>
             <ul style={styles.benefitList}>
               <li style={styles.benefitItem}>

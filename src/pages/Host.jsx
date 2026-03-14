@@ -178,7 +178,7 @@ const Host = () => {
             <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>CONTACT_PROTOCOL</span>
             <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF' }}>GET IN TOUCH.</h1>
             <p style={{ marginTop: '32px', fontSize: '1.1rem', opacity: 0.8, fontFamily: "'DM Sans', sans-serif" }}>
-              Questions about Emergence? Want to get involved? Drop us a message and we'll get back to you within 24 hours.
+              Questions? Drop a message. Response within 24 hours.
             </p>
           </aside>
 
