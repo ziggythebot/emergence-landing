@@ -229,32 +229,54 @@ const customStyles = {
     marginBottom: '32px',
     flexGrow: 1,
   },
-  statsSection: {
-    background: '#EAF8F5',
-    borderBottom: '3px solid #251720',
-    padding: '80px 64px',
-  },
-  statsGrid: {
+  venue: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(4, 1fr)',
-    gap: '64px',
+    gridTemplateColumns: '1fr 1fr',
+    borderBottom: '3px solid #251720',
+    background: '#FFFFFF',
   },
-  statBox: {
-    textAlign: 'center',
+  venueInfo: {
+    padding: '64px',
+    borderRight: '3px solid #251720',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
-  statNumber: {
+  venueH2: {
     fontFamily: "'Epilogue', sans-serif",
+    textTransform: 'uppercase',
+    lineHeight: '1.05',
+    letterSpacing: '-0.02em',
     fontSize: '4rem',
-    fontWeight: 900,
-    lineHeight: 1,
     marginBottom: '16px',
   },
-  statLabel: {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.85rem',
-    textTransform: 'uppercase',
-    letterSpacing: '0.1em',
-    color: '#5A4C55',
+  venueMeta: {
+    display: 'flex',
+    gap: '16px',
+    marginBottom: '32px',
+    flexWrap: 'wrap',
+  },
+  venueImageContainer: {
+    position: 'relative',
+    minHeight: '500px',
+  },
+  venueImage: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    position: 'absolute',
+    inset: 0,
+    filter: 'contrast(1.1) saturate(0.8)',
+  },
+  hudOverlay: {
+    position: 'absolute',
+    bottom: '24px',
+    right: '24px',
+    background: '#FFFFFF',
+    border: '3px solid #251720',
+    padding: '16px',
+    boxShadow: '3px 3px 0px #251720',
+    zIndex: 10,
   },
   footerCapture: {
     padding: '120px 64px',
@@ -370,11 +392,9 @@ const Header = ({ onNavClick }) => (
       EMERGENCE
     </div>
     <nav style={customStyles.navLinks}>
-      <a href="#concept" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('concept'); }}>CONCEPT</a>
-      <a href="#mechanics" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('mechanics'); }}>MECHANICS</a>
-      <a href="#network" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('network'); }}>NETWORK</a>
-      <a href="#" style={customStyles.navLink}>HOST NODE</a>
-      <a href="#" style={customStyles.navLink}>SPONSOR</a>
+      <a href="#about" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('about'); }}>[01] ABOUT</a>
+      <a href="#mechanics" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('mechanics'); }}>[02] MECHANICS</a>
+      <a href="#venue" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('venue'); }}>[03] CORE HUB</a>
     </nav>
   </header>
 );
@@ -400,17 +420,15 @@ const HeroSection = () => (
 );
 
 const ExplanationSection = () => (
-  <section id="concept" style={customStyles.explanation}>
+  <section id="about" style={customStyles.explanation}>
     <div style={customStyles.explHeader}>
-      <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>// MANIFESTO</span>
-      <h2 style={customStyles.explHeaderH2}>THE PROTOCOL LAYER.</h2>
+      <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>CONCEPT_FILE // 01</span>
+      <h2 style={customStyles.explHeaderH2}>EMERGENCE.</h2>
     </div>
     <div style={customStyles.explContent}>
-      <p style={customStyles.explParagraph}>Most conferences centralize. Everyone flies to one venue, sits in one room, hears one broadcast.</p>
-      <p style={customStyles.explParagraph}>We do the opposite.</p>
-      <p style={customStyles.explParagraph}>London already has the infrastructure: 321 tech companies, 50+ coworking spaces, dozens of events every week. They're just fragmented. Invisible to each other.</p>
-      <p style={customStyles.explParagraph}>Emergence is the protocol layer. We don't run events. We make them discoverable. We don't build venues. We activate existing nodes. We don't consolidate. We coordinate.</p>
-      <p style={customStyles.explParagraph}>Three days. One city. Dozens of simultaneous events. You decide your own path through the network.</p>
+      <p style={customStyles.explParagraph}>Traditional tech conferences put everyone in a dark room to listen to a single broadcast. Emergence inverts this architecture. We are turning London itself into the venue, utilizing distributed spaces to facilitate a decentralized exchange of ideas.</p>
+      <p style={customStyles.explParagraph}>For three days, offices, cafes, warehouses, and studios across the city become active "Nodes" in the Emergence network. Each node hosts autonomous programming—workshops, debates, hackathons, or dinners—governed entirely by the hosts but discoverable through the central protocol.</p>
+      <p style={customStyles.explParagraph}>This is not a top-down event. It is a peer-to-peer protocol for the ecosystem to map itself, share bandwidth, and build unexpected connections. You don't just attend Emergence; you plug into it.</p>
     </div>
   </section>
 );
@@ -434,14 +452,11 @@ const MechanicsSection = () => (
       label="// ACT_01"
       icon={
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#251720" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <rect x="3" y="3" width="7" height="7" />
-          <rect x="14" y="3" width="7" height="7" />
-          <rect x="14" y="14" width="7" height="7" />
-          <rect x="3" y="14" width="7" height="7" />
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
         </svg>
       }
       title="HOST A NODE"
-      description="Have an office, warehouse, or cafe? Turn your space into an active node. You control the format, capacity, and agenda. We route the network to your door."
+      description="Have an office, a warehouse, or a living room? Turn your space into an active node. You control the format, the capacity, and the agenda. We provide the protocol and route the network to your door."
       btnStyle={{ background: '#00D27F' }}
       btnText="INITIALIZE"
     />
@@ -450,12 +465,12 @@ const MechanicsSection = () => (
       label="// ACT_02"
       icon={
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#251720" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-          <polyline points="9 22 9 12 15 12 15 22" />
+          <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
+          <path d="M21 3v5h-5" />
         </svg>
       }
-      title="NAVIGATE"
-      description="No single ticket. Build your path through the city. Workshops in Shoreditch. Demo day in King's Cross. Dinners in Mayfair. The map goes live April 1st."
+      title="ATTEND & SYNC"
+      description="No single ticket. Build your own path through the city. Sync your calendar with nodes that match your frequency. Navigate between micro-summits, underground demos, and rooftop debates."
       btnStyle={{ background: '#FFD600' }}
       btnText="ACCESS MAP"
     />
@@ -465,46 +480,51 @@ const MechanicsSection = () => (
       label="// ACT_03"
       icon={
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
         </svg>
       }
       title="POWER THE GRID"
-      description="Sponsors don't get logos on lanyards. They inject capital directly into nodes, subsidizing costs and elevating network fidelity. Visibility across the entire ecosystem."
+      description="Provide bandwidth. Sponsors don't get logos on lanyards; they inject capital directly into nodes, subsidizing costs for indie developers and elevating the overall fidelity of the network."
       btnStyle={{ background: '#FFFFFF', color: '#251720' }}
-      btnText="SPONSOR"
+      btnText="INJECT CAPITAL"
       isLast
     />
   </section>
 );
 
-const StatsSection = () => (
-  <section id="network" style={customStyles.statsSection}>
-    <span style={{ ...customStyles.monoLabel, textAlign: 'center', display: 'block', marginBottom: '48px' }}>// NETWORK_EFFECTS</span>
-    <h2 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '3rem', textTransform: 'uppercase', textAlign: 'center', marginBottom: '64px', letterSpacing: '-0.02em' }}>VISIBILITY CREATES MOMENTUM</h2>
-    <div style={customStyles.statsGrid}>
-      <div style={customStyles.statBox}>
-        <div style={customStyles.statNumber}>321</div>
-        <div style={customStyles.statLabel}>Tech Companies</div>
+const VenueSection = () => (
+  <section id="venue" style={customStyles.venue}>
+    <div style={customStyles.venueInfo}>
+      <span style={customStyles.monoLabel}>PHYSICAL_INFRASTRUCTURE // CENTRAL ROUTER</span>
+      <h2 style={customStyles.venueH2}>KACHETTE.</h2>
+      <div style={customStyles.venueMeta}>
+        <Pill>EC1V 9LP</Pill>
+        <Pill>CAPACITY: 400</Pill>
+        <Pill>STATUS: SECURED</Pill>
       </div>
-      <div style={customStyles.statBox}>
-        <div style={customStyles.statNumber}>50+</div>
-        <div style={customStyles.statLabel}>Workspaces</div>
-      </div>
-      <div style={customStyles.statBox}>
-        <div style={customStyles.statNumber}>10</div>
-        <div style={customStyles.statLabel}>Square Miles</div>
-      </div>
-      <div style={customStyles.statBox}>
-        <div style={customStyles.statNumber}>3</div>
-        <div style={customStyles.statLabel}>Days</div>
+      <p style={{ fontSize: '1.25rem', color: '#5A4C55', marginBottom: '32px' }}>
+        While the network is distributed, every system needs a central router. Located in the historic railway arches of Shoreditch, Kachette acts as the physical core. Come here to sync, collect credentials, and access the master schedule.
+      </p>
+      <div style={{ borderTop: '1px solid rgba(37, 23, 32, 0.15)', paddingTop: '16px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', color: '#251720' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
+          <span>LAT/LONG:</span> <span>51.526° N, 0.078° W</span>
+        </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <span>ARCHITECTURE:</span> <span>EXPOSED BRICK / DUAL ARCH</span>
+        </div>
       </div>
     </div>
-    <p style={{ fontSize: '1.5rem', lineHeight: '1.6', maxWidth: '900px', margin: '64px auto 0', textAlign: 'center', color: '#5A4C55' }}>
-      High density. Zero coordination. Most founders don't know what's three blocks away. Most VCs don't see deals until they're priced. Most engineers don't know which companies are hiring.
-    </p>
-    <p style={{ fontSize: '1.5rem', lineHeight: '1.6', maxWidth: '900px', margin: '32px auto 0', textAlign: 'center', fontWeight: 500 }}>
-      Information asymmetry kills momentum. Emergence solves this in three days.
-    </p>
+    <div style={customStyles.venueImageContainer}>
+      <img
+        src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+        alt="Exposed brick arches of Kachette venue"
+        style={customStyles.venueImage}
+      />
+      <div style={customStyles.hudOverlay}>
+        <span style={{ ...customStyles.monoLabel, color: '#251720', marginBottom: '4px' }}>SYSTEM CAM // 04</span>
+        <div style={{ fontFamily: "'Epilogue', sans-serif", fontWeight: 900, fontSize: '1.2rem' }}>MAIN ARCHWAY</div>
+      </div>
+    </div>
   </section>
 );
 
@@ -526,7 +546,7 @@ const FooterCaptureSection = () => {
       <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '16px', position: 'relative', zIndex: 2 }}>
         {submitted ? 'CONNECTION ESTABLISHED' : 'AWAITING INPUT'}
       </span>
-      <h2 style={customStyles.footerH2}>JOIN THE NETWORK.</h2>
+      <h2 style={customStyles.footerH2}>ESTABLISH CONNECTION.</h2>
       {submitted ? (
         <p style={{ fontFamily: "'JetBrains Mono', monospace", color: '#00D27F', fontSize: '1.1rem', position: 'relative', zIndex: 2 }}>
           YOU ARE NOW PART OF THE NETWORK.
@@ -535,7 +555,7 @@ const FooterCaptureSection = () => {
         <form style={customStyles.captureForm} onSubmit={handleSubmit}>
           <input
             type="email"
-            placeholder="YOUR EMAIL..."
+            placeholder="ENTER COMM-LINK (EMAIL)..."
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -601,8 +621,8 @@ const App = () => {
         .mechanics-responsive {
           grid-template-columns: 1fr !important;
         }
-        .stats-responsive {
-          grid-template-columns: repeat(2, 1fr) !important;
+        .venue-responsive {
+          grid-template-columns: 1fr !important;
         }
       }
 
@@ -617,9 +637,6 @@ const App = () => {
         .system-container-responsive {
           border-left: none !important;
           border-right: none !important;
-        }
-        .stats-responsive {
-          grid-template-columns: 1fr !important;
         }
       }
     `;
@@ -641,7 +658,7 @@ const App = () => {
         <HeroSection />
         <ExplanationSection />
         <MechanicsSection />
-        <StatsSection />
+        <VenueSection />
         <FooterCaptureSection />
       </div>
     </div>
