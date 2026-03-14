@@ -228,21 +228,47 @@ const Sponsor = () => {
   const [formData, setFormData] = useState({
     orgName: '',
     email: '',
+    contactName: '',
     tier: 'SELECT ALLOCATION...',
     sector: '',
     goals: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [activeBtn, setActiveBtn] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/sponsor', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          company: formData.orgName,
+          contactName: formData.contactName,
+          email: formData.email,
+          message: `Tier: ${formData.tier}\nSector: ${formData.sector}\nGoals: ${formData.goals}`,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const scrollToInquiry = () => {
@@ -390,6 +416,19 @@ const Sponsor = () => {
                     value={formData.orgName}
                     onChange={handleChange}
                     style={styles.input}
+                    required
+                  />
+                </div>
+                <div style={styles.formGroup}>
+                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>CONTACT_NAME</label>
+                  <input
+                    type="text"
+                    name="contactName"
+                    placeholder="Your name"
+                    value={formData.contactName}
+                    onChange={handleChange}
+                    style={styles.input}
+                    required
                   />
                 </div>
                 <div style={styles.formGroup}>
@@ -401,6 +440,7 @@ const Sponsor = () => {
                     value={formData.email}
                     onChange={handleChange}
                     style={styles.input}
+                    required
                   />
                 </div>
                 <div style={styles.formGroup}>

@@ -42,40 +42,14 @@ const customStyles = {
     background: '#FFFFFF',
   },
   formSection: {
-    marginBottom: '64px',
+    marginBottom: '48px',
     maxWidth: '800px',
-  },
-  formSectionTitle: {
-    display: 'flex',
-    alignItems: 'center',
-    gap: '16px',
-    marginBottom: '32px',
-    borderBottom: '3px solid #251720',
-    paddingBottom: '12px',
-  },
-  sectionNum: {
-    fontFamily: "'JetBrains Mono', monospace",
-    background: '#251720',
-    color: '#FFFFFF',
-    padding: '4px 8px',
-    fontSize: '0.9rem',
-  },
-  inputGroup: {
-    display: 'grid',
-    gridTemplateColumns: '1fr 1fr',
-    gap: '24px',
-    marginBottom: '24px',
   },
   field: {
     display: 'flex',
     flexDirection: 'column',
     gap: '8px',
-  },
-  fieldFull: {
-    display: 'flex',
-    flexDirection: 'column',
-    gap: '8px',
-    gridColumn: 'span 2',
+    marginBottom: '24px',
   },
   label: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -157,27 +131,41 @@ const FocusableInput = ({ as: Tag = 'input', ...props }) => {
 
 const Host = () => {
   const [formData, setFormData] = useState({
-    venueName: '',
-    postcode: '',
-    capacity: '',
-    venueDescription: '',
-    eventCategory: 'HACKATHON / BUILD',
-    preferredDate: 'APRIL 28 (DAY 01)',
-    programmingTitle: '',
-    leadSpeaker: '',
-    digitalHandle: '',
-    synopsis: '',
+    name: '',
+    email: '',
+    company: '',
+    message: '',
   });
   const [submitted, setSubmitted] = useState(false);
   const [btnPressed, setBtnPressed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -187,206 +175,90 @@ const Host = () => {
 
         <div className="form-hero-grid" style={customStyles.formHero}>
           <aside className="form-sidebar-resp" style={customStyles.formSidebar}>
-            <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>NODE_INITIALIZATION_PROTOCOL</span>
-            <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF' }}>INITIALIZE YOUR NODE.</h1>
+            <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>CONTACT_PROTOCOL</span>
+            <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF' }}>GET IN TOUCH.</h1>
             <p style={{ marginTop: '32px', fontSize: '1.1rem', opacity: 0.8, fontFamily: "'DM Sans', sans-serif" }}>
-              Apply to register your space on the Emergence 2026 grid. Every node is an autonomous point of connection in the London tech renaissance.
+              Questions about Emergence? Want to get involved? Drop us a message and we'll get back to you within 24 hours.
             </p>
-            <div style={{ marginTop: '64px', border: '2px solid #00D27F', padding: '24px' }}>
-              <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>SYSTEM_STATUS</span>
-              <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.8rem', color: '#FFFFFF' }}>
-                &gt; Grid density: High<br />
-                &gt; Latency: 12ms<br />
-                &gt; Active nodes: 142/200
-              </p>
-            </div>
           </aside>
 
           <main className="form-container-resp" style={customStyles.formContainer}>
             {submitted ? (
               <div style={{ maxWidth: '800px', textAlign: 'center', padding: '80px 0' }}>
-                <span style={{ ...customStyles.monoLabel, color: '#00D27F', fontSize: '1rem' }}>SUBMISSION_RECEIVED</span>
-                <h2 style={{ fontSize: '2.5rem', marginTop: '16px', color: '#251720' }}>NODE APPLICATION UPLOADED.</h2>
+                <span style={{ ...customStyles.monoLabel, color: '#00D27F', fontSize: '1rem' }}>MESSAGE_RECEIVED</span>
+                <h2 style={{ fontSize: '2.5rem', marginTop: '16px', color: '#251720' }}>THANKS FOR REACHING OUT.</h2>
                 <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.9rem', color: '#5A4C55', marginTop: '24px' }}>
-                  Your application has been queued for grid compatibility review. Response time: &lt; 48hrs.
+                  We'll get back to you within 24 hours.
                 </p>
-                <button
-                  onClick={() => setSubmitted(false)}
-                  style={{ ...customStyles.btn, marginTop: '48px' }}
-                >
-                  SUBMIT ANOTHER NODE
-                </button>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-
-                {/* Section 01 */}
                 <div style={customStyles.formSection}>
-                  <div style={customStyles.formSectionTitle}>
-                    <span style={customStyles.sectionNum}>01</span>
-                    <h2 style={{ fontSize: '1.5rem', color: '#251720' }}>VENUE INFRASTRUCTURE</h2>
+                  <div style={customStyles.field}>
+                    <label style={customStyles.label}>NAME</label>
+                    <FocusableInput
+                      type="text"
+                      name="name"
+                      placeholder="Your name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                    />
                   </div>
-                  <div className="input-group-resp" style={customStyles.inputGroup}>
-                    <div style={customStyles.field}>
-                      <label style={customStyles.label}>VENUE NAME</label>
-                      <FocusableInput
-                        type="text"
-                        name="venueName"
-                        placeholder="e.g. THE SIGNAL LAB"
-                        value={formData.venueName}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div style={customStyles.field}>
-                      <label style={customStyles.label}>POSTCODE / LOCATION</label>
-                      <FocusableInput
-                        type="text"
-                        name="postcode"
-                        placeholder="e.g. E1 6HU"
-                        value={formData.postcode}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="field-full-resp" style={customStyles.fieldFull}>
-                      <label style={customStyles.label}>PHYSICAL CAPACITY (PEOPLE)</label>
-                      <FocusableInput
-                        type="number"
-                        name="capacity"
-                        placeholder="40"
-                        value={formData.capacity}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div className="field-full-resp" style={customStyles.fieldFull}>
-                      <label style={customStyles.label}>VENUE DESCRIPTION</label>
-                      <FocusableInput
-                        as="textarea"
-                        name="venueDescription"
-                        rows={3}
-                        placeholder="Describe the spatial qualities and technical facilities..."
-                        value={formData.venueDescription}
-                        onChange={handleChange}
-                        style={{ resize: 'vertical' }}
-                      />
-                    </div>
+
+                  <div style={customStyles.field}>
+                    <label style={customStyles.label}>EMAIL</label>
+                    <FocusableInput
+                      type="email"
+                      name="email"
+                      placeholder="your@email.com"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+
+                  <div style={customStyles.field}>
+                    <label style={customStyles.label}>COMPANY / ORGANIZATION (OPTIONAL)</label>
+                    <FocusableInput
+                      type="text"
+                      name="company"
+                      placeholder="Company name"
+                      value={formData.company}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div style={customStyles.field}>
+                    <label style={customStyles.label}>MESSAGE</label>
+                    <FocusableInput
+                      as="textarea"
+                      name="message"
+                      rows={6}
+                      placeholder="What's on your mind?"
+                      value={formData.message}
+                      onChange={handleChange}
+                      style={{ resize: 'vertical' }}
+                      required
+                    />
                   </div>
                 </div>
 
-                {/* Section 02 */}
-                <div style={customStyles.formSection}>
-                  <div style={customStyles.formSectionTitle}>
-                    <span style={customStyles.sectionNum}>02</span>
-                    <h2 style={{ fontSize: '1.5rem', color: '#251720' }}>NODE PROGRAMMING</h2>
-                  </div>
-                  <div className="input-group-resp" style={customStyles.inputGroup}>
-                    <div style={customStyles.field}>
-                      <label style={customStyles.label}>EVENT CATEGORY</label>
-                      <FocusableInput
-                        as="select"
-                        name="eventCategory"
-                        value={formData.eventCategory}
-                        onChange={handleChange}
-                        required
-                      >
-                        <option>HACKATHON / BUILD</option>
-                        <option>DEBATE / SALON</option>
-                        <option>DEMO DAY</option>
-                        <option>PEER-TO-PEER WORKSHOP</option>
-                        <option>NETWORKING SYNC</option>
-                      </FocusableInput>
-                    </div>
-                    <div style={customStyles.field}>
-                      <label style={customStyles.label}>PREFERRED DATE</label>
-                      <FocusableInput
-                        as="select"
-                        name="preferredDate"
-                        value={formData.preferredDate}
-                        onChange={handleChange}
-                        required
-                      >
-                        <option>APRIL 28 (DAY 01)</option>
-                        <option>APRIL 29 (DAY 02)</option>
-                        <option>APRIL 30 (DAY 03)</option>
-                      </FocusableInput>
-                    </div>
-                    <div className="field-full-resp" style={customStyles.fieldFull}>
-                      <label style={customStyles.label}>PROGRAMMING TITLE</label>
-                      <FocusableInput
-                        type="text"
-                        name="programmingTitle"
-                        placeholder="The Future of Distributed Compute..."
-                        value={formData.programmingTitle}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Section 03 */}
-                <div style={customStyles.formSection}>
-                  <div style={customStyles.formSectionTitle}>
-                    <span style={customStyles.sectionNum}>03</span>
-                    <h2 style={{ fontSize: '1.5rem', color: '#251720' }}>CURATION &amp; VOICES</h2>
-                  </div>
-                  <div className="input-group-resp" style={customStyles.inputGroup}>
-                    <div style={customStyles.field}>
-                      <label style={customStyles.label}>LEAD SPEAKER / HOST</label>
-                      <FocusableInput
-                        type="text"
-                        name="leadSpeaker"
-                        placeholder="Full Name"
-                        value={formData.leadSpeaker}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-                    <div style={customStyles.field}>
-                      <label style={customStyles.label}>DIGITAL HANDLE (X/GH)</label>
-                      <FocusableInput
-                        type="text"
-                        name="digitalHandle"
-                        placeholder="@handle"
-                        value={formData.digitalHandle}
-                        onChange={handleChange}
-                      />
-                    </div>
-                    <div className="field-full-resp" style={customStyles.fieldFull}>
-                      <label style={customStyles.label}>PROPOSED TOPICS / SYNOPSIS</label>
-                      <FocusableInput
-                        as="textarea"
-                        name="synopsis"
-                        rows={4}
-                        placeholder="Outline the core thesis of your node session..."
-                        value={formData.synopsis}
-                        onChange={handleChange}
-                        style={{ resize: 'vertical' }}
-                      />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Form Actions */}
                 <div style={{ borderTop: '3px solid #251720', paddingTop: '40px' }}>
-                  <span style={customStyles.monoLabel}>VERIFY ALL FIELDS BEFORE UPLOAD</span>
                   <button
                     type="submit"
+                    disabled={isSubmitting}
                     style={{
                       ...customStyles.btn,
                       ...(btnPressed ? customStyles.btnActive : {}),
+                      opacity: isSubmitting ? 0.6 : 1,
                     }}
                     onMouseDown={() => setBtnPressed(true)}
                     onMouseUp={() => setBtnPressed(false)}
                     onMouseLeave={() => setBtnPressed(false)}
                   >
-                    SUBMIT TO GRID
+                    {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
                   </button>
-                  <p style={{ marginTop: '24px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem', color: '#5A4C55' }}>
-                    By submitting, you agree to the Emergence Node Protocol. Applications are reviewed for grid compatibility and technical relevance. Response time: &lt; 48hrs.
-                  </p>
                 </div>
               </form>
             )}
