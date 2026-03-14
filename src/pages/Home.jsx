@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Header from '../components/Header';
 
 const customStyles = {
   root: {
@@ -385,21 +386,6 @@ const NetworkSVG = () => (
   </svg>
 );
 
-const Header = ({ onNavClick }) => (
-  <header style={customStyles.header}>
-    <div style={customStyles.logo}>
-      <LogoNode />
-      EMERGENCE
-    </div>
-    <nav style={customStyles.navLinks}>
-      <a href="/" style={customStyles.navLink}>HOME</a>
-      <a href="/events" style={customStyles.navLink}>EVENTS</a>
-      <a href="/host" style={customStyles.navLink}>HOST</a>
-      <a href="/sponsor" style={customStyles.navLink}>SPONSOR</a>
-    </nav>
-  </header>
-);
-
 const HeroSection = () => (
   <section style={customStyles.hero}>
     <div style={customStyles.heroContent}>
@@ -655,7 +641,7 @@ const App = () => {
   return (
     <div style={customStyles.body}>
       <div style={customStyles.systemContainer}>
-        <Header onNavClick={scrollToSection} />
+        <Header />
         <HeroSection />
         <ExplanationSection />
         <MechanicsSection />

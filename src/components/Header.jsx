@@ -43,11 +43,9 @@ function Header() {
         EMERGENCE
       </Link>
       <nav style={customStyles.navLinks}>
-        <a href="/#concept" style={customStyles.navLink}>CONCEPT</a>
-        <a href="/#mechanics" style={customStyles.navLink}>MECHANICS</a>
-        <a href="/#network" style={customStyles.navLink}>NETWORK</a>
+        <Link to="/" style={customStyles.navLink}>HOME</Link>
         <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
-        <Link to="/host" style={customStyles.navLink}>HOST NODE</Link>
+        <Link to="/host" style={customStyles.navLink}>HOST</Link>
         <Link to="/sponsor" style={customStyles.navLink}>SPONSOR</Link>
       </nav>
     </header>
