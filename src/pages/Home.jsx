@@ -389,12 +389,11 @@ const NetworkSVG = () => (
 const HeroSection = () => (
   <section className="hero-grid" style={customStyles.hero}>
     <div style={customStyles.heroContent}>
-      <span style={{ ...customStyles.monoLabel, marginBottom: '24px', display: 'flex', gap: '12px', alignItems: 'center' }}>
-        <Pill active>SYSTEM LIVE</Pill>
-        <span>LDN_TECH_ECO_V2</span>
+      <span style={{ ...customStyles.monoLabel, marginBottom: '16px', display: 'block', color: '#00D27F', fontSize: '0.85rem' }}>
+        APRIL 28-30, 2026 // LONDON
       </span>
       <h1 style={customStyles.h1}>LONDON'S TECH ECOSYSTEM, SELF-AWARE.</h1>
-      <p style={customStyles.subtitle}>Three days. Distributed nodes. One protocol.</p>
+      <p style={customStyles.subtitle}>Not a conference. A distributed protocol for the city to self-organize.</p>
       <div style={customStyles.heroCtas}>
         <a href="#" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>HOST A NODE</a>
         <a href="#" style={{ ...customStyles.btn, ...customStyles.btnSecondary }}>SPONSOR THE GRID</a>
@@ -414,6 +413,35 @@ const ExplanationSection = () => (
     </div>
     <div style={customStyles.explContent}>
       <p style={customStyles.explParagraph}>Turn London into the venue. Offices, cafes, warehouses become nodes—each running autonomous programming. You don't attend; you plug in.</p>
+    </div>
+  </section>
+);
+
+const VisualSection = () => (
+  <section style={{ borderBottom: '3px solid #251720', position: 'relative', minHeight: '400px', background: '#EAF8F5' }}>
+    <img
+      src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+      alt="London venue space"
+      style={{
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        position: 'absolute',
+        inset: 0,
+        filter: 'contrast(1.1) saturate(0.8)',
+      }}
+    />
+    <div style={{
+      position: 'absolute',
+      bottom: '24px',
+      right: '24px',
+      background: '#FFFFFF',
+      border: '3px solid #251720',
+      padding: '16px',
+      boxShadow: '3px 3px 0px #251720',
+    }}>
+      <span style={{ ...customStyles.monoLabel, color: '#251720', marginBottom: '4px' }}>SYSTEM CAM // SHOREDITCH</span>
+      <div style={{ fontFamily: "'Epilogue', sans-serif", fontWeight: 900, fontSize: '1.2rem' }}>LONDON GRID</div>
     </div>
   </section>
 );
@@ -713,15 +741,6 @@ const App = () => {
             box-shadow: 3px 3px 0px #251720 !important;
           }
 
-          /* Venue section */
-          .venue-grid h2 {
-            font-size: 1.5rem !important;
-          }
-
-          .venue-grid p {
-            font-size: 0.9rem !important;
-            line-height: 1.4 !important;
-          }
 
           /* Footer capture */
           .footer-section h2 {
@@ -744,8 +763,8 @@ const App = () => {
           <Header />
           <HeroSection />
           <ExplanationSection />
+          <VisualSection />
           <MechanicsSection />
-          <VenueSection />
           <FooterCaptureSection />
         </div>
       </div>
