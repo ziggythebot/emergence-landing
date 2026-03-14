@@ -109,3 +109,73 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* Emergence Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Header mobile padding */
+  header {
+    padding: 16px 20px !important;
+  }
+
+  /* Grid layouts → stack on mobile */
+  .hero-grid,
+  .form-hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Hide right borders on mobile for stacked layouts */
+  .form-sidebar-resp {
+    border-right: none !important;
+    border-bottom: 3px solid #251720 !important;
+  }
+
+  /* Reduce padding on mobile */
+  .form-sidebar-resp,
+  .form-container-resp {
+    padding: 40px 24px !important;
+  }
+
+  /* Input groups → stack on mobile */
+  .input-group-resp {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Full-width fields on mobile */
+  .field-full-resp {
+    grid-column: span 1 !important;
+  }
+
+  /* System container borders */
+  .system-container {
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  /* Events grid → single column */
+  .events-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Sponsor tiers → stack */
+  .tier-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer → stack */
+  footer {
+    flex-direction: column !important;
+    gap: 16px !important;
+    text-align: center !important;
+  }
+}
+
+/* Tablet adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .input-group-resp {
+    grid-template-columns: 1fr !important;
+  }
+
+  .events-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

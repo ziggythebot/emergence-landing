@@ -492,7 +492,7 @@ const Events = () => {
           </div>
         </div>
 
-        <div style={customStyles.eventGrid}>
+        <div className="events-grid" style={customStyles.eventGrid}>
           {filteredEvents.length > 0 ? (
             filteredEvents.map((event) => (
               <EventCard key={event.id} event={event} onSync={handleSync} />

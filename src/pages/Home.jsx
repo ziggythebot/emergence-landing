@@ -387,7 +387,7 @@ const NetworkSVG = () => (
 );
 
 const HeroSection = () => (
-  <section style={customStyles.hero}>
+  <section className="hero-grid" style={customStyles.hero}>
     <div style={customStyles.heroContent}>
       <span style={{ ...customStyles.monoLabel, marginBottom: '24px', display: 'flex', gap: '12px', alignItems: 'center' }}>
         <Pill active>SYSTEM LIVE</Pill>
@@ -407,7 +407,7 @@ const HeroSection = () => (
 );
 
 const ExplanationSection = () => (
-  <section id="about" style={customStyles.explanation}>
+  <section id="about" className="explanation-section" style={customStyles.explanation}>
     <div style={customStyles.explHeader}>
       <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>CONCEPT_FILE // 01</span>
       <h2 style={customStyles.explHeaderH2}>EMERGENCE.</h2>
@@ -433,7 +433,7 @@ const MechCard = ({ accentColor, iconColor, label, icon, title, description, btn
 );
 
 const MechanicsSection = () => (
-  <section id="mechanics" style={customStyles.mechanics}>
+  <section id="mechanics" className="mechanics-grid" style={customStyles.mechanics}>
     <MechCard
       accentColor="#00D27F"
       label="// ACT_01"
@@ -480,7 +480,7 @@ const MechanicsSection = () => (
 );
 
 const VenueSection = () => (
-  <section id="venue" style={customStyles.venue}>
+  <section id="venue" className="venue-grid" style={customStyles.venue}>
     <div style={customStyles.venueInfo}>
       <span style={customStyles.monoLabel}>PHYSICAL_INFRASTRUCTURE // CENTRAL ROUTER</span>
       <h2 style={customStyles.venueH2}>KACHETTE.</h2>
@@ -528,7 +528,7 @@ const FooterCaptureSection = () => {
   };
 
   return (
-    <section style={customStyles.footerCapture}>
+    <section className="footer-section" style={customStyles.footerCapture}>
       <div style={customStyles.footerGrid} />
       <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '16px', position: 'relative', zIndex: 2 }}>
         {submitted ? 'CONNECTION ESTABLISHED' : 'AWAITING INPUT'}
@@ -639,16 +639,33 @@ const App = () => {
   };
 
   return (
-    <div style={customStyles.body}>
-      <div style={customStyles.systemContainer}>
-        <Header />
-        <HeroSection />
-        <ExplanationSection />
-        <MechanicsSection />
-        <VenueSection />
-        <FooterCaptureSection />
+    <>
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-grid { grid-template-columns: 1fr !important; }
+          .hero-grid > div:first-child { border-right: none !important; border-bottom: 3px solid #251720 !important; padding: 40px 24px !important; }
+          .hero-grid > div:last-child { padding: 40px 24px !important; }
+          .system-container { border-left: none !important; border-right: none !important; }
+          .explanation-section { padding: 40px 24px !important; }
+          .mechanics-grid { grid-template-columns: 1fr !important; }
+          .mechanics-grid > div { border-right: none !important; border-bottom: 3px solid #251720 !important; padding: 40px 24px !important; }
+          .mechanics-grid > div:last-child { border-bottom: none !important; }
+          .venue-grid { grid-template-columns: 1fr !important; }
+          .venue-grid > div:first-child { border-right: none !important; border-bottom: 3px solid #251720 !important; padding: 40px 24px !important; }
+          .footer-section { padding: 40px 24px !important; }
+        }
+      `}</style>
+      <div style={customStyles.body}>
+        <div className="system-container" style={customStyles.systemContainer}>
+          <Header />
+          <HeroSection />
+          <ExplanationSection />
+          <MechanicsSection />
+          <VenueSection />
+          <FooterCaptureSection />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
