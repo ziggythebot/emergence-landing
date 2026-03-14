@@ -642,17 +642,29 @@ const App = () => {
     <>
       <style>{`
         @media (max-width: 768px) {
-          .hero-grid { grid-template-columns: 1fr !important; }
-          .hero-grid > div:first-child { border-right: none !important; border-bottom: 3px solid #251720 !important; padding: 40px 24px !important; }
-          .hero-grid > div:last-child { padding: 40px 24px !important; }
-          .system-container { border-left: none !important; border-right: none !important; }
-          .explanation-section { padding: 40px 24px !important; }
-          .mechanics-grid { grid-template-columns: 1fr !important; }
-          .mechanics-grid > div { border-right: none !important; border-bottom: 3px solid #251720 !important; padding: 40px 24px !important; }
-          .mechanics-grid > div:last-child { border-bottom: none !important; }
-          .venue-grid { grid-template-columns: 1fr !important; }
-          .venue-grid > div:first-child { border-right: none !important; border-bottom: 3px solid #251720 !important; padding: 40px 24px !important; }
-          .footer-section { padding: 40px 24px !important; }
+          /* Titles */
+          .hero-grid h1 { font-size: 2rem !important; margin: 16px 0 !important; }
+          .hero-grid p { font-size: 1rem !important; line-height: 1.5 !important; }
+
+          /* Buttons */
+          .hero-grid a {
+            padding: 14px 24px !important;
+            font-size: 0.85rem !important;
+            white-space: nowrap !important;
+          }
+
+          /* Button container */
+          .hero-grid > div:first-child > div:last-child {
+            display: flex !important;
+            flex-wrap: wrap !important;
+            gap: 12px !important;
+          }
+
+          /* SVG container - make it proportional */
+          .hero-grid > div:last-child svg {
+            max-width: 100% !important;
+            height: auto !important;
+          }
         }
       `}</style>
       <div style={customStyles.body}>

@@ -52,6 +52,14 @@
 
 body {
   margin: 0;
+  /* iOS Safari viewport fix */
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+html {
+  /* iOS Safari viewport fix */
+  height: -webkit-fill-available;
 }
 
 #root {
@@ -112,9 +120,9 @@ code {
 
 /* Emergence Mobile Responsive Styles */
 @media (max-width: 768px) {
-  /* Header mobile padding */
+  /* Header mobile padding - iOS safe area insets */
   header {
-    padding: 16px 20px !important;
+    padding: max(16px, env(safe-area-inset-top)) 20px 16px 20px !important;
   }
 
   /* Grid layouts → stack on mobile */
@@ -123,16 +131,28 @@ code {
     grid-template-columns: 1fr !important;
   }
 
+  /* Hero sections - better mobile spacing */
+  .hero-grid > div:first-child {
+    border-right: none !important;
+    border-bottom: 3px solid #251720 !important;
+    padding: 32px 20px !important;
+  }
+
+  .hero-grid > div:last-child {
+    padding: 32px 20px !important;
+    min-height: 300px !important;
+  }
+
   /* Hide right borders on mobile for stacked layouts */
   .form-sidebar-resp {
     border-right: none !important;
     border-bottom: 3px solid #251720 !important;
+    padding: 32px 20px !important;
   }
 
   /* Reduce padding on mobile */
-  .form-sidebar-resp,
   .form-container-resp {
-    padding: 40px 24px !important;
+    padding: 32px 20px !important;
   }
 
   /* Input groups → stack on mobile */
@@ -151,9 +171,52 @@ code {
     border-right: none !important;
   }
 
+  /* Section padding adjustments */
+  .explanation-section {
+    padding: 32px 20px !important;
+  }
+
+  /* Mechanics grid - stack properly */
+  .mechanics-grid > div {
+    border-right: none !important;
+    border-bottom: 3px solid #251720 !important;
+    padding: 32px 20px !important;
+  }
+
+  .mechanics-grid > div:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Venue grid - stack */
+  .venue-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .venue-grid > div:first-child {
+    border-right: none !important;
+    border-bottom: 3px solid #251720 !important;
+    padding: 32px 20px !important;
+  }
+
+  /* Footer section */
+  .footer-section {
+    padding: 32px 20px !important;
+  }
+
   /* Events grid → single column */
   .events-grid {
     grid-template-columns: 1fr !important;
+  }
+
+  /* Event cards - remove alternating borders on mobile */
+  .events-grid > div {
+    border-right: none !important;
+    border-bottom: 3px solid #251720 !important;
+    padding: 24px 20px !important;
+  }
+
+  .events-grid > div:last-child {
+    border-bottom: none !important;
   }
 
   /* Sponsor tiers → stack */
@@ -161,11 +224,44 @@ code {
     grid-template-columns: 1fr !important;
   }
 
+  .tier-grid > div {
+    border-right: none !important;
+    border-bottom: 3px solid #251720 !important;
+  }
+
+  .tier-grid > div:last-child {
+    border-bottom: none !important;
+  }
+
   /* Footer → stack */
   footer {
     flex-direction: column !important;
     gap: 16px !important;
     text-align: center !important;
+    padding: 24px 20px !important;
+  }
+
+  /* Typography adjustments for mobile */
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.1 !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Button adjustments */
+  button, .btn, a[style*="padding"] {
+    padding: 14px 28px !important;
+    font-size: 0.9rem !important;
+  }
+
+  /* Input fields - better touch targets */
+  input, textarea, select {
+    font-size: 16px !important; /* Prevents iOS zoom */
+    padding: 14px !important;
   }
 }
 

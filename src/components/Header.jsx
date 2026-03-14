@@ -56,6 +56,7 @@ const customStyles = {
     right: 0,
     width: '100%',
     height: '100vh',
+    height: '-webkit-fill-available',
     background: '#251720',
     display: 'flex',
     flexDirection: 'column',
@@ -64,6 +65,8 @@ const customStyles = {
     gap: '40px',
     zIndex: 1000,
     transition: 'transform 0.3s ease',
+    paddingTop: 'env(safe-area-inset-top)',
+    paddingBottom: 'env(safe-area-inset-bottom)',
   },
   mobileMenuHidden: {
     transform: 'translateX(100%)',
