@@ -392,9 +392,10 @@ const Header = ({ onNavClick }) => (
       EMERGENCE
     </div>
     <nav style={customStyles.navLinks}>
-      <a href="#about" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('about'); }}>[01] ABOUT</a>
-      <a href="#mechanics" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('mechanics'); }}>[02] MECHANICS</a>
-      <a href="#venue" style={customStyles.navLink} onClick={(e) => { e.preventDefault(); onNavClick('venue'); }}>[03] CORE HUB</a>
+      <a href="/" style={customStyles.navLink}>HOME</a>
+      <a href="/events" style={customStyles.navLink}>EVENTS</a>
+      <a href="/host" style={customStyles.navLink}>HOST</a>
+      <a href="/sponsor" style={customStyles.navLink}>SPONSOR</a>
     </nav>
   </header>
 );
