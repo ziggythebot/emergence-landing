@@ -122,7 +122,7 @@ code {
 @media (max-width: 768px) {
   /* Header mobile padding - iOS safe area insets */
   header {
-    padding: max(16px, env(safe-area-inset-top)) 20px 16px 20px !important;
+    padding: max(16px, env(safe-area-inset-top)) 16px 16px 16px !important;
   }
 
   /* Grid layouts → stack on mobile */
@@ -135,24 +135,24 @@ code {
   .hero-grid > div:first-child {
     border-right: none !important;
     border-bottom: 3px solid #251720 !important;
-    padding: 32px 20px !important;
+    padding: 24px 16px !important;
   }
 
   .hero-grid > div:last-child {
-    padding: 32px 20px !important;
-    min-height: 300px !important;
+    padding: 24px 16px !important;
+    min-height: 250px !important;
   }
 
   /* Hide right borders on mobile for stacked layouts */
   .form-sidebar-resp {
     border-right: none !important;
     border-bottom: 3px solid #251720 !important;
-    padding: 32px 20px !important;
+    padding: 24px 16px !important;
   }
 
   /* Reduce padding on mobile */
   .form-container-resp {
-    padding: 32px 20px !important;
+    padding: 24px 16px !important;
   }
 
   /* Input groups → stack on mobile */
@@ -169,18 +169,34 @@ code {
   .system-container {
     border-left: none !important;
     border-right: none !important;
+    background: #FFFFFF !important;
+    backdrop-filter: none !important;
   }
 
-  /* Section padding adjustments */
+  /* Explanation section - stack the grid */
   .explanation-section {
-    padding: 32px 20px !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .explanation-section > div:first-child {
+    border-right: none !important;
+    border-bottom: 3px solid #251720 !important;
+    padding: 24px 16px !important;
+  }
+
+  .explanation-section > div:last-child {
+    padding: 24px 16px !important;
+  }
+
+  .explanation-section h2 {
+    font-size: 2rem !important;
   }
 
   /* Mechanics grid - stack properly */
   .mechanics-grid > div {
     border-right: none !important;
     border-bottom: 3px solid #251720 !important;
-    padding: 32px 20px !important;
+    padding: 24px 16px !important;
   }
 
   .mechanics-grid > div:last-child {
@@ -195,12 +211,16 @@ code {
   .venue-grid > div:first-child {
     border-right: none !important;
     border-bottom: 3px solid #251720 !important;
-    padding: 32px 20px !important;
+    padding: 24px 16px !important;
+  }
+
+  .venue-grid > div:last-child {
+    padding: 24px 16px !important;
   }
 
   /* Footer section */
   .footer-section {
-    padding: 32px 20px !important;
+    padding: 24px 16px !important;
   }
 
   /* Events grid → single column */
@@ -212,7 +232,7 @@ code {
   .events-grid > div {
     border-right: none !important;
     border-bottom: 3px solid #251720 !important;
-    padding: 24px 20px !important;
+    padding: 20px 16px !important;
   }
 
   .events-grid > div:last-child {
@@ -238,7 +258,7 @@ code {
     flex-direction: column !important;
     gap: 16px !important;
     text-align: center !important;
-    padding: 24px 20px !important;
+    padding: 20px 16px !important;
   }
 
   /* Typography adjustments for mobile */
