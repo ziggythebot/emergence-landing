@@ -5,8 +5,9 @@ Landing page for Emergence 2026 - London Tech Week distributed event (April 28-3
 
 **Live:** emergence.london
 **GitHub:** ziggythebot/emergence-landing
-**Tech Stack:** Vite + React + React Router
+**Tech Stack:** Vite + React + React Router + Remotion
 **Deployment:** Vercel
+**Video Content:** Remotion programmatic videos (Twitter, Instagram/TikTok, website hero)
 
 ---
 
@@ -166,6 +167,63 @@ buttons: 0.8rem - 0.9rem
 AIRTABLE_API_KEY=patXXXXXXXXXXXXXX
 AIRTABLE_BASE_ID=appXXXXXXXXXXXXXX
 ```
+
+---
+
+## Video Content (Remotion)
+
+**Setup:** `REMOTION_SETUP.md` (in repo)
+
+### Three Video Templates
+
+**1. Twitter Announcement (16:9 landscape, 6 seconds)**
+- Format: 1280x720
+- Use: Twitter/X posts, LinkedIn
+- Animation: Title fade → Date slide → Tagline → CTA pulse
+- Output: `videos/twitter-announcement.mp4`
+- Command: `npm run video:twitter`
+
+**2. Event Showcase (9:16 vertical, 15 seconds)**
+- Format: 1080x1920 (Instagram/TikTok)
+- Use: Instagram Reels, TikTok, Stories
+- Animation: Intro → 4 event cards (90 frames each) → CTA
+- Content: Encode Club, Space, Raum, After Party
+- Output: `videos/event-showcase.mp4`
+- Command: `npm run video:events`
+
+**3. Hero Loop (16:9 landscape, 5 seconds)**
+- Format: 1920x1080
+- Use: Website hero background, email headers
+- Animation: Seamless loop - rotating network nodes, pulsing center
+- Output: `videos/hero-loop.mp4`
+- Command: `npm run video:hero`
+
+### Quick Commands
+
+```bash
+# Preview all videos (interactive)
+npm run remotion:preview
+
+# Render all three videos
+npm run video:all
+
+# Individual renders
+npm run video:twitter
+npm run video:events
+npm run video:hero
+```
+
+### Video Specs
+- **FPS:** 30 (all videos)
+- **Codec:** H.264
+- **Brand consistency:** All videos use Emergence design system (colors, fonts, borders, shadows)
+- **Protocol aesthetic:** Network nodes, technical labels, system animations
+
+### Use Cases
+- **Social launch:** Post to Twitter/Instagram/TikTok
+- **Website:** Embed hero loop as background video
+- **Email campaigns:** Use hero loop in headers
+- **Ads:** Upload to Facebook/Instagram Ads Manager
 
 ---
 
@@ -343,9 +401,12 @@ vercel --prod --yes  # Auto-deploy
 - `src/index.css` - Global styles + mobile responsive
 - `api/contact.js` - Airtable contact form handler
 - `api/sponsor.js` - Airtable sponsor form handler
+- `remotion/` - Video composition templates
+- `videos/` - Rendered video output
 
 ### Documentation
 - `AIRTABLE_SETUP.md` - Step-by-step Airtable integration
+- `REMOTION_SETUP.md` - Video generation guide
 - `DESIGN_NOTES.md` - Saved design patterns
 - `.env.example` - Environment variables template
 
@@ -378,6 +439,7 @@ vercel --prod --yes  # Auto-deploy
 5. ✅ Copy slimmed by 50%
 6. ✅ Consistent header across all pages
 7. ✅ Variant design system preserved
+8. ✅ Remotion video templates (Twitter, Instagram/TikTok, website hero)
 
 ### Key Decisions
 - **No node approval needed** - Anyone can host via Luma

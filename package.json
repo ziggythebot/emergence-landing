@@ -7,12 +7,21 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "remotion:preview": "remotion preview remotion/index.ts",
+    "remotion:render": "remotion render remotion/index.ts",
+    "video:twitter": "remotion render remotion/index.ts TwitterAnnouncement videos/twitter-announcement.mp4",
+    "video:events": "remotion render remotion/index.ts EventShowcase videos/event-showcase.mp4",
+    "video:hero": "remotion render remotion/index.ts HeroLoop videos/hero-loop.mp4",
+    "video:all": "npm run video:twitter && npm run video:events && npm run video:hero"
   },
   "dependencies": {
+    "@remotion/cli": "^4.0.435",
+    "@remotion/player": "^4.0.435",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-router-dom": "^7.5.1"
+    "react-router-dom": "^7.5.1",
+    "remotion": "^4.0.435"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",
