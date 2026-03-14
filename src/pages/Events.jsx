@@ -436,12 +436,47 @@ const Events = () => {
   };
 
   return (
-    <div style={customStyles.body}>
-      <div style={customStyles.systemContainer}>
-        <Header />
+    <>
+      <style>{`
+        @media (max-width: 768px) {
+          /* Filter system mobile */
+          .filter-system-mobile {
+            padding: 20px 16px !important;
+          }
 
-        <div style={customStyles.filterSystem}>
-          <div style={customStyles.filterGrid}>
+          .filter-grid-mobile {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+          }
+
+          /* Schedule header mobile */
+          .schedule-header-mobile {
+            padding: 24px 16px !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 16px !important;
+          }
+
+          .schedule-title-mobile {
+            font-size: 2rem !important;
+          }
+
+          .counter-box-mobile {
+            align-self: flex-start !important;
+          }
+
+          /* No events message */
+          .no-events-mobile {
+            padding: 40px 16px !important;
+          }
+        }
+      `}</style>
+      <div style={customStyles.body}>
+        <div style={customStyles.systemContainer}>
+          <Header />
+
+        <div className="filter-system-mobile" style={customStyles.filterSystem}>
+          <div className="filter-grid-mobile" style={customStyles.filterGrid}>
             <div>
               <label style={customStyles.filterLabel}>CHRONO_INDEX</label>
               <div style={customStyles.pillContainer}>
@@ -484,12 +519,12 @@ const Events = () => {
           </div>
         </div>
 
-        <div style={customStyles.scheduleHeader}>
+        <div className="schedule-header-mobile" style={customStyles.scheduleHeader}>
           <div>
             <span style={customStyles.liveLabel}>LIVE_NETWORK_STATUS</span>
-            <h1 style={customStyles.scheduleTitle}>THE GRID SCHEDULE.</h1>
+            <h1 className="schedule-title-mobile" style={customStyles.scheduleTitle}>THE GRID SCHEDULE.</h1>
           </div>
-          <div style={customStyles.counterBox}>
+          <div className="counter-box-mobile" style={customStyles.counterBox}>
             <div style={{ fontSize: '2rem', fontWeight: 700, lineHeight: 1 }}>{filteredEvents.length}</div>
             <div style={{ fontSize: '0.6rem', opacity: 0.7 }}>EVENTS ON GRID</div>
           </div>
@@ -501,7 +536,7 @@ const Events = () => {
               <EventCard key={event.id} event={event} onSync={handleSync} />
             ))
           ) : (
-            <div style={{
+            <div className="no-events-mobile" style={{
               padding: '80px 40px',
               textAlign: 'center',
               gridColumn: '1 / -1',
@@ -525,6 +560,7 @@ const Events = () => {
         />
       </div>
     </div>
+    </>
   );
 };
 
