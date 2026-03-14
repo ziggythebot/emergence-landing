@@ -1,9 +1,5 @@
 import React from 'react';
 import Header from '../components/Header';
-import { Player } from '@remotion/player';
-import { TwitterAnnouncement } from '../../remotion/compositions/TwitterAnnouncement';
-import { EventShowcase } from '../../remotion/compositions/EventShowcase';
-import { HeroLoop } from '../../remotion/compositions/HeroLoop';
 
 const customStyles = {
   body: {
@@ -154,15 +150,12 @@ const Videos = () => {
             </div>
 
             <div style={customStyles.playerContainer}>
-              <Player
-                component={TwitterAnnouncement}
-                durationInFrames={180}
-                compositionWidth={1280}
-                compositionHeight={720}
-                fps={30}
+              <video
                 controls
-                style={{ width: '100%' }}
-              />
+                style={{ width: '100%', display: 'block' }}
+              >
+                <source src="/videos/twitter-announcement.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <a
@@ -203,15 +196,12 @@ const Videos = () => {
             </div>
 
             <div style={customStyles.playerContainer}>
-              <Player
-                component={EventShowcase}
-                durationInFrames={450}
-                compositionWidth={1080}
-                compositionHeight={1920}
-                fps={30}
+              <video
                 controls
-                style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}
-              />
+                style={{ width: '100%', maxWidth: '400px', margin: '0 auto', display: 'block' }}
+              >
+                <source src="/videos/event-showcase.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <a
@@ -252,16 +242,13 @@ const Videos = () => {
             </div>
 
             <div style={customStyles.playerContainer}>
-              <Player
-                component={HeroLoop}
-                durationInFrames={150}
-                compositionWidth={1920}
-                compositionHeight={1080}
-                fps={30}
+              <video
                 controls
                 loop
-                style={{ width: '100%' }}
-              />
+                style={{ width: '100%', display: 'block' }}
+              >
+                <source src="/videos/hero-loop.mp4" type="video/mp4" />
+              </video>
             </div>
 
             <a
