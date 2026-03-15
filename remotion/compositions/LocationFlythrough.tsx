@@ -1,4 +1,4 @@
-import { useCurrentFrame, AbsoluteFill, interpolate, Easing } from 'remotion';
+import { useCurrentFrame, AbsoluteFill, interpolate, Easing, Img, staticFile } from 'remotion';
 
 export const LocationFlythrough: React.FC = () => {
   const frame = useCurrentFrame();
@@ -121,11 +121,11 @@ export const LocationFlythrough: React.FC = () => {
           left: 0,
           right: 0,
           bottom: 0,
-          opacity: 0.4,
+          opacity: 1,
         }}
       >
-        <img
-          src="/footage/london-aerial.jpg"
+        <Img
+          src={staticFile('footage/london-aerial.jpg')}
           style={{
             width: '100%',
             height: '100%',
@@ -141,7 +141,7 @@ export const LocationFlythrough: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'linear-gradient(135deg, rgba(229, 244, 239, 0.9) 0%, rgba(242, 253, 251, 0.85) 50%, rgba(255, 255, 255, 0.9) 100%)',
+            background: 'linear-gradient(135deg, rgba(229, 244, 239, 0.25) 0%, rgba(242, 253, 251, 0.2) 50%, rgba(255, 255, 255, 0.3) 100%)',
           }}
         />
       </div>

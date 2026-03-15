@@ -1,4 +1,4 @@
-import { useCurrentFrame, AbsoluteFill, interpolate, spring } from 'remotion';
+import { useCurrentFrame, AbsoluteFill, interpolate, spring, Img, staticFile } from 'remotion';
 
 export const EventCountdown: React.FC = () => {
   const frame = useCurrentFrame();
@@ -59,8 +59,8 @@ export const EventCountdown: React.FC = () => {
           bottom: 0,
         }}
       >
-        <img
-          src="/footage/london-night.jpg"
+        <Img
+          src={staticFile('footage/london-night.jpg')}
           style={{
             width: '100%',
             height: '100%',
@@ -76,7 +76,7 @@ export const EventCountdown: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'linear-gradient(135deg, rgba(37, 23, 32, 0.8) 0%, rgba(58, 42, 52, 0.7) 50%, rgba(37, 23, 32, 0.85) 100%)',
+            background: 'linear-gradient(135deg, rgba(37, 23, 32, 0.3) 0%, rgba(58, 42, 52, 0.2) 50%, rgba(37, 23, 32, 0.3) 100%)',
           }}
         />
       </div>

@@ -1,4 +1,4 @@
-import { useCurrentFrame, AbsoluteFill, interpolate, Sequence } from 'remotion';
+import { useCurrentFrame, AbsoluteFill, interpolate, Sequence, Img, staticFile } from 'remotion';
 
 export const LondonSkylineData: React.FC = () => {
   const frame = useCurrentFrame();
@@ -55,8 +55,8 @@ export const LondonSkylineData: React.FC = () => {
           overflow: 'hidden',
         }}
       >
-        <img
-          src="/footage/london-skyline.jpg"
+        <Img
+          src={staticFile('footage/london-skyline.jpg')}
           style={{
             width: '100%',
             height: '100%',
@@ -72,7 +72,7 @@ export const LondonSkylineData: React.FC = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: 'linear-gradient(180deg, rgba(242, 253, 251, 0.85) 0%, rgba(234, 248, 245, 0.75) 50%, rgba(229, 244, 239, 0.85) 100%)',
+            background: 'linear-gradient(180deg, rgba(242, 253, 251, 0.25) 0%, rgba(234, 248, 245, 0.2) 50%, rgba(229, 244, 239, 0.25) 100%)',
           }}
         />
       </div>
