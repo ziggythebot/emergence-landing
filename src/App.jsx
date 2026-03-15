@@ -5,8 +5,8 @@ import Contact from './pages/Contact';
 import Sponsor from './pages/Sponsor';
 import SponsorAlt from './pages/SponsorAlt';
 import Welcome from './pages/Welcome';
-import Videos from './pages/Videos';
 import Partners from './pages/Partners';
+import VideoLibrary from './pages/VideoLibrary';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/sponsor-alt" element={<SponsorAlt />} />
         <Route path="/welcome" element={<Welcome />} />
-        <Route path="/videos" element={<Videos />} />
+        <Route path="/video-library" element={<VideoLibrary />} />
       </Routes>
     </Router>
   );
