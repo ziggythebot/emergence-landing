@@ -160,7 +160,7 @@ const VideoLibrary = () => {
               textTransform: 'uppercase',
               letterSpacing: '0.1em',
             }}>
-              5 EXPERIMENTAL VIDEOS USING REAL LONDON ECOSYSTEM DATA (320+ COMPANIES)
+              8 VIDEOS TOTAL // 5 EXPERIMENTAL WITH REAL LONDON ECOSYSTEM DATA (320+ COMPANIES)
             </span>
           </div>
         </section>
