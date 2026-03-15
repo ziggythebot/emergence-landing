@@ -63,6 +63,8 @@ const VideoLibrary = () => {
       format: '1280x720 (16:9)',
       duration: '6 seconds',
       useCase: 'Twitter, LinkedIn',
+      file: 'twitter-announcement.mp4',
+      vertical: false,
     },
     {
       title: 'Event Showcase',
@@ -70,6 +72,8 @@ const VideoLibrary = () => {
       format: '1080x1920 (9:16)',
       duration: '15 seconds',
       useCase: 'Reels, TikTok, Stories',
+      file: 'event-showcase.mp4',
+      vertical: true,
     },
     {
       title: 'Hero Loop',
@@ -77,6 +81,8 @@ const VideoLibrary = () => {
       format: '1920x1080 (16:9)',
       duration: '5 seconds (loops)',
       useCase: 'Website, Email',
+      file: 'hero-loop.mp4',
+      vertical: false,
     },
   ];
 
@@ -122,6 +128,7 @@ const VideoLibrary = () => {
                   gap: '16px',
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: '0.75rem',
+                  marginBottom: '24px',
                 }}>
                   <div>
                     <div style={{ color: '#00D27F', marginBottom: '4px', textTransform: 'uppercase', fontSize: '0.65rem' }}>
@@ -142,6 +149,52 @@ const VideoLibrary = () => {
                     <div style={{ color: '#5A4C55' }}>{video.useCase}</div>
                   </div>
                 </div>
+                <div style={{
+                  border: '3px solid #251720',
+                  boxShadow: '8px 8px 0px #251720',
+                  overflow: 'hidden',
+                  background: '#000000',
+                  marginBottom: '16px',
+                }}>
+                  <video
+                    controls
+                    loop={video.file === 'hero-loop.mp4'}
+                    style={{
+                      width: '100%',
+                      display: 'block',
+                      maxWidth: video.vertical ? '400px' : '100%',
+                      margin: video.vertical ? '0 auto' : '0',
+                    }}
+                  >
+                    <source src={`/videos/${video.file}`} type="video/mp4" />
+                  </video>
+                </div>
+                <a
+                  href={`/videos/${video.file}`}
+                  download
+                  style={{
+                    display: 'inline-flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    padding: '12px 24px',
+                    fontFamily: "'Epilogue', sans-serif",
+                    fontSize: '0.85rem',
+                    fontWeight: 900,
+                    textTransform: 'uppercase',
+                    color: '#251720',
+                    background: '#00D27F',
+                    border: '3px solid #251720',
+                    cursor: 'pointer',
+                    transition: 'all 0.1s ease',
+                    boxShadow: '4px 4px 0px #251720',
+                    textDecoration: 'none',
+                  }}
+                  onMouseDown={(e) => e.currentTarget.style.transform = 'translate(2px, 2px)'}
+                  onMouseUp={(e) => e.currentTarget.style.transform = 'translate(0, 0)'}
+                  onMouseLeave={(e) => e.currentTarget.style.transform = 'translate(0, 0)'}
+                >
+                  DOWNLOAD MP4
+                </a>
               </div>
             </div>
           ))}
