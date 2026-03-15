@@ -514,6 +514,62 @@ const MechanicsSection = () => (
 );
 
 
+const PoweredBySection = () => (
+  <section style={{
+    padding: '64px',
+    borderBottom: '3px solid #251720',
+    background: '#FFFFFF',
+    textAlign: 'center',
+  }}>
+    <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '16px' }}>
+      POWERED_BY
+    </span>
+    <h2 style={{ fontSize: '2rem', marginBottom: '48px' }}>
+      LONDON'S TECH NETWORK.
+    </h2>
+    <div style={{
+      display: 'grid',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
+      gap: '32px',
+      maxWidth: '900px',
+      margin: '0 auto 48px auto',
+    }}>
+      {['Partner 1', 'Partner 2', 'Partner 3', 'Partner 4', 'Partner 5', 'Partner 6', 'Partner 7', 'Partner 8'].map((name, i) => (
+        <div
+          key={i}
+          style={{
+            height: '80px',
+            background: '#EAF8F5',
+            border: '3px solid #251720',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontFamily: "'Epilogue', sans-serif",
+            fontWeight: 900,
+            fontSize: '0.9rem',
+          }}
+        >
+          {name}
+        </div>
+      ))}
+    </div>
+    <a
+      href="/partners"
+      style={{
+        fontFamily: "'JetBrains Mono', monospace",
+        fontSize: '0.85rem',
+        fontWeight: 700,
+        textTransform: 'uppercase',
+        color: '#00D27F',
+        textDecoration: 'none',
+        letterSpacing: '0.1em',
+      }}
+    >
+      VIEW ALL PARTNERS →
+    </a>
+  </section>
+);
+
 const FooterCaptureSection = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -738,6 +794,7 @@ const App = () => {
           <ExplanationSection />
           <VisualSection />
           <MechanicsSection />
+          <PoweredBySection />
           <FooterCaptureSection />
         </div>
       </div>
