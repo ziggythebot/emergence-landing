@@ -284,19 +284,6 @@ const allEvents = [
     btnLabel: 'CONFIRMED',
     btnStyle: 'confirmed',
   },
-  {
-    id: 5,
-    date: 'TBA',
-    time: 'TBA',
-    topic: 'YOUR_EVENT',
-    topicCategory: 'OPEN',
-    title: 'CREATE YOUR EVENT',
-    desc: 'Add your event to the grid. Host a node. Join the protocol.',
-    location: 'YOUR SPACE',
-    locationArea: 'LONDON',
-    btnLabel: 'JOIN',
-    btnStyle: 'gold',
-  },
 ];
 
 const PillFilter = ({ label, active, onClick }) => {
@@ -521,12 +508,12 @@ const Events = () => {
 
         <div className="schedule-header-mobile" style={customStyles.scheduleHeader}>
           <div>
-            <span style={customStyles.liveLabel}>LIVE_NETWORK_STATUS</span>
-            <h1 className="schedule-title-mobile" style={customStyles.scheduleTitle}>THE GRID SCHEDULE.</h1>
+            <span style={customStyles.liveLabel}>APR 28-30, 2026</span>
+            <h1 className="schedule-title-mobile" style={customStyles.scheduleTitle}>BROWSE EVENTS.</h1>
           </div>
           <div className="counter-box-mobile" style={customStyles.counterBox}>
             <div style={{ fontSize: '2rem', fontWeight: 700, lineHeight: 1 }}>{filteredEvents.length}</div>
-            <div style={{ fontSize: '0.6rem', opacity: 0.7 }}>EVENTS ON GRID</div>
+            <div style={{ fontSize: '0.6rem', opacity: 0.7 }}>EVENTS</div>
           </div>
         </div>
 

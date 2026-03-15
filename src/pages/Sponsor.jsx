@@ -229,13 +229,10 @@ const Sponsor = () => {
     orgName: '',
     email: '',
     contactName: '',
-    tier: 'SELECT ALLOCATION...',
-    sector: '',
     goals: '',
   });
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [activeBtn, setActiveBtn] = useState(null);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -253,7 +250,7 @@ const Sponsor = () => {
           company: formData.orgName,
           contactName: formData.contactName,
           email: formData.email,
-          message: `Tier: ${formData.tier}\nSector: ${formData.sector}\nGoals: ${formData.goals}`,
+          message: formData.goals,
         }),
       });
 
@@ -271,16 +268,6 @@ const Sponsor = () => {
     }
   };
 
-  const scrollToInquiry = () => {
-    document.getElementById('inquiry')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const getBtnStyle = (type, isActive) => ({
-    ...styles.btn,
-    ...(type === 'emerald' ? styles.btnEmerald : styles.btnGold),
-    ...(isActive ? { transform: 'translate(4px, 4px)', boxShadow: '2px 2px 0px #251720' } : {}),
-    marginTop: '40px',
-  });
 
   return (
     <div style={styles.body}>
@@ -290,10 +277,10 @@ const Sponsor = () => {
         {/* Hero Split */}
         <section style={styles.heroSplit}>
           <div style={styles.heroText}>
-            <span style={styles.monoLabel}>TRANSMISSION // GRID_SPONSORSHIP</span>
-            <h1 style={styles.h1}>FUEL THE RENAISSANCE.</h1>
+            <span style={styles.monoLabel}>SPONSORSHIP</span>
+            <h1 style={styles.h1}>POWER THE NETWORK.</h1>
             <p style={{ fontSize: '1.25rem', color: '#5A4C55', maxWidth: '500px' }}>
-              Build London's tech infrastructure. Provide bandwidth, power the network.
+              Support London's distributed tech ecosystem. April 28-30, 2026.
             </p>
           </div>
           <div style={styles.visualWell}>
@@ -303,89 +290,44 @@ const Sponsor = () => {
               <path d="M50 10 L50 90 M10 50 L90 50" stroke="#FFD600" strokeWidth="0.5" />
               <rect x="35" y="35" width="30" height="30" fill="none" stroke="#FFFFFF" strokeWidth="2" />
               <circle cx="50" cy="50" r="4" fill="#00D27F" />
-              <text x="50" y="75" fontFamily="JetBrains Mono" fontSize="3" fill="#FFFFFF" textAnchor="middle">CAPITAL_INJECTION_CORE</text>
+              <text x="50" y="75" fontFamily="JetBrains Mono" fontSize="3" fill="#FFFFFF" textAnchor="middle">SPONSOR</text>
             </svg>
           </div>
         </section>
 
-        {/* Tiers Grid */}
-        <section style={styles.tiersGrid}>
-          {/* Tier 1 */}
-          <div style={styles.tierCard}>
-            <div style={styles.pill}>FOUNDING_NODE</div>
-            <div style={styles.priceTag}>£10,000</div>
-            <p style={{ color: '#5A4C55', fontWeight: 500 }}>
-              Join the distributed network. For scaling startups and community orgs.
-            </p>
-            <ul style={styles.benefitList}>
-              <li style={styles.benefitItem}>
-                <CheckIcon color="#00D27F" />
-                Logo placement on the Unified Map &amp; Protocol Docs
-              </li>
-              <li style={styles.benefitItem}>
-                <CheckIcon color="#00D27F" />
-                Direct routing: Host up to 2 specific community events
-              </li>
-              <li style={styles.benefitItem}>
-                <CheckIcon color="#00D27F" />
-                Access to the 'Sync' private lounge at Kachette
-              </li>
-            </ul>
-            <button
-              style={getBtnStyle('emerald', activeBtn === 'founding')}
-              onMouseDown={() => setActiveBtn('founding')}
-              onMouseUp={() => { setActiveBtn(null); scrollToInquiry(); }}
-              onMouseLeave={() => setActiveBtn(null)}
-            >
-              SELECT TIER
-            </button>
-          </div>
-
-          {/* Tier 2 */}
-          <div style={styles.tierCardAlt}>
-            <div style={styles.pillGold}>SYSTEM_ARCHITECT</div>
-            <div style={styles.priceTag}>£20,000</div>
-            <p style={{ color: '#5A4C55', fontWeight: 500 }}>
-              Directly influence the topology of the event. For industry leaders shaping the future of the London ecosystem.
-            </p>
-            <ul style={styles.benefitList}>
-              <li style={styles.benefitItem}>
-                <CheckIcon color="#251720" />
-                Premier "Core Node" placement in the central physical hub
-              </li>
-              <li style={styles.benefitItem}>
-                <CheckIcon color="#251720" />
-                Data Insights: Full post-event network flow analysis
-              </li>
-              <li style={styles.benefitItem}>
-                <CheckIcon color="#251720" />
-                Keynote position at the Opening Sync ceremony
-              </li>
-              <li style={styles.benefitItem}>
-                <CheckIcon color="#251720" />
-                Branded 'Node' sponsorship for 5 indie developer spaces
-              </li>
-            </ul>
-            <button
-              style={getBtnStyle('gold', activeBtn === 'architect')}
-              onMouseDown={() => setActiveBtn('architect')}
-              onMouseUp={() => { setActiveBtn(null); scrollToInquiry(); }}
-              onMouseLeave={() => setActiveBtn(null)}
-            >
-              SELECT TIER
-            </button>
+        {/* Why Sponsor Section */}
+        <section style={{ ...styles.tiersGrid, gridTemplateColumns: '1fr' }}>
+          <div style={{ ...styles.tierCard, padding: '80px 64px' }}>
+            <span style={styles.monoLabel}>WHY SPONSOR</span>
+            <h2 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '3rem', textTransform: 'uppercase', marginBottom: '32px' }}>
+              REACH LONDON'S TECH BUILDERS.
+            </h2>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', maxWidth: '1000px' }}>
+              <div>
+                <h3 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '1.5rem', fontWeight: 900, marginBottom: '16px' }}>DISTRIBUTED REACH</h3>
+                <p style={{ color: '#5A4C55', fontSize: '1.1rem', lineHeight: '1.6' }}>
+                  Events across London. AI labs, biotech startups, web3 builders, design studios. Your brand reaches the entire ecosystem, not just one venue.
+                </p>
+              </div>
+              <div>
+                <h3 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '1.5rem', fontWeight: 900, marginBottom: '16px' }}>BUILDER AUDIENCE</h3>
+                <p style={{ color: '#5A4C55', fontSize: '1.1rem', lineHeight: '1.6' }}>
+                  Founders, engineers, researchers. People building the future. Active participants, not passive attendees.
+                </p>
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Inquiry Section */}
         <section id="inquiry" style={styles.inquirySection}>
           <div style={styles.inquirySidebar}>
-            <span style={{ ...styles.monoLabel, color: '#00D27F' }}>DATA_LINK // INQUIRY</span>
+            <span style={{ ...styles.monoLabel, color: '#00D27F' }}>CONTACT US</span>
             <h2 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '2.5rem', textTransform: 'uppercase', margin: '16px 0' }}>
-              GET IN THE GRID.
+              LET'S TALK.
             </h2>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.9rem' }}>
-              Fill out the packet. Our team will verify your connection and reach out to finalize the injection parameters.
+              Custom packages available. We'll get back to you within 24 hours.
             </p>
           </div>
           <div style={styles.formContainer}>
@@ -402,17 +344,17 @@ const Sponsor = () => {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
                 <p style={{ fontFamily: "'JetBrains Mono', monospace", color: '#00D27F', fontSize: '1.2rem', textAlign: 'center' }}>
-                  PACKET_SENT // AWAITING_VERIFICATION
+                  MESSAGE SENT
                 </p>
               </div>
             ) : (
               <form style={styles.gridForm} onSubmit={handleSubmit}>
                 <div style={styles.formGroup}>
-                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>ORGANISATION_NAME</label>
+                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>COMPANY NAME</label>
                   <input
                     type="text"
                     name="orgName"
-                    placeholder="e.g. CORE DYNAMICS"
+                    placeholder="Your company"
                     value={formData.orgName}
                     onChange={handleChange}
                     style={styles.input}
@@ -420,7 +362,7 @@ const Sponsor = () => {
                   />
                 </div>
                 <div style={styles.formGroup}>
-                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>CONTACT_NAME</label>
+                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>YOUR NAME</label>
                   <input
                     type="text"
                     name="contactName"
@@ -431,49 +373,24 @@ const Sponsor = () => {
                     required
                   />
                 </div>
-                <div style={styles.formGroup}>
-                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>COMM_LINK_EMAIL</label>
+                <div style={styles.formGroupFull}>
+                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>EMAIL</label>
                   <input
                     type="email"
                     name="email"
-                    placeholder="CONTACT@GRID.SYS"
+                    placeholder="your@email.com"
                     value={formData.email}
                     onChange={handleChange}
                     style={styles.input}
                     required
                   />
                 </div>
-                <div style={styles.formGroup}>
-                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>DESIRED_TIER</label>
-                  <select
-                    name="tier"
-                    value={formData.tier}
-                    onChange={handleChange}
-                    style={styles.select}
-                  >
-                    <option>SELECT ALLOCATION...</option>
-                    <option>FOUNDING_NODE (£10K)</option>
-                    <option>SYSTEM_ARCHITECT (£20K)</option>
-                    <option>CUSTOM_INJECTION</option>
-                  </select>
-                </div>
-                <div style={styles.formGroup}>
-                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>INDUSTRY_SECTOR</label>
-                  <input
-                    type="text"
-                    name="sector"
-                    placeholder="e.g. WEB3 / AI / BIOTECH"
-                    value={formData.sector}
-                    onChange={handleChange}
-                    style={styles.input}
-                  />
-                </div>
                 <div style={styles.formGroupFull}>
-                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>NETWORK_GOALS</label>
+                  <label style={{ ...styles.monoLabel, color: '#FFFFFF' }}>MESSAGE</label>
                   <textarea
                     rows={4}
                     name="goals"
-                    placeholder="HOW DO YOU WANT TO IMPACT THE LONDON TECH ECOSYSTEM?"
+                    placeholder="Tell us about your sponsorship goals..."
                     value={formData.goals}
                     onChange={handleChange}
                     style={styles.textarea}
@@ -496,7 +413,7 @@ const Sponsor = () => {
                       e.currentTarget.style.boxShadow = '6px 6px 0px #251720';
                     }}
                   >
-                    SEND INQUIRY PACKET
+                    SEND MESSAGE
                   </button>
                 </div>
               </form>

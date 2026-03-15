@@ -390,13 +390,12 @@ const HeroSection = () => (
   <section className="hero-grid" style={customStyles.hero}>
     <div style={customStyles.heroContent}>
       <span style={{ ...customStyles.monoLabel, marginBottom: '16px', display: 'block', color: '#00D27F', fontSize: '0.85rem' }}>
-        APRIL 28-30, 2026 // LONDON
+        APRIL 28-30, 2026
       </span>
-      <h1 style={customStyles.h1}>LONDON'S TECH ECOSYSTEM, SELF-AWARE.</h1>
-      <p style={customStyles.subtitle}>Not a conference. A distributed protocol for the city to self-organize.</p>
+      <h1 style={customStyles.h1}>THREE DAYS. LONDON'S TECH ECOSYSTEM. ONE NETWORK.</h1>
+      <p style={customStyles.subtitle}>Not a conference. A distributed protocol.</p>
       <div style={customStyles.heroCtas}>
-        <a href="#" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>HOST A NODE</a>
-        <a href="#" style={{ ...customStyles.btn, ...customStyles.btnSecondary }}>SPONSOR THE GRID</a>
+        <a href="/events" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>BROWSE EVENTS</a>
       </div>
     </div>
     <div style={customStyles.heroVisual}>
@@ -409,10 +408,11 @@ const ExplanationSection = () => (
   <section id="about" className="explanation-section" style={customStyles.explanation}>
     <div style={customStyles.explHeader}>
       <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>CONCEPT_FILE // 01</span>
-      <h2 style={customStyles.explHeaderH2}>EMERGENCE.</h2>
+      <h2 style={customStyles.explHeaderH2}>WHAT IS THIS.</h2>
     </div>
     <div style={customStyles.explContent}>
-      <p style={customStyles.explParagraph}>Turn London into the venue. Offices, cafes, warehouses become nodes—each running autonomous programming. You don't attend; you plug in.</p>
+      <p style={customStyles.explParagraph}>London Tech Week, networked. Events happening across the city April 28-30. AI labs. Biotech. Fintech. Design studios. Web3.</p>
+      <p style={customStyles.explParagraph}>Browse the grid. Pick your path. RSVP on Luma.</p>
     </div>
   </section>
 );
@@ -446,7 +446,7 @@ const VisualSection = () => (
   </section>
 );
 
-const MechCard = ({ accentColor, iconColor, label, icon, title, description, btnStyle, btnText, isLast }) => (
+const MechCard = ({ accentColor, iconColor, label, icon, title, description, btnStyle, btnText, btnLink, isLast }) => (
   <div style={{ ...customStyles.mechCard, ...(isLast ? customStyles.mechCardLast : {}) }}>
     <span style={{ ...customStyles.monoLabel, position: 'absolute', top: '16px', right: '16px' }}>{label}</span>
     <div style={{ ...customStyles.mechIcon, background: accentColor, color: iconColor || '#251720' }}>
@@ -454,7 +454,7 @@ const MechCard = ({ accentColor, iconColor, label, icon, title, description, btn
     </div>
     <h3 style={customStyles.mechH3}>{title}</h3>
     <p style={customStyles.mechP}>{description}</p>
-    <a href="#" style={{ ...customStyles.btn, ...customStyles.btnSmall, ...btnStyle }}>{btnText}</a>
+    <a href={btnLink} style={{ ...customStyles.btn, ...customStyles.btnSmall, ...btnStyle }}>{btnText}</a>
   </div>
 );
 
@@ -462,84 +462,57 @@ const MechanicsSection = () => (
   <section id="mechanics" className="mechanics-grid" style={customStyles.mechanics}>
     <MechCard
       accentColor="#00D27F"
-      label="// ACT_01"
+      label="// STEP_01"
       icon={
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#251720" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+          <rect x="3" y="3" width="7" height="7" />
+          <rect x="14" y="3" width="7" height="7" />
+          <rect x="14" y="14" width="7" height="7" />
+          <rect x="3" y="14" width="7" height="7" />
         </svg>
       }
-      title="HOST A NODE"
-      description="Your space becomes a node. You control format and agenda. We route the network."
+      title="BROWSE THE GRID"
+      description="Events across London. Filter by topic, location, date."
       btnStyle={{ background: '#00D27F' }}
-      btnText="INITIALIZE"
+      btnText="SEE EVENTS"
+      btnLink="/events"
     />
     <MechCard
       accentColor="#FFD600"
-      label="// ACT_02"
+      label="// STEP_02"
       icon={
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#251720" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
-          <path d="M21 3v5h-5" />
+          <polyline points="20 6 9 17 4 12" />
         </svg>
       }
-      title="ATTEND & SYNC"
-      description="Build your path. Sync with nodes that match your frequency. Navigate the city."
+      title="RSVP ON LUMA"
+      description="Each event links to Luma. RSVP. Get location details."
       btnStyle={{ background: '#FFD600' }}
       btnText="ACCESS MAP"
+      btnLink="/events"
     />
     <MechCard
       accentColor="#251720"
       iconColor="#FFFFFF"
-      label="// ACT_03"
+      label="// STEP_03"
       icon={
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
         </svg>
       }
-      title="POWER THE GRID"
-      description="Inject capital directly into nodes. Subsidize indie developers. Elevate network fidelity."
+      title="SHOW UP"
+      description="April 28-30. Navigate London. Build your network."
       btnStyle={{ background: '#FFFFFF', color: '#251720' }}
-      btnText="INJECT CAPITAL"
+      btnText="SEE SCHEDULE"
+      btnLink="/events"
       isLast
     />
   </section>
 );
 
-const VenueSection = () => (
-  <section id="venue" className="venue-grid" style={customStyles.venue}>
-    <div style={customStyles.venueInfo}>
-      <span style={customStyles.monoLabel}>PHYSICAL_INFRASTRUCTURE // CENTRAL ROUTER</span>
-      <h2 style={customStyles.venueH2}>KACHETTE.</h2>
-      <div style={customStyles.venueMeta}>
-        <Pill>EC1V 9LP</Pill>
-        <Pill>CAPACITY: 400</Pill>
-        <Pill>STATUS: SECURED</Pill>
-      </div>
-      <p style={{ fontSize: '1.25rem', color: '#5A4C55', marginBottom: '32px' }}>
-        Every system needs a router. Kachette is the physical core. Sync, collect credentials, access the schedule.
-      </p>
-      <div style={{ borderTop: '1px solid rgba(37, 23, 32, 0.15)', paddingTop: '16px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', color: '#251720' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '8px' }}>
-          <span>LAT/LONG:</span> <span>51.526° N, 0.078° W</span>
-        </div>
-        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <span>ARCHITECTURE:</span> <span>EXPOSED BRICK / DUAL ARCH</span>
-        </div>
-      </div>
-    </div>
-    <div style={customStyles.venueImageContainer}>
-      <img
-        src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-        alt="Exposed brick arches of Kachette venue"
-        style={customStyles.venueImage}
-      />
-      <div style={customStyles.hudOverlay}>
-        <span style={{ ...customStyles.monoLabel, color: '#251720', marginBottom: '4px' }}>SYSTEM CAM // 04</span>
-        <div style={{ fontFamily: "'Epilogue', sans-serif", fontWeight: 900, fontSize: '1.2rem' }}>MAIN ARCHWAY</div>
-      </div>
-    </div>
-  </section>
-);
 
 const FooterCaptureSection = () => {
   const [email, setEmail] = useState('');
@@ -557,18 +530,18 @@ const FooterCaptureSection = () => {
     <section className="footer-section" style={customStyles.footerCapture}>
       <div style={customStyles.footerGrid} />
       <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '16px', position: 'relative', zIndex: 2 }}>
-        {submitted ? 'CONNECTION ESTABLISHED' : 'AWAITING INPUT'}
+        {submitted ? 'SYNCED' : 'GET UPDATES'}
       </span>
-      <h2 style={customStyles.footerH2}>ESTABLISH CONNECTION.</h2>
+      <h2 style={customStyles.footerH2}>STAY IN THE LOOP.</h2>
       {submitted ? (
         <p style={{ fontFamily: "'JetBrains Mono', monospace", color: '#00D27F', fontSize: '1.1rem', position: 'relative', zIndex: 2 }}>
-          YOU ARE NOW PART OF THE NETWORK.
+          YOU'RE ON THE LIST.
         </p>
       ) : (
         <form style={customStyles.captureForm} onSubmit={handleSubmit}>
           <input
             type="email"
-            placeholder="ENTER COMM-LINK (EMAIL)..."
+            placeholder="YOUR EMAIL..."
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -578,7 +551,7 @@ const FooterCaptureSection = () => {
             type="submit"
             style={{ ...customStyles.btn, ...customStyles.btnPrimary, boxShadow: 'none', borderLeft: 'none' }}
           >
-            SYNC
+            SUBSCRIBE
           </button>
         </form>
       )}

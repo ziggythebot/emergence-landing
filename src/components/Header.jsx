@@ -120,7 +120,7 @@ function Header() {
           <Link to="/" style={customStyles.navLink}>HOME</Link>
           <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
           <Link to="/videos" style={customStyles.navLink}>VIDEOS</Link>
-          <Link to="/host" style={customStyles.navLink}>HOST</Link>
+          <Link to="/contact" style={customStyles.navLink}>CONTACT</Link>
           <Link to="/sponsor" style={customStyles.navLink}>SPONSOR</Link>
         </nav>
 
@@ -173,11 +173,11 @@ function Header() {
           VIDEOS
         </Link>
         <Link
-          to="/host"
+          to="/contact"
           style={customStyles.mobileNavLink}
           onClick={closeMenu}
         >
-          HOST
+          CONTACT
         </Link>
         <Link
           to="/sponsor"
