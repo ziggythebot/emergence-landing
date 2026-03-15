@@ -1,4 +1,4 @@
-import { useCurrentFrame, AbsoluteFill, interpolate, Easing, Img, staticFile } from 'remotion';
+import { useCurrentFrame, AbsoluteFill, interpolate, Easing, Video, staticFile } from 'remotion';
 
 export const LocationFlythrough: React.FC = () => {
   const frame = useCurrentFrame();
@@ -113,7 +113,7 @@ export const LocationFlythrough: React.FC = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Real London aerial background */}
+      {/* Real London business district video background */}
       <div
         style={{
           position: 'absolute',
@@ -124,14 +124,16 @@ export const LocationFlythrough: React.FC = () => {
           opacity: 1,
         }}
       >
-        <Img
-          src={staticFile('footage/london-aerial.jpg')}
+        <Video
+          src={staticFile('footage/london-business-district.mp4')}
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
             filter: 'blur(2px) brightness(1.1)',
           }}
+          loop
+          muted
         />
         {/* Gradient overlay */}
         <div

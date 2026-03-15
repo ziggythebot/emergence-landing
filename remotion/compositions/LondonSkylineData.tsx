@@ -1,4 +1,4 @@
-import { useCurrentFrame, AbsoluteFill, interpolate, Sequence, Img, staticFile } from 'remotion';
+import { useCurrentFrame, AbsoluteFill, interpolate, Sequence, Video, staticFile } from 'remotion';
 
 export const LondonSkylineData: React.FC = () => {
   const frame = useCurrentFrame();
@@ -43,7 +43,7 @@ export const LondonSkylineData: React.FC = () => {
         fontFamily: "'Epilogue', sans-serif",
       }}
     >
-      {/* Real London skyline background image */}
+      {/* Real London aerial video background */}
       <div
         style={{
           position: 'absolute',
@@ -55,14 +55,16 @@ export const LondonSkylineData: React.FC = () => {
           overflow: 'hidden',
         }}
       >
-        <Img
-          src={staticFile('footage/london-skyline.jpg')}
+        <Video
+          src={staticFile('footage/london-aerial-skyline.mp4')}
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
             filter: 'brightness(0.9)',
           }}
+          loop
+          muted
         />
         {/* Gradient overlay for better text contrast */}
         <div

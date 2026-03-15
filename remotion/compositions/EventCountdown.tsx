@@ -1,4 +1,4 @@
-import { useCurrentFrame, AbsoluteFill, interpolate, spring, Img, staticFile } from 'remotion';
+import { useCurrentFrame, AbsoluteFill, interpolate, spring, Video, staticFile } from 'remotion';
 
 export const EventCountdown: React.FC = () => {
   const frame = useCurrentFrame();
@@ -49,7 +49,7 @@ export const EventCountdown: React.FC = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Real London night background */}
+      {/* Real city night video background */}
       <div
         style={{
           position: 'absolute',
@@ -59,14 +59,16 @@ export const EventCountdown: React.FC = () => {
           bottom: 0,
         }}
       >
-        <Img
-          src={staticFile('footage/london-night.jpg')}
+        <Video
+          src={staticFile('footage/city-night-aerial.mp4')}
           style={{
             width: '100%',
             height: '100%',
             objectFit: 'cover',
             filter: 'brightness(0.5)',
           }}
+          loop
+          muted
         />
         {/* Dark overlay */}
         <div
