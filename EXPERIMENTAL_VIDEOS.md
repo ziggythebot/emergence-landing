@@ -178,15 +178,30 @@ npm run remotion:preview
 
 ---
 
+## Updated with Real London Footage (March 15, 2026)
+
+**Three videos now use real London imagery:**
+1. **London Skyline Data** - Real London skyline photo background (663KB from Unsplash)
+2. **Location Flythrough** - Real aerial London view (505KB from Unsplash)
+3. **Event Countdown** - Real London night cityscape (1.1MB from Unsplash)
+
+All images sourced from Unsplash (free to use, no attribution required). Backgrounds are overlaid with semi-transparent gradients to maintain brand colors and text legibility while showing authentic London scenery.
+
+**Source images stored in:** `/public/footage/`
+- `london-skyline.jpg` - Shard and modern buildings
+- `london-aerial.jpg` - Aerial city view
+- `london-night.jpg` - Cityscape at night
+- `shoreditch-street.jpg`, `kings-cross.jpg`, `tower-bridge.jpg` (available for future use)
+
 ## Next Steps
 
 1. **Deploy to production** - Push to Vercel, videos are already in public/videos/
 2. **Share on social** - Download from `/videos/` page and post
 3. **A/B test formats** - Try different aspect ratios for Instagram vs LinkedIn
 4. **Add audio** - Consider background music or voiceover for longer videos
-5. **Real stock footage** - Replace geometric skyline with actual London footage if budget allows
-6. **MapBox integration** - Use real interactive maps instead of simplified SVG for location video
-7. **Company logos** - Add actual logos instead of just names (requires licensing/permission)
+5. **MapBox integration** - Use real interactive maps instead of simplified SVG for location video
+6. **Company logos** - Add actual logos instead of just names (requires licensing/permission)
+7. **Video footage upgrade** - Consider replacing static images with time-lapse videos from Pexels/Pixabay
 
 ---
 

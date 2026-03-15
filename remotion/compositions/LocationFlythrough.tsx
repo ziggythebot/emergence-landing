@@ -108,12 +108,43 @@ export const LocationFlythrough: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: 'linear-gradient(135deg, #E5F4EF 0%, #F2FDFB 50%, #FFFFFF 100%)',
         fontFamily: "'Epilogue', sans-serif",
         position: 'relative',
         overflow: 'hidden',
       }}
     >
+      {/* Real London aerial background */}
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          opacity: 0.4,
+        }}
+      >
+        <img
+          src="/footage/london-aerial.jpg"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            filter: 'blur(2px) brightness(1.1)',
+          }}
+        />
+        {/* Gradient overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(229, 244, 239, 0.9) 0%, rgba(242, 253, 251, 0.85) 50%, rgba(255, 255, 255, 0.9) 100%)',
+          }}
+        />
+      </div>
       {/* Initial title */}
       <div
         style={{

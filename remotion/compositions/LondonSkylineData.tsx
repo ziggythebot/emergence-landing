@@ -40,65 +40,41 @@ export const LondonSkylineData: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: 'linear-gradient(180deg, #F2FDFB 0%, #EAF8F5 50%, #E5F4EF 100%)',
         fontFamily: "'Epilogue', sans-serif",
       }}
     >
-      {/* London skyline silhouette (simplified geometric representation) */}
+      {/* Real London skyline background image */}
       <div
         style={{
           position: 'absolute',
-          bottom: 0,
+          top: 0,
           left: 0,
           right: 0,
-          height: '40%',
+          bottom: 0,
           opacity: bgOpacity,
+          overflow: 'hidden',
         }}
       >
-        {/* The Shard */}
+        <img
+          src="/footage/london-skyline.jpg"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            filter: 'brightness(0.9)',
+          }}
+        />
+        {/* Gradient overlay for better text contrast */}
         <div
           style={{
             position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
             bottom: 0,
-            left: '60%',
-            width: '0',
-            height: '0',
-            borderLeft: '40px solid transparent',
-            borderRight: '40px solid transparent',
-            borderBottom: '300px solid #251720',
-            opacity: 0.3,
+            background: 'linear-gradient(180deg, rgba(242, 253, 251, 0.85) 0%, rgba(234, 248, 245, 0.75) 50%, rgba(229, 244, 239, 0.85) 100%)',
           }}
         />
-
-        {/* Gherkin */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 0,
-            left: '45%',
-            width: '60px',
-            height: '250px',
-            background: 'linear-gradient(to top, #251720, rgba(37, 23, 32, 0.4))',
-            borderRadius: '50% 50% 0 0',
-            opacity: 0.3,
-          }}
-        />
-
-        {/* Generic buildings */}
-        {[20, 30, 35, 50, 55, 70, 75, 80].map((left, i) => (
-          <div
-            key={i}
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: `${left}%`,
-              width: `${40 + i * 10}px`,
-              height: `${120 + i * 20}px`,
-              background: '#251720',
-              opacity: 0.25,
-            }}
-          />
-        ))}
       </div>
 
       {/* Network connections */}

@@ -40,7 +40,6 @@ export const EventCountdown: React.FC = () => {
   return (
     <AbsoluteFill
       style={{
-        background: 'linear-gradient(135deg, #251720 0%, #3A2A34 50%, #251720 100%)',
         fontFamily: "'Epilogue', sans-serif",
         display: 'flex',
         flexDirection: 'column',
@@ -50,52 +49,36 @@ export const EventCountdown: React.FC = () => {
         overflow: 'hidden',
       }}
     >
-      {/* Rotating background pattern - London landmarks as silhouettes */}
+      {/* Real London night background */}
       <div
         style={{
           position: 'absolute',
-          width: '200%',
-          height: '200%',
-          top: '-50%',
-          left: '-50%',
-          transform: `rotate(${landmarksRotation}deg)`,
-          opacity: 0.08,
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
         }}
       >
-        {/* Shard silhouette pattern */}
-        {[0, 90, 180, 270].map((angle) => (
-          <div
-            key={angle}
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: '0',
-              height: '0',
-              borderLeft: '80px solid transparent',
-              borderRight: '80px solid transparent',
-              borderBottom: '400px solid #FFD600',
-              transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(-300px)`,
-            }}
-          />
-        ))}
-
-        {/* Gherkin pattern */}
-        {[45, 135, 225, 315].map((angle) => (
-          <div
-            key={`gherkin-${angle}`}
-            style={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              width: '100px',
-              height: '300px',
-              background: '#00D27F',
-              borderRadius: '50% 50% 0 0',
-              transform: `translate(-50%, -50%) rotate(${angle}deg) translateY(-250px)`,
-            }}
-          />
-        ))}
+        <img
+          src="/footage/london-night.jpg"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            filter: 'brightness(0.5)',
+          }}
+        />
+        {/* Dark overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'linear-gradient(135deg, rgba(37, 23, 32, 0.8) 0%, rgba(58, 42, 52, 0.7) 50%, rgba(37, 23, 32, 0.85) 100%)',
+          }}
+        />
       </div>
 
       {/* Grid pattern overlay */}
@@ -104,7 +87,7 @@ export const EventCountdown: React.FC = () => {
           position: 'absolute',
           width: '100%',
           height: '100%',
-          backgroundImage: 'radial-gradient(rgba(255, 214, 0, 0.2) 1px, transparent 1px)',
+          backgroundImage: 'radial-gradient(rgba(255, 214, 0, 0.15) 1px, transparent 1px)',
           backgroundSize: '32px 32px',
           backgroundPosition: '-1px -1px',
         }}
