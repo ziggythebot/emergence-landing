@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remotion Videos - Emergence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Epilogue:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #F2FDFB 0%, #EAF8F5 100%);
+            background-image: radial-gradient(#251720 1px, transparent 1px);
+            background-size: 32px 32px;
+            background-position: -1px -1px;
+            font-family: 'DM Sans', sans-serif;
+            color: #251720;
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+        .system-container {
+            max-width: 1440px;
+            margin: 0 auto;
+            border-left: 3px solid #251720;
+            border-right: 3px solid #251720;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            min-height: 100vh;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 32px;
+            border-bottom: 3px solid #251720;
+            background: #FFFFFF;
+        }
+        .logo {
+            font-family: 'Epilogue', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: -0.05em;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-node {
+            width: 24px;
+            height: 24px;
+            background: #FFD600;
+            border: 3px solid #251720;
+            border-radius: 50%;
+        }
+        nav {
+            display: flex;
+            gap: 32px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+        nav a {
+            color: #251720;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        .hero {
+            padding: 64px;
+            border-bottom: 3px solid #251720;
+            text-align: center;
+            background: #FFFFFF;
+        }
+        .mono-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #00D27F;
+            display: block;
+            margin-bottom: 1rem;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin: 24px 0 16px 0;
+            color: #251720;
+        }
+        .hero p {
+            font-size: 1.1rem;
+            color: #5A4C55;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0;
+        }
+        .video-card {
+            padding: 64px;
+            border-bottom: 3px solid #251720;
+            background: #FFFFFF;
+        }
+        .video-card:last-child {
+            border-bottom: none;
+        }
+        .video-card h2 {
+            font-size: 2.5rem;
+            margin: 0 0 16px 0;
+            color: #251720;
+        }
+        .video-card > .mono-label {
+            color: #00D27F;
+        }
+        .video-card p {
+            font-size: 1rem;
+            color: #5A4C55;
+            margin-bottom: 24px;
+        }
+        .specs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+        .spec-item {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #5A4C55;
+        }
+        .spec-label {
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            color: #00D27F;
+            margin-bottom: 4px;
+        }
+        .player-container {
+            border: 3px solid #251720;
+            box-shadow: 8px 8px 0px #251720;
+            overflow: hidden;
+            background: #000000;
+            margin-top: 32px;
+        }
+        .player-container video {
+            width: 100%;
+            display: block;
+        }
+        .player-container.vertical video {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+        }
+        .download-btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 12px 32px;
+            font-family: 'Epilogue', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: #251720;
+            background: #00D27F;
+            border: 3px solid #251720;
+            cursor: pointer;
+            transition: all 0.1s ease;
+            box-shadow: 4px 4px 0px #251720;
+            margin-top: 24px;
+            text-decoration: none;
+        }
+        .download-btn:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px #251720;
+        }
+        footer {
+            padding: 48px;
+            border-top: 3px solid #251720;
+            background: #FFFFFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        footer .mono-label {
+            margin-bottom: 0;
+            color: #5A4C55;
+        }
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+        }
+        .footer-links a {
+            text-decoration: none;
+            color: #251720;
+        }
+    </style>
+</head>
+<body>
+    <div class="system-container">
+        <header>
+            <div class="logo">
+                <div class="logo-node"></div>
+                <span>EMERGENCE</span>
+            </div>
+            <nav>
+                <a href="/">HOME</a>
+                <a href="/host">HOST</a>
+                <a href="/events">EVENTS</a>
+                <a href="/partners">PARTNERS</a>
+                <a href="/remotion-videos.html">VIDEOS</a>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <span class="mono-label">VIDEO_LIBRARY</span>
+            <h1>REMOTION VIDEOS.</h1>
+            <p>Programmatic videos built from React components. Ready for social, website, and email.</p>
+        </section>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <span class="mono-label">01_TWITTER</span>
+                <h2>TWITTER ANNOUNCEMENT</h2>
+                <p>Brand intro video. Title animation, date reveal, tagline, pulsing CTA. Perfect for Twitter/X and LinkedIn posts.</p>
+
+                <div class="specs">
+                    <div class="spec-item">
+                        <div class="spec-label">Format</div>
+                        1280x720 (16:9)
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Duration</div>
+                        6 seconds
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Use Case</div>
+                        Twitter, LinkedIn
+                    </div>
+                </div>
+
+                <div class="player-container">
+                    <video controls>
+                        <source src="/videos/twitter-announcement.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <a href="/videos/twitter-announcement.mp4" download class="download-btn">DOWNLOAD MP4</a>
+            </div>
+
+            <div class="video-card">
+                <span class="mono-label">02_INSTAGRAM</span>
+                <h2>EVENT SHOWCASE</h2>
+                <p>Vertical video for Instagram/TikTok. Intro → 4 event cards → CTA. Encode Club, Space, Raum, After Party.</p>
+
+                <div class="specs">
+                    <div class="spec-item">
+                        <div class="spec-label">Format</div>
+                        1080x1920 (9:16)
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Duration</div>
+                        15 seconds
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Use Case</div>
+                        Reels, TikTok, Stories
+                    </div>
+                </div>
+
+                <div class="player-container vertical">
+                    <video controls>
+                        <source src="/videos/event-showcase.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <a href="/videos/event-showcase.mp4" download class="download-btn">DOWNLOAD MP4</a>
+            </div>
+
+            <div class="video-card">
+                <span class="mono-label">03_HERO_LOOP</span>
+                <h2>HERO LOOP</h2>
+                <p>Seamless 5-second loop. Rotating network nodes, pulsing center, floating text. Use as website hero or email header.</p>
+
+                <div class="specs">
+                    <div class="spec-item">
+                        <div class="spec-label">Format</div>
+                        1920x1080 (16:9)
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Duration</div>
+                        5 seconds (loops)
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-label">Use Case</div>
+                        Website, Email
+                    </div>
+                </div>
+
+                <div class="player-container">
+                    <video controls loop>
+                        <source src="/videos/hero-loop.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+                <a href="/videos/hero-loop.mp4" download class="download-btn">DOWNLOAD MP4</a>
+            </div>
+        </div>
+
+        <footer>
+            <div class="mono-label">
+                © 2026 EMERGENCE PROTOCOL // LDN
+            </div>
+            <div class="footer-links">
+                <a href="#">PRIVACY</a>
+                <a href="#">TERMS</a>
+                <a href="/host">CONTACT</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
