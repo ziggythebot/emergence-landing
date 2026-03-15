@@ -1,4 +1,5 @@
-import { useCurrentFrame, AbsoluteFill, interpolate, spring, Video, staticFile } from 'remotion';
+import { useCurrentFrame, AbsoluteFill, interpolate, spring, staticFile } from 'remotion';
+import { Video } from '@remotion/media';
 
 export const EventCountdown: React.FC = () => {
   const frame = useCurrentFrame();
@@ -69,6 +70,7 @@ export const EventCountdown: React.FC = () => {
           }}
           loop
           muted
+          playbackRate={1.25}
         />
         {/* Dark overlay */}
         <div

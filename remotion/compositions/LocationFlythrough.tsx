@@ -1,4 +1,5 @@
-import { useCurrentFrame, AbsoluteFill, interpolate, Easing, Video, staticFile } from 'remotion';
+import { useCurrentFrame, AbsoluteFill, interpolate, Easing, staticFile } from 'remotion';
+import { Video } from '@remotion/media';
 
 export const LocationFlythrough: React.FC = () => {
   const frame = useCurrentFrame();
@@ -134,6 +135,7 @@ export const LocationFlythrough: React.FC = () => {
           }}
           loop
           muted
+          playbackRate={1.2}
         />
         {/* Gradient overlay */}
         <div

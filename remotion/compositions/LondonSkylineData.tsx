@@ -1,4 +1,5 @@
-import { useCurrentFrame, AbsoluteFill, interpolate, Sequence, Video, staticFile } from 'remotion';
+import { useCurrentFrame, AbsoluteFill, interpolate, Sequence, staticFile } from 'remotion';
+import { Video } from '@remotion/media';
 
 export const LondonSkylineData: React.FC = () => {
   const frame = useCurrentFrame();
@@ -65,6 +66,7 @@ export const LondonSkylineData: React.FC = () => {
           }}
           loop
           muted
+          playbackRate={1}
         />
         {/* Gradient overlay for better text contrast */}
         <div
