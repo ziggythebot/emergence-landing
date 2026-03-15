@@ -84,6 +84,52 @@ const VideoLibrary = () => {
       file: 'hero-loop.mp4',
       vertical: false,
     },
+    // EXPERIMENTAL VIDEOS
+    {
+      title: 'London Skyline + Data',
+      description: 'Ecosystem visualization over London skyline. Company markers, network connections, and stats (320+ companies, 63 AI labs, 61 fintech).',
+      format: '1280x720 (16:9)',
+      duration: '30 seconds',
+      useCase: 'LinkedIn, Twitter, Website Hero',
+      file: 'london-skyline-data.mp4',
+      vertical: false,
+    },
+    {
+      title: 'Animated Network Graph',
+      description: 'Full ecosystem network expanding from center node. 30+ real company names (DeepMind, Anthropic, Revolut, etc.) appearing in tiers.',
+      format: '1280x720 (16:9)',
+      duration: '45 seconds',
+      useCase: 'Presentation, Website, LinkedIn',
+      file: 'animated-network-graph.mp4',
+      vertical: false,
+    },
+    {
+      title: 'Event Countdown',
+      description: 'Kinetic countdown animation. "44 DAYS" → "APRIL 28-30" → "EMERGENCE". Dark theme with London landmarks.',
+      format: '1080x1080 (1:1)',
+      duration: '15 seconds',
+      useCase: 'Instagram Post, Twitter',
+      file: 'event-countdown.mp4',
+      vertical: false,
+    },
+    {
+      title: 'Ecosystem Stats',
+      description: 'Data-driven kinetic typography. Real stats cascading: 320+ Companies → 63 AI Labs → 61 Fintech → 53 Web3.',
+      format: '1280x720 (16:9)',
+      duration: '20 seconds',
+      useCase: 'LinkedIn, Presentation, Website',
+      file: 'ecosystem-stats.mp4',
+      vertical: false,
+    },
+    {
+      title: 'Location Flythrough',
+      description: 'Map-based journey through London tech hubs. Zooms through Shoreditch → King\'s Cross → Soho, revealing company locations. Ends with 302+ companies as dots.',
+      format: '1280x720 (16:9)',
+      duration: '40 seconds',
+      useCase: 'Website Hero, LinkedIn, Presentation',
+      file: 'location-flythrough.mp4',
+      vertical: false,
+    },
   ];
 
   return (
@@ -96,9 +142,27 @@ const VideoLibrary = () => {
           <h1 style={{ fontSize: '3.5rem', margin: '24px 0 16px 0', color: '#251720' }}>
             REMOTION VIDEOS.
           </h1>
-          <p style={{ fontSize: '1.1rem', color: '#5A4C55', maxWidth: '600px', margin: '0 auto' }}>
+          <p style={{ fontSize: '1.1rem', color: '#5A4C55', maxWidth: '700px', margin: '0 auto 16px auto' }}>
             Programmatic videos built from React components. Ready for social, website, and email.
           </p>
+          <div style={{
+            padding: '12px 24px',
+            background: 'rgba(0, 210, 127, 0.1)',
+            border: '2px solid #00D27F',
+            borderRadius: '4px',
+            display: 'inline-block',
+            marginTop: '16px',
+          }}>
+            <span style={{
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: '0.75rem',
+              color: '#00D27F',
+              textTransform: 'uppercase',
+              letterSpacing: '0.1em',
+            }}>
+              5 EXPERIMENTAL VIDEOS USING REAL LONDON ECOSYSTEM DATA (320+ COMPANIES)
+            </span>
+          </div>
         </section>
 
         <div style={customStyles.videosGrid}>
