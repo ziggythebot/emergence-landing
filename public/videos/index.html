@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergence Videos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Epilogue', -apple-system, sans-serif;
+            background: #EAF8F5;
+            color: #251720;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #251720;
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .video-card {
+            background: white;
+            border: 3px solid #251720;
+            padding: 20px;
+        }
+        .video-card h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #00D27F;
+        }
+        .video-card video {
+            width: 100%;
+            border: 2px solid #251720;
+            margin-bottom: 15px;
+        }
+        .video-card a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #00D27F;
+            color: #251720;
+            text-decoration: none;
+            border: 2px solid #251720;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .video-card a:hover {
+            background: #251720;
+            color: #00D27F;
+        }
+        .specs {
+            font-size: 0.85rem;
+            color: #5A4C55;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>EMERGENCE VIDEOS</h1>
+
+        <div class="video-grid">
+            <div class="video-card">
+                <h2>TWITTER ANNOUNCEMENT</h2>
+                <video controls>
+                    <source src="twitter-announcement.mp4" type="video/mp4">
+                </video>
+                <div class="specs">1280x720 • 6s • Twitter/LinkedIn</div>
+                <a href="twitter-announcement.mp4" download>DOWNLOAD MP4</a>
+            </div>
+
+            <div class="video-card">
+                <h2>EVENT SHOWCASE</h2>
+                <video controls>
+                    <source src="event-showcase.mp4" type="video/mp4">
+                </video>
+                <div class="specs">1080x1920 • 15s • Instagram/TikTok</div>
+                <a href="event-showcase.mp4" download>DOWNLOAD MP4</a>
+            </div>
+
+            <div class="video-card">
+                <h2>HERO LOOP</h2>
+                <video controls loop>
+                    <source src="hero-loop.mp4" type="video/mp4">
+                </video>
+                <div class="specs">1920x1080 • 5s loop • Website/Email</div>
+                <a href="hero-loop.mp4" download>DOWNLOAD MP4</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
