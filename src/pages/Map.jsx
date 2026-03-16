@@ -26,6 +26,7 @@ const customStyles = {
   mapHeader: {
     padding: '32px 64px',
     borderBottom: '3px solid #251720',
+    textAlign: 'center',
   },
   liveLabel: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -53,6 +54,7 @@ const customStyles = {
     color: '#5A4C55',
     lineHeight: 1.5,
     maxWidth: '800px',
+    margin: '0 auto',
   },
   mapContainer: {
     flex: 1,
@@ -104,7 +106,7 @@ const Map = () => {
             <span style={customStyles.liveLabel}>INTERACTIVE MAP</span>
             <h1 className="map-title-mobile" style={customStyles.mapTitle}>LONDON TECH MAP.</h1>
             <p style={customStyles.mapDescription}>
-              This map is where Emergence started. Every dot is a node in London's tech network. We built this to see the whole ecosystem at once. Then we realized — these nodes need to connect in real space. April 28-30.
+              This map is where Emergence started. Every dot is a node in London's tech network. We built this to see the whole ecosystem at once. Then we started connecting them IRL.
             </p>
           </div>
 
