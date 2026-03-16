@@ -793,10 +793,10 @@ const App = () => {
           <Header />
           <HeroSection />
           <ExplanationSection />
+          <FooterCaptureSection />
           <VisualSection />
           <MechanicsSection />
           <PoweredBySection />
-          <FooterCaptureSection />
         </div>
       </div>
     </>
