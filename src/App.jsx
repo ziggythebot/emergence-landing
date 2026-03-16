@@ -11,6 +11,7 @@ import Partners from './pages/Partners';
 import VideoLibrary from './pages/VideoLibrary';
 import BrandKit from './pages/BrandKit';
 import Blocmates from './pages/Blocmates';
+import AlexApology from './pages/AlexApology';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/video-library" element={<VideoLibrary />} />
         <Route path="/brand-kit" element={<BrandKit />} />
         <Route path="/blocmates" element={<Blocmates />} />
+        <Route path="/alex-apology" element={<AlexApology />} />
       </Routes>
     </Router>
   );
