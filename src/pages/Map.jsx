@@ -24,7 +24,7 @@ const customStyles = {
     flexDirection: 'column',
   },
   mapHeader: {
-    padding: '32px',
+    padding: '32px 64px',
     borderBottom: '3px solid #251720',
   },
   liveLabel: {
@@ -104,7 +104,7 @@ const Map = () => {
             <span style={customStyles.liveLabel}>INTERACTIVE MAP</span>
             <h1 className="map-title-mobile" style={customStyles.mapTitle}>LONDON TECH MAP.</h1>
             <p style={customStyles.mapDescription}>
-              Interactive map of London's tech ecosystem. Events across AI, fintech, web3, biotech, and deep tech.
+              This map is where Emergence started. Every dot is a node in London's tech network. We built this to see the whole ecosystem at once. Then we realized — these nodes need to connect in real space. April 28-30.
             </p>
           </div>
 
