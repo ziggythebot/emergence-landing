@@ -110,6 +110,12 @@ const BrandKit = () => {
       file: '/luma-assets/luma-sharing.png',
     },
     {
+      title: 'Logo - White Background',
+      description: 'Yellow circle with E letter and EMERGENCE text',
+      dimensions: '1080x1080px (Square)',
+      file: '/luma-assets/emergence-logo-white-bg.png',
+    },
+    {
       title: 'Twitter Header',
       description: 'Banner for Twitter/X profile page. Multiple variants available.',
       dimensions: '1500x500px (3:1)',
