@@ -119,7 +119,6 @@ function Header() {
         <nav className="desktop-nav" style={customStyles.navLinks}>
           <Link to="/" style={customStyles.navLink}>HOME</Link>
           <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
-          <Link to="/partners" style={customStyles.navLink}>PARTNERS</Link>
           <Link to="/videos" style={customStyles.navLink}>VIDEOS</Link>
           <Link to="/contact" style={customStyles.navLink}>CONTACT</Link>
           <Link to="/sponsor" style={customStyles.navLink}>SPONSOR</Link>
@@ -165,13 +164,6 @@ function Header() {
           onClick={closeMenu}
         >
           EVENTS
-        </Link>
-        <Link
-          to="/partners"
-          style={customStyles.mobileNavLink}
-          onClick={closeMenu}
-        >
-          PARTNERS
         </Link>
         <Link
           to="/videos"
