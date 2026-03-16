@@ -118,8 +118,9 @@ function Header() {
         {/* Desktop Nav */}
         <nav className="desktop-nav" style={customStyles.navLinks}>
           <Link to="/" style={customStyles.navLink}>HOME</Link>
-          <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
           <Link to="/host" style={customStyles.navLink}>HOST</Link>
+          <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
+          <Link to="/map" style={customStyles.navLink}>MAP</Link>
           <Link to="/contact" style={customStyles.navLink}>CONTACT</Link>
         </nav>
 
@@ -158,6 +159,13 @@ function Header() {
           HOME
         </Link>
         <Link
+          to="/host"
+          style={customStyles.mobileNavLink}
+          onClick={closeMenu}
+        >
+          HOST
+        </Link>
+        <Link
           to="/events"
           style={customStyles.mobileNavLink}
           onClick={closeMenu}
@@ -165,11 +173,11 @@ function Header() {
           EVENTS
         </Link>
         <Link
-          to="/host"
+          to="/map"
           style={customStyles.mobileNavLink}
           onClick={closeMenu}
         >
-          HOST
+          MAP
         </Link>
         <Link
           to="/contact"

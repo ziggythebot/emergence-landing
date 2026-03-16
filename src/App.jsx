@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
 import Host from './pages/Host';
+import Map from './pages/Map';
 import Sponsor from './pages/Sponsor';
 import SponsorAlt from './pages/SponsorAlt';
 import Welcome from './pages/Welcome';
@@ -19,6 +20,7 @@ function App() {
         <Route path="/partners" element={<Partners />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/host" element={<Host />} />
+        <Route path="/map" element={<Map />} />
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/sponsor-alt" element={<SponsorAlt />} />
         <Route path="/welcome" element={<Welcome />} />
