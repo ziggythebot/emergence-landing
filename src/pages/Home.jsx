@@ -433,36 +433,21 @@ const ExplanationSection = () => (
 );
 
 const VisualSection = () => (
-  <section style={{ borderBottom: '3px solid #251720', position: 'relative', minHeight: '250px', background: '#EAF8F5' }}>
-    <a href="/videos" style={{ display: 'block', position: 'relative', cursor: 'pointer', textDecoration: 'none' }}>
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          position: 'absolute',
-          inset: 0,
-        }}
-      >
-        <source src="/videos/london-skyline-data.mp4" type="video/mp4" />
-      </video>
-      <div style={{
-        position: 'absolute',
-        bottom: '24px',
-        right: '24px',
-        background: '#FFFFFF',
-        border: '3px solid #251720',
-        padding: '16px',
-        boxShadow: '3px 3px 0px #251720',
-        transition: 'all 0.1s ease',
-      }}>
-        <div style={{ fontFamily: "'Epilogue', sans-serif", fontWeight: 900, fontSize: '1.2rem', color: '#251720' }}>LONDON GRID →</div>
-      </div>
-    </a>
+  <section style={{ borderBottom: '3px solid #251720', position: 'relative', minHeight: '500px', background: '#EAF8F5' }}>
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
+      style={{
+        width: '100%',
+        height: '100%',
+        minHeight: '500px',
+        objectFit: 'cover',
+      }}
+    >
+      <source src="/videos/london-skyline-data.mp4" type="video/mp4" />
+    </video>
   </section>
 );
 
