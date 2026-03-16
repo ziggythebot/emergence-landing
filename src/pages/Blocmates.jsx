@@ -148,6 +148,23 @@ const Blocmates = () => {
             <p><strong>STRENGTHS:</strong> Process-driven, quality control, early conviction (shilled LINK pre-ATH)</p>
             <p><strong>DECISION_STYLE:</strong> Engineering rigor, operational efficiency, data-informed</p>
           </div>
+
+          <div style={{ ...customStyles.subsection, marginTop: '40px', borderTop: '2px solid #ff0000', paddingTop: '30px' }}>
+            <div style={{ ...customStyles.label, color: '#ff0000' }}>[CRITICAL UPDATE // ERROR CORRECTION]</div>
+            <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '20px' }}>
+              <img src="/alex_apology.gif" alt="Alex Bachmann Apology" style={{ maxWidth: '100%', border: '2px solid #00ff00' }} />
+            </div>
+            <p style={{ color: '#ffff00', fontSize: '1.1rem' }}>
+              <strong>NOTE:</strong> Alex Bachmann (Head of Operations) was criminally omitted from the original intelligence report.
+              This oversight has been logged as ERROR CODE: AB-404. Corrective action has been initiated.
+            </p>
+            <p style={{ marginTop: '15px' }}>
+              Alex Bachmann brings extensive marketing and communications experience across professional sports,
+              global brand campaigns, agency life, and craft beer industries before entering crypto. He is instrumental
+              in fine-tuning and executing the blocmates tone and vision, co-hosting the weekly blocmates podcast
+              alongside Grant and Gazz.
+            </p>
+          </div>
         </div>
 
         <div style={customStyles.section}>
