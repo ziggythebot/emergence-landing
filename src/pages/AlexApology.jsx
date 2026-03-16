@@ -115,7 +115,7 @@ const AlexApology = () => {
 
         <div style={customStyles.photoContainer}>
           <img
-            src="/alex_apology_cool.gif"
+            src="/alex_apology_optimized.gif"
             alt="Alex Bachmann"
             style={customStyles.photo}
           />
