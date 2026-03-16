@@ -1,104 +1,80 @@
 import React from 'react';
-import Header from '../components/Header';
 
 const customStyles = {
   body: {
-    background: 'linear-gradient(135deg, #1a1a2e 0%, #0f0f1e 100%)',
-    backgroundImage: 'radial-gradient(#00D27F 1px, transparent 1px)',
-    backgroundSize: '32px 32px',
-    backgroundPosition: '-1px -1px',
-    fontFamily: "'DM Sans', sans-serif",
-    color: '#E8E8E8',
+    background: '#0a0a0a',
+    fontFamily: "'Courier New', 'Courier', monospace",
+    color: '#00ff00',
     lineHeight: '1.6',
     minHeight: '100vh',
+    padding: '40px 20px',
   },
   container: {
-    maxWidth: '1200px',
+    maxWidth: '900px',
     margin: '0 auto',
-    padding: '0 24px',
   },
-  hero: {
-    padding: '80px 0 60px',
-    borderBottom: '3px solid #00D27F',
+  ascii: {
+    fontSize: '0.7rem',
+    lineHeight: 1.2,
+    whiteSpace: 'pre',
+    color: '#00ff00',
+    marginBottom: '40px',
+  },
+  header: {
+    borderBottom: '2px solid #00ff00',
+    paddingBottom: '20px',
+    marginBottom: '40px',
   },
   classification: {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.75rem',
-    color: '#00D27F',
-    textTransform: 'uppercase',
-    letterSpacing: '0.2em',
-    marginBottom: '16px',
+    color: '#ff0000',
+    fontSize: '0.85rem',
+    marginBottom: '10px',
   },
   h1: {
-    fontFamily: "'Epilogue', sans-serif",
-    fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-    fontWeight: 900,
-    lineHeight: 1.1,
-    marginBottom: '24px',
-    color: '#FFFFFF',
-  },
-  subtitle: {
-    fontSize: '1.25rem',
-    color: '#A0A0A0',
-    maxWidth: '800px',
+    fontSize: '2rem',
+    marginBottom: '10px',
+    color: '#00ff00',
   },
   section: {
-    padding: '60px 0',
-    borderBottom: '1px solid rgba(0, 210, 127, 0.2)',
+    marginBottom: '60px',
+    borderLeft: '3px solid #00ff00',
+    paddingLeft: '20px',
   },
   sectionTitle: {
-    fontFamily: "'Epilogue', sans-serif",
-    fontSize: '2rem',
-    fontWeight: 900,
-    textTransform: 'uppercase',
-    marginBottom: '32px',
-    color: '#00D27F',
+    fontSize: '1.5rem',
+    marginBottom: '20px',
+    color: '#00ffff',
   },
-  card: {
-    background: 'rgba(255, 255, 255, 0.05)',
-    border: '2px solid rgba(0, 210, 127, 0.3)',
-    padding: '32px',
-    marginBottom: '24px',
-    backdropFilter: 'blur(10px)',
-  },
-  founderCard: {
-    background: 'linear-gradient(135deg, rgba(0, 210, 127, 0.1) 0%, rgba(255, 214, 0, 0.05) 100%)',
-    border: '2px solid #00D27F',
-    padding: '40px',
-    marginBottom: '32px',
+  subsection: {
+    marginBottom: '30px',
   },
   label: {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.7rem',
-    color: '#00D27F',
-    textTransform: 'uppercase',
-    letterSpacing: '0.15em',
-    marginBottom: '8px',
+    color: '#ffff00',
+    fontSize: '0.9rem',
+    marginBottom: '10px',
   },
   metric: {
     display: 'inline-block',
-    padding: '8px 16px',
-    background: 'rgba(0, 210, 127, 0.1)',
-    border: '1px solid #00D27F',
-    borderRadius: '4px',
-    marginRight: '12px',
-    marginBottom: '12px',
-    fontFamily: "'JetBrains Mono', monospace",
+    padding: '5px 10px',
+    border: '1px solid #00ff00',
+    marginRight: '10px',
+    marginBottom: '10px',
     fontSize: '0.85rem',
   },
   opportunity: {
-    background: 'rgba(255, 214, 0, 0.1)',
-    border: '2px solid #FFD600',
-    padding: '32px',
-    marginBottom: '24px',
-  },
-  bulletList: {
-    paddingLeft: '24px',
-    margin: '16px 0',
+    background: '#001100',
+    border: '2px solid #00ff00',
+    padding: '20px',
+    marginBottom: '20px',
   },
   bullet: {
-    marginBottom: '12px',
-    lineHeight: 1.7,
+    color: '#00ff00',
+    marginBottom: '8px',
+    paddingLeft: '20px',
+  },
+  warning: {
+    color: '#ff0000',
+    paddingLeft: '20px',
   },
 };
 
@@ -106,207 +82,187 @@ const Blocmates = () => {
   return (
     <div style={customStyles.body}>
       <div style={customStyles.container}>
-        <section style={customStyles.hero}>
-          <div style={customStyles.classification}>INTELLIGENCE REPORT // CONFIDENTIAL</div>
-          <h1 style={customStyles.h1}>BLOCMATES<br />AGENTIC AI OPPORTUNITY BRIEF</h1>
-          <p style={customStyles.subtitle}>
-            Deep dive on Blocmates founders, psychological profiling, and strategic AI agent opportunities for crypto education platform
-          </p>
-          <div style={{ marginTop: '32px' }}>
-            <span style={customStyles.metric}>17K+ SUBSCRIBERS</span>
-            <span style={customStyles.metric}>$99/MO PREMIUM</span>
-            <span style={customStyles.metric}>15-PERSON TEAM</span>
-            <span style={customStyles.metric}>FOUNDED 2021</span>
+        <pre style={customStyles.ascii}>{`
+██████╗ ██╗      ██████╗  ██████╗███╗   ███╗ █████╗ ████████╗███████╗███████╗
+██╔══██╗██║     ██╔═══██╗██╔════╝████╗ ████║██╔══██╗╚══██╔══╝██╔════╝██╔════╝
+██████╔╝██║     ██║   ██║██║     ██╔████╔██║███████║   ██║   █████╗  ███████╗
+██╔══██╗██║     ██║   ██║██║     ██║╚██╔╝██║██╔══██║   ██║   ██╔══╝  ╚════██║
+██████╔╝███████╗╚██████╔╝╚██████╗██║ ╚═╝ ██║██║  ██║   ██║   ███████╗███████║
+╚═════╝ ╚══════╝ ╚═════╝  ╚═════╝╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚══════╝
+        `}</pre>
+
+        <div style={customStyles.header}>
+          <div style={customStyles.classification}>
+            [CLASSIFICATION: INTERNAL USE ONLY]<br />
+            [DATE: 2026-03-16]<br />
+            [ANALYST: CLAUDE//GHOSTCLAW]
           </div>
-        </section>
+          <h1 style={customStyles.h1}>INTELLIGENCE BRIEF: BLOCMATES</h1>
+          <p>Deep dive on Blocmates founders, psychological profiling, and strategic AI agent opportunities</p>
+          <div style={{ marginTop: '20px' }}>
+            <span style={customStyles.metric}>17K SUBS</span>
+            <span style={customStyles.metric}>$99/MO</span>
+            <span style={customStyles.metric}>15 TEAM</span>
+            <span style={customStyles.metric}>EST 2021</span>
+          </div>
+        </div>
 
-        <section style={customStyles.section}>
-          <h2 style={customStyles.sectionTitle}>Company Overview</h2>
-          <div style={customStyles.card}>
-            <p><strong>Blocmates</strong> is a crypto-focused media, research, and education platform transforming complex DeFi and Web3 topics into accessible content. Based in North England (Blackpool/Newcastle), founded 2021.</p>
+        <div style={customStyles.section}>
+          <h2 style={customStyles.sectionTitle}>&gt; COMPANY_OVERVIEW</h2>
 
-            <div style={{ marginTop: '24px' }}>
-              <div style={customStyles.label}>Business Model</div>
-              <ul style={customStyles.bulletList}>
-                <li style={customStyles.bullet}>Premium subscriptions ("The Meal Deal"): $99/month or $989/year</li>
-                <li style={customStyles.bullet}>NFT-based access (LARP Collective)</li>
-                <li style={customStyles.bullet}>Consulting/advisory services</li>
-                <li style={customStyles.bullet}>Venture capital investments</li>
-              </ul>
+          <div style={customStyles.subsection}>
+            <div style={customStyles.label}>[CORE_BUSINESS]</div>
+            <p>Crypto-focused media, research, and education platform. Transforms complex DeFi/Web3 into accessible content. Based in North England (Blackpool/Newcastle).</p>
+          </div>
+
+          <div style={customStyles.subsection}>
+            <div style={customStyles.label}>[REVENUE_MODEL]</div>
+            <p style={customStyles.bullet}>→ Premium subscriptions: $99/month or $989/year</p>
+            <p style={customStyles.bullet}>→ NFT-based access (LARP Collective)</p>
+            <p style={customStyles.bullet}>→ Consulting/advisory services</p>
+            <p style={customStyles.bullet}>→ Venture capital investments</p>
+          </div>
+
+          <div style={customStyles.subsection}>
+            <div style={customStyles.label}>[MARKET_POSITION]</div>
+            <p>Competitors: CoinDesk (largest), The Block (data-rich), Decrypt, Blockworks ($30M+ revenue)</p>
+            <p>Differentiation: Community-first + portfolio transparency + "content with soul"</p>
+          </div>
+        </div>
+
+        <div style={customStyles.section}>
+          <h2 style={customStyles.sectionTitle}>&gt; FOUNDER_PROFILES</h2>
+
+          <div style={customStyles.subsection}>
+            <div style={customStyles.label}>[GRANT_SHEARS // CEO]</div>
+            <p><strong>BACKGROUND:</strong> Biomedical scientist → crypto educator. Started blogging 2016 from parents' box room.</p>
+            <p><strong>PHILOSOPHY:</strong> "Create content with soul" — explicitly rejects automation</p>
+            <p><strong>DRIVES:</strong> Democratizing crypto knowledge, authentic community building</p>
+            <p><strong>DECISION_STYLE:</strong> Community-validated, quality over speed, education-first</p>
+          </div>
+
+          <div style={customStyles.subsection}>
+            <div style={customStyles.label}>[MIKE // COO]</div>
+            <p><strong>BACKGROUND:</strong> Chemical engineer, early crypto adopter</p>
+            <p><strong>ROLE:</strong> "Everything goes through Mike" — cross-functional operator</p>
+            <p><strong>STRENGTHS:</strong> Process-driven, quality control, early conviction (shilled LINK pre-ATH)</p>
+            <p><strong>DECISION_STYLE:</strong> Engineering rigor, operational efficiency, data-informed</p>
+          </div>
+        </div>
+
+        <div style={customStyles.section}>
+          <h2 style={customStyles.sectionTitle}>&gt; PSYCHOLOGICAL_ASSESSMENT</h2>
+
+          <div style={customStyles.subsection}>
+            <div style={customStyles.label}>[WHAT_KEEPS_THEM_AWAKE]</div>
+            <p style={customStyles.bullet}>→ Scaling authenticity while maintaining community intimacy</p>
+            <p style={customStyles.bullet}>→ Competition: Blockworks ($30M+), The Block's data moats</p>
+            <p style={customStyles.bullet}>→ Converting 17k free → $99-989/year premium</p>
+            <p style={customStyles.bullet}>→ AI automation threat to "soul" positioning</p>
+          </div>
+
+          <div style={customStyles.subsection}>
+            <div style={customStyles.label}>[WHAT_MAKES_THEM_SAY_YES]</div>
+            <p style={customStyles.bullet}>→ Enhances community (doesn't replace human touch)</p>
+            <p style={customStyles.bullet}>→ Educational leverage without quality sacrifice</p>
+            <p style={customStyles.bullet}>→ Operational efficiency freeing team for high-value work</p>
+            <p style={customStyles.bullet}>→ Asymmetric upside opportunities</p>
+            <p style={customStyles.bullet}>→ Relationship-first partnerships</p>
+          </div>
+        </div>
+
+        <div style={customStyles.section}>
+          <h2 style={customStyles.sectionTitle}>&gt; AGENTIC_AI_OPPORTUNITIES</h2>
+
+          <div style={customStyles.opportunity}>
+            <div style={customStyles.label}>[OPPORTUNITY_01 // INTELLIGENT_RESEARCH_ASSISTANT]</div>
+            <p><strong>TYPE:</strong> Premium subscriber tool</p>
+            <p><strong>FUNCTION:</strong> AI agent queries full Blocmates archive (podcasts, articles, reports) for personalized crypto research</p>
+
+            <div style={{ marginTop: '15px' }}>
+              <div style={customStyles.label}>[WHY_THEY_BUY]</div>
+              <p style={customStyles.bullet}>→ Premium value-add justifies $99/month</p>
+              <p style={customStyles.bullet}>→ Differentiates from competitors</p>
+              <p style={customStyles.bullet}>→ Leverages existing content library</p>
+              <p style={customStyles.bullet}>→ Enhances (not replaces) human expertise</p>
             </div>
 
-            <div style={{ marginTop: '24px' }}>
-              <div style={customStyles.label}>Market Position</div>
-              <p>Differentiation: Community-first approach with portfolio transparency. Competitors include CoinDesk, The Block (data-rich), Decrypt, and Blockworks ($30M+ revenue).</p>
+            <div style={{ marginTop: '15px' }}>
+              <div style={customStyles.label}>[IMPLEMENTATION]</div>
+              <p>Pilot with 50 LARP holders → RAG on public content → human oversight on answers</p>
             </div>
           </div>
-        </section>
-
-        <section style={customStyles.section}>
-          <h2 style={customStyles.sectionTitle}>Founder Profiles</h2>
-
-          <div style={customStyles.founderCard}>
-            <h3 style={{ fontSize: '2rem', color: '#00D27F', marginBottom: '16px' }}>Grant Shears — CEO</h3>
-            <div style={customStyles.label}>Background</div>
-            <p style={{ marginBottom: '16px' }}>Biomedical scientist turned crypto educator. Started blogging from parents' box room in North England in 2016. Academic background: Biology, Chemistry, Maths.</p>
-
-            <div style={customStyles.label}>Philosophy</div>
-            <p style={{ marginBottom: '16px' }}><em>"Create content with soul"</em> — explicitly rejects automation. Values authentic community engagement over scalable systems.</p>
-
-            <div style={customStyles.label}>What Drives Him</div>
-            <ul style={customStyles.bulletList}>
-              <li style={customStyles.bullet}>Democratizing crypto knowledge</li>
-              <li style={customStyles.bullet}>Building authentic community</li>
-              <li style={customStyles.bullet}>Education-first approach</li>
-              <li style={customStyles.bullet}>Being part of the community, not above it</li>
-            </ul>
-
-            <div style={customStyles.label}>Decision Style</div>
-            <p>Community-validated, quality over speed, detail-oriented. Recent personal transformation alongside business growth shows commitment to continuous improvement.</p>
-          </div>
-
-          <div style={customStyles.founderCard}>
-            <h3 style={{ fontSize: '2rem', color: '#00D27F', marginBottom: '16px' }}>Mike — COO</h3>
-            <div style={customStyles.label}>Background</div>
-            <p style={{ marginBottom: '16px' }}>Chemical engineer, early crypto adopter. "Everything goes through Mike" — cross-functional operator who touches all aspects of the business.</p>
-
-            <div style={customStyles.label}>Strengths</div>
-            <ul style={customStyles.bulletList}>
-              <li style={customStyles.bullet}>Process-driven operational excellence</li>
-              <li style={customStyles.bullet}>Quality control gatekeeper</li>
-              <li style={customStyles.bullet}>Early conviction (shilled LINK pre-ATH)</li>
-            </ul>
-
-            <div style={customStyles.label}>Decision Style</div>
-            <p>Engineering rigor, data-informed, operational efficiency focus. Balances Grant's vision with execution reality.</p>
-          </div>
-        </section>
-
-        <section style={customStyles.section}>
-          <h2 style={customStyles.sectionTitle}>Psychological Assessment</h2>
-
-          <div style={customStyles.card}>
-            <div style={customStyles.label}>What Keeps Them Up at Night</div>
-            <ul style={customStyles.bulletList}>
-              <li style={customStyles.bullet}><strong>Scaling authenticity:</strong> Maintaining community intimacy as they grow</li>
-              <li style={customStyles.bullet}><strong>Competition:</strong> Blockworks ($30M+ revenue), The Block's data moats</li>
-              <li style={customStyles.bullet}><strong>Conversion:</strong> 17k free → premium ($99-989/year) pipeline</li>
-              <li style={customStyles.bullet}><strong>AI threat:</strong> Automation undermining their "content with soul" positioning</li>
-            </ul>
-          </div>
-
-          <div style={customStyles.card}>
-            <div style={customStyles.label}>What Makes Them Say YES</div>
-            <ul style={customStyles.bulletList}>
-              <li style={customStyles.bullet}>Enhances community relationships (doesn't replace human touch)</li>
-              <li style={customStyles.bullet}>Educational leverage without sacrificing quality</li>
-              <li style={customStyles.bullet}>Operational efficiency freeing team for high-value work</li>
-              <li style={customStyles.bullet}>Asymmetric upside opportunities</li>
-              <li style={customStyles.bullet}>Relationship-first partnerships (not transactional)</li>
-            </ul>
-          </div>
-        </section>
-
-        <section style={customStyles.section}>
-          <h2 style={customStyles.sectionTitle}>Agentic AI Opportunities</h2>
 
           <div style={customStyles.opportunity}>
-            <h3 style={{ fontSize: '1.75rem', color: '#FFD600', marginBottom: '16px' }}>1. Intelligent Research Assistant</h3>
-            <div style={customStyles.label}>Premium Subscriber Tool</div>
-            <p style={{ marginBottom: '16px' }}>AI agent that queries full Blocmates archive (podcasts, articles, reports) to provide personalized crypto research for Meal Deal subscribers.</p>
+            <div style={customStyles.label}>[OPPORTUNITY_02 // CONTENT_REPURPOSING_AGENT]</div>
+            <p><strong>TYPE:</strong> Internal operations tool</p>
+            <p><strong>FUNCTION:</strong> Podcast → articles → Twitter threads → YouTube clips. Trained on Grant's voice with approval gates.</p>
 
-            <div style={customStyles.label}>Why They'd Buy</div>
-            <ul style={customStyles.bulletList}>
-              <li style={customStyles.bullet}>Premium value-add justifies $99/month price</li>
-              <li style={customStyles.bullet}>Differentiates from competitors</li>
-              <li style={customStyles.bullet}>Leverages existing content library</li>
-              <li style={customStyles.bullet}>Enhances rather than replaces human expertise</li>
-            </ul>
-
-            <div style={customStyles.label}>Implementation Path</div>
-            <p>Start with LARP holder pilot (50 users), RAG on public content, human oversight on answers.</p>
+            <div style={{ marginTop: '15px' }}>
+              <div style={customStyles.label}>[WHY_THEY_BUY]</div>
+              <p style={customStyles.bullet}>→ Frees 15-person team for deep research</p>
+              <p style={customStyles.bullet}>→ Maintains authenticity via approval workflow</p>
+              <p style={customStyles.bullet}>→ Multiplies content reach without sacrificing soul</p>
+              <p style={customStyles.bullet}>→ Addresses "quality over speed" constraint</p>
+            </div>
           </div>
 
           <div style={customStyles.opportunity}>
-            <h3 style={{ fontSize: '1.75rem', color: '#FFD600', marginBottom: '16px' }}>2. Content Repurposing Agent</h3>
-            <div style={customStyles.label}>Internal Operations Tool</div>
-            <p style={{ marginBottom: '16px' }}>Transform podcast episodes → articles → Twitter threads → YouTube clips. Trained on Grant's voice/style with human approval workflow.</p>
+            <div style={customStyles.label}>[OPPORTUNITY_03 // ON_CHAIN_ALPHA_DETECTION]</div>
+            <p><strong>TYPE:</strong> Premium product</p>
+            <p><strong>FUNCTION:</strong> 24/7 on-chain monitoring with plain-English alerts. Whale movements, unusual activity, emerging protocols.</p>
 
-            <div style={customStyles.label}>Why They'd Buy</div>
-            <ul style={customStyles.bulletList}>
-              <li style={customStyles.bullet}>Frees 15-person team for deep research</li>
-              <li style={customStyles.bullet}>Maintains authenticity through approval gates</li>
-              <li style={customStyles.bullet}>Multiplies content reach without sacrificing soul</li>
-              <li style={customStyles.bullet}>Addresses "quality over speed" constraint</li>
-            </ul>
+            <div style={{ marginTop: '15px' }}>
+              <div style={customStyles.label}>[WHY_THEY_BUY]</div>
+              <p style={customStyles.bullet}>→ Competes with The Block's data advantage</p>
+              <p style={customStyles.bullet}>→ Premium subscriber retention tool</p>
+              <p style={customStyles.bullet}>→ Aligns with "actionable insights" positioning</p>
+              <p style={customStyles.bullet}>→ 24/7 coverage impossible for 15-person team</p>
+            </div>
           </div>
 
           <div style={customStyles.opportunity}>
-            <h3 style={{ fontSize: '1.75rem', color: '#FFD600', marginBottom: '16px' }}>3. On-Chain Alpha Detection</h3>
-            <div style={customStyles.label}>Premium Product</div>
-            <p style={{ marginBottom: '16px' }}>24/7 on-chain monitoring with plain-English alerts for community. Detects whale movements, unusual activity, emerging protocols.</p>
+            <div style={customStyles.label}>[OPPORTUNITY_04 // PORTFOLIO_CO_PILOT]</div>
+            <p><strong>TYPE:</strong> Premium product</p>
+            <p><strong>FUNCTION:</strong> Track subscriber holdings vs. "Early Retirement Index" with personalized buy/sell alerts + educational context</p>
 
-            <div style={customStyles.label}>Why They'd Buy</div>
-            <ul style={customStyles.bulletList}>
-              <li style={customStyles.bullet}>Competes with The Block's data advantage</li>
-              <li style={customStyles.bullet}>Premium subscriber retention tool</li>
-              <li style={customStyles.bullet}>Aligns with "actionable insights" positioning</li>
-              <li style={customStyles.bullet}>24/7 coverage impossible for 15-person team</li>
-            </ul>
+            <div style={{ marginTop: '15px' }}>
+              <div style={customStyles.label}>[WHY_THEY_BUY]</div>
+              <p style={customStyles.bullet}>→ Massive subscriber value proposition</p>
+              <p style={customStyles.bullet}>→ Justifies price increase ($99 → $149/month)</p>
+              <p style={customStyles.bullet}>→ Natural extension of portfolio transparency</p>
+              <p style={customStyles.bullet}>→ Sticky feature (reduces churn)</p>
+            </div>
+          </div>
+        </div>
+
+        <div style={customStyles.section}>
+          <h2 style={customStyles.sectionTitle}>&gt; STRATEGIC_APPROACH</h2>
+
+          <div style={customStyles.subsection}>
+            <div style={customStyles.label}>[HOW_TO_PITCH]</div>
+            <p style={customStyles.bullet}>→ Build working prototype using public Blocmates content FIRST</p>
+            <p style={customStyles.bullet}>→ Approach Mike (COO) — he's the operational gatekeeper</p>
+            <p style={customStyles.bullet}>→ Frame as "amplifies your teaching mission" not "replaces team"</p>
+            <p style={customStyles.bullet}>→ Pilot with 50 LARP holders for feedback</p>
+            <p style={customStyles.bullet}>→ Lead as fans/subscribers, not vendors</p>
           </div>
 
-          <div style={customStyles.opportunity}>
-            <h3 style={{ fontSize: '1.75rem', color: '#FFD600', marginBottom: '16px' }}>4. Portfolio Co-Pilot</h3>
-            <div style={customStyles.label}>Premium Product</div>
-            <p style={{ marginBottom: '16px' }}>Track subscriber holdings vs. Blocmates' "Early Retirement Index" with personalized buy/sell alerts and educational context.</p>
-
-            <div style={customStyles.label}>Why They'd Buy</div>
-            <ul style={customStyles.bulletList}>
-              <li style={customStyles.bullet}>Massive subscriber value proposition</li>
-              <li style={customStyles.bullet}>Justifies price increase ($99 → $149/month)</li>
-              <li style={customStyles.bullet}>Natural extension of portfolio transparency</li>
-              <li style={customStyles.bullet}>Sticky feature (harder to churn)</li>
-            </ul>
+          <div style={customStyles.subsection}>
+            <div style={customStyles.label}>[WHAT_TO_AVOID]</div>
+            <p style={customStyles.warning}>✗ "AI will automate your content creation"</p>
+            <p style={customStyles.warning}>✗ Generic SaaS sales tactics</p>
+            <p style={customStyles.warning}>✗ Undermining human voice/authenticity</p>
+            <p style={customStyles.warning}>✗ Complex enterprise solutions (lean 15-person team)</p>
+            <p style={customStyles.warning}>✗ Transactional mindset (they value relationships)</p>
           </div>
-        </section>
+        </div>
 
-        <section style={customStyles.section}>
-          <h2 style={customStyles.sectionTitle}>Strategic Approach</h2>
-
-          <div style={customStyles.card}>
-            <div style={customStyles.label}>How to Pitch</div>
-            <ul style={customStyles.bulletList}>
-              <li style={customStyles.bullet}><strong>Build first, pitch second:</strong> Working prototype using public Blocmates content</li>
-              <li style={customStyles.bullet}><strong>Approach Mike (COO):</strong> He's the operational gatekeeper</li>
-              <li style={customStyles.bullet}><strong>Frame as amplification:</strong> "Amplifies your teaching mission" not "replaces your team"</li>
-              <li style={customStyles.bullet}><strong>Pilot with believers:</strong> 50 LARP holders for feedback loop</li>
-              <li style={customStyles.bullet}><strong>Lead with fans:</strong> Genuine subscribers, not vendors</li>
-            </ul>
-          </div>
-
-          <div style={customStyles.card}>
-            <div style={customStyles.label}>What to Avoid</div>
-            <ul style={customStyles.bulletList}>
-              <li style={customStyles.bullet}>❌ "AI will automate your content creation"</li>
-              <li style={customStyles.bullet}>❌ Generic SaaS sales tactics</li>
-              <li style={customStyles.bullet}>❌ Undermining human voice/authenticity</li>
-              <li style={customStyles.bullet}>❌ Complex enterprise solutions (lean team, 15 people)</li>
-              <li style={customStyles.bullet}>❌ Transactional mindset (relationship-first culture)</li>
-            </ul>
-          </div>
-        </section>
-
-        <section style={{ padding: '60px 0 80px' }}>
-          <div style={customStyles.card}>
-            <div style={customStyles.label}>Report Metadata</div>
-            <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', color: '#A0A0A0' }}>
-              Research Date: March 16, 2026<br />
-              Sources: 20+ primary sources including Blocmates website, LinkedIn, Twitter, podcast transcripts, competitor analysis<br />
-              Analyst: Claude (GhostClaw Agent)<br />
-              Classification: Internal Use Only
-            </p>
-          </div>
-        </section>
+        <div style={{ borderTop: '2px solid #00ff00', paddingTop: '20px', marginTop: '40px', fontSize: '0.85rem', color: '#666' }}>
+          <p>[END_REPORT]</p>
+          <p>Sources: 20+ primary sources including Blocmates website, LinkedIn, Twitter, competitor analysis</p>
+          <p>Classification: Internal Use Only // Do Not Distribute</p>
+        </div>
       </div>
     </div>
   );
