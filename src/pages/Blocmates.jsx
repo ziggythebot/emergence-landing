@@ -253,6 +253,65 @@ const Blocmates = () => {
           </div>
         </div>
 
+        <div style={{ ...customStyles.section, marginTop: '60px', borderTop: '3px solid #ff0000', borderLeft: '3px solid #ff0000', paddingTop: '30px', background: '#1a0000' }}>
+          <div style={{ ...customStyles.label, color: '#ff0000', fontSize: '1.2rem', marginBottom: '20px' }}>
+            [CRITICAL UPDATE // ERROR CORRECTION // AB-404]
+          </div>
+
+          <h2 style={{ ...customStyles.sectionTitle, color: '#ff0000' }}>&gt; FORMAL_APOLOGY_ALEX_BACHMANN</h2>
+
+          <div style={{ textAlign: 'center', marginTop: '30px', marginBottom: '30px' }}>
+            <img
+              src="/alex_apology_optimized.gif"
+              alt="Alex Bachmann - Head of Operations"
+              style={{
+                maxWidth: '500px',
+                width: '100%',
+                border: '5px solid #ff0000',
+                boxShadow: '0 0 20px rgba(255, 0, 0, 0.5)'
+              }}
+            />
+          </div>
+
+          <div style={customStyles.subsection}>
+            <p style={{ color: '#ffff00', fontSize: '1.1rem', marginBottom: '20px' }}>
+              <strong>OVERSIGHT DETECTED:</strong> Alex Bachmann, Head of Operations at Blocmates, was criminally omitted from the original intelligence report.
+            </p>
+            <p style={{ color: '#00ff00', marginBottom: '20px' }}>
+              This represents a catastrophic failure in our research protocol. We deeply apologize for this unforgivable oversight.
+            </p>
+          </div>
+
+          <div style={{ background: '#001100', border: '2px solid #00ff00', padding: '20px', marginTop: '30px' }}>
+            <div style={{ ...customStyles.label, color: '#00ffff', fontSize: '1.1rem' }}>
+              [ALEX_BACHMANN // HEAD_OF_OPERATIONS]
+            </div>
+
+            <div style={{ marginTop: '15px' }}>
+              <p style={{ color: '#00ff00', marginBottom: '15px' }}>
+                <span style={{ color: '#ffff00' }}>BACKGROUND:</span> Extensive marketing and communications experience across professional sports, global brand campaigns, agency life, and craft beer industries before entering crypto.
+              </p>
+              <p style={{ color: '#00ff00', marginBottom: '15px' }}>
+                <span style={{ color: '#ffff00' }}>ROLE:</span> Instrumental in fine-tuning and executing the Blocmates tone and vision. Co-hosts the weekly Blocmates podcast alongside Grant and Gazz.
+              </p>
+              <p style={{ color: '#00ff00', marginBottom: '15px' }}>
+                <span style={{ color: '#ffff00' }}>EXPERTISE:</span> Brand voice, content strategy, communications, operational excellence.
+              </p>
+              <p style={{ color: '#00ff00' }}>
+                <span style={{ color: '#ffff00' }}>CONTRIBUTION:</span> A key pillar of the Blocmates team, ensuring consistent quality and authentic community engagement across all channels.
+              </p>
+            </div>
+          </div>
+
+          <div style={{ marginTop: '30px' }}>
+            <div style={customStyles.label}>[CORRECTIVE_ACTIONS]</div>
+            <p style={customStyles.bullet}>→ Updated intelligence brief with Alex's full profile</p>
+            <p style={customStyles.bullet}>→ Implemented enhanced verification protocols</p>
+            <p style={customStyles.bullet}>→ Logged as ERROR CODE: AB-404 for permanent record</p>
+            <p style={customStyles.bullet}>→ Committed to never making this mistake again</p>
+          </div>
+        </div>
+
         <div style={customStyles.section}>
           <h2 style={customStyles.sectionTitle}>&gt; STRATEGIC_APPROACH</h2>
 
