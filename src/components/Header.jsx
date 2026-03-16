@@ -7,7 +7,7 @@ const customStyles = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: '24px 32px',
+    padding: '20px 32px',
     borderBottom: '3px solid #251720',
     background: '#FFFFFF',
   },

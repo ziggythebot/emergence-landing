@@ -26,7 +26,7 @@ const customStyles = {
     flexDirection: 'column',
   },
   hero: {
-    padding: '80px 64px',
+    padding: '48px 64px',
     borderBottom: '3px solid #251720',
     textAlign: 'center',
     background: '#FFFFFF',
@@ -38,10 +38,10 @@ const customStyles = {
     letterSpacing: '0.1em',
     color: '#00D27F',
     display: 'block',
-    marginBottom: '1rem',
+    marginBottom: '0.5rem',
   },
   filterSection: {
-    padding: '40px 64px',
+    padding: '32px 64px',
     borderBottom: '3px solid #251720',
     background: '#FFFFFF',
   },
@@ -49,7 +49,7 @@ const customStyles = {
     display: 'grid',
     gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
     gap: '16px',
-    marginTop: '24px',
+    marginTop: '16px',
   },
   filterBtn: {
     padding: '12px 24px',
@@ -72,14 +72,14 @@ const customStyles = {
     gap: '0',
   },
   partnerCard: {
-    padding: '48px',
+    padding: '40px',
     borderBottom: '3px solid #251720',
     borderRight: '3px solid #251720',
     background: '#FFFFFF',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    minHeight: '280px',
+    minHeight: '260px',
   },
   logoPlaceholder: {
     width: '120px',
@@ -92,10 +92,10 @@ const customStyles = {
     fontFamily: "'Epilogue', sans-serif",
     fontWeight: 900,
     fontSize: '0.9rem',
-    marginBottom: '24px',
+    marginBottom: '16px',
   },
   ctaSection: {
-    padding: '80px 64px',
+    padding: '48px 64px',
     borderBottom: '3px solid #251720',
     textAlign: 'center',
     background: '#EAF8F5',
@@ -159,7 +159,7 @@ const Partners = () => {
         {/* Hero */}
         <section style={customStyles.hero}>
           <span style={customStyles.monoLabel}>NETWORK_DIRECTORY</span>
-          <h1 style={{ fontSize: '3.5rem', margin: '24px 0 16px 0', color: '#251720' }}>
+          <h1 style={{ fontSize: '3.5rem', margin: '12px 0 12px 0', color: '#251720' }}>
             PARTNERS.
           </h1>
           <p style={{ fontSize: '1.1rem', color: '#5A4C55', maxWidth: '600px', margin: '0 auto' }}>
@@ -198,7 +198,7 @@ const Partners = () => {
                   {partner.description}
                 </p>
               </div>
-              <div style={{ marginTop: '24px' }}>
+              <div style={{ marginTop: '16px' }}>
                 <span style={{
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: '0.7rem',
@@ -216,10 +216,10 @@ const Partners = () => {
         {/* CTA Section */}
         <section style={customStyles.ctaSection}>
           <span style={customStyles.monoLabel}>JOIN_NETWORK</span>
-          <h2 style={{ fontSize: '2.5rem', margin: '16px 0 24px 0' }}>
+          <h2 style={{ fontSize: '2.5rem', margin: '12px 0 16px 0' }}>
             BECOME A PARTNER.
           </h2>
-          <p style={{ fontSize: '1.1rem', color: '#5A4C55', maxWidth: '600px', margin: '0 auto 40px auto' }}>
+          <p style={{ fontSize: '1.1rem', color: '#5A4C55', maxWidth: '600px', margin: '0 auto 32px auto' }}>
             Event organizer? Co-working hub? Tech company hosting on April 28-30? Join the network.
           </p>
           <a

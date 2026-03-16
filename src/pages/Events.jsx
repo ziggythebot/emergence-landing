@@ -34,7 +34,7 @@ const customStyles = {
   filterSystem: {
     background: '#251720',
     color: '#FFFFFF',
-    padding: '40px 64px',
+    padding: '32px 64px',
     borderBottom: '3px solid #251720',
   },
   filterGrid: {
@@ -79,7 +79,7 @@ const customStyles = {
     transition: 'all 0.2s',
   },
   scheduleHeader: {
-    padding: '64px 64px 32px 64px',
+    padding: '48px 64px 24px 64px',
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
@@ -105,7 +105,7 @@ const customStyles = {
     borderTop: '3px solid #251720',
   },
   eventCard: {
-    padding: '40px',
+    padding: '32px',
     borderRight: '3px solid #251720',
     borderBottom: '3px solid #251720',
     display: 'flex',
@@ -115,7 +115,7 @@ const customStyles = {
     background: '#FFFFFF',
   },
   eventCardHover: {
-    padding: '40px',
+    padding: '32px',
     borderRight: '3px solid #251720',
     borderBottom: '3px solid #251720',
     display: 'flex',
@@ -127,7 +127,7 @@ const customStyles = {
   eventTime: {
     fontFamily: "'JetBrains Mono', monospace",
     fontWeight: 700,
-    marginBottom: '8px',
+    marginBottom: '6px',
     display: 'flex',
     justifyContent: 'space-between',
   },
@@ -141,13 +141,13 @@ const customStyles = {
     fontFamily: "'Epilogue', sans-serif",
     fontSize: '1.75rem',
     fontWeight: 900,
-    marginBottom: '16px',
+    marginBottom: '12px',
     lineHeight: 1.1,
   },
   eventDesc: {
     color: '#5A4C55',
     fontSize: '1rem',
-    marginBottom: '24px',
+    marginBottom: '20px',
     flexGrow: 1,
   },
   eventMeta: {
@@ -155,7 +155,7 @@ const customStyles = {
     justifyContent: 'space-between',
     alignItems: 'center',
     borderTop: '1px solid rgba(37, 23, 32, 0.15)',
-    paddingTop: '16px',
+    paddingTop: '12px',
   },
   eventLocation: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -210,7 +210,7 @@ const customStyles = {
     fontSize: '0.75rem',
     fontWeight: 700,
     display: 'inline-block',
-    marginBottom: '16px',
+    marginBottom: '8px',
     border: '2px solid #00D27F',
     padding: '4px 10px',
     color: '#00D27F',

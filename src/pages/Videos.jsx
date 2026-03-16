@@ -26,7 +26,7 @@ const customStyles = {
     flexDirection: 'column',
   },
   hero: {
-    padding: '64px',
+    padding: '48px',
     borderBottom: '3px solid #251720',
     textAlign: 'center',
     background: '#FFFFFF',
@@ -38,7 +38,7 @@ const customStyles = {
     letterSpacing: '0.1em',
     color: '#00D27F',
     display: 'block',
-    marginBottom: '1rem',
+    marginBottom: '0.5rem',
   },
   videoGrid: {
     display: 'grid',
@@ -46,7 +46,7 @@ const customStyles = {
     gap: '0',
   },
   videoCard: {
-    padding: '64px',
+    padding: '48px',
     borderBottom: '3px solid #251720',
     background: '#FFFFFF',
   },
@@ -58,13 +58,13 @@ const customStyles = {
     boxShadow: '8px 8px 0px #251720',
     overflow: 'hidden',
     background: '#000000',
-    marginTop: '32px',
+    marginTop: '24px',
   },
   specs: {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
     gap: '24px',
-    marginTop: '24px',
+    marginTop: '16px',
   },
   specItem: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -92,7 +92,7 @@ const customStyles = {
     cursor: 'pointer',
     transition: 'all 0.1s ease',
     boxShadow: '4px 4px 0px #251720',
-    marginTop: '24px',
+    marginTop: '20px',
     textDecoration: 'none',
   },
   footer: {
@@ -114,7 +114,7 @@ const Videos = () => {
         {/* Hero */}
         <section style={customStyles.hero}>
           <span style={customStyles.monoLabel}>VIDEO_LIBRARY</span>
-          <h1 style={{ fontSize: '3.5rem', margin: '24px 0 16px 0', color: '#251720' }}>
+          <h1 style={{ fontSize: '3.5rem', margin: '12px 0 12px 0', color: '#251720' }}>
             REMOTION VIDEOS.
           </h1>
           <p style={{ fontSize: '1.1rem', color: '#5A4C55', maxWidth: '600px', margin: '0 auto' }}>
@@ -127,10 +127,10 @@ const Videos = () => {
           {/* Twitter Announcement */}
           <div style={customStyles.videoCard}>
             <span style={customStyles.monoLabel}>01_TWITTER</span>
-            <h2 style={{ fontSize: '2.5rem', margin: '0 0 16px 0', color: '#251720' }}>
+            <h2 style={{ fontSize: '2.5rem', margin: '0 0 12px 0', color: '#251720' }}>
               TWITTER ANNOUNCEMENT
             </h2>
-            <p style={{ fontSize: '1rem', color: '#5A4C55', marginBottom: '24px' }}>
+            <p style={{ fontSize: '1rem', color: '#5A4C55', marginBottom: '16px' }}>
               Brand intro video. Title animation, date reveal, tagline, pulsing CTA. Perfect for Twitter/X and LinkedIn posts.
             </p>
 
@@ -173,10 +173,10 @@ const Videos = () => {
           {/* Event Showcase */}
           <div style={customStyles.videoCard}>
             <span style={customStyles.monoLabel}>02_INSTAGRAM</span>
-            <h2 style={{ fontSize: '2.5rem', margin: '0 0 16px 0', color: '#251720' }}>
+            <h2 style={{ fontSize: '2.5rem', margin: '0 0 12px 0', color: '#251720' }}>
               EVENT SHOWCASE
             </h2>
-            <p style={{ fontSize: '1rem', color: '#5A4C55', marginBottom: '24px' }}>
+            <p style={{ fontSize: '1rem', color: '#5A4C55', marginBottom: '16px' }}>
               Vertical video for Instagram/TikTok. Intro → 4 event cards → CTA. Encode Club, Space, Raum, After Party.
             </p>
 
@@ -219,10 +219,10 @@ const Videos = () => {
           {/* Hero Loop */}
           <div style={{ ...customStyles.videoCard, ...customStyles.videoCardLast }}>
             <span style={customStyles.monoLabel}>03_HERO_LOOP</span>
-            <h2 style={{ fontSize: '2.5rem', margin: '0 0 16px 0', color: '#251720' }}>
+            <h2 style={{ fontSize: '2.5rem', margin: '0 0 12px 0', color: '#251720' }}>
               HERO LOOP
             </h2>
-            <p style={{ fontSize: '1rem', color: '#5A4C55', marginBottom: '24px' }}>
+            <p style={{ fontSize: '1rem', color: '#5A4C55', marginBottom: '16px' }}>
               Seamless 5-second loop. Rotating network nodes, pulsing center, floating text. Use as website hero or email header.
             </p>
 

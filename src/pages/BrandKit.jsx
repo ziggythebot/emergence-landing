@@ -46,7 +46,7 @@ const customStyles = {
     gap: '0',
   },
   assetCard: {
-    padding: '48px',
+    padding: '40px',
     borderBottom: '3px solid #251720',
     borderRight: '3px solid #251720',
     background: '#FFFFFF',
@@ -58,7 +58,7 @@ const customStyles = {
     boxShadow: '8px 8px 0px #251720',
     overflow: 'hidden',
     background: '#F5F5F5',
-    marginBottom: '24px',
+    marginBottom: '20px',
   },
   downloadBtn: {
     display: 'inline-flex',
@@ -143,14 +143,14 @@ const BrandKit = () => {
                 <h2 style={{ fontSize: '2rem', margin: '0 0 12px 0', color: '#251720' }}>
                   {asset.title.toUpperCase()}
                 </h2>
-                <p style={{ fontSize: '0.95rem', color: '#5A4C55', lineHeight: 1.6, marginBottom: '24px' }}>
+                <p style={{ fontSize: '0.95rem', color: '#5A4C55', lineHeight: 1.6, marginBottom: '20px' }}>
                   {asset.description}
                 </p>
                 <div style={{
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: '0.75rem',
                   color: '#5A4C55',
-                  marginBottom: '24px',
+                  marginBottom: '20px',
                 }}>
                   <div style={{ color: '#00D27F', marginBottom: '4px', textTransform: 'uppercase', fontSize: '0.65rem' }}>
                     Dimensions

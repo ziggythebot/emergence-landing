@@ -71,7 +71,7 @@ const customStyles = {
     borderBottom: '3px solid #251720',
   },
   heroContent: {
-    padding: '80px 64px',
+    padding: '48px 64px',
     borderRight: '3px solid #251720',
     display: 'flex',
     flexDirection: 'column',
@@ -93,7 +93,7 @@ const customStyles = {
     letterSpacing: '0.1em',
     color: '#5A4C55',
     display: 'block',
-    marginBottom: '0.5rem',
+    marginBottom: '0.25rem',
   },
   pill: {
     display: 'inline-flex',
@@ -116,13 +116,13 @@ const customStyles = {
     lineHeight: '1.05',
     letterSpacing: '-0.02em',
     fontSize: 'clamp(3rem, 6vw, 5.5rem)',
-    marginBottom: '24px',
+    marginBottom: '12px',
   },
   subtitle: {
     fontSize: '1.25rem',
     color: '#5A4C55',
     maxWidth: '480px',
-    marginBottom: '48px',
+    marginBottom: '32px',
   },
   heroCtas: {
     display: 'flex',
@@ -164,7 +164,7 @@ const customStyles = {
     borderBottom: '3px solid #251720',
   },
   explHeader: {
-    padding: '64px',
+    padding: '48px',
     borderRight: '3px solid #251720',
     background: '#251720',
     color: '#FFFFFF',
@@ -178,10 +178,10 @@ const customStyles = {
     fontSize: '3rem',
   },
   explContent: {
-    padding: '64px',
+    padding: '48px',
     display: 'grid',
     gridTemplateColumns: '1fr',
-    gap: '32px',
+    gap: '24px',
     background: '#FFFFFF',
   },
   explParagraph: {
@@ -196,7 +196,7 @@ const customStyles = {
     borderBottom: '3px solid #251720',
   },
   mechCard: {
-    padding: '48px',
+    padding: '40px',
     borderRight: '3px solid #251720',
     background: '#FFFFFF',
     position: 'relative',
@@ -211,7 +211,7 @@ const customStyles = {
     height: '64px',
     border: '3px solid #251720',
     borderRadius: '16px',
-    marginBottom: '32px',
+    marginBottom: '20px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -223,11 +223,11 @@ const customStyles = {
     lineHeight: '1.05',
     letterSpacing: '-0.02em',
     fontSize: '2rem',
-    marginBottom: '16px',
+    marginBottom: '12px',
   },
   mechP: {
     color: '#5A4C55',
-    marginBottom: '32px',
+    marginBottom: '24px',
     flexGrow: 1,
   },
   venue: {
@@ -237,7 +237,7 @@ const customStyles = {
     background: '#FFFFFF',
   },
   venueInfo: {
-    padding: '64px',
+    padding: '48px',
     borderRight: '3px solid #251720',
     display: 'flex',
     flexDirection: 'column',
@@ -249,12 +249,12 @@ const customStyles = {
     lineHeight: '1.05',
     letterSpacing: '-0.02em',
     fontSize: '4rem',
-    marginBottom: '16px',
+    marginBottom: '12px',
   },
   venueMeta: {
     display: 'flex',
     gap: '16px',
-    marginBottom: '32px',
+    marginBottom: '24px',
     flexWrap: 'wrap',
   },
   venueImageContainer: {
@@ -280,7 +280,7 @@ const customStyles = {
     zIndex: 10,
   },
   footerCapture: {
-    padding: '120px 64px',
+    padding: '64px 64px',
     background: '#251720',
     color: '#FFFFFF',
     textAlign: 'center',
@@ -294,7 +294,7 @@ const customStyles = {
     letterSpacing: '-0.02em',
     fontSize: '4rem',
     color: '#FFFFFF',
-    marginBottom: '48px',
+    marginBottom: '32px',
     position: 'relative',
     zIndex: 2,
   },
@@ -516,23 +516,23 @@ const MechanicsSection = () => (
 
 const PoweredBySection = () => (
   <section style={{
-    padding: '64px',
+    padding: '48px',
     borderBottom: '3px solid #251720',
     background: '#FFFFFF',
     textAlign: 'center',
   }}>
-    <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '16px' }}>
+    <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '8px' }}>
       POWERED_BY
     </span>
-    <h2 style={{ fontSize: '2rem', marginBottom: '48px' }}>
+    <h2 style={{ fontSize: '2rem', marginBottom: '32px' }}>
       LONDON'S TECH NETWORK.
     </h2>
     <div style={{
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-      gap: '32px',
+      gap: '24px',
       maxWidth: '900px',
-      margin: '0 auto 48px auto',
+      margin: '0 auto 32px auto',
     }}>
       {['Partner 1', 'Partner 2', 'Partner 3', 'Partner 4', 'Partner 5', 'Partner 6', 'Partner 7', 'Partner 8'].map((name, i) => (
         <div
