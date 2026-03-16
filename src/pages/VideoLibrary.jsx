@@ -26,7 +26,7 @@ const customStyles = {
     flexDirection: 'column',
   },
   hero: {
-    padding: '80px 64px',
+    padding: '48px 64px',
     borderBottom: '3px solid #251720',
     textAlign: 'center',
     background: '#FFFFFF',
@@ -183,7 +183,7 @@ const VideoLibrary = () => {
                 <h2 style={{ fontSize: '2rem', margin: '0 0 12px 0', color: '#251720' }}>
                   {video.title.toUpperCase()}
                 </h2>
-                <p style={{ fontSize: '0.95rem', color: '#5A4C55', lineHeight: 1.6, marginBottom: '24px' }}>
+                <p style={{ fontSize: '0.95rem', color: '#5A4C55', lineHeight: 1.6, marginBottom: '16px' }}>
                   {video.description}
                 </p>
                 <div style={{
@@ -192,7 +192,7 @@ const VideoLibrary = () => {
                   gap: '16px',
                   fontFamily: "'JetBrains Mono', monospace",
                   fontSize: '0.75rem',
-                  marginBottom: '24px',
+                  marginBottom: '16px',
                 }}>
                   <div>
                     <div style={{ color: '#00D27F', marginBottom: '4px', textTransform: 'uppercase', fontSize: '0.65rem' }}>

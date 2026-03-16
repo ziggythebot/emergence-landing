@@ -122,7 +122,7 @@ const customStyles = {
     fontSize: '1.25rem',
     color: '#5A4C55',
     maxWidth: '480px',
-    marginBottom: '32px',
+    marginBottom: '16px',
   },
   heroCtas: {
     display: 'flex',
@@ -227,7 +227,7 @@ const customStyles = {
   },
   mechP: {
     color: '#5A4C55',
-    marginBottom: '24px',
+    marginBottom: '16px',
     flexGrow: 1,
   },
   venue: {
@@ -254,7 +254,7 @@ const customStyles = {
   venueMeta: {
     display: 'flex',
     gap: '16px',
-    marginBottom: '24px',
+    marginBottom: '16px',
     flexWrap: 'wrap',
   },
   venueImageContainer: {
@@ -294,7 +294,7 @@ const customStyles = {
     letterSpacing: '-0.02em',
     fontSize: '4rem',
     color: '#FFFFFF',
-    marginBottom: '32px',
+    marginBottom: '16px',
     position: 'relative',
     zIndex: 2,
   },
@@ -524,7 +524,7 @@ const PoweredBySection = () => (
     <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '8px' }}>
       POWERED_BY
     </span>
-    <h2 style={{ fontSize: '2rem', marginBottom: '32px' }}>
+    <h2 style={{ fontSize: '2rem', marginBottom: '16px' }}>
       LONDON'S TECH NETWORK.
     </h2>
     <div style={{

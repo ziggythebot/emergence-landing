@@ -68,7 +68,7 @@ const customStyles = {
     flexGrow: 1,
   },
   confirmationContent: {
-    padding: '80px 64px',
+    padding: '48px 64px',
     borderRight: '3px solid #251720',
     display: 'flex',
     flexDirection: 'column',
@@ -80,7 +80,7 @@ const customStyles = {
     lineHeight: '1.05',
     letterSpacing: '-0.02em',
     fontSize: '5rem',
-    marginBottom: '24px',
+    marginBottom: '16px',
   },
   subtext: {
     fontSize: '1.5rem',
@@ -143,7 +143,7 @@ const customStyles = {
     fontSize: '0.95rem',
   },
   shareSection: {
-    padding: '64px',
+    padding: '48px',
     background: '#251720',
     color: '#FFFFFF',
     display: 'flex',
@@ -211,7 +211,7 @@ const NetworkAnimation = () => (
 const ConfirmationHero = () => (
   <div style={customStyles.confirmationHero}>
     <div style={customStyles.confirmationContent}>
-      <span style={{ ...customStyles.monoLabel, marginBottom: '24px' }}>
+      <span style={{ ...customStyles.monoLabel, marginBottom: '16px' }}>
         <span style={{ ...customStyles.pill, ...customStyles.pillActive }}>CONNECTION SUCCESSFUL</span>
       </span>
       <h1 style={customStyles.h1}>YOU'RE IN THE GRID.</h1>

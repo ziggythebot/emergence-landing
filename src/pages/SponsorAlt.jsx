@@ -35,7 +35,7 @@ const styles = {
     borderBottom: '3px solid #251720',
   },
   heroText: {
-    padding: '80px 64px',
+    padding: '48px 64px',
     borderRight: '3px solid #251720',
   },
   monoLabel: {
@@ -52,11 +52,11 @@ const styles = {
     fontSize: '4.5rem',
     textTransform: 'uppercase',
     lineHeight: 0.95,
-    marginBottom: '32px',
+    marginBottom: '16px',
   },
   visualWell: {
     background: '#251720',
-    padding: '64px',
+    padding: '48px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -76,13 +76,13 @@ const styles = {
     borderBottom: '3px solid #251720',
   },
   tierCard: {
-    padding: '64px',
+    padding: '48px',
     background: '#FFFFFF',
     display: 'flex',
     flexDirection: 'column',
   },
   tierCardAlt: {
-    padding: '64px',
+    padding: '48px',
     background: '#EAF8F5',
     display: 'flex',
     flexDirection: 'column',
@@ -138,11 +138,11 @@ const styles = {
     color: '#FFFFFF',
   },
   inquirySidebar: {
-    padding: '64px',
+    padding: '48px',
     borderRight: '3px solid rgba(255,255,255,0.1)',
   },
   formContainer: {
-    padding: '80px 64px',
+    padding: '48px 64px',
   },
   gridForm: {
     display: 'grid',

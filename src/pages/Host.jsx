@@ -32,24 +32,24 @@ const customStyles = {
     flex: 1,
   },
   formSidebar: {
-    padding: '64px',
+    padding: '48px',
     borderRight: '3px solid #251720',
     background: '#251720',
     color: '#FFFFFF',
   },
   formContainer: {
-    padding: '80px 64px',
+    padding: '48px 64px',
     background: '#FFFFFF',
   },
   formSection: {
-    marginBottom: '48px',
+    marginBottom: '16px',
     maxWidth: '800px',
   },
   field: {
     display: 'flex',
     flexDirection: 'column',
     gap: '8px',
-    marginBottom: '24px',
+    marginBottom: '16px',
   },
   label: {
     fontFamily: "'JetBrains Mono', monospace",

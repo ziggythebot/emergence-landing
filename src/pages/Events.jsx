@@ -368,7 +368,7 @@ const Modal = ({ isOpen, onClose, event }) => {
           <span style={customStyles.eventTopic}>{event.topic}</span>
         </div>
         <h3 style={{ ...customStyles.eventTitle, marginBottom: '12px' }}>{event.title}</h3>
-        <p style={{ ...customStyles.eventDesc, marginBottom: '24px' }}>{event.desc}</p>
+        <p style={{ ...customStyles.eventDesc, marginBottom: '16px' }}>{event.desc}</p>
         <div style={customStyles.eventMeta}>
           <div style={customStyles.eventLocation}>
             <div style={customStyles.statusDot}></div>

@@ -42,7 +42,7 @@ const customStyles = {
     background: '#FFFFFF',
   },
   formSection: {
-    marginBottom: '32px',
+    marginBottom: '16px',
     maxWidth: '800px',
   },
   field: {
