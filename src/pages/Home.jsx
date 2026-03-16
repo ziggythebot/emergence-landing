@@ -393,9 +393,10 @@ const HeroSection = () => (
       <span style={{ ...customStyles.monoLabel, marginBottom: '16px', display: 'block', color: '#00D27F', fontSize: '0.85rem' }}>
         APRIL 28-30, 2026
       </span>
-      <h1 style={customStyles.h1}>A CITY EMERGES. LONDON 2026. THREE DAYS.</h1>
+      <h1 style={customStyles.h1}>A CITY EMERGES. THREE DAYS. LONDON'S AI AND TECH SCENE.</h1>
       <div style={customStyles.heroCtas}>
         <a href="/host" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>HOST AN EVENT</a>
+        <a href="/contact" style={{ ...customStyles.btn, background: '#FFB3D9', border: '3px solid #251720', boxShadow: '4px 4px 0px #251720' }}>PARTNER WITH US</a>
       </div>
     </div>
     <div style={customStyles.heroVisual}>
