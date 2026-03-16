@@ -1,6 +1,57 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 
+const NetworkSVG = () => (
+  <svg
+    style={{ width: '100%', height: '100%', maxHeight: '400px', overflow: 'visible' }}
+    viewBox="0 0 500 500"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <style>{`
+      @keyframes drawLine {
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes pulseNode {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
+      }
+    `}</style>
+    <path stroke="#00D27F" strokeWidth="2" fill="none" opacity="0.2" d="M100,50 L100,450 M200,50 L200,450 M300,50 L300,450 M400,50 L400,450" />
+    <path stroke="#00D27F" strokeWidth="2" fill="none" opacity="0.2" d="M50,100 L450,100 M50,200 L450,200 M50,300 L450,300 M50,400 L450,400" />
+    <path stroke="#00D27F" strokeWidth="3" fill="none" opacity="0.4" d="M100,200 L200,100 L400,100 L400,300 L300,400 L100,400 Z" />
+    <path stroke="#00D27F" strokeWidth="3" fill="none" opacity="0.4" d="M200,300 L300,200 L400,200" />
+    <path
+      stroke="#00D27F"
+      strokeWidth="4"
+      fill="none"
+      strokeDasharray="1000"
+      strokeDashoffset="1000"
+      d="M100,200 L200,300 L300,300 L400,200"
+      style={{ animation: 'drawLine 4s infinite alternate ease-in-out' }}
+    />
+    <path
+      stroke="#FFD600"
+      strokeWidth="4"
+      fill="none"
+      strokeDasharray="1000"
+      strokeDashoffset="1000"
+      d="M200,100 L200,300 L100,400"
+      style={{ animation: 'drawLine 4s infinite alternate ease-in-out', animationDelay: '1.5s' }}
+    />
+    <circle cx="100" cy="200" r="8" fill="#00D27F" stroke="#FFFFFF" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #00D27F)', animation: 'pulseNode 2s infinite' }} />
+    <circle cx="200" cy="100" r="10" fill="#FFFFFF" stroke="#00D27F" strokeWidth="3" />
+    <circle cx="400" cy="100" r="8" fill="#FFD600" stroke="#FFFFFF" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #FFD600)', animation: 'pulseNode 2s infinite' }} />
+    <circle cx="400" cy="300" r="12" fill="#00D27F" stroke="#FFFFFF" strokeWidth="3" />
+    <circle cx="300" cy="400" r="8" fill="#FFFFFF" stroke="#00D27F" strokeWidth="3" />
+    <circle cx="100" cy="400" r="10" fill="#FFD600" stroke="#FFFFFF" strokeWidth="3" />
+    <circle cx="200" cy="300" r="14" fill="#00D27F" stroke="#FFFFFF" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #00D27F)', animation: 'pulseNode 2s infinite' }} />
+    <circle cx="300" cy="300" r="6" fill="#FFFFFF" stroke="#00D27F" strokeWidth="3" />
+    <circle cx="300" cy="200" r="8" fill="#FFD600" stroke="#FFFFFF" strokeWidth="3" />
+    <circle cx="400" cy="200" r="10" fill="#FFFFFF" stroke="#00D27F" strokeWidth="3" />
+    <rect x="185" y="285" width="30" height="30" fill="none" stroke="#00D27F" strokeWidth="2" strokeDasharray="4" />
+  </svg>
+);
+
 const customStyles = {
   body: {
     background: 'linear-gradient(135deg, #F2FDFB 0%, #EAF8F5 100%)',
@@ -36,6 +87,9 @@ const customStyles = {
     borderRight: '3px solid #251720',
     background: '#251720',
     color: '#FFFFFF',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
   formContainer: {
     padding: '48px 64px',
@@ -175,8 +229,13 @@ const Host = () => {
 
         <div className="form-hero-grid" style={customStyles.formHero}>
           <aside className="form-sidebar-resp" style={customStyles.formSidebar}>
-            <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>HOST_PROTOCOL</span>
-            <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF', lineHeight: 1.1 }}>HOST AN EVENT.</h1>
+            <div>
+              <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>HOST_PROTOCOL</span>
+              <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF', lineHeight: 1.1 }}>HOST AN EVENT.</h1>
+            </div>
+            <div style={{ marginTop: '40px', opacity: 0.8 }}>
+              <NetworkSVG />
+            </div>
           </aside>
 
           <main className="form-container-resp" style={customStyles.formContainer}>
@@ -237,6 +296,26 @@ const Host = () => {
             <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>CONTACT</a>
           </div>
         </footer>
+
+        <style>{`
+          @media (max-width: 768px) {
+            .form-hero-grid {
+              grid-template-columns: 1fr !important;
+            }
+            .form-sidebar-resp {
+              border-right: none !important;
+              border-bottom: 3px solid #251720 !important;
+              padding: 32px 24px !important;
+              min-height: auto !important;
+            }
+            .form-sidebar-resp h1 {
+              font-size: 2.5rem !important;
+            }
+            .form-container-resp {
+              padding: 32px 24px !important;
+            }
+          }
+        `}</style>
       </div>
     </div>
   );

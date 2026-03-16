@@ -273,6 +273,29 @@ const Contact = () => {
             <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>CONTACT</a>
           </div>
         </footer>
+
+        <style>{`
+          @media (max-width: 768px) {
+            .form-hero-grid {
+              grid-template-columns: 1fr !important;
+            }
+            .form-sidebar-resp {
+              border-right: none !important;
+              border-bottom: 3px solid #251720 !important;
+              padding: 32px 24px !important;
+            }
+            .form-sidebar-resp h1 {
+              font-size: 2.5rem !important;
+            }
+            .form-container-resp {
+              padding: 32px 24px !important;
+            }
+            .system-container {
+              border-left: none !important;
+              border-right: none !important;
+            }
+          }
+        `}</style>
       </div>
     </div>
   );

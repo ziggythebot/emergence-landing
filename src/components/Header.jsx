@@ -112,7 +112,7 @@ function Header() {
       <header style={customStyles.header}>
         <Link to="/" style={customStyles.logo}>
           <LogoNode />
-          EMERGENCE v1.0
+          EMERGENCE
         </Link>
 
         {/* Desktop Nav */}
