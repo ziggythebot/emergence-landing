@@ -396,7 +396,7 @@ const HeroSection = () => (
       <h1 style={customStyles.h1}>A CITY EMERGES. LONDON 2026. THREE DAYS.</h1>
       <p style={customStyles.subtitle}>Not a conference. A distributed protocol.</p>
       <div style={customStyles.heroCtas}>
-        <a href="/events" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>BROWSE EVENTS</a>
+        <a href="/host" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>HOST AN EVENT</a>
       </div>
     </div>
     <div style={customStyles.heroVisual}>
