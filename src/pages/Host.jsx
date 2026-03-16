@@ -176,9 +176,12 @@ const Host = () => {
         <div className="form-hero-grid" style={customStyles.formHero}>
           <aside className="form-sidebar-resp" style={customStyles.formSidebar}>
             <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>HOST_PROTOCOL</span>
-            <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF' }}>HOST AN EVENT.</h1>
-            <p style={{ marginTop: '32px', fontSize: '1.1rem', opacity: 0.8, fontFamily: "'DM Sans', sans-serif" }}>
-              Running an event April 28-30? Add it to the grid.
+            <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF', lineHeight: 1.1 }}>HOST AN EVENT.</h1>
+            <p style={{ marginTop: '16px', fontSize: '1.3rem', color: '#FFFFFF', fontFamily: "'Epilogue', sans-serif", fontWeight: 700, lineHeight: 1.2 }}>
+              Three days. One city. Your stage.
+            </p>
+            <p style={{ marginTop: '24px', fontSize: '0.95rem', opacity: 0.7, fontFamily: "'DM Sans', sans-serif", lineHeight: 1.6 }}>
+              Emergence runs April 28-30, 2026. Hundreds of events across London, all on one calendar. You host, we bring the audience.
             </p>
           </aside>
 
@@ -194,29 +197,23 @@ const Host = () => {
             ) : (
               <>
                 <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
-                  <h2 style={{ fontSize: '2rem', marginBottom: '16px', fontFamily: "'Epilogue', sans-serif", textTransform: 'uppercase' }}>HOW IT WORKS</h2>
-                  <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '16px', color: '#5A4C55' }}>
-                    Email <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> with your event details or fill out the form below. We'll add you as a co-host and list your event on the calendar.
+                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '32px', color: '#251720' }}>
+                    We want frontier AI researchers opening their labs. Biotech founders showing what's on the bench. Government teams talking policy. Coworking spaces throwing their doors open. Design studios, fintech teams, deep tech groups, defence startups — anyone doing real work and willing to let people in.
                   </p>
 
-                  <h3 style={{ fontSize: '1.25rem', marginTop: '32px', marginBottom: '12px', fontFamily: "'Epilogue', sans-serif", textTransform: 'uppercase' }}>REQUIREMENTS</h3>
-                  <ul style={{ fontSize: '1rem', lineHeight: '1.8', color: '#5A4C55', paddingLeft: '24px' }}>
-                    <li>Event must take place April 28-30, 2026</li>
-                    <li>Must be tech-related (AI, biotech, fintech, design, web3, etc.)</li>
-                    <li>Must be in London</li>
-                    <li>Must have a Luma event page (or we can help you create one)</li>
-                    <li>Open to the public or registered attendees</li>
-                  </ul>
+                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '32px', color: '#251720' }}>
+                    The format is yours. A morning coffee and a whiteboard. A panel on the roof. A demo night in a warehouse. A proper mini conference. A dinner for twelve founders. It all counts.
+                  </p>
 
-                  <h3 style={{ fontSize: '1.25rem', marginTop: '32px', marginBottom: '12px', fontFamily: "'Epilogue', sans-serif", textTransform: 'uppercase' }}>WHAT WE NEED</h3>
-                  <ul style={{ fontSize: '1rem', lineHeight: '1.8', color: '#5A4C55', paddingLeft: '24px' }}>
-                    <li>Event name and description</li>
-                    <li>Date and time</li>
-                    <li>Venue/location</li>
-                    <li>Luma event link</li>
-                    <li>Host organization/company</li>
-                    <li>Topic/category (AI, biotech, fintech, etc.)</li>
-                  </ul>
+                  <div style={{ background: '#EAF8F5', padding: '32px', border: '3px solid #251720', marginBottom: '40px' }}>
+                    <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', fontFamily: "'Epilogue', sans-serif", fontWeight: 900, textTransform: 'uppercase', color: '#251720' }}>How it works.</h2>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
+                      Set up your event on Luma, add it to the Emergence London calendar, and make <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> a co-host. We'll review it and list it across the network.
+                    </p>
+                    <p style={{ fontSize: '0.9rem', lineHeight: '1.6', color: '#5A4C55', fontFamily: "'DM Sans', sans-serif" }}>
+                      Not sure where to start? Email <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> and we'll help you get set up.
+                    </p>
+                  </div>
                 </div>
 
                 <form onSubmit={handleSubmit}>
@@ -262,8 +259,8 @@ const Host = () => {
                       <FocusableInput
                         as="textarea"
                         name="message"
-                        rows={8}
-                        placeholder="Include: Event name, date/time, venue, Luma link, topic/category, and brief description"
+                        rows={10}
+                        placeholder="Event name, date/time, venue/location, Luma link, host organization, topic/category (AI, biotech, fintech, etc.), brief description"
                         value={formData.message}
                         onChange={handleChange}
                         style={{ resize: 'vertical' }}
