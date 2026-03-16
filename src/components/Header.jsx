@@ -112,7 +112,7 @@ function Header() {
       <header style={customStyles.header}>
         <Link to="/" style={customStyles.logo}>
           <LogoNode />
-          EMERGENCE
+          EMERGENCE v1.0
         </Link>
 
         {/* Desktop Nav */}
@@ -122,6 +122,7 @@ function Header() {
           <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
           <Link to="/map" style={customStyles.navLink}>MAP</Link>
           <Link to="/contact" style={customStyles.navLink}>CONTACT</Link>
+          <a href="https://x.com/emergence_ldn" target="_blank" rel="noopener noreferrer" style={customStyles.navLink}>X</a>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -186,6 +187,15 @@ function Header() {
         >
           CONTACT
         </Link>
+        <a
+          href="https://x.com/emergence_ldn"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={customStyles.mobileNavLink}
+          onClick={closeMenu}
+        >
+          X
+        </a>
       </div>
     </>
   );

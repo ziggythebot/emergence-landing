@@ -180,9 +180,6 @@ const Host = () => {
             <p style={{ marginTop: '16px', fontSize: '1.3rem', color: '#FFFFFF', fontFamily: "'Epilogue', sans-serif", fontWeight: 700, lineHeight: 1.2 }}>
               Three days. One city. Your stage.
             </p>
-            <p style={{ marginTop: '24px', fontSize: '0.95rem', opacity: 0.7, fontFamily: "'DM Sans', sans-serif", lineHeight: 1.6 }}>
-              April 28–30, 2026. You host, we bring the audience.
-            </p>
           </aside>
 
           <main className="form-container-resp" style={customStyles.formContainer}>
@@ -197,27 +194,40 @@ const Host = () => {
             ) : (
               <>
                 <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
-                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '32px', color: '#251720' }}>
-                    AI labs. Biotech founders. Design studios. Coworking spaces. Fintech firms. Web3. Deep tech. Defence. If you're doing the work, open the door.
-                  </p>
-
-                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '32px', color: '#251720' }}>
-                    Coffee and a whiteboard. Rooftop panel. Demo night. Founder dinner. Mini conference. Hackathon. You pick the format.
-                  </p>
-
-                  <div style={{ background: '#EAF8F5', padding: '32px', border: '3px solid #251720', marginBottom: '16px' }}>
+                  <div style={{ background: '#EAF8F5', padding: '32px', border: '3px solid #251720', marginBottom: '32px' }}>
                     <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', fontFamily: "'Epilogue', sans-serif", fontWeight: 900, textTransform: 'uppercase', color: '#251720' }}>How it works.</h2>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '0', color: '#251720' }}>
-                      Create your event on Luma. Either email us the event link, or make <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> a co-host.
+                      Create your event on <a href="https://lu.ma" target="_blank" rel="noopener noreferrer" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>Luma</a>. Either email us the event link, or make <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> a co-host.
                     </p>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '0', marginTop: '16px', color: '#251720' }}>
                       We review it and list it to our calendar launching next week.
                     </p>
                   </div>
 
-                  <p style={{ fontSize: '0.9rem', lineHeight: '1.6', color: '#5A4C55', fontFamily: "'DM Sans', sans-serif", marginTop: '16px' }}>
-                    Need help? <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a>
+                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '24px', color: '#251720' }}>
+                    Where London tech happens. VCs, AI labs, fintech, web3.
                   </p>
+
+                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '24px', color: '#251720' }}>
+                    Open your doors for a demo, host a roof party, talks series, mini conference, art show, the floor is open.
+                  </p>
+
+                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '24px', color: '#251720' }}>
+                    You host, we bring the audience.
+                  </p>
+
+                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '32px', color: '#251720' }}>
+                    If you need help with ideas or implementation then reach out.
+                  </p>
+
+                  <div style={{ padding: '24px', border: '3px solid #251720', background: '#FFFFFF', marginBottom: '32px' }}>
+                    <p style={{ fontSize: '0.85rem', lineHeight: '1.6', color: '#5A4C55', fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>
+                      *It must be London tech scene related, happening between April 28-30th.
+                    </p>
+                    <p style={{ fontSize: '0.85rem', lineHeight: '1.6', color: '#5A4C55', fontFamily: "'JetBrains Mono', monospace", margin: '8px 0 0 0' }}>
+                      We will be building out some featured events, but for now get cooking.
+                    </p>
+                  </div>
                 </div>
 
                 <form onSubmit={handleSubmit}>
@@ -298,6 +308,7 @@ const Host = () => {
         <footer style={customStyles.footer}>
           <div style={{ ...customStyles.monoLabel, marginBottom: 0 }}>© 2026 EMERGENCE PROTOCOL // LDN</div>
           <div style={{ display: 'flex', gap: '24px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem' }}>
+            <a href="https://x.com/emergence_ldn" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#251720' }}>X</a>
             <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>PRIVACY</a>
             <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>TERMS</a>
             <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>CONTACT</a>
