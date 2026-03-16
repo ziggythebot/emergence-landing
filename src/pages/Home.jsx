@@ -384,8 +384,6 @@ const NetworkSVG = () => (
     <circle cx="300" cy="200" r="8" fill="#FFD600" stroke="#251720" strokeWidth="3" />
     <circle cx="400" cy="200" r="10" fill="#FFFFFF" stroke="#251720" strokeWidth="3" />
     <rect x="185" y="285" width="30" height="30" fill="none" stroke="#251720" strokeWidth="2" strokeDasharray="4" />
-    <text x="220" y="315" fontFamily="JetBrains Mono" fontSize="10" fill="#251720">HUB_01</text>
-    <text x="415" y="305" fontFamily="JetBrains Mono" fontSize="10" fill="#251720">NODE_EAST</text>
   </svg>
 );
 
@@ -410,12 +408,11 @@ const HeroSection = () => (
 const ExplanationSection = () => (
   <section id="about" className="explanation-section" style={customStyles.explanation}>
     <div style={customStyles.explHeader}>
-      <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>CONCEPT_FILE // 01</span>
       <h2 style={customStyles.explHeaderH2}>WHAT IS THIS.</h2>
     </div>
     <div style={customStyles.explContent}>
-      <p style={customStyles.explParagraph}>London Tech Week, networked. Events happening across the city April 28-30. AI labs. Biotech. Fintech. Design studios. Web3.</p>
-      <p style={customStyles.explParagraph}>Browse the grid. Pick your path. RSVP on Luma.</p>
+      <p style={customStyles.explParagraph}>Events across London. April 28-30. AI labs. Biotech. Fintech. Design studios. Web3.</p>
+      <p style={customStyles.explParagraph}>Not centralized. Not contained. The network activates itself.</p>
     </div>
   </section>
 );
@@ -443,15 +440,13 @@ const VisualSection = () => (
       padding: '16px',
       boxShadow: '3px 3px 0px #251720',
     }}>
-      <span style={{ ...customStyles.monoLabel, color: '#251720', marginBottom: '4px' }}>SYSTEM CAM // SHOREDITCH</span>
       <div style={{ fontFamily: "'Epilogue', sans-serif", fontWeight: 900, fontSize: '1.2rem' }}>LONDON GRID</div>
     </div>
   </section>
 );
 
-const MechCard = ({ accentColor, iconColor, label, icon, title, description, btnStyle, btnText, btnLink, isLast }) => (
+const MechCard = ({ accentColor, iconColor, icon, title, description, btnStyle, btnText, btnLink, isLast }) => (
   <div style={{ ...customStyles.mechCard, ...(isLast ? customStyles.mechCardLast : {}) }}>
-    <span style={{ ...customStyles.monoLabel, position: 'absolute', top: '16px', right: '16px' }}>{label}</span>
     <div style={{ ...customStyles.mechIcon, background: accentColor, color: iconColor || '#251720' }}>
       {icon}
     </div>
@@ -465,7 +460,6 @@ const MechanicsSection = () => (
   <section id="mechanics" className="mechanics-grid" style={customStyles.mechanics}>
     <MechCard
       accentColor="#00D27F"
-      label="// STEP_01"
       icon={
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#251720" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
           <rect x="3" y="3" width="7" height="7" />
@@ -474,30 +468,28 @@ const MechanicsSection = () => (
           <rect x="3" y="14" width="7" height="7" />
         </svg>
       }
-      title="BROWSE THE GRID"
-      description="Events across London. Filter by topic, location, date."
+      title="EVENTS"
+      description="Hundreds of events. Dozens of venues. Three days. Filter by topic, location, time."
       btnStyle={{ background: '#00D27F' }}
-      btnText="SEE EVENTS"
+      btnText="EXPLORE"
       btnLink="/events"
     />
     <MechCard
       accentColor="#FFD600"
-      label="// STEP_02"
       icon={
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#251720" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
           <polyline points="20 6 9 17 4 12" />
         </svg>
       }
-      title="RSVP ON LUMA"
-      description="Each event links to Luma. RSVP. Get location details."
+      title="RSVP"
+      description="Each event runs through Luma. RSVP. Get details. Show up."
       btnStyle={{ background: '#FFD600' }}
-      btnText="ACCESS MAP"
+      btnText="ACCESS"
       btnLink="/events"
     />
     <MechCard
       accentColor="#251720"
       iconColor="#FFFFFF"
-      label="// STEP_03"
       icon={
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -506,10 +498,10 @@ const MechanicsSection = () => (
           <path d="M16 3.13a4 4 0 0 1 0 7.75" />
         </svg>
       }
-      title="SHOW UP"
-      description="April 28-30. Navigate London. Build your network."
+      title="CONNECT"
+      description="The network builds itself. Every event. Every conversation. Every connection."
       btnStyle={{ background: '#FFFFFF', color: '#251720' }}
-      btnText="SEE SCHEDULE"
+      btnText="JOIN"
       btnLink="/events"
       isLast
     />

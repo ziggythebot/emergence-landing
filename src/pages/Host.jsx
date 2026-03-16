@@ -175,92 +175,121 @@ const Host = () => {
 
         <div className="form-hero-grid" style={customStyles.formHero}>
           <aside className="form-sidebar-resp" style={customStyles.formSidebar}>
-            <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>CONTACT_PROTOCOL</span>
-            <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF' }}>GET IN TOUCH.</h1>
+            <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>HOST_PROTOCOL</span>
+            <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF' }}>HOST AN EVENT.</h1>
             <p style={{ marginTop: '32px', fontSize: '1.1rem', opacity: 0.8, fontFamily: "'DM Sans', sans-serif" }}>
-              Questions? Drop a message. Response within 24 hours.
+              Running an event April 28-30? Add it to the grid.
             </p>
           </aside>
 
           <main className="form-container-resp" style={customStyles.formContainer}>
             {submitted ? (
               <div style={{ maxWidth: '800px', textAlign: 'center', padding: '80px 0' }}>
-                <span style={{ ...customStyles.monoLabel, color: '#00D27F', fontSize: '1rem' }}>MESSAGE_RECEIVED</span>
-                <h2 style={{ fontSize: '2.5rem', marginTop: '16px', color: '#251720' }}>THANKS FOR REACHING OUT.</h2>
+                <span style={{ ...customStyles.monoLabel, color: '#00D27F', fontSize: '1rem' }}>REQUEST_RECEIVED</span>
+                <h2 style={{ fontSize: '2.5rem', marginTop: '16px', color: '#251720' }}>YOU'RE IN THE QUEUE.</h2>
                 <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.9rem', color: '#5A4C55', marginTop: '24px' }}>
-                  We'll get back to you within 24 hours.
+                  We'll review your event and add it to the calendar within 24 hours.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit}>
-                <div style={customStyles.formSection}>
-                  <div style={customStyles.field}>
-                    <label style={customStyles.label}>NAME</label>
-                    <FocusableInput
-                      type="text"
-                      name="name"
-                      placeholder="Your name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
+              <>
+                <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
+                  <h2 style={{ fontSize: '2rem', marginBottom: '16px', fontFamily: "'Epilogue', sans-serif", textTransform: 'uppercase' }}>HOW IT WORKS</h2>
+                  <p style={{ fontSize: '1rem', lineHeight: '1.6', marginBottom: '16px', color: '#5A4C55' }}>
+                    Email <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> with your event details or fill out the form below. We'll add you as a co-host and list your event on the calendar.
+                  </p>
 
-                  <div style={customStyles.field}>
-                    <label style={customStyles.label}>EMAIL</label>
-                    <FocusableInput
-                      type="email"
-                      name="email"
-                      placeholder="your@email.com"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                    />
-                  </div>
+                  <h3 style={{ fontSize: '1.25rem', marginTop: '32px', marginBottom: '12px', fontFamily: "'Epilogue', sans-serif", textTransform: 'uppercase' }}>REQUIREMENTS</h3>
+                  <ul style={{ fontSize: '1rem', lineHeight: '1.8', color: '#5A4C55', paddingLeft: '24px' }}>
+                    <li>Event must take place April 28-30, 2026</li>
+                    <li>Must be tech-related (AI, biotech, fintech, design, web3, etc.)</li>
+                    <li>Must be in London</li>
+                    <li>Must have a Luma event page (or we can help you create one)</li>
+                    <li>Open to the public or registered attendees</li>
+                  </ul>
 
-                  <div style={customStyles.field}>
-                    <label style={customStyles.label}>COMPANY / ORGANIZATION (OPTIONAL)</label>
-                    <FocusableInput
-                      type="text"
-                      name="company"
-                      placeholder="Company name"
-                      value={formData.company}
-                      onChange={handleChange}
-                    />
-                  </div>
-
-                  <div style={customStyles.field}>
-                    <label style={customStyles.label}>MESSAGE</label>
-                    <FocusableInput
-                      as="textarea"
-                      name="message"
-                      rows={6}
-                      placeholder="What's on your mind?"
-                      value={formData.message}
-                      onChange={handleChange}
-                      style={{ resize: 'vertical' }}
-                      required
-                    />
-                  </div>
+                  <h3 style={{ fontSize: '1.25rem', marginTop: '32px', marginBottom: '12px', fontFamily: "'Epilogue', sans-serif", textTransform: 'uppercase' }}>WHAT WE NEED</h3>
+                  <ul style={{ fontSize: '1rem', lineHeight: '1.8', color: '#5A4C55', paddingLeft: '24px' }}>
+                    <li>Event name and description</li>
+                    <li>Date and time</li>
+                    <li>Venue/location</li>
+                    <li>Luma event link</li>
+                    <li>Host organization/company</li>
+                    <li>Topic/category (AI, biotech, fintech, etc.)</li>
+                  </ul>
                 </div>
 
-                <div style={{ borderTop: '3px solid #251720', paddingTop: '40px' }}>
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    style={{
-                      ...customStyles.btn,
-                      ...(btnPressed ? customStyles.btnActive : {}),
-                      opacity: isSubmitting ? 0.6 : 1,
-                    }}
-                    onMouseDown={() => setBtnPressed(true)}
-                    onMouseUp={() => setBtnPressed(false)}
-                    onMouseLeave={() => setBtnPressed(false)}
-                  >
-                    {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
-                  </button>
-                </div>
-              </form>
+                <form onSubmit={handleSubmit}>
+                  <div style={customStyles.formSection}>
+                    <div style={customStyles.field}>
+                      <label style={customStyles.label}>YOUR NAME</label>
+                      <FocusableInput
+                        type="text"
+                        name="name"
+                        placeholder="Full name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div style={customStyles.field}>
+                      <label style={customStyles.label}>EMAIL</label>
+                      <FocusableInput
+                        type="email"
+                        name="email"
+                        placeholder="your@email.com"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div style={customStyles.field}>
+                      <label style={customStyles.label}>ORGANIZATION / COMPANY</label>
+                      <FocusableInput
+                        type="text"
+                        name="company"
+                        placeholder="Who's hosting this event?"
+                        value={formData.company}
+                        onChange={handleChange}
+                        required
+                      />
+                    </div>
+
+                    <div style={customStyles.field}>
+                      <label style={customStyles.label}>EVENT DETAILS</label>
+                      <FocusableInput
+                        as="textarea"
+                        name="message"
+                        rows={8}
+                        placeholder="Include: Event name, date/time, venue, Luma link, topic/category, and brief description"
+                        value={formData.message}
+                        onChange={handleChange}
+                        style={{ resize: 'vertical' }}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div style={{ borderTop: '3px solid #251720', paddingTop: '40px' }}>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      style={{
+                        ...customStyles.btn,
+                        ...(btnPressed ? customStyles.btnActive : {}),
+                        opacity: isSubmitting ? 0.6 : 1,
+                      }}
+                      onMouseDown={() => setBtnPressed(true)}
+                      onMouseUp={() => setBtnPressed(false)}
+                      onMouseLeave={() => setBtnPressed(false)}
+                    >
+                      {isSubmitting ? 'SUBMITTING...' : 'SUBMIT EVENT'}
+                    </button>
+                  </div>
+                </form>
+              </>
             )}
           </main>
         </div>
