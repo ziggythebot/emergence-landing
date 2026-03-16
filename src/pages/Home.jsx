@@ -394,7 +394,6 @@ const HeroSection = () => (
         APRIL 28-30, 2026
       </span>
       <h1 style={customStyles.h1}>A CITY EMERGES. LONDON 2026. THREE DAYS.</h1>
-      <p style={customStyles.subtitle}>Not a conference. A distributed protocol. Three days of London showcases.</p>
       <div style={customStyles.heroCtas}>
         <a href="/host" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>HOST AN EVENT</a>
       </div>
@@ -426,8 +425,9 @@ const ExplanationSection = () => (
       <h2 style={customStyles.explHeaderH2}>WHAT IS THIS.</h2>
     </div>
     <div style={customStyles.explContent}>
-      <p style={customStyles.explParagraph}>Events across London. April 28-30. AI labs. Biotech. Fintech. Design studios. Web3.</p>
-      <p style={customStyles.explParagraph}>Not centralized. Not contained. The network activates itself.</p>
+      <p style={customStyles.explParagraph}>Not a conference. Not a single venue. Three days of London's AI and tech scene opening its doors.</p>
+      <p style={customStyles.explParagraph}>Events across London. April 28–30.</p>
+      <p style={customStyles.explParagraph}>You host. We amplify.</p>
     </div>
   </section>
 );
