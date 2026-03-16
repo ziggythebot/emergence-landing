@@ -231,6 +231,35 @@ const customStyles = {
     textTransform: 'uppercase',
     letterSpacing: '0.1em',
   },
+  eventsGridContainer: {
+    position: 'relative',
+  },
+  diagonalOverlay: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'linear-gradient(135deg, rgba(0, 210, 127, 0.95) 0%, rgba(0, 210, 127, 0.85) 100%)',
+    zIndex: 10,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    pointerEvents: 'none',
+  },
+  overlayText: {
+    fontFamily: "'Epilogue', sans-serif",
+    fontSize: '3rem',
+    fontWeight: 900,
+    color: '#251720',
+    textTransform: 'uppercase',
+    letterSpacing: '-0.02em',
+    textAlign: 'center',
+    padding: '40px',
+    lineHeight: 1.1,
+    transform: 'rotate(-12deg)',
+    textShadow: '4px 4px 0px rgba(37, 23, 32, 0.2)',
+  },
 };
 
 const allEvents = [
@@ -458,12 +487,20 @@ const Events = () => {
           .no-events-mobile {
             padding: 40px 16px !important;
           }
+
+          /* Diagonal overlay mobile */
+          .overlay-text-mobile {
+            font-size: 1.75rem !important;
+            padding: 20px !important;
+          }
         }
       `}</style>
       <div style={customStyles.body}>
         <div style={customStyles.systemContainer}>
           <Header />
 
+        {/* Filter bar hidden for launch */}
+        {false && (
         <div className="filter-system-mobile" style={customStyles.filterSystem}>
           <div className="filter-grid-mobile" style={customStyles.filterGrid}>
             <div>
@@ -507,6 +544,7 @@ const Events = () => {
             </div>
           </div>
         </div>
+        )}
 
         <div className="schedule-header-mobile" style={customStyles.scheduleHeader}>
           <div>
@@ -519,23 +557,30 @@ const Events = () => {
           </div>
         </div>
 
-        <div className="events-grid" style={customStyles.eventGrid}>
-          {filteredEvents.length > 0 ? (
-            filteredEvents.map((event) => (
-              <EventCard key={event.id} event={event} onSync={handleSync} />
-            ))
-          ) : (
-            <div className="no-events-mobile" style={{
-              padding: '80px 40px',
-              textAlign: 'center',
-              gridColumn: '1 / -1',
-              fontFamily: "'JetBrains Mono', monospace",
-              fontSize: '1rem',
-              color: '#5A4C55',
-            }}>
-              NO_NODES_FOUND — TRY ADJUSTING FILTERS
+        <div style={customStyles.eventsGridContainer}>
+          <div style={customStyles.diagonalOverlay}>
+            <div className="overlay-text-mobile" style={customStyles.overlayText}>
+              FULL EVENTS LIST<br />LAUNCHES APRIL 1ST
             </div>
-          )}
+          </div>
+          <div className="events-grid" style={customStyles.eventGrid}>
+            {filteredEvents.length > 0 ? (
+              filteredEvents.map((event) => (
+                <EventCard key={event.id} event={event} onSync={handleSync} />
+              ))
+            ) : (
+              <div className="no-events-mobile" style={{
+                padding: '80px 40px',
+                textAlign: 'center',
+                gridColumn: '1 / -1',
+                fontFamily: "'JetBrains Mono', monospace",
+                fontSize: '1rem',
+                color: '#5A4C55',
+              }}>
+                NO_NODES_FOUND — TRY ADJUSTING FILTERS
+              </div>
+            )}
+          </div>
         </div>
 
         <div style={customStyles.footer}>
