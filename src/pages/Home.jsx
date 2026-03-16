@@ -434,18 +434,21 @@ const ExplanationSection = () => (
 
 const VisualSection = () => (
   <section style={{ borderBottom: '3px solid #251720', position: 'relative', minHeight: '250px', background: '#EAF8F5' }}>
-    <img
-      src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
-      alt="London venue space"
+    <video
+      autoPlay
+      loop
+      muted
+      playsInline
       style={{
         width: '100%',
         height: '100%',
         objectFit: 'cover',
         position: 'absolute',
         inset: 0,
-        filter: 'contrast(1.1) saturate(0.8)',
       }}
-    />
+    >
+      <source src="/videos/location-flythrough.mp4" type="video/mp4" />
+    </video>
     <div style={{
       position: 'absolute',
       bottom: '24px',
