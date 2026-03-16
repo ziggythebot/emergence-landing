@@ -26,7 +26,7 @@ const customStyles = {
     flexDirection: 'column',
   },
   hero: {
-    padding: '80px 64px',
+    padding: '48px 64px 40px 64px',
     borderBottom: '3px solid #251720',
     textAlign: 'center',
     background: '#FFFFFF',
@@ -38,7 +38,7 @@ const customStyles = {
     letterSpacing: '0.1em',
     color: '#00D27F',
     display: 'block',
-    marginBottom: '1rem',
+    marginBottom: '0.5rem',
   },
   assetsGrid: {
     display: 'grid',
@@ -109,10 +109,18 @@ const BrandKit = () => {
 
         <section style={customStyles.hero}>
           <span style={customStyles.monoLabel}>BRAND_KIT</span>
-          <h1 style={{ fontSize: '3.5rem', margin: '24px 0 16px 0', color: '#251720' }}>
+          <h1 style={{
+            fontSize: '4rem',
+            margin: '0 0 12px 0',
+            color: '#251720',
+            fontFamily: "'Epilogue', sans-serif",
+            fontWeight: 900,
+            lineHeight: 1.1,
+            letterSpacing: '-0.02em'
+          }}>
             EMERGENCE ASSETS.
           </h1>
-          <p style={{ fontSize: '1.1rem', color: '#5A4C55', maxWidth: '700px', margin: '0 auto' }}>
+          <p style={{ fontSize: '1rem', color: '#5A4C55', maxWidth: '600px', margin: '0 auto', lineHeight: 1.5 }}>
             Brand assets for event organizers and partners. Luma images, logos, and sharing assets.
           </p>
         </section>

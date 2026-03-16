@@ -47,30 +47,63 @@ function drawYellowNode(ctx, x, y, radius, borderWidth = 3) {
   ctx.stroke();
 }
 
-// 1. LOGO (512x512) - Bold, iconic, works at small sizes
+// 1. LOGO (512x512) - Minimal network graph
 function generateLogo() {
   const canvas = createCanvas(512, 512);
   const ctx = canvas.getContext('2d');
 
-  // Mint gradient background
-  drawMintGradient(ctx, 512, 512);
+  // Mint background
+  ctx.fillStyle = COLORS.mint;
+  ctx.fillRect(0, 0, 512, 512);
 
-  // Dot grid
-  drawDotGrid(ctx, 512, 512, 1, 32, COLORS.ink);
-
-  // Large yellow node (the iconic element)
   const centerX = 256;
   const centerY = 256;
-  const nodeRadius = 140;
 
-  drawYellowNode(ctx, centerX, centerY, nodeRadius, 8);
+  // Network graph nodes - positioned to create an organic cluster
+  const nodes = [
+    { x: centerX, y: centerY - 60, r: 22, color: COLORS.gold },           // top center
+    { x: centerX - 70, y: centerY - 20, r: 18, color: COLORS.emerald },   // left
+    { x: centerX + 70, y: centerY - 20, r: 18, color: COLORS.emerald },   // right
+    { x: centerX - 40, y: centerY + 50, r: 16, color: COLORS.gold },      // bottom left
+    { x: centerX + 40, y: centerY + 50, r: 16, color: COLORS.gold },      // bottom right
+  ];
 
-  // Bold "E" in the center - much larger and bolder
-  ctx.fillStyle = COLORS.ink;
-  ctx.font = 'bold 280px Arial Black';
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.fillText('E', centerX, centerY + 5);
+  // Connections between nodes - thin lines
+  const connections = [
+    [0, 1], // top to left
+    [0, 2], // top to right
+    [1, 3], // left to bottom left
+    [2, 4], // right to bottom right
+    [3, 4], // bottom left to bottom right
+    [1, 2], // left to right (horizontal)
+  ];
+
+  // Draw connections
+  ctx.strokeStyle = COLORS.ink;
+  ctx.lineWidth = 3;
+  ctx.lineCap = 'round';
+  connections.forEach(([i, j]) => {
+    ctx.beginPath();
+    ctx.moveTo(nodes[i].x, nodes[i].y);
+    ctx.lineTo(nodes[j].x, nodes[j].y);
+    ctx.stroke();
+  });
+
+  // Draw nodes
+  nodes.forEach(node => {
+    // Fill
+    ctx.fillStyle = node.color;
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Border
+    ctx.strokeStyle = COLORS.ink;
+    ctx.lineWidth = 4;
+    ctx.beginPath();
+    ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
+    ctx.stroke();
+  });
 
   // Save
   const buffer = canvas.toBuffer('image/png');
