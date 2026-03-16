@@ -265,15 +265,6 @@ const Contact = () => {
           </main>
         </div>
 
-        <footer style={customStyles.footer}>
-          <div style={{ ...customStyles.monoLabel, marginBottom: 0 }}>© 2026 EMERGENCE PROTOCOL // LDN</div>
-          <div style={{ display: 'flex', gap: '24px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem' }}>
-            <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>PRIVACY</a>
-            <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>TERMS</a>
-            <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>CONTACT</a>
-          </div>
-        </footer>
-
         <style>{`
           @media (max-width: 768px) {
             .form-hero-grid {
