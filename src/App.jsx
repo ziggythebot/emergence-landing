@@ -7,6 +7,7 @@ import SponsorAlt from './pages/SponsorAlt';
 import Welcome from './pages/Welcome';
 import Partners from './pages/Partners';
 import VideoLibrary from './pages/VideoLibrary';
+import BrandKit from './pages/BrandKit';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/sponsor-alt" element={<SponsorAlt />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/video-library" element={<VideoLibrary />} />
+        <Route path="/brand-kit" element={<BrandKit />} />
       </Routes>
     </Router>
   );
