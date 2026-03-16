@@ -201,9 +201,18 @@ const Host = () => {
                     </p>
                   </div>
 
-                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '32px', color: '#251720' }}>
-                    Open your doors for a demo, host a roof party, talks series, mini conference, art show, the floor is open. Where London tech happens. VCs, AI labs, fintech, web3. You host, we bring the audience. If you need help with ideas or implementation then reach out.
-                  </p>
+                  <div style={{ background: '#FFF9E6', padding: '32px', border: '3px solid #251720', marginBottom: '32px' }}>
+                    <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', fontFamily: "'Epilogue', sans-serif", fontWeight: 900, textTransform: 'uppercase', color: '#251720' }}>What we want.</h2>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
+                      Bringing London's tech scene together. Use your imagination.
+                    </p>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
+                      Examples: Open your doors for a demo, host a roof party, talks series, mini conference, art show — the floor is open. Where London tech happens. VCs, AI labs, fintech, web3.
+                    </p>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '0', color: '#251720' }}>
+                      You host, we bring the audience. If you need help with ideas or implementation then reach out.
+                    </p>
+                  </div>
 
                   <div style={{ padding: '24px', border: '3px solid #251720', background: '#FFFFFF', marginBottom: '32px' }}>
                     <p style={{ fontSize: '0.85rem', lineHeight: '1.6', color: '#5A4C55', fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>
