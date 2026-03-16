@@ -81,6 +81,15 @@ const customStyles = {
 };
 
 const BrandKit = () => {
+  const [selectedTwitterVariant, setSelectedTwitterVariant] = React.useState(1);
+
+  const twitterVariants = [
+    { id: 1, name: 'V1 - Current Style', description: 'Right-aligned with network nodes' },
+    { id: 2, name: 'V2 - Centered High', description: 'Centered positioning with flanking nodes' },
+    { id: 3, name: 'V3 - Minimal Bold', description: 'Clean wordmark-focused design' },
+    { id: 4, name: 'V4 - Network Heavy', description: 'Large abstract network graph' },
+  ];
+
   const assets = [
     {
       title: 'Luma Header',
@@ -102,9 +111,10 @@ const BrandKit = () => {
     },
     {
       title: 'Twitter Header',
-      description: 'Banner for Twitter/X profile page',
+      description: 'Banner for Twitter/X profile page. Multiple variants available.',
       dimensions: '1500x500px (3:1)',
-      file: '/luma-assets/twitter-header.png',
+      file: `/luma-assets/twitter-header-v${selectedTwitterVariant}.png`,
+      isTwitter: true,
     },
   ];
 
@@ -163,6 +173,54 @@ const BrandKit = () => {
                   </div>
                   {asset.dimensions}
                 </div>
+
+                {asset.isTwitter && (
+                  <div style={{ marginBottom: '20px' }}>
+                    <div style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: '0.65rem',
+                      color: '#00D27F',
+                      marginBottom: '10px',
+                      textTransform: 'uppercase',
+                    }}>
+                      Select Variant
+                    </div>
+                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+                      {twitterVariants.map((variant) => (
+                        <button
+                          key={variant.id}
+                          onClick={() => setSelectedTwitterVariant(variant.id)}
+                          style={{
+                            fontFamily: "'JetBrains Mono', monospace",
+                            fontSize: '0.7rem',
+                            padding: '8px 12px',
+                            background: selectedTwitterVariant === variant.id ? '#00D27F' : '#FFFFFF',
+                            color: '#251720',
+                            border: '2px solid #251720',
+                            cursor: 'pointer',
+                            transition: 'all 0.1s ease',
+                            boxShadow: selectedTwitterVariant === variant.id ? '3px 3px 0px #251720' : '2px 2px 0px #251720',
+                          }}
+                          onMouseDown={(e) => e.currentTarget.style.transform = 'translate(1px, 1px)'}
+                          onMouseUp={(e) => e.currentTarget.style.transform = 'translate(0, 0)'}
+                          onMouseLeave={(e) => e.currentTarget.style.transform = 'translate(0, 0)'}
+                        >
+                          V{variant.id}
+                        </button>
+                      ))}
+                    </div>
+                    <div style={{
+                      fontFamily: "'JetBrains Mono', monospace",
+                      fontSize: '0.65rem',
+                      color: '#5A4C55',
+                      marginTop: '8px',
+                      lineHeight: 1.4,
+                    }}>
+                      {twitterVariants.find(v => v.id === selectedTwitterVariant)?.description}
+                    </div>
+                  </div>
+                )}
+
                 <div style={customStyles.imagePreview}>
                   <img
                     src={asset.file}
