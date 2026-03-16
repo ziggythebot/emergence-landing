@@ -178,7 +178,9 @@ const Host = () => {
             <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>HOST_PROTOCOL</span>
             <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF', lineHeight: 1.1 }}>HOST AN EVENT.</h1>
             <p style={{ marginTop: '16px', fontSize: '1.3rem', color: '#FFFFFF', fontFamily: "'Epilogue', sans-serif", fontWeight: 700, lineHeight: 1.2 }}>
-              Three days. One city. Your stage.
+              Three days.<br />
+              One city.<br />
+              Your stage.
             </p>
           </aside>
 
@@ -204,20 +206,8 @@ const Host = () => {
                     </p>
                   </div>
 
-                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '24px', color: '#251720' }}>
-                    Where London tech happens. VCs, AI labs, fintech, web3.
-                  </p>
-
-                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '24px', color: '#251720' }}>
-                    Open your doors for a demo, host a roof party, talks series, mini conference, art show, the floor is open.
-                  </p>
-
-                  <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '24px', color: '#251720' }}>
-                    You host, we bring the audience.
-                  </p>
-
                   <p style={{ fontSize: '1.1rem', lineHeight: '1.7', marginBottom: '32px', color: '#251720' }}>
-                    If you need help with ideas or implementation then reach out.
+                    Open your doors for a demo, host a roof party, talks series, mini conference, art show, the floor is open. Where London tech happens. VCs, AI labs, fintech, web3. You host, we bring the audience. If you need help with ideas or implementation then reach out.
                   </p>
 
                   <div style={{ padding: '24px', border: '3px solid #251720', background: '#FFFFFF', marginBottom: '32px' }}>
@@ -308,7 +298,7 @@ const Host = () => {
         <footer style={customStyles.footer}>
           <div style={{ ...customStyles.monoLabel, marginBottom: 0 }}>© 2026 EMERGENCE PROTOCOL // LDN</div>
           <div style={{ display: 'flex', gap: '24px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem' }}>
-            <a href="https://x.com/emergence_ldn" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#251720' }}>X</a>
+            <a href="https://x.com/emergenceldn" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#251720' }}>X</a>
             <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>PRIVACY</a>
             <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>TERMS</a>
             <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>CONTACT</a>

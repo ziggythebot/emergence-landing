@@ -122,7 +122,7 @@ function Header() {
           <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
           <Link to="/map" style={customStyles.navLink}>MAP</Link>
           <Link to="/contact" style={customStyles.navLink}>CONTACT</Link>
-          <a href="https://x.com/emergence_ldn" target="_blank" rel="noopener noreferrer" style={customStyles.navLink}>X</a>
+          <a href="https://x.com/emergenceldn" target="_blank" rel="noopener noreferrer" style={customStyles.navLink}>X</a>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -188,7 +188,7 @@ function Header() {
           CONTACT
         </Link>
         <a
-          href="https://x.com/emergence_ldn"
+          href="https://x.com/emergenceldn"
           target="_blank"
           rel="noopener noreferrer"
           style={customStyles.mobileNavLink}
