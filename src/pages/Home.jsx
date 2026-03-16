@@ -394,7 +394,7 @@ const HeroSection = () => (
         APRIL 28-30, 2026
       </span>
       <h1 style={customStyles.h1}>A CITY EMERGES. LONDON 2026. THREE DAYS.</h1>
-      <p style={customStyles.subtitle}>Not a conference. A distributed protocol.</p>
+      <p style={customStyles.subtitle}>Not a conference. A distributed protocol. Three days of London showcases.</p>
       <div style={customStyles.heroCtas}>
         <a href="/host" style={{ ...customStyles.btn, ...customStyles.btnPrimary }}>HOST AN EVENT</a>
       </div>
