@@ -20,6 +20,7 @@ function App() {
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/sponsor-alt" element={<SponsorAlt />} />
         <Route path="/welcome" element={<Welcome />} />
+        <Route path="/videos" element={<VideoLibrary />} />
         <Route path="/video-library" element={<VideoLibrary />} />
         <Route path="/brand-kit" element={<BrandKit />} />
       </Routes>
