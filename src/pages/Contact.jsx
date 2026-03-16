@@ -32,24 +32,24 @@ const customStyles = {
     flex: 1,
   },
   formSidebar: {
-    padding: '48px',
+    padding: '24px',
     borderRight: '3px solid #251720',
     background: '#251720',
     color: '#FFFFFF',
   },
   formContainer: {
-    padding: '48px 64px',
+    padding: '24px 32px',
     background: '#FFFFFF',
   },
   formSection: {
-    marginBottom: '16px',
+    marginBottom: '12px',
     maxWidth: '800px',
   },
   field: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '6px',
-    marginBottom: '20px',
+    gap: '4px',
+    marginBottom: '12px',
   },
   label: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -59,10 +59,10 @@ const customStyles = {
     color: '#251720',
   },
   input: {
-    padding: '16px',
+    padding: '12px',
     border: '3px solid #251720',
     fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '1rem',
+    fontSize: '0.9rem',
     outline: 'none',
     background: '#FFFFFF',
     transition: 'all 0.2s',
@@ -76,9 +76,9 @@ const customStyles = {
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '16px 48px',
+    padding: '12px 32px',
     fontFamily: "'Epilogue', sans-serif",
-    fontSize: '1.25rem',
+    fontSize: '0.95rem',
     fontWeight: 900,
     textTransform: 'uppercase',
     color: '#251720',
@@ -86,12 +86,12 @@ const customStyles = {
     border: '3px solid #251720',
     cursor: 'pointer',
     transition: 'all 0.1s ease',
-    boxShadow: '6px 6px 0px #251720',
-    marginTop: '24px',
+    boxShadow: '4px 4px 0px #251720',
+    marginTop: '16px',
   },
   btnActive: {
-    transform: 'translate(4px, 4px)',
-    boxShadow: '2px 2px 0px #251720',
+    transform: 'translate(3px, 3px)',
+    boxShadow: '1px 1px 0px #251720',
   },
   monoLabel: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -103,7 +103,7 @@ const customStyles = {
     marginBottom: '0.5rem',
   },
   footer: {
-    padding: '48px',
+    padding: '24px',
     borderTop: '3px solid #251720',
     background: '#FFFFFF',
     display: 'flex',
@@ -176,18 +176,18 @@ const Contact = () => {
         <div className="form-hero-grid" style={customStyles.formHero}>
           <aside className="form-sidebar-resp" style={customStyles.formSidebar}>
             <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>CONTACT</span>
-            <h1 style={{ fontSize: '3.5rem', marginTop: '12px', color: '#FFFFFF' }}>GET INVOLVED.</h1>
-            <p style={{ marginTop: '24px', fontSize: '1.1rem', opacity: 0.8, fontFamily: "'DM Sans', sans-serif" }}>
+            <h1 style={{ fontSize: '2rem', marginTop: '8px', color: '#FFFFFF', lineHeight: '0.95' }}>GET INVOLVED.</h1>
+            <p style={{ marginTop: '12px', fontSize: '0.95rem', opacity: 0.8, fontFamily: "'DM Sans', sans-serif", lineHeight: '1.4' }}>
               Event organizer? Want to add Emergence as co-host? Sponsor inquiry? Drop a message.
             </p>
           </aside>
 
           <main className="form-container-resp" style={customStyles.formContainer}>
             {submitted ? (
-              <div style={{ maxWidth: '800px', textAlign: 'center', padding: '48px 0' }}>
-                <span style={{ ...customStyles.monoLabel, color: '#00D27F', fontSize: '1rem' }}>MESSAGE RECEIVED</span>
-                <h2 style={{ fontSize: '2.5rem', marginTop: '12px', color: '#251720' }}>THANKS FOR REACHING OUT.</h2>
-                <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.9rem', color: '#5A4C55', marginTop: '16px' }}>
+              <div style={{ maxWidth: '800px', textAlign: 'center', padding: '24px 0' }}>
+                <span style={{ ...customStyles.monoLabel, color: '#00D27F', fontSize: '0.85rem' }}>MESSAGE RECEIVED</span>
+                <h2 style={{ fontSize: '1.75rem', marginTop: '8px', color: '#251720', lineHeight: '0.95' }}>THANKS FOR REACHING OUT.</h2>
+                <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', color: '#5A4C55', marginTop: '12px' }}>
                   We'll get back to you within 24 hours.
                 </p>
               </div>
@@ -244,7 +244,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div style={{ borderTop: '3px solid #251720', paddingTop: '32px' }}>
+                <div style={{ borderTop: '3px solid #251720', paddingTop: '16px' }}>
                   <button
                     type="submit"
                     disabled={isSubmitting}

@@ -26,7 +26,7 @@ const customStyles = {
     flexDirection: 'column',
   },
   hero: {
-    padding: '48px',
+    padding: '24px',
     borderBottom: '3px solid #251720',
     textAlign: 'center',
     background: '#FFFFFF',
@@ -46,7 +46,7 @@ const customStyles = {
     gap: '0',
   },
   videoCard: {
-    padding: '48px',
+    padding: '24px',
     borderBottom: '3px solid #251720',
     background: '#FFFFFF',
   },
@@ -55,16 +55,16 @@ const customStyles = {
   },
   playerContainer: {
     border: '3px solid #251720',
-    boxShadow: '8px 8px 0px #251720',
+    boxShadow: '4px 4px 0px #251720',
     overflow: 'hidden',
     background: '#000000',
-    marginTop: '24px',
+    marginTop: '12px',
   },
   specs: {
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
-    gap: '24px',
-    marginTop: '16px',
+    gap: '12px',
+    marginTop: '12px',
   },
   specItem: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -81,9 +81,9 @@ const customStyles = {
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '12px 32px',
+    padding: '10px 20px',
     fontFamily: "'Epilogue', sans-serif",
-    fontSize: '0.9rem',
+    fontSize: '0.8rem',
     fontWeight: 900,
     textTransform: 'uppercase',
     color: '#251720',
@@ -91,12 +91,12 @@ const customStyles = {
     border: '3px solid #251720',
     cursor: 'pointer',
     transition: 'all 0.1s ease',
-    boxShadow: '4px 4px 0px #251720',
-    marginTop: '20px',
+    boxShadow: '3px 3px 0px #251720',
+    marginTop: '12px',
     textDecoration: 'none',
   },
   footer: {
-    padding: '48px',
+    padding: '24px',
     borderTop: '3px solid #251720',
     background: '#FFFFFF',
     display: 'flex',
@@ -114,10 +114,10 @@ const Videos = () => {
         {/* Hero */}
         <section style={customStyles.hero}>
           <span style={customStyles.monoLabel}>VIDEO_LIBRARY</span>
-          <h1 style={{ fontSize: '3.5rem', margin: '12px 0 12px 0', color: '#251720' }}>
+          <h1 style={{ fontSize: '2rem', margin: '8px 0 8px 0', color: '#251720', lineHeight: '0.95' }}>
             REMOTION VIDEOS.
           </h1>
-          <p style={{ fontSize: '1.1rem', color: '#5A4C55', maxWidth: '600px', margin: '0 auto' }}>
+          <p style={{ fontSize: '0.95rem', color: '#5A4C55', maxWidth: '600px', margin: '0 auto', lineHeight: '1.4' }}>
             Programmatic videos built from React components. Ready for social, website, and email.
           </p>
         </section>
@@ -127,10 +127,10 @@ const Videos = () => {
           {/* Twitter Announcement */}
           <div style={customStyles.videoCard}>
             <span style={customStyles.monoLabel}>01_TWITTER</span>
-            <h2 style={{ fontSize: '2.5rem', margin: '0 0 12px 0', color: '#251720' }}>
+            <h2 style={{ fontSize: '1.5rem', margin: '0 0 8px 0', color: '#251720', lineHeight: '0.95' }}>
               TWITTER ANNOUNCEMENT
             </h2>
-            <p style={{ fontSize: '1rem', color: '#5A4C55', marginBottom: '16px' }}>
+            <p style={{ fontSize: '0.9rem', color: '#5A4C55', marginBottom: '12px', lineHeight: '1.4' }}>
               Brand intro video. Title animation, date reveal, tagline, pulsing CTA. Perfect for Twitter/X and LinkedIn posts.
             </p>
 
@@ -173,10 +173,10 @@ const Videos = () => {
           {/* Event Showcase */}
           <div style={customStyles.videoCard}>
             <span style={customStyles.monoLabel}>02_INSTAGRAM</span>
-            <h2 style={{ fontSize: '2.5rem', margin: '0 0 12px 0', color: '#251720' }}>
+            <h2 style={{ fontSize: '1.5rem', margin: '0 0 8px 0', color: '#251720', lineHeight: '0.95' }}>
               EVENT SHOWCASE
             </h2>
-            <p style={{ fontSize: '1rem', color: '#5A4C55', marginBottom: '16px' }}>
+            <p style={{ fontSize: '0.9rem', color: '#5A4C55', marginBottom: '12px', lineHeight: '1.4' }}>
               Vertical video for Instagram/TikTok. Intro → 4 event cards → CTA. Encode Club, Space, Raum, After Party.
             </p>
 
@@ -219,10 +219,10 @@ const Videos = () => {
           {/* Hero Loop */}
           <div style={{ ...customStyles.videoCard, ...customStyles.videoCardLast }}>
             <span style={customStyles.monoLabel}>03_HERO_LOOP</span>
-            <h2 style={{ fontSize: '2.5rem', margin: '0 0 12px 0', color: '#251720' }}>
+            <h2 style={{ fontSize: '1.5rem', margin: '0 0 8px 0', color: '#251720', lineHeight: '0.95' }}>
               HERO LOOP
             </h2>
-            <p style={{ fontSize: '1rem', color: '#5A4C55', marginBottom: '16px' }}>
+            <p style={{ fontSize: '0.9rem', color: '#5A4C55', marginBottom: '12px', lineHeight: '1.4' }}>
               Seamless 5-second loop. Rotating network nodes, pulsing center, floating text. Use as website hero or email header.
             </p>
 

@@ -35,7 +35,7 @@ const styles = {
     borderBottom: '3px solid #251720',
   },
   heroText: {
-    padding: '48px 64px',
+    padding: '24px 32px',
     borderRight: '3px solid #251720',
   },
   monoLabel: {
@@ -49,14 +49,14 @@ const styles = {
   },
   h1: {
     fontFamily: "'Epilogue', sans-serif",
-    fontSize: '4.5rem',
+    fontSize: '2.5rem',
     textTransform: 'uppercase',
-    lineHeight: 0.95,
-    marginBottom: '16px',
+    lineHeight: 0.9,
+    marginBottom: '8px',
   },
   visualWell: {
     background: '#251720',
-    padding: '48px',
+    padding: '24px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -76,13 +76,13 @@ const styles = {
     borderBottom: '3px solid #251720',
   },
   tierCard: {
-    padding: '48px',
+    padding: '24px',
     background: '#FFFFFF',
     display: 'flex',
     flexDirection: 'column',
   },
   tierCardAlt: {
-    padding: '48px',
+    padding: '24px',
     background: '#EAF8F5',
     display: 'flex',
     flexDirection: 'column',
@@ -114,22 +114,22 @@ const styles = {
   },
   priceTag: {
     fontFamily: "'Epilogue', sans-serif",
-    fontSize: '3.5rem',
+    fontSize: '2rem',
     fontWeight: 900,
-    margin: '16px 0',
+    margin: '12px 0',
     color: '#251720',
   },
   benefitList: {
     listStyle: 'none',
-    marginTop: '32px',
+    marginTop: '16px',
     flexGrow: 1,
   },
   benefitItem: {
     display: 'flex',
     alignItems: 'flex-start',
-    gap: '12px',
-    marginBottom: '16px',
-    fontSize: '1.1rem',
+    gap: '8px',
+    marginBottom: '12px',
+    fontSize: '0.95rem',
   },
   inquirySection: {
     display: 'grid',
@@ -138,33 +138,34 @@ const styles = {
     color: '#FFFFFF',
   },
   inquirySidebar: {
-    padding: '48px',
+    padding: '24px',
     borderRight: '3px solid rgba(255,255,255,0.1)',
   },
   formContainer: {
-    padding: '48px 64px',
+    padding: '24px 32px',
   },
   gridForm: {
     display: 'grid',
     gridTemplateColumns: '1fr 1fr',
-    gap: '24px',
+    gap: '12px',
   },
   formGroup: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '8px',
+    gap: '4px',
   },
   formGroupFull: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '8px',
+    gap: '4px',
     gridColumn: 'span 2',
   },
   input: {
     background: 'transparent',
     border: '2px solid rgba(255,255,255,0.2)',
-    padding: '16px',
+    padding: '12px',
     fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.9rem',
     color: '#FFFFFF',
     outline: 'none',
     width: '100%',
@@ -172,8 +173,9 @@ const styles = {
   select: {
     background: 'transparent',
     border: '2px solid rgba(255,255,255,0.2)',
-    padding: '16px',
+    padding: '12px',
     fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.9rem',
     color: '#FFFFFF',
     outline: 'none',
     width: '100%',
@@ -181,8 +183,9 @@ const styles = {
   textarea: {
     background: 'transparent',
     border: '2px solid rgba(255,255,255,0.2)',
-    padding: '16px',
+    padding: '12px',
     fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.9rem',
     color: '#FFFFFF',
     outline: 'none',
     width: '100%',
@@ -190,17 +193,17 @@ const styles = {
   },
   btn: {
     display: 'inline-flex',
-    padding: '16px 32px',
+    padding: '12px 24px',
     fontFamily: "'Epilogue', sans-serif",
     fontWeight: 900,
     textTransform: 'uppercase',
     border: '3px solid #251720',
     cursor: 'pointer',
-    boxShadow: '6px 6px 0px #251720',
+    boxShadow: '4px 4px 0px #251720',
     transition: 'transform 0.1s',
     textDecoration: 'none',
     color: '#251720',
-    fontSize: '1rem',
+    fontSize: '0.9rem',
   },
   btnEmerald: {
     background: '#00D27F',
@@ -209,7 +212,7 @@ const styles = {
     background: '#FFD600',
   },
   footer: {
-    padding: '48px 64px',
+    padding: '24px 32px',
     borderTop: '3px solid #251720',
     background: '#FFFFFF',
     display: 'flex',
@@ -279,7 +282,7 @@ const Sponsor = () => {
           <div style={styles.heroText}>
             <span style={styles.monoLabel}>SPONSORSHIP</span>
             <h1 style={styles.h1}>POWER THE NETWORK.</h1>
-            <p style={{ fontSize: '1.25rem', color: '#5A4C55', maxWidth: '500px' }}>
+            <p style={{ fontSize: '1rem', color: '#5A4C55', maxWidth: '500px', lineHeight: '1.4' }}>
               Support London's distributed tech ecosystem. April 28-30, 2026.
             </p>
           </div>
@@ -297,21 +300,21 @@ const Sponsor = () => {
 
         {/* Why Sponsor Section */}
         <section style={{ ...styles.tiersGrid, gridTemplateColumns: '1fr' }}>
-          <div style={{ ...styles.tierCard, padding: '48px 64px' }}>
+          <div style={{ ...styles.tierCard, padding: '24px 32px' }}>
             <span style={styles.monoLabel}>WHY SPONSOR</span>
-            <h2 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '3rem', textTransform: 'uppercase', marginBottom: '16px' }}>
+            <h2 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '2rem', textTransform: 'uppercase', marginBottom: '12px', lineHeight: '0.95' }}>
               REACH LONDON'S TECH BUILDERS.
             </h2>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '48px', maxWidth: '1000px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px', maxWidth: '1000px' }}>
               <div>
-                <h3 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '1.5rem', fontWeight: 900, marginBottom: '16px' }}>DISTRIBUTED REACH</h3>
-                <p style={{ color: '#5A4C55', fontSize: '1.1rem', lineHeight: '1.6' }}>
+                <h3 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '1.25rem', fontWeight: 900, marginBottom: '8px' }}>DISTRIBUTED REACH</h3>
+                <p style={{ color: '#5A4C55', fontSize: '0.95rem', lineHeight: '1.4' }}>
                   Events across London. AI labs, biotech startups, web3 builders, design studios. Your brand reaches the entire ecosystem, not just one venue.
                 </p>
               </div>
               <div>
-                <h3 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '1.5rem', fontWeight: 900, marginBottom: '16px' }}>BUILDER AUDIENCE</h3>
-                <p style={{ color: '#5A4C55', fontSize: '1.1rem', lineHeight: '1.6' }}>
+                <h3 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '1.25rem', fontWeight: 900, marginBottom: '8px' }}>BUILDER AUDIENCE</h3>
+                <p style={{ color: '#5A4C55', fontSize: '0.95rem', lineHeight: '1.4' }}>
                   Founders, engineers, researchers. People building the future. Active participants, not passive attendees.
                 </p>
               </div>
@@ -323,10 +326,10 @@ const Sponsor = () => {
         <section id="inquiry" style={styles.inquirySection}>
           <div style={styles.inquirySidebar}>
             <span style={{ ...styles.monoLabel, color: '#00D27F' }}>CONTACT US</span>
-            <h2 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '2.5rem', textTransform: 'uppercase', margin: '16px 0' }}>
+            <h2 style={{ fontFamily: "'Epilogue', sans-serif", fontSize: '1.75rem', textTransform: 'uppercase', margin: '8px 0', lineHeight: '0.95' }}>
               LET'S TALK.
             </h2>
-            <p style={{ color: 'rgba(255,255,255,0.6)', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.9rem' }}>
+            <p style={{ color: 'rgba(255,255,255,0.6)', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.85rem', lineHeight: '1.4' }}>
               Custom packages available. We'll get back to you within 24 hours.
             </p>
           </div>

@@ -71,7 +71,7 @@ const customStyles = {
     borderBottom: '3px solid #251720',
   },
   heroContent: {
-    padding: '48px 64px',
+    padding: '24px 32px',
     borderRight: '3px solid #251720',
     display: 'flex',
     flexDirection: 'column',
@@ -84,7 +84,7 @@ const customStyles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    padding: '40px',
+    padding: '20px',
   },
   monoLabel: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -113,29 +113,30 @@ const customStyles = {
   h1: {
     fontFamily: "'Epilogue', sans-serif",
     textTransform: 'uppercase',
-    lineHeight: '1.05',
+    lineHeight: '0.95',
     letterSpacing: '-0.02em',
-    fontSize: 'clamp(3rem, 6vw, 5.5rem)',
-    marginBottom: '12px',
+    fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+    marginBottom: '8px',
   },
   subtitle: {
-    fontSize: '1.25rem',
+    fontSize: '1rem',
     color: '#5A4C55',
     maxWidth: '480px',
-    marginBottom: '16px',
+    marginBottom: '12px',
+    lineHeight: '1.4',
   },
   heroCtas: {
     display: 'flex',
-    gap: '24px',
+    gap: '12px',
     flexWrap: 'wrap',
   },
   btn: {
     display: 'inline-flex',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: '16px 32px',
+    padding: '12px 24px',
     fontFamily: "'Epilogue', sans-serif",
-    fontSize: '1.1rem',
+    fontSize: '0.9rem',
     fontWeight: 900,
     textTransform: 'uppercase',
     color: '#251720',
@@ -144,7 +145,7 @@ const customStyles = {
     cursor: 'pointer',
     textDecoration: 'none',
     transition: 'all 0.1s ease',
-    boxShadow: '6px 6px 0px #251720',
+    boxShadow: '4px 4px 0px #251720',
   },
   btnPrimary: {
     background: '#00D27F',
@@ -154,17 +155,17 @@ const customStyles = {
   },
   btnSmall: {
     alignSelf: 'flex-start',
-    padding: '12px 24px',
-    fontSize: '0.9rem',
-    boxShadow: '6px 6px 0px #251720',
+    padding: '8px 16px',
+    fontSize: '0.75rem',
+    boxShadow: '3px 3px 0px #251720',
   },
   explanation: {
     display: 'grid',
-    gridTemplateColumns: '300px 1fr',
+    gridTemplateColumns: '240px 1fr',
     borderBottom: '3px solid #251720',
   },
   explHeader: {
-    padding: '48px',
+    padding: '24px',
     borderRight: '3px solid #251720',
     background: '#251720',
     color: '#FFFFFF',
@@ -172,21 +173,21 @@ const customStyles = {
   explHeaderH2: {
     fontFamily: "'Epilogue', sans-serif",
     textTransform: 'uppercase',
-    lineHeight: '1.05',
+    lineHeight: '0.95',
     letterSpacing: '-0.02em',
     color: '#FFFFFF',
-    fontSize: '3rem',
+    fontSize: '2rem',
   },
   explContent: {
-    padding: '48px',
+    padding: '24px',
     display: 'grid',
     gridTemplateColumns: '1fr',
-    gap: '24px',
+    gap: '12px',
     background: '#FFFFFF',
   },
   explParagraph: {
-    fontSize: '1.5rem',
-    lineHeight: '1.6',
+    fontSize: '1rem',
+    lineHeight: '1.4',
     letterSpacing: '-0.01em',
     maxWidth: '800px',
   },
@@ -196,7 +197,7 @@ const customStyles = {
     borderBottom: '3px solid #251720',
   },
   mechCard: {
-    padding: '40px',
+    padding: '24px',
     borderRight: '3px solid #251720',
     background: '#FFFFFF',
     position: 'relative',
@@ -207,11 +208,11 @@ const customStyles = {
     borderRight: 'none',
   },
   mechIcon: {
-    width: '64px',
-    height: '64px',
+    width: '48px',
+    height: '48px',
     border: '3px solid #251720',
-    borderRadius: '16px',
-    marginBottom: '20px',
+    borderRadius: '12px',
+    marginBottom: '12px',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -220,15 +221,17 @@ const customStyles = {
   mechH3: {
     fontFamily: "'Epilogue', sans-serif",
     textTransform: 'uppercase',
-    lineHeight: '1.05',
+    lineHeight: '0.95',
     letterSpacing: '-0.02em',
-    fontSize: '2rem',
-    marginBottom: '12px',
+    fontSize: '1.5rem',
+    marginBottom: '8px',
   },
   mechP: {
     color: '#5A4C55',
-    marginBottom: '16px',
+    marginBottom: '12px',
     flexGrow: 1,
+    fontSize: '0.95rem',
+    lineHeight: '1.4',
   },
   venue: {
     display: 'grid',
@@ -237,7 +240,7 @@ const customStyles = {
     background: '#FFFFFF',
   },
   venueInfo: {
-    padding: '48px',
+    padding: '24px',
     borderRight: '3px solid #251720',
     display: 'flex',
     flexDirection: 'column',
@@ -246,10 +249,10 @@ const customStyles = {
   venueH2: {
     fontFamily: "'Epilogue', sans-serif",
     textTransform: 'uppercase',
-    lineHeight: '1.05',
+    lineHeight: '0.95',
     letterSpacing: '-0.02em',
-    fontSize: '4rem',
-    marginBottom: '12px',
+    fontSize: '2.5rem',
+    marginBottom: '8px',
   },
   venueMeta: {
     display: 'flex',
@@ -259,7 +262,7 @@ const customStyles = {
   },
   venueImageContainer: {
     position: 'relative',
-    minHeight: '500px',
+    minHeight: '300px',
   },
   venueImage: {
     width: '100%',
@@ -280,7 +283,7 @@ const customStyles = {
     zIndex: 10,
   },
   footerCapture: {
-    padding: '64px 64px',
+    padding: '32px',
     background: '#251720',
     color: '#FFFFFF',
     textAlign: 'center',
@@ -290,11 +293,11 @@ const customStyles = {
   footerH2: {
     fontFamily: "'Epilogue', sans-serif",
     textTransform: 'uppercase',
-    lineHeight: '1.05',
+    lineHeight: '0.95',
     letterSpacing: '-0.02em',
-    fontSize: '4rem',
+    fontSize: '2.5rem',
     color: '#FFFFFF',
-    marginBottom: '16px',
+    marginBottom: '12px',
     position: 'relative',
     zIndex: 2,
   },
@@ -307,9 +310,9 @@ const customStyles = {
   },
   captureInput: {
     flexGrow: 1,
-    padding: '24px 32px',
+    padding: '12px 16px',
     fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '1.1rem',
+    fontSize: '0.9rem',
     border: '3px solid #00D27F',
     background: '#251720',
     color: '#FFFFFF',
@@ -418,7 +421,7 @@ const ExplanationSection = () => (
 );
 
 const VisualSection = () => (
-  <section style={{ borderBottom: '3px solid #251720', position: 'relative', minHeight: '400px', background: '#EAF8F5' }}>
+  <section style={{ borderBottom: '3px solid #251720', position: 'relative', minHeight: '250px', background: '#EAF8F5' }}>
     <img
       src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
       alt="London venue space"
@@ -516,29 +519,29 @@ const MechanicsSection = () => (
 
 const PoweredBySection = () => (
   <section style={{
-    padding: '48px',
+    padding: '24px',
     borderBottom: '3px solid #251720',
     background: '#FFFFFF',
     textAlign: 'center',
   }}>
-    <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '8px' }}>
+    <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '4px' }}>
       POWERED_BY
     </span>
-    <h2 style={{ fontSize: '2rem', marginBottom: '16px' }}>
+    <h2 style={{ fontSize: '1.5rem', marginBottom: '12px' }}>
       LONDON'S TECH NETWORK.
     </h2>
     <div style={{
       display: 'grid',
-      gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-      gap: '24px',
+      gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+      gap: '12px',
       maxWidth: '900px',
-      margin: '0 auto 32px auto',
+      margin: '0 auto 16px auto',
     }}>
       {['Partner 1', 'Partner 2', 'Partner 3', 'Partner 4', 'Partner 5', 'Partner 6', 'Partner 7', 'Partner 8'].map((name, i) => (
         <div
           key={i}
           style={{
-            height: '80px',
+            height: '60px',
             background: '#EAF8F5',
             border: '3px solid #251720',
             display: 'flex',
@@ -546,7 +549,7 @@ const PoweredBySection = () => (
             justifyContent: 'center',
             fontFamily: "'Epilogue', sans-serif",
             fontWeight: 900,
-            fontSize: '0.9rem',
+            fontSize: '0.75rem',
           }}
         >
           {name}
