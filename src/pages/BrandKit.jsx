@@ -100,6 +100,12 @@ const BrandKit = () => {
       dimensions: '1200x630px (1.91:1)',
       file: '/luma-assets/luma-sharing.png',
     },
+    {
+      title: 'Twitter Header',
+      description: 'Banner for Twitter/X profile page',
+      dimensions: '1500x500px (3:1)',
+      file: '/luma-assets/twitter-header.png',
+    },
   ];
 
   return (

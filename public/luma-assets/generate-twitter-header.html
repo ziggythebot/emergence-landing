@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Emergence Twitter Header</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@900&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+    }
+    .canvas {
+      width: 1500px;
+      height: 500px;
+      position: relative;
+      background: #EAF8F5;
+      overflow: hidden;
+    }
+    /* Grid pattern background */
+    .grid-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(#251720 1px, transparent 1px);
+      background-size: 32px 32px;
+      background-position: -1px -1px;
+      opacity: 0.4;
+    }
+    /* Network node pattern in top-right */
+    .network-nodes {
+      position: absolute;
+      top: 40px;
+      right: 60px;
+      width: 400px;
+      height: 400px;
+    }
+    .node {
+      position: absolute;
+      border-radius: 50%;
+      border: 3px solid #251720;
+    }
+    .node-yellow {
+      background: #FFD600;
+      box-shadow: 0 4px 20px rgba(255, 214, 0, 0.4);
+    }
+    .node-emerald {
+      background: #00D27F;
+      box-shadow: 0 4px 20px rgba(0, 210, 127, 0.4);
+    }
+    /* Connection lines */
+    .connection {
+      position: absolute;
+      background: #251720;
+      transform-origin: 0 0;
+    }
+    /* Content */
+    .content {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 80px;
+      z-index: 10;
+    }
+    h1 {
+      font-family: 'Epilogue', sans-serif;
+      font-weight: 900;
+      font-size: 140px;
+      letter-spacing: -0.03em;
+      color: #251720;
+      text-transform: uppercase;
+      line-height: 0.9;
+      margin-bottom: 24px;
+    }
+    .date {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 28px;
+      letter-spacing: 0.1em;
+      color: #00D27F;
+      text-transform: uppercase;
+    }
+    /* Border accent */
+    .border-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #251720;
+    }
+    .border-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: #251720;
+    }
+    .border-left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 100%;
+      background: #251720;
+    }
+    .border-right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3px;
+      height: 100%;
+      background: #251720;
+    }
+  </style>
+</head>
+<body>
+  <div class="canvas">
+    <!-- Borders -->
+    <div class="border-top"></div>
+    <div class="border-bottom"></div>
+    <div class="border-left"></div>
+    <div class="border-right"></div>
+
+    <!-- Grid background -->
+    <div class="grid-bg"></div>
+
+    <!-- Network nodes pattern -->
+    <div class="network-nodes">
+      <!-- Connection lines -->
+      <div class="connection" style="width: 120px; height: 3px; top: 80px; left: 60px; transform: rotate(45deg);"></div>
+      <div class="connection" style="width: 100px; height: 3px; top: 200px; left: 150px; transform: rotate(-30deg);"></div>
+      <div class="connection" style="width: 90px; height: 3px; top: 140px; left: 180px; transform: rotate(60deg);"></div>
+
+      <!-- Nodes -->
+      <div class="node node-yellow" style="width: 48px; height: 48px; top: 60px; left: 40px;"></div>
+      <div class="node node-emerald" style="width: 64px; height: 64px; top: 100px; left: 160px;"></div>
+      <div class="node node-yellow" style="width: 40px; height: 40px; top: 180px; left: 120px;"></div>
+      <div class="node node-emerald" style="width: 52px; height: 52px; top: 200px; left: 240px;"></div>
+      <div class="node node-yellow" style="width: 56px; height: 56px; top: 80px; left: 280px;"></div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+      <h1>EMERGENCE</h1>
+      <div class="date">APRIL 28-30, 2026 // LONDON</div>
+    </div>
+  </div>
+
+  <script>
+    console.log('Screenshot this at 1500x500px (Twitter header dimensions)');
+  </script>
+</body>
+</html>

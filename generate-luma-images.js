@@ -52,11 +52,25 @@ async function generateImages() {
     });
     console.log('✓ Sharing image saved: public/luma-assets/luma-sharing.png');
 
+    // Generate Twitter header (1500x500)
+    console.log('Generating Twitter header...');
+    const twitterPage = await browser.newPage();
+    await twitterPage.setViewport({ width: 1500, height: 500, deviceScaleFactor: 2 });
+    await twitterPage.goto(`file://${path.join(__dirname, 'public/luma-assets/generate-twitter-header.html')}`, {
+      waitUntil: 'networkidle0'
+    });
+    await twitterPage.screenshot({
+      path: 'public/luma-assets/twitter-header.png',
+      fullPage: false
+    });
+    console.log('✓ Twitter header saved: public/luma-assets/twitter-header.png');
+
     console.log('\n✅ All images generated successfully!');
     console.log('\nFiles created:');
     console.log('  - public/luma-assets/luma-header.png (1400x400 - Luma header banner)');
     console.log('  - public/luma-assets/luma-logo.png (512x512 - Luma profile picture)');
     console.log('  - public/luma-assets/luma-sharing.png (1200x630 - Social sharing OG image)');
+    console.log('  - public/luma-assets/twitter-header.png (1500x500 - Twitter/X header banner)');
 
   } catch (error) {
     console.error('Error generating images:', error);
