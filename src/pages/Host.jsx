@@ -177,11 +177,6 @@ const Host = () => {
           <aside className="form-sidebar-resp" style={customStyles.formSidebar}>
             <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>HOST_PROTOCOL</span>
             <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF', lineHeight: 1.1 }}>HOST AN EVENT.</h1>
-            <p style={{ marginTop: '16px', fontSize: '1.3rem', color: '#FFFFFF', fontFamily: "'Epilogue', sans-serif", fontWeight: 700, lineHeight: 1.2 }}>
-              Three days.<br />
-              One city.<br />
-              Your stage.
-            </p>
           </aside>
 
           <main className="form-container-resp" style={customStyles.formContainer}>
@@ -219,77 +214,6 @@ const Host = () => {
                     </p>
                   </div>
                 </div>
-
-                <form onSubmit={handleSubmit}>
-                  <div style={customStyles.formSection}>
-                    <div style={customStyles.field}>
-                      <label style={customStyles.label}>YOUR NAME</label>
-                      <FocusableInput
-                        type="text"
-                        name="name"
-                        placeholder="Full name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-
-                    <div style={customStyles.field}>
-                      <label style={customStyles.label}>EMAIL</label>
-                      <FocusableInput
-                        type="email"
-                        name="email"
-                        placeholder="your@email.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-
-                    <div style={customStyles.field}>
-                      <label style={customStyles.label}>ORGANIZATION / COMPANY</label>
-                      <FocusableInput
-                        type="text"
-                        name="company"
-                        placeholder="Who's hosting this event?"
-                        value={formData.company}
-                        onChange={handleChange}
-                        required
-                      />
-                    </div>
-
-                    <div style={customStyles.field}>
-                      <label style={customStyles.label}>EVENT DETAILS</label>
-                      <FocusableInput
-                        as="textarea"
-                        name="message"
-                        rows={10}
-                        placeholder="Event name, date/time, venue/location, Luma link, host organization, topic/category (AI, biotech, fintech, etc.), brief description"
-                        value={formData.message}
-                        onChange={handleChange}
-                        style={{ resize: 'vertical' }}
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div style={{ borderTop: '3px solid #251720', paddingTop: '40px' }}>
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      style={{
-                        ...customStyles.btn,
-                        ...(btnPressed ? customStyles.btnActive : {}),
-                        opacity: isSubmitting ? 0.6 : 1,
-                      }}
-                      onMouseDown={() => setBtnPressed(true)}
-                      onMouseUp={() => setBtnPressed(false)}
-                      onMouseLeave={() => setBtnPressed(false)}
-                    >
-                      {isSubmitting ? 'SUBMITTING...' : 'SUBMIT EVENT'}
-                    </button>
-                  </div>
-                </form>
               </>
             )}
           </main>
