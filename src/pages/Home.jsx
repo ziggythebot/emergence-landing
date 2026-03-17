@@ -481,11 +481,11 @@ const MechanicsSection = () => (
           <rect x="3" y="14" width="7" height="7" />
         </svg>
       }
-      title="EVENTS"
-      description="Hundreds of events. Dozens of venues. Three days. Filter by topic, location, time."
+      title="HOST"
+      description="Run an event."
       btnStyle={{ background: '#00D27F' }}
-      btnText="EXPLORE"
-      btnLink="/events"
+      btnText="GET STARTED"
+      btnLink="/host"
     />
     <MechCard
       accentColor="#FFD600"
@@ -494,11 +494,11 @@ const MechanicsSection = () => (
           <polyline points="20 6 9 17 4 12" />
         </svg>
       }
-      title="RSVP"
-      description="Each event runs through Luma. RSVP. Get details. Show up."
+      title="PARTNER"
+      description="Back the movement."
       btnStyle={{ background: '#FFD600' }}
-      btnText="ACCESS"
-      btnLink="/events"
+      btnText="GET INVOLVED"
+      btnLink="/contact"
     />
     <MechCard
       accentColor="#251720"
@@ -511,11 +511,11 @@ const MechanicsSection = () => (
           <path d="M16 3.13a4 4 0 0 1 0 7.75" />
         </svg>
       }
-      title="CONNECT"
-      description="The network builds itself. Every event. Every conversation. Every connection."
+      title="STAY IN THE LOOP"
+      description="Calendar launches April 1st."
       btnStyle={{ background: '#FFFFFF', color: '#251720' }}
-      btnText="JOIN"
-      btnLink="/events"
+      btnText="SIGN UP"
+      btnLink="/#capture"
       isLast
     />
   </section>
@@ -847,7 +847,6 @@ const App = () => {
           <FooterCaptureSection />
           <VisualSection />
           <MechanicsSection />
-          <PoweredBySection />
         </div>
       </div>
     </>
