@@ -38,7 +38,7 @@ const customStyles = {
     color: '#FFFFFF',
   },
   formContainer: {
-    padding: '24px 32px',
+    padding: '32px',
     background: '#FFFFFF',
   },
   formSection: {
