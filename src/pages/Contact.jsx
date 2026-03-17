@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
+import EmailCapture from '../components/EmailCapture';
 
 const customStyles = {
   body: {
@@ -34,12 +36,15 @@ const customStyles = {
   formSidebar: {
     padding: '24px',
     borderRight: '3px solid #251720',
-    background: '#251720',
-    color: '#FFFFFF',
+    background: '#FFFFFF',
+    color: '#251720',
   },
   formContainer: {
     padding: '32px',
     background: '#FFFFFF',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   formSection: {
     marginBottom: '12px',
@@ -172,15 +177,18 @@ const Contact = () => {
 
   return (
     <div style={customStyles.body}>
+      <Helmet>
+        <title>Contact - Emergence London 2026</title>
+        <meta name="description" content="Get in touch with Emergence. Event organizer? Want to partner? Sponsor inquiry? Drop us a message." />
+      </Helmet>
       <div style={customStyles.systemContainer}>
         <Header />
 
         <div className="form-hero-grid" style={customStyles.formHero}>
           <aside className="form-sidebar-resp" style={customStyles.formSidebar}>
-            <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>CONTACT</span>
-            <h1 style={{ fontSize: '2rem', marginTop: '8px', color: '#FFFFFF', lineHeight: '0.95' }}>GET INVOLVED.</h1>
-            <p style={{ marginTop: '12px', fontSize: '0.95rem', opacity: 0.8, fontFamily: "'DM Sans', sans-serif", lineHeight: '1.4' }}>
-              Event organizer? Want to add Emergence as co-host? Sponsor inquiry? Drop a message.
+            <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#251720', lineHeight: 1.1 }}>CONTACT US.</h1>
+            <p style={{ marginTop: '16px', fontSize: '1.1rem', color: '#5A4C55', fontFamily: "'DM Sans', sans-serif", lineHeight: '1.6' }}>
+              Questions, partnerships, or general inquiries.
             </p>
           </aside>
 
@@ -321,6 +329,7 @@ const Contact = () => {
             }
           }
         `}</style>
+        <EmailCapture sourcePage="Contact" />
       </div>
     </div>
   );

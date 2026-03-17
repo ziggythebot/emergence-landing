@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
+import EmailCapture from '../components/EmailCapture';
 
 const NetworkSVG = () => (
   <svg
@@ -38,14 +40,14 @@ const NetworkSVG = () => (
       d="M200,100 L200,300 L100,400"
       style={{ animation: 'drawLine 4s infinite alternate ease-in-out', animationDelay: '1.5s' }}
     />
-    <circle cx="100" cy="200" r="8" fill="#00D27F" stroke="#FFFFFF" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #00D27F)', animation: 'pulseNode 2s infinite' }} />
-    <circle cx="200" cy="100" r="10" fill="#FFFFFF" stroke="#00D27F" strokeWidth="3" />
-    <circle cx="400" cy="100" r="8" fill="#FFD600" stroke="#FFFFFF" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #FFD600)', animation: 'pulseNode 2s infinite' }} />
-    <circle cx="400" cy="300" r="12" fill="#00D27F" stroke="#FFFFFF" strokeWidth="3" />
-    <circle cx="300" cy="400" r="8" fill="#FFFFFF" stroke="#00D27F" strokeWidth="3" />
-    <circle cx="100" cy="400" r="10" fill="#FFD600" stroke="#FFFFFF" strokeWidth="3" />
-    <circle cx="200" cy="300" r="14" fill="#00D27F" stroke="#FFFFFF" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #00D27F)', animation: 'pulseNode 2s infinite' }} />
-    <circle cx="300" cy="300" r="6" fill="#FFFFFF" stroke="#00D27F" strokeWidth="3" />
+    <circle cx="100" cy="200" r="8" fill="#00D27F" stroke="#251720" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #00D27F)', animation: 'pulseNode 2s infinite' }} />
+    <circle cx="200" cy="100" r="10" fill="#FFFFFF" stroke="#251720" strokeWidth="3" />
+    <circle cx="400" cy="100" r="8" fill="#FFD600" stroke="#251720" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #FFD600)', animation: 'pulseNode 2s infinite' }} />
+    <circle cx="400" cy="300" r="12" fill="#00D27F" stroke="#251720" strokeWidth="3" />
+    <circle cx="300" cy="400" r="8" fill="#FFFFFF" stroke="#251720" strokeWidth="3" />
+    <circle cx="100" cy="400" r="10" fill="#FFD600" stroke="#251720" strokeWidth="3" />
+    <circle cx="200" cy="300" r="14" fill="#00D27F" stroke="#251720" strokeWidth="3" style={{ filter: 'drop-shadow(0px 0px 8px #00D27F)', animation: 'pulseNode 2s infinite' }} />
+    <circle cx="300" cy="300" r="6" fill="#FFFFFF" stroke="#251720" strokeWidth="3" />
     <circle cx="300" cy="200" r="8" fill="#FFD600" stroke="#FFFFFF" strokeWidth="3" />
     <circle cx="400" cy="200" r="10" fill="#FFFFFF" stroke="#00D27F" strokeWidth="3" />
     <rect x="185" y="285" width="30" height="30" fill="none" stroke="#00D27F" strokeWidth="2" strokeDasharray="4" />
@@ -85,8 +87,8 @@ const customStyles = {
   formSidebar: {
     padding: '48px',
     borderRight: '3px solid #251720',
-    background: '#251720',
-    color: '#FFFFFF',
+    background: '#FFFFFF',
+    color: '#251720',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -94,6 +96,9 @@ const customStyles = {
   formContainer: {
     padding: '48px 64px',
     background: '#FFFFFF',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   formSection: {
     marginBottom: '16px',
@@ -189,8 +194,10 @@ const Host = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    company: '',
-    message: '',
+    eventTitle: '',
+    eventDate: '',
+    eventDescription: '',
+    eventUrl: '',
   });
   const [submitted, setSubmitted] = useState(false);
   const [btnPressed, setBtnPressed] = useState(false);
@@ -205,7 +212,7 @@ const Host = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/host', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -226,13 +233,20 @@ const Host = () => {
 
   return (
     <div style={customStyles.body}>
+      <Helmet>
+        <title>Host an Event - Emergence London 2026</title>
+        <meta name="description" content="Submit your event to Emergence. April 28-30, 2026. London's AI and tech scene. Add us as co-host on Luma or fill in the form." />
+      </Helmet>
       <div style={customStyles.systemContainer}>
         <Header />
 
         <div className="form-hero-grid" style={customStyles.formHero}>
           <aside className="form-sidebar-resp" style={customStyles.formSidebar}>
             <div>
-              <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF', lineHeight: 1.1 }}>HOST AN EVENT.</h1>
+              <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#251720', lineHeight: 1.1 }}>HOST AN EVENT.</h1>
+              <p style={{ fontSize: '1.25rem', marginTop: '16px', color: '#00D27F', fontFamily: "'JetBrains Mono', monospace", fontWeight: 700 }}>
+                Calendar launches 25th March.
+              </p>
             </div>
             <div style={{ marginTop: '40px', opacity: 0.8 }}>
               <NetworkSVG />
@@ -253,13 +267,16 @@ const Host = () => {
                 <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
                   <div style={{ background: '#EAF8F5', padding: '32px', border: '3px solid #251720', marginBottom: '32px' }}>
                     <div style={{ display: 'inline-block', background: '#00D27F', color: '#251720', padding: '8px 16px', border: '3px solid #251720', boxShadow: '4px 4px 0px #251720', marginBottom: '16px', fontFamily: "'Epilogue', sans-serif", fontWeight: 900, fontSize: '1.5rem', textTransform: 'uppercase' }}>
-                      HOW IT WORKS.
+                      HOW IT WORKS?
                     </div>
-                    <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '0', color: '#251720' }}>
-                      Create your event on <a href="https://lu.ma" target="_blank" rel="noopener noreferrer" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>Luma</a>. Either email us the event link, or make <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> a co-host.
+                    <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
+                      Create your event on <a href="https://lu.ma" target="_blank" rel="noopener noreferrer" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>Luma</a>.
                     </p>
-                    <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '0', marginTop: '16px', color: '#251720' }}>
-                      We review it and list it to our calendar launching next week.
+                    <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
+                      Make <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> a co-host and we will pick it up automatically.
+                    </p>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '0', color: '#251720' }}>
+                      Alternatively fill in the form below to submit the event. Any questions drop us a line.
                     </p>
                   </div>
 
@@ -268,25 +285,109 @@ const Host = () => {
                       WHAT WE WANT.
                     </div>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
-                      Bringing London's tech scene together. Use your imagination.
+                      Where London tech happens. VCs, AI labs, fintech, web3.
                     </p>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
-                      Examples: Open your doors for a demo, host a roof party, talks series, mini conference, art show — the floor is open. Where London tech happens. VCs, AI labs, fintech, web3.
+                      Open your doors for a demo, host a roof party, a talks series, mini conference, art show. Use your imagination. Reach out if you're not sure.
                     </p>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '0', color: '#251720' }}>
-                      You host, we bring the audience. If you need help with ideas or implementation then reach out.
-                    </p>
-                  </div>
-
-                  <div style={{ padding: '24px', border: '3px solid #251720', background: '#FFFFFF', marginBottom: '32px' }}>
-                    <p style={{ fontSize: '0.85rem', lineHeight: '1.6', color: '#5A4C55', fontFamily: "'JetBrains Mono', monospace", margin: 0 }}>
-                      *It must be London tech scene related, happening between April 28-30th.
-                    </p>
-                    <p style={{ fontSize: '0.85rem', lineHeight: '1.6', color: '#5A4C55', fontFamily: "'JetBrains Mono', monospace", margin: '8px 0 0 0' }}>
-                      We will be building out some featured events, but for now get cooking.
+                      You host, we bring the audience.
                     </p>
                   </div>
                 </div>
+
+                <form onSubmit={handleSubmit} style={{ maxWidth: '800px' }}>
+                  <div style={customStyles.field}>
+                    <label htmlFor="name" style={customStyles.label}>Your Name *</label>
+                    <FocusableInput
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div style={customStyles.field}>
+                    <label htmlFor="email" style={customStyles.label}>Your Email *</label>
+                    <FocusableInput
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div style={customStyles.field}>
+                    <label htmlFor="eventTitle" style={customStyles.label}>Event Title *</label>
+                    <FocusableInput
+                      type="text"
+                      id="eventTitle"
+                      name="eventTitle"
+                      required
+                      value={formData.eventTitle}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div style={customStyles.field}>
+                    <label htmlFor="eventDate" style={customStyles.label}>Event Date (April 28-30, 2026)</label>
+                    <FocusableInput
+                      type="date"
+                      id="eventDate"
+                      name="eventDate"
+                      min="2026-04-28"
+                      max="2026-04-30"
+                      value={formData.eventDate}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div style={customStyles.field}>
+                    <label htmlFor="eventUrl" style={customStyles.label}>Luma Event URL</label>
+                    <FocusableInput
+                      type="url"
+                      id="eventUrl"
+                      name="eventUrl"
+                      placeholder="https://lu.ma/..."
+                      value={formData.eventUrl}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div style={customStyles.field}>
+                    <label htmlFor="eventDescription" style={customStyles.label}>Event Description</label>
+                    <FocusableInput
+                      as="textarea"
+                      id="eventDescription"
+                      name="eventDescription"
+                      rows="5"
+                      value={formData.eventDescription}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div style={{ borderTop: '3px solid #251720', paddingTop: '16px', display: 'flex', justifyContent: 'center' }}>
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      style={{
+                        ...customStyles.btn,
+                        ...(btnPressed ? customStyles.btnActive : {}),
+                        opacity: isSubmitting ? 0.6 : 1,
+                        cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                      }}
+                      onMouseDown={() => setBtnPressed(true)}
+                      onMouseUp={() => setBtnPressed(false)}
+                      onMouseLeave={() => setBtnPressed(false)}
+                    >
+                      {isSubmitting ? 'SUBMITTING...' : 'SUBMIT EVENT'}
+                    </button>
+                  </div>
+                </form>
               </>
             )}
           </main>
@@ -333,6 +434,7 @@ const Host = () => {
             }
           }
         `}</style>
+        <EmailCapture sourcePage="Host" />
       </div>
     </div>
   );

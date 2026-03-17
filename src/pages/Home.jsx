@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
+import EmailCapture from '../components/EmailCapture';
 
 const customStyles = {
   root: {
@@ -181,17 +183,18 @@ const customStyles = {
     fontSize: '2rem',
   },
   explContent: {
-    padding: '24px',
-    display: 'grid',
-    gridTemplateColumns: '1fr',
-    gap: '12px',
+    padding: '32px',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '16px',
     background: '#FFFFFF',
   },
   explParagraph: {
     fontSize: '1rem',
-    lineHeight: '1.4',
+    lineHeight: '1.7',
     letterSpacing: '-0.01em',
     maxWidth: '800px',
+    color: '#251720',
   },
   mechanics: {
     display: 'grid',
@@ -283,49 +286,6 @@ const customStyles = {
     padding: '16px',
     boxShadow: '3px 3px 0px #251720',
     zIndex: 10,
-  },
-  footerCapture: {
-    padding: '32px',
-    background: '#251720',
-    color: '#FFFFFF',
-    textAlign: 'center',
-    position: 'relative',
-    overflow: 'hidden',
-  },
-  footerH2: {
-    fontFamily: "'Epilogue', sans-serif",
-    textTransform: 'uppercase',
-    lineHeight: '0.95',
-    letterSpacing: '-0.02em',
-    fontSize: '2.5rem',
-    color: '#FFFFFF',
-    marginBottom: '12px',
-    position: 'relative',
-    zIndex: 2,
-  },
-  captureForm: {
-    display: 'flex',
-    maxWidth: '600px',
-    margin: '0 auto',
-    position: 'relative',
-    zIndex: 2,
-  },
-  captureInput: {
-    flexGrow: 1,
-    padding: '12px 16px',
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.9rem',
-    border: '3px solid #00D27F',
-    background: '#251720',
-    color: '#FFFFFF',
-    outline: 'none',
-  },
-  footerGrid: {
-    position: 'absolute',
-    inset: 0,
-    backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-    backgroundSize: '40px 40px',
-    zIndex: 1,
   },
 };
 
@@ -469,57 +429,6 @@ const MechCard = ({ accentColor, iconColor, icon, title, description, btnStyle, 
   </div>
 );
 
-const MechanicsSection = () => (
-  <section id="mechanics" className="mechanics-grid" style={customStyles.mechanics}>
-    <MechCard
-      accentColor="#00D27F"
-      icon={
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#251720" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <rect x="3" y="3" width="7" height="7" />
-          <rect x="14" y="3" width="7" height="7" />
-          <rect x="14" y="14" width="7" height="7" />
-          <rect x="3" y="14" width="7" height="7" />
-        </svg>
-      }
-      title="HOST"
-      description="Run an event."
-      btnStyle={{ background: '#00D27F' }}
-      btnText="GET STARTED"
-      btnLink="/host"
-    />
-    <MechCard
-      accentColor="#FFD600"
-      icon={
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#251720" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
-      }
-      title="PARTNER"
-      description="Back the movement."
-      btnStyle={{ background: '#FFD600' }}
-      btnText="GET INVOLVED"
-      btnLink="/contact"
-    />
-    <MechCard
-      accentColor="#251720"
-      iconColor="#FFFFFF"
-      icon={
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square" strokeLinejoin="miter">
-          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-          <circle cx="9" cy="7" r="4" />
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-        </svg>
-      }
-      title="STAY IN THE LOOP"
-      description="Calendar launches April 1st."
-      btnStyle={{ background: '#FFFFFF', color: '#251720' }}
-      btnText="SIGN UP"
-      btnLink="/#capture"
-      isLast
-    />
-  </section>
-);
 
 
 const PoweredBySection = () => (
@@ -578,50 +487,50 @@ const PoweredBySection = () => (
   </section>
 );
 
-const FooterCaptureSection = () => {
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setEmail('');
-    }
-  };
-
-  return (
-    <section className="footer-section" style={customStyles.footerCapture}>
-      <div style={customStyles.footerGrid} />
-      <span style={{ ...customStyles.monoLabel, color: '#00D27F', marginBottom: '16px', position: 'relative', zIndex: 2 }}>
-        {submitted ? 'SYNCED' : 'GET UPDATES'}
-      </span>
-      <h2 style={customStyles.footerH2}>STAY IN THE LOOP.</h2>
-      {submitted ? (
-        <p style={{ fontFamily: "'JetBrains Mono', monospace", color: '#00D27F', fontSize: '1.1rem', position: 'relative', zIndex: 2 }}>
-          YOU'RE ON THE LIST.
-        </p>
-      ) : (
-        <form style={customStyles.captureForm} onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="YOUR EMAIL..."
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            style={customStyles.captureInput}
-          />
-          <button
-            type="submit"
-            style={{ ...customStyles.btn, ...customStyles.btnPrimary, boxShadow: 'none', borderLeft: 'none' }}
-          >
-            SUBSCRIBE
-          </button>
-        </form>
-      )}
-    </section>
-  );
-};
+const Footer = () => (
+  <footer style={{
+    padding: '24px 32px',
+    borderTop: '3px solid #251720',
+    background: '#FFFFFF',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flexWrap: 'wrap',
+    gap: '16px',
+  }}>
+    <div style={{
+      fontFamily: "'Epilogue', sans-serif",
+      fontWeight: 900,
+      fontSize: '1.25rem',
+      display: 'flex',
+      alignItems: 'center',
+      gap: '12px',
+    }}>
+      <LogoNode />
+      EMERGENCE
+    </div>
+    <div style={{
+      display: 'flex',
+      gap: '24px',
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: '0.75rem',
+      color: '#5A4C55',
+    }}>
+      <a href="/host" style={{ color: '#251720', textDecoration: 'none' }}>HOST</a>
+      <a href="/partners" style={{ color: '#251720', textDecoration: 'none' }}>PARTNERS</a>
+      <a href="/contact" style={{ color: '#251720', textDecoration: 'none' }}>CONTACT</a>
+      <a href="/map" style={{ color: '#251720', textDecoration: 'none' }}>MAP</a>
+      <a href="/privacy" style={{ color: '#251720', textDecoration: 'none' }}>PRIVACY</a>
+    </div>
+    <div style={{
+      fontFamily: "'JetBrains Mono', monospace",
+      fontSize: '0.75rem',
+      color: '#5A4C55',
+    }}>
+      © 2026 EMERGENCE LONDON
+    </div>
+  </footer>
+);
 
 const App = () => {
   useEffect(() => {
@@ -724,6 +633,10 @@ const App = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Emergence - London, April 28-30, 2026</title>
+        <meta name="description" content="Three days. London's AI and tech scene opens its doors. Events across the city, one calendar. Host an event or find what's on." />
+      </Helmet>
       <style>{`
         @media (max-width: 768px) {
           /* Global mobile resets */
@@ -844,9 +757,9 @@ const App = () => {
           <Header />
           <HeroSection />
           <ExplanationSection />
-          <FooterCaptureSection />
           <VisualSection />
-          <MechanicsSection />
+          <EmailCapture sourcePage="Home" />
+          <Footer />
         </div>
       </div>
     </>

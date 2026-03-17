@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
+import EmailCapture from '../components/EmailCapture';
 
 const customStyles = {
   body: {
@@ -19,94 +21,112 @@ const customStyles = {
     margin: '0 auto',
     borderLeft: '3px solid #251720',
     borderRight: '3px solid #251720',
-    background: 'rgba(255,255,255,0.95)',
+    background: 'rgba(255,255,255,0.4)',
     backdropFilter: 'blur(10px)',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
   },
-  hero: {
-    padding: '48px 64px',
-    borderBottom: '3px solid #251720',
-    textAlign: 'center',
-    background: '#FFFFFF',
-  },
-  monoLabel: {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.75rem',
-    textTransform: 'uppercase',
-    letterSpacing: '0.1em',
-    color: '#00D27F',
-    display: 'block',
-    marginBottom: '0.5rem',
-  },
-  filterSection: {
-    padding: '32px 64px',
-    borderBottom: '3px solid #251720',
-    background: '#FFFFFF',
-  },
-  filterGrid: {
+  pageLayout: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-    gap: '16px',
-    marginTop: '16px',
-  },
-  filterBtn: {
-    padding: '12px 24px',
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.8rem',
-    fontWeight: 700,
-    textTransform: 'uppercase',
-    background: '#FFFFFF',
-    border: '3px solid #251720',
-    cursor: 'pointer',
-    minHeight: '44px',
-    minWidth: '44px',
-    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
-  },
-  filterBtnActive: {
-    background: '#00D27F',
-    boxShadow: '3px 3px 0px #251720',
-  },
-  partnersGrid: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-    gap: '0',
-  },
-  partnerCard: {
-    padding: '40px',
+    gridTemplateColumns: '400px 1fr',
     borderBottom: '3px solid #251720',
+    flex: 1,
+  },
+  sidebar: {
+    padding: '48px',
     borderRight: '3px solid #251720',
+    background: '#FFFFFF',
+    color: '#251720',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  content: {
+    padding: '48px 64px',
     background: '#FFFFFF',
     display: 'flex',
     flexDirection: 'column',
-    justifyContent: 'space-between',
-    minHeight: '260px',
+    alignItems: 'center',
   },
-  logoPlaceholder: {
-    width: '120px',
-    height: '60px',
+  contentInner: {
+    maxWidth: '800px',
+    width: '100%',
+  },
+  sectionBox: {
     background: '#EAF8F5',
+    padding: '32px',
+    border: '3px solid #251720',
+    marginBottom: '32px',
+  },
+  sectionTitle: {
+    display: 'inline-block',
+    background: '#00D27F',
+    color: '#251720',
+    padding: '8px 16px',
+    border: '3px solid #251720',
+    boxShadow: '4px 4px 0px #251720',
+    marginBottom: '16px',
+    fontFamily: "'Epilogue', sans-serif",
+    fontWeight: 900,
+    fontSize: '1.5rem',
+    textTransform: 'uppercase',
+  },
+  email: {
+    color: '#00D27F',
+    textDecoration: 'none',
+    fontWeight: 700,
+    fontSize: '1.25rem',
+  },
+  logosGrid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gap: '16px',
+    marginTop: '24px',
+  },
+  logoBox: {
+    height: '100px',
+    background: '#FFFFFF',
     border: '3px solid #251720',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontFamily: "'Epilogue', sans-serif",
-    fontWeight: 900,
-    fontSize: '0.9rem',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.75rem',
+    color: '#5A4C55',
+    textAlign: 'center',
+  },
+  field: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '8px',
     marginBottom: '16px',
   },
-  ctaSection: {
-    padding: '48px 64px',
-    borderBottom: '3px solid #251720',
-    textAlign: 'center',
-    background: '#EAF8F5',
+  label: {
+    fontFamily: "'JetBrains Mono', monospace",
+    fontWeight: 700,
+    fontSize: '0.8rem',
+    textTransform: 'uppercase',
+    color: '#251720',
+  },
+  input: {
+    padding: '16px',
+    border: '3px solid #251720',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '1rem',
+    outline: 'none',
+    background: '#FFFFFF',
+    transition: 'all 0.2s',
+    width: '100%',
+  },
+  inputFocus: {
+    borderColor: '#00D27F',
+    boxShadow: '4px 4px 0px #00D27F',
   },
   btn: {
     display: 'inline-flex',
-    alignItems: 'center',
     justifyContent: 'center',
-    padding: '16px 40px',
+    alignItems: 'center',
+    padding: '16px 48px',
     fontFamily: "'Epilogue', sans-serif",
     fontSize: '1rem',
     fontWeight: 900,
@@ -115,154 +135,204 @@ const customStyles = {
     background: '#00D27F',
     border: '3px solid #251720',
     cursor: 'pointer',
-    textDecoration: 'none',
     minHeight: '44px',
     minWidth: '44px',
     transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
     boxShadow: '6px 6px 0px #251720',
+    marginTop: '16px',
+  },
+  btnActive: {
+    transform: 'translate(4px, 4px)',
+    boxShadow: '2px 2px 0px #251720',
   },
 };
 
+const FocusableInput = ({ as: Tag = 'input', ...props }) => {
+  const [focused, setFocused] = useState(false);
+  const baseStyle = {
+    ...customStyles.input,
+    ...(focused ? customStyles.inputFocus : {}),
+    ...(props.style || {}),
+  };
+  return (
+    <Tag
+      {...props}
+      style={baseStyle}
+      onFocus={() => setFocused(true)}
+      onBlur={() => setFocused(false)}
+    />
+  );
+};
+
 const Partners = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    company: '',
+  });
+  const [submitted, setSubmitted] = useState(false);
+  const [btnPressed, setBtnPressed] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const categories = [
-    { id: 'all', label: 'All Partners' },
-    { id: 'ai', label: 'AI / ML' },
-    { id: 'fintech', label: 'Fintech' },
-    { id: 'web3', label: 'Web3' },
-    { id: 'biotech', label: 'Biotech' },
-    { id: 'infrastructure', label: 'Infrastructure' },
-  ];
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-  const partners = [
-    // Placeholder partners - replace with real data
-    { name: 'Partner 1', category: 'ai', description: 'AI research lab pushing boundaries.' },
-    { name: 'Partner 2', category: 'fintech', description: 'Fintech platform scaling globally.' },
-    { name: 'Partner 3', category: 'web3', description: 'Web3 protocol for builders.' },
-    { name: 'Partner 4', category: 'biotech', description: 'Biotech startup innovating.' },
-    { name: 'Partner 5', category: 'infrastructure', description: 'Co-working hub for tech.' },
-    { name: 'Partner 6', category: 'ai', description: 'Machine learning infrastructure.' },
-    { name: 'Partner 7', category: 'fintech', description: 'Payment rails for developers.' },
-    { name: 'Partner 8', category: 'web3', description: 'Decentralized protocols.' },
-    { name: 'Partner 9', category: 'ai', description: 'Computer vision platform.' },
-    { name: 'Partner 10', category: 'infrastructure', description: 'Developer workspace.' },
-    { name: 'Partner 11', category: 'fintech', description: 'Banking infrastructure API.' },
-    { name: 'Partner 12', category: 'web3', description: 'Crypto developer tools.' },
-  ];
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  const filteredPartners = activeFilter === 'all'
-    ? partners
-    : partners.filter(p => p.category === activeFilter);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, message: 'Corporate partnership inquiry' }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({ name: '', email: '', company: '' });
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div style={customStyles.body}>
-      <div style={customStyles.systemContainer} className="system-container">
+      <Helmet>
+        <title>Partners - Emergence London 2026</title>
+        <meta name="description" content="Community and corporate partnerships. Coworking spaces, universities, accelerators, and sponsors backing Emergence London 2026." />
+      </Helmet>
+      <div style={customStyles.systemContainer}>
         <Header />
 
-        {/* Hero */}
-        <section style={customStyles.hero}>
-          <span style={customStyles.monoLabel}>NETWORK_DIRECTORY</span>
-          <h1 style={{ fontSize: '3.5rem', margin: '12px 0 12px 0', color: '#251720' }}>
-            PARTNERS.
-          </h1>
-          <p style={{ fontSize: '1.1rem', color: '#5A4C55', maxWidth: '600px', margin: '0 auto' }}>
-            Companies powering London's distributed network. April 28-30, 2026.
-          </p>
-        </section>
+        <div style={customStyles.pageLayout}>
+          <aside style={customStyles.sidebar}>
+            <div>
+              <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#251720', lineHeight: 1.1 }}>
+                PARTNERS.
+              </h1>
+              <p style={{ fontSize: '1.1rem', marginTop: '16px', color: '#5A4C55', lineHeight: '1.6' }}>
+                The companies and communities behind Emergence.
+              </p>
+            </div>
+          </aside>
 
-        {/* Filters */}
-        <section style={customStyles.filterSection}>
-          <span style={customStyles.monoLabel}>FILTER_BY_VERTICAL</span>
-          <div style={customStyles.filterGrid}>
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveFilter(cat.id)}
-                style={{
-                  ...customStyles.filterBtn,
-                  ...(activeFilter === cat.id ? customStyles.filterBtnActive : {}),
-                }}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-        </section>
-
-        {/* Partners Grid */}
-        <div style={customStyles.partnersGrid}>
-          {filteredPartners.map((partner, index) => (
-            <div key={index} style={customStyles.partnerCard}>
-              <div>
-                <div style={customStyles.logoPlaceholder}>
-                  {partner.name}
-                </div>
-                <p style={{ fontSize: '0.95rem', color: '#5A4C55', lineHeight: 1.6 }}>
-                  {partner.description}
+          <main style={customStyles.content}>
+            <div style={customStyles.contentInner}>
+              <div style={customStyles.sectionBox}>
+                <div style={customStyles.sectionTitle}>Community partners</div>
+                <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
+                  We're announcing our first community partners on March 24th. If you're a coworking space, university, accelerator, media outlet, developer community or government organisation — get in touch. We'll get you onboarded quickly.
                 </p>
+                <a href="mailto:andy@emergence.london" style={customStyles.email}>
+                  andy@emergence.london
+                </a>
+
+                <div style={customStyles.logosGrid}>
+                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
+                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
+                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
+                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
+                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
+                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
+                </div>
               </div>
-              <div style={{ marginTop: '16px' }}>
-                <span style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: '0.7rem',
-                  textTransform: 'uppercase',
-                  color: '#00D27F',
-                  letterSpacing: '0.1em',
-                }}>
-                  {categories.find(c => c.id === partner.category)?.label || partner.category}
-                </span>
+
+              <div style={{ background: '#FFF9E6', padding: '32px', border: '3px solid #251720', marginBottom: '32px' }}>
+                <div style={{ ...customStyles.sectionTitle, background: '#FFD600' }}>Corporate partnerships</div>
+                <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
+                  Emergence reaches London's entire AI and tech scene across three days. There are a limited number of partnership opportunities — featured events, calendar branding, daily email, and the official after party.
+                </p>
+                <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '24px', color: '#251720' }}>
+                  We're finalising packages now. Leave your details and we'll send them over as soon as they're ready.
+                </p>
+
+                {submitted ? (
+                  <div style={{ 
+                    padding: '32px', 
+                    background: '#FFFFFF', 
+                    border: '3px solid #251720',
+                    textAlign: 'center',
+                  }}>
+                    <p style={{ 
+                      fontFamily: "'Epilogue', sans-serif", 
+                      fontSize: '1.5rem', 
+                      fontWeight: 900,
+                      color: '#00D27F',
+                      margin: 0,
+                    }}>
+                      THANKS — WE'LL BE IN TOUCH.
+                    </p>
+                  </div>
+                ) : (
+                  <form onSubmit={handleSubmit} style={{ maxWidth: '600px' }}>
+                    <div style={customStyles.field}>
+                      <label htmlFor="name" style={customStyles.label}>Name *</label>
+                      <FocusableInput
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        value={formData.name}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div style={customStyles.field}>
+                      <label htmlFor="email" style={customStyles.label}>Email *</label>
+                      <FocusableInput
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <div style={customStyles.field}>
+                      <label htmlFor="company" style={customStyles.label}>Company *</label>
+                      <FocusableInput
+                        type="text"
+                        id="company"
+                        name="company"
+                        required
+                        value={formData.company}
+                        onChange={handleChange}
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      style={{
+                        ...customStyles.btn,
+                        ...(btnPressed ? customStyles.btnActive : {}),
+                        opacity: isSubmitting ? 0.6 : 1,
+                        cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                      }}
+                      onMouseDown={() => setBtnPressed(true)}
+                      onMouseUp={() => setBtnPressed(false)}
+                      onMouseLeave={() => setBtnPressed(false)}
+                    >
+                      {isSubmitting ? 'SUBMITTING...' : 'SUBMIT'}
+                    </button>
+                  </form>
+                )}
               </div>
             </div>
-          ))}
+          </main>
         </div>
 
-        {/* CTA Section */}
-        <section style={customStyles.ctaSection}>
-          <span style={customStyles.monoLabel}>JOIN_NETWORK</span>
-          <h2 style={{ fontSize: '2.5rem', margin: '12px 0 16px 0' }}>
-            BECOME A PARTNER.
-          </h2>
-          <p style={{ fontSize: '1.1rem', color: '#5A4C55', maxWidth: '600px', margin: '0 auto 32px auto' }}>
-            Event organizer? Co-working hub? Tech company hosting on April 28-30? Join the network.
-          </p>
-          <a
-            href="/contact"
-            style={customStyles.btn}
-            onMouseDown={(e) => e.currentTarget.style.transform = 'translate(3px, 3px)'}
-            onMouseUp={(e) => e.currentTarget.style.transform = 'translate(0, 0)'}
-            onMouseLeave={(e) => e.currentTarget.style.transform = 'translate(0, 0)'}
-          >
-            GET IN TOUCH
-          </a>
-        </section>
+        <EmailCapture sourcePage="Partners" />
 
-        {/* Footer */}
-        <footer style={{
-          padding: '48px 64px',
-          borderTop: '3px solid #251720',
-          background: '#FFFFFF',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}>
-          <div style={{
-            fontFamily: "'JetBrains Mono', monospace",
-            fontSize: '0.75rem',
-            color: '#5A4C55',
-            textTransform: 'uppercase',
-            letterSpacing: '0.1em',
-          }}>
-            © 2026 EMERGENCE PROTOCOL // LDN
-          </div>
-          <div style={{ display: 'flex', gap: '24px', fontFamily: "'JetBrains Mono', monospace", fontSize: '0.75rem' }}>
-            <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>PRIVACY</a>
-            <a href="#" style={{ textDecoration: 'none', color: '#251720' }}>TERMS</a>
-            <a href="/contact" style={{ textDecoration: 'none', color: '#251720' }}>CONTACT</a>
-          </div>
-        </footer>
-
-        {/* Mobile styles */}
         <style>{`
           /* Focus indicators for keyboard navigation */
           button:focus-visible,
@@ -289,7 +359,6 @@ const Partners = () => {
             .system-container {
               border-left: none !important;
               border-right: none !important;
-              background: #FFFFFF !important;
             }
           }
         `}</style>

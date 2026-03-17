@@ -17,14 +17,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, company, message } = req.body;
+  const { name, email, eventTitle, eventDate, eventDescription, eventUrl } = req.body;
 
-  if (!name || !email || !message) {
+  if (!name || !email || !eventTitle) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
   try {
-    const response = await fetch('https://api.airtable.com/v0/appmFQoIYTJY1aQUy/tblyHe1HsPMNHWDli', {
+    const response = await fetch('https://api.airtable.com/v0/appmFQoIYTJY1aQUy/tblsq0BPGid3NuwF5', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${process.env.AIRTABLE_TOKEN}`,
@@ -34,8 +34,10 @@ export default async function handler(req, res) {
         fields: {
           'Name': name,
           'Email': email,
-          'Company': company || '',
-          'Message': message,
+          'Event Title': eventTitle,
+          'Event Date': eventDate || null,
+          'Event Description': eventDescription || '',
+          'Event URL': eventUrl || '',
         },
       }),
     });

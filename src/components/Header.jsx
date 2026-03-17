@@ -141,9 +141,9 @@ function Header() {
 
         {/* Desktop Nav */}
         <nav className="desktop-nav" style={customStyles.navLinks}>
-          <Link to="/" style={customStyles.navLink}>HOME</Link>
           <Link to="/host" style={customStyles.navLink}>HOST</Link>
           <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
+          <Link to="/partners" style={customStyles.navLink}>PARTNERS</Link>
           <Link to="/map" style={customStyles.navLink}>MAP</Link>
           <Link to="/contact" style={customStyles.navLink}>CONTACT</Link>
           <a href="https://x.com/emergenceldn" target="_blank" rel="noopener noreferrer" style={customStyles.navLink}>X</a>
@@ -177,13 +177,6 @@ function Header() {
         ...(menuOpen ? customStyles.mobileMenuVisible : customStyles.mobileMenuHidden),
       }}>
         <Link
-          to="/"
-          style={customStyles.mobileNavLink}
-          onClick={closeMenu}
-        >
-          HOME
-        </Link>
-        <Link
           to="/host"
           style={customStyles.mobileNavLink}
           onClick={closeMenu}
@@ -196,6 +189,13 @@ function Header() {
           onClick={closeMenu}
         >
           EVENTS
+        </Link>
+        <Link
+          to="/partners"
+          style={customStyles.mobileNavLink}
+          onClick={closeMenu}
+        >
+          PARTNERS
         </Link>
         <Link
           to="/map"

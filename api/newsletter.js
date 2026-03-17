@@ -17,14 +17,14 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, company, message } = req.body;
+  const { email, sourcePage } = req.body;
 
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: 'Missing required fields' });
+  if (!email) {
+    return res.status(400).json({ error: 'Email is required' });
   }
 
   try {
-    const response = await fetch('https://api.airtable.com/v0/appmFQoIYTJY1aQUy/tblyHe1HsPMNHWDli', {
+    const response = await fetch('https://api.airtable.com/v0/appmFQoIYTJY1aQUy/tblN5BZuDCn3M45sV', {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${process.env.AIRTABLE_TOKEN}`,
@@ -32,10 +32,8 @@ export default async function handler(req, res) {
       },
       body: JSON.stringify({
         fields: {
-          'Name': name,
           'Email': email,
-          'Company': company || '',
-          'Message': message,
+          'Source Page': sourcePage || 'Unknown',
         },
       }),
     });
@@ -43,7 +41,7 @@ export default async function handler(req, res) {
     if (!response.ok) {
       const error = await response.text();
       console.error('Airtable error:', error);
-      return res.status(500).json({ error: 'Failed to save submission' });
+      return res.status(500).json({ error: 'Failed to save subscription' });
     }
 
     return res.status(200).json({ success: true });

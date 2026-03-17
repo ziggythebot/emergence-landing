@@ -1,11 +1,14 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
+import EmailCapture from '../components/EmailCapture';
 
 const customStyles = {
   body: {
-    background: '#EAF8F5',
+    background: 'linear-gradient(135deg, #F2FDFB 0%, #EAF8F5 100%)',
     backgroundImage: 'radial-gradient(#251720 1px, transparent 1px)',
     backgroundSize: '32px 32px',
+    backgroundPosition: '-1px -1px',
     fontFamily: "'DM Sans', sans-serif",
     color: '#251720',
     lineHeight: '1.5',
@@ -18,15 +21,42 @@ const customStyles = {
     margin: '0 auto',
     borderLeft: '3px solid #251720',
     borderRight: '3px solid #251720',
-    background: '#FFFFFF',
+    background: 'rgba(255,255,255,0.4)',
+    backdropFilter: 'blur(10px)',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
   },
-  mapHeader: {
-    padding: '32px 64px',
+  pageLayout: {
+    display: 'grid',
+    gridTemplateColumns: '400px 1fr',
     borderBottom: '3px solid #251720',
-    textAlign: 'center',
+    flex: 1,
+  },
+  sidebar: {
+    padding: '48px',
+    borderRight: '3px solid #251720',
+    background: '#FFFFFF',
+    color: '#251720',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  content: {
+    background: '#FFFFFF',
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  mapContainer: {
+    flex: 1,
+    position: 'relative',
+    minHeight: '600px',
+  },
+  mapIframe: {
+    width: '100%',
+    height: '100%',
+    border: 'none',
+    position: 'absolute',
+    inset: 0,
   },
   liveLabel: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -40,109 +70,75 @@ const customStyles = {
     textTransform: 'uppercase',
     letterSpacing: '0.1em',
   },
-  mapTitle: {
-    fontFamily: "'Epilogue', sans-serif",
-    fontSize: '2.5rem',
-    fontWeight: 900,
-    letterSpacing: '-0.05em',
-    lineHeight: 0.95,
-    marginBottom: '12px',
-  },
-  mapDescription: {
-    fontFamily: "'DM Sans', sans-serif",
-    fontSize: '1rem',
-    color: '#5A4C55',
-    lineHeight: 1.5,
-    maxWidth: '800px',
-    margin: '0 auto',
-  },
-  mapContainer: {
-    flex: 1,
-    position: 'relative',
-    borderBottom: '3px solid #251720',
-  },
-  mapIframe: {
-    width: '100%',
-    height: '100%',
-    border: 'none',
-    minHeight: '600px',
-  },
-  footer: {
-    padding: '24px',
-    textAlign: 'center',
-  },
-  footerText: {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.75rem',
-    color: '#5A4C55',
-    textTransform: 'uppercase',
-    letterSpacing: '0.1em',
-  },
 };
 
 const Map = () => {
   return (
-    <>
-      <style>{`
-        /* Focus indicators for keyboard navigation */
-        button:focus-visible,
-        a:focus-visible,
-        input:focus-visible {
-          outline: 3px solid #00D27F;
-          outline-offset: 4px;
-          border-radius: 2px;
-        }
+    <div style={customStyles.body}>
+      <Helmet>
+        <title>Map - Emergence London 2026</title>
+        <meta name="description" content="Explore London's AI and tech ecosystem. Interactive map of VCs, AI labs, coworking spaces, and innovation hubs across the city." />
+      </Helmet>
+      <div style={customStyles.systemContainer}>
+        <Header />
 
-        /* Reduced motion support for accessibility */
-        @media (prefers-reduced-motion: reduce) {
-          *,
-          *::before,
-          *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
-          }
-        }
+        <div style={customStyles.pageLayout}>
+          <aside style={customStyles.sidebar}>
+            <div>
+              <span style={customStyles.liveLabel}>LIVE MAP</span>
+              <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#251720', lineHeight: 1.1 }}>
+                LONDON'S TECH ECOSYSTEM.
+              </h1>
+              <p style={{ fontSize: '1.1rem', marginTop: '16px', color: '#5A4C55', lineHeight: '1.6' }}>
+                VCs, AI labs, coworking spaces, and innovation hubs. The map behind Emergence.
+              </p>
+            </div>
+          </aside>
 
-        @media (max-width: 768px) {
-          .map-header-mobile {
-            padding: 24px 16px !important;
-          }
-
-          .map-title-mobile {
-            font-size: 2rem !important;
-          }
-
-          .map-iframe-mobile {
-            min-height: 400px !important;
-          }
-        }
-      `}</style>
-      <div style={customStyles.body}>
-        <div style={customStyles.systemContainer}>
-          <Header />
-
-          <div className="map-header-mobile" style={customStyles.mapHeader}>
-            <h1 className="map-title-mobile" style={customStyles.mapTitle}>LONDON TECH MAP.</h1>
-            <p style={customStyles.mapDescription}>
-              This map is where Emergence started. Every dot is a node in London's tech network. We built this to see the whole ecosystem at once. Then we started connecting them IRL.
-            </p>
-          </div>
-
-          <div style={customStyles.mapContainer}>
-            <iframe
-              className="map-iframe-mobile"
-              src="https://londonmaxxxing.com/embed"
-              style={customStyles.mapIframe}
-              title="London Tech Map"
-              allowFullScreen
-            />
-          </div>
-
+          <main style={customStyles.content}>
+            <div style={customStyles.mapContainer}>
+              <iframe
+                src="https://londonmaxxxing.com"
+                style={customStyles.mapIframe}
+                title="London Tech Ecosystem Map"
+              />
+            </div>
+          </main>
         </div>
+
+        <EmailCapture sourcePage="Map" />
+
+        <style>{`
+          /* Focus indicators for keyboard navigation */
+          button:focus-visible,
+          a:focus-visible,
+          input:focus-visible {
+            outline: 3px solid #00D27F;
+            outline-offset: 4px;
+            border-radius: 2px;
+          }
+
+          /* Reduced motion support for accessibility */
+          @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+              animation-duration: 0.01ms !important;
+              animation-iteration-count: 1 !important;
+              transition-duration: 0.01ms !important;
+              scroll-behavior: auto !important;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .system-container {
+              border-left: none !important;
+              border-right: none !important;
+            }
+          }
+        `}</style>
       </div>
-    </>
+    </div>
   );
 };
 
