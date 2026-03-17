@@ -84,6 +84,27 @@ const Map = () => {
   return (
     <>
       <style>{`
+        /* Focus indicators for keyboard navigation */
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible {
+          outline: 3px solid #00D27F;
+          outline-offset: 4px;
+          border-radius: 2px;
+        }
+
+        /* Reduced motion support for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+          }
+        }
+
         @media (max-width: 768px) {
           .map-header-mobile {
             padding: 24px 16px !important;

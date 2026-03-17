@@ -65,7 +65,9 @@ const customStyles = {
     fontSize: '0.75rem',
     cursor: 'pointer',
     textTransform: 'uppercase',
-    transition: 'all 0.2s',
+    minHeight: '44px',
+    minWidth: '44px',
+    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
   },
   pillFilterActive: {
     padding: '6px 14px',
@@ -76,7 +78,9 @@ const customStyles = {
     fontSize: '0.75rem',
     cursor: 'pointer',
     textTransform: 'uppercase',
-    transition: 'all 0.2s',
+    minHeight: '44px',
+    minWidth: '44px',
+    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
   },
   scheduleHeader: {
     padding: '24px 32px 16px 32px',
@@ -183,6 +187,9 @@ const customStyles = {
     textTransform: 'uppercase',
     boxShadow: '2px 2px 0px #251720',
     cursor: 'pointer',
+    minHeight: '44px',
+    minWidth: '44px',
+    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
   },
   btnSmGold: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -194,6 +201,9 @@ const customStyles = {
     textTransform: 'uppercase',
     boxShadow: '2px 2px 0px #251720',
     cursor: 'pointer',
+    minHeight: '44px',
+    minWidth: '44px',
+    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
   },
   btnSmConfirmed: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -206,6 +216,9 @@ const customStyles = {
     textTransform: 'uppercase',
     boxShadow: '2px 2px 0px #251720',
     cursor: 'default',
+    minHeight: '44px',
+    minWidth: '44px',
+    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
   },
   liveLabel: {
     fontFamily: "'JetBrains Mono', monospace",
@@ -492,6 +505,26 @@ const Events = () => {
           .overlay-text-mobile {
             font-size: 1.75rem !important;
             padding: 20px !important;
+          }
+        }
+        /* Focus indicators for keyboard navigation */
+        button:focus-visible,
+        a:focus-visible,
+        input:focus-visible {
+          outline: 3px solid #00D27F;
+          outline-offset: 4px;
+          border-radius: 2px;
+        }
+
+        /* Reduced motion support for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+          *,
+          *::before,
+          *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
           }
         }
       `}</style>

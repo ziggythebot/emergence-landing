@@ -73,7 +73,9 @@ const customStyles = {
     background: '#00D27F',
     border: '3px solid #251720',
     cursor: 'pointer',
-    transition: 'all 0.1s ease',
+    minHeight: '44px',
+    minWidth: '44px',
+    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
     boxShadow: '4px 4px 0px #251720',
     textDecoration: 'none',
     marginTop: 'auto',
@@ -277,6 +279,27 @@ const BrandKit = () => {
         </footer>
 
         <style>{`
+          /* Focus indicators for keyboard navigation */
+          button:focus-visible,
+          a:focus-visible,
+          input:focus-visible {
+            outline: 3px solid #00D27F;
+            outline-offset: 4px;
+            border-radius: 2px;
+          }
+
+          /* Reduced motion support for accessibility */
+          @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+              animation-duration: 0.01ms !important;
+              animation-iteration-count: 1 !important;
+              transition-duration: 0.01ms !important;
+              scroll-behavior: auto !important;
+            }
+          }
+
           @media (max-width: 768px) {
             .system-container {
               border-left: none !important;
