@@ -246,7 +246,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div style={{ borderTop: '3px solid #251720', paddingTop: '16px' }}>
+                <div style={{ borderTop: '3px solid #251720', paddingTop: '16px', display: 'flex', justifyContent: 'center' }}>
                   <button
                     type="submit"
                     disabled={isSubmitting}
