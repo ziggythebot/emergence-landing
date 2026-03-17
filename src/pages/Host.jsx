@@ -249,7 +249,9 @@ const Host = () => {
               <>
                 <div style={{ maxWidth: '800px', marginBottom: '40px' }}>
                   <div style={{ background: '#EAF8F5', padding: '32px', border: '3px solid #251720', marginBottom: '32px' }}>
-                    <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', fontFamily: "'Epilogue', sans-serif", fontWeight: 900, textTransform: 'uppercase', color: '#251720' }}>How it works.</h2>
+                    <div style={{ display: 'inline-block', background: '#00D27F', color: '#251720', padding: '8px 16px', border: '3px solid #251720', boxShadow: '4px 4px 0px #251720', marginBottom: '16px', fontFamily: "'Epilogue', sans-serif", fontWeight: 900, fontSize: '1.5rem', textTransform: 'uppercase' }}>
+                      HOW IT WORKS.
+                    </div>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '0', color: '#251720' }}>
                       Create your event on <a href="https://lu.ma" target="_blank" rel="noopener noreferrer" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>Luma</a>. Either email us the event link, or make <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> a co-host.
                     </p>
@@ -259,7 +261,9 @@ const Host = () => {
                   </div>
 
                   <div style={{ background: '#FFF9E6', padding: '32px', border: '3px solid #251720', marginBottom: '32px' }}>
-                    <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', fontFamily: "'Epilogue', sans-serif", fontWeight: 900, textTransform: 'uppercase', color: '#251720' }}>What we want.</h2>
+                    <div style={{ display: 'inline-block', background: '#FFD600', color: '#251720', padding: '8px 16px', border: '3px solid #251720', boxShadow: '4px 4px 0px #251720', marginBottom: '16px', fontFamily: "'Epilogue', sans-serif", fontWeight: 900, fontSize: '1.5rem', textTransform: 'uppercase' }}>
+                      WHAT WE WANT.
+                    </div>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
                       Bringing London's tech scene together. Use your imagination.
                     </p>
