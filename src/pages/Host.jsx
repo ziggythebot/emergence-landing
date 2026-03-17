@@ -232,11 +232,7 @@ const Host = () => {
         <div className="form-hero-grid" style={customStyles.formHero}>
           <aside className="form-sidebar-resp" style={customStyles.formSidebar}>
             <div>
-              <span style={{ ...customStyles.monoLabel, color: '#00D27F' }}>HOST_PROTOCOL</span>
               <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#FFFFFF', lineHeight: 1.1 }}>HOST AN EVENT.</h1>
-            </div>
-            <div style={{ marginTop: '40px', opacity: 0.8 }}>
-              <NetworkSVG />
             </div>
           </aside>
 

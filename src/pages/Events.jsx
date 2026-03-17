@@ -616,9 +616,6 @@ const Events = () => {
           </div>
         </div>
 
-        <div style={customStyles.footer}>
-          <span style={customStyles.footerText}>END_OF_TRANSMISSION — [SCROLL FOR MORE]</span>
-        </div>
 
         <Modal
           isOpen={modalOpen}

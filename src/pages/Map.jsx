@@ -124,7 +124,6 @@ const Map = () => {
           <Header />
 
           <div className="map-header-mobile" style={customStyles.mapHeader}>
-            <span style={customStyles.liveLabel}>INTERACTIVE MAP</span>
             <h1 className="map-title-mobile" style={customStyles.mapTitle}>LONDON TECH MAP.</h1>
             <p style={customStyles.mapDescription}>
               This map is where Emergence started. Every dot is a node in London's tech network. We built this to see the whole ecosystem at once. Then we started connecting them IRL.
@@ -141,9 +140,6 @@ const Map = () => {
             />
           </div>
 
-          <div style={customStyles.footer}>
-            <span style={customStyles.footerText}>END_OF_TRANSMISSION</span>
-          </div>
         </div>
       </div>
     </>

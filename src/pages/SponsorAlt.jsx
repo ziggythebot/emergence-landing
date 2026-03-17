@@ -290,7 +290,6 @@ const SponsorAlt = () => {
         {/* Hero Split */}
         <section style={styles.heroSplit}>
           <div style={styles.heroText}>
-            <span style={styles.monoLabel}>TRANSMISSION // GRID_SPONSORSHIP</span>
             <h1 style={styles.h1}>FUEL THE RENAISSANCE.</h1>
             <p style={{ fontSize: '1.25rem', color: '#5A4C55', maxWidth: '500px' }}>
               We are building the infrastructure for London's tech future. Sponsors don't just get visibility; they provide the bandwidth that powers every Node in the network.
