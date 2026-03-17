@@ -1,0 +1,51 @@
+{
+  "name": "Emergence London 2026",
+  "description": "Tech Week event aggregator - bold, brutalist, network-driven aesthetic",
+  "fonts": {
+    "heading": "Epilogue",
+    "body": "DM Sans",
+    "mono": "JetBrains Mono"
+  },
+  "colors": {
+    "primary": "#00D27F",
+    "secondary": "#FFD600",
+    "ink": "#251720",
+    "background": "#FFFFFF",
+    "node-primary": "#00D27F",
+    "node-secondary": "#FFD600",
+    "node-tertiary": "#FF5733",
+    "border": "#251720"
+  },
+  "spacing": {
+    "base": "8px",
+    "small": "4px",
+    "medium": "16px",
+    "large": "24px",
+    "xlarge": "32px",
+    "section": "48px"
+  },
+  "typography": {
+    "h1": "48px",
+    "h2": "36px",
+    "h3": "24px",
+    "h4": "20px",
+    "body": "16px",
+    "small": "14px"
+  },
+  "borders": {
+    "default": "3px",
+    "radius": "0px"
+  },
+  "rules": [
+    "Always use 3px borders",
+    "No rounded corners except circles (borderRadius: 50%)",
+    "No gradients",
+    "Network nodes use primary (#00D27F), secondary (#FFD600), or tertiary (#FF5733) colors",
+    "Buttons have 3px solid borders with ink (#251720)",
+    "Maximum border-radius is 50% (circles only)",
+    "Use mono font (JetBrains Mono) for dates, times, metadata",
+    "Maintain brutalist aesthetic - sharp edges, bold borders",
+    "Background is always white (#FFFFFF)",
+    "Ink (#251720) is for text and borders only"
+  ]
+}

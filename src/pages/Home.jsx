@@ -135,6 +135,8 @@ const customStyles = {
     justifyContent: 'center',
     alignItems: 'center',
     padding: '12px 24px',
+    minHeight: '44px',
+    minWidth: '44px',
     fontFamily: "'Epilogue', sans-serif",
     fontSize: '0.9rem',
     fontWeight: 900,
@@ -144,7 +146,7 @@ const customStyles = {
     border: '3px solid #251720',
     cursor: 'pointer',
     textDecoration: 'none',
-    transition: 'all 0.1s ease',
+    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
     boxShadow: '4px 4px 0px #251720',
   },
   btnPrimary: {
@@ -657,6 +659,27 @@ const App = () => {
 
       a:hover {
         color: #00D27F !important;
+      }
+
+      /* Focus indicators for keyboard navigation */
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible {
+        outline: 3px solid #00D27F;
+        outline-offset: 4px;
+        border-radius: 2px;
+      }
+
+      /* Reduced motion support for accessibility */
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
       }
 
       @media (max-width: 1024px) {
