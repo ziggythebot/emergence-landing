@@ -297,17 +297,27 @@ const Contact = () => {
             .form-sidebar-resp {
               border-right: none !important;
               border-bottom: 3px solid #251720 !important;
-              padding: 32px 24px !important;
+              padding: 24px 16px !important;
             }
             .form-sidebar-resp h1 {
-              font-size: 2.5rem !important;
+              font-size: 2rem !important;
             }
             .form-container-resp {
-              padding: 32px 24px !important;
+              padding: 24px 16px !important;
             }
             .system-container {
               border-left: none !important;
               border-right: none !important;
+            }
+            input, textarea {
+              width: 100% !important;
+              box-sizing: border-box !important;
+              max-width: 100% !important;
+              font-size: 16px !important;
+            }
+            form {
+              max-width: 100% !important;
+              overflow-x: hidden !important;
             }
           }
         `}</style>
