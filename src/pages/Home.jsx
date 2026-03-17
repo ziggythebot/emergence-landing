@@ -728,6 +728,18 @@ const App = () => {
         @media (max-width: 768px) {
           /* Global mobile resets */
           body { overflow-x: hidden !important; }
+          * { max-width: 100vw !important; box-sizing: border-box !important; }
+
+          /* Prevent video/image bleeding */
+          .hero-grid > div:last-child {
+            overflow: hidden !important;
+            max-width: 100% !important;
+          }
+
+          .hero-grid > div:last-child > * {
+            max-width: 100% !important;
+            width: 100% !important;
+          }
 
           /* Hero section */
           .hero-grid h1 {
@@ -790,6 +802,17 @@ const App = () => {
           .mechanics-grid svg {
             width: 20px !important;
             height: 20px !important;
+          }
+
+          .mechanics-grid {
+            text-align: center !important;
+          }
+
+          .mechanics-grid > div {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
           }
 
           .mechanics-grid button,
