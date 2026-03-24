@@ -245,7 +245,7 @@ const Host = () => {
             <div>
               <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#251720', lineHeight: 1.1 }}>HOST AN EVENT.</h1>
               <p style={{ fontSize: '1.25rem', marginTop: '16px', color: '#00D27F', fontFamily: "'JetBrains Mono', monospace", fontWeight: 700 }}>
-                Calendar launches 25th March.
+                Calendar launches 1st of April.
               </p>
             </div>
             <div style={{ marginTop: '40px', opacity: 0.8 }}>
@@ -272,8 +272,11 @@ const Host = () => {
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
                       Create your event on <a href="https://lu.ma" target="_blank" rel="noopener noreferrer" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>Luma</a> or <a href="https://www.eventbrite.com" target="_blank" rel="noopener noreferrer" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>Eventbrite</a>.
                     </p>
+                    <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '8px', color: '#251720' }}>
+                      Send <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> the event link.
+                    </p>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
-                      Send <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> the event link (or submit below).
+                      (or submit below)
                     </p>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '0', color: '#251720' }}>
                       That's it. We will add to calendar and amplify.
