@@ -229,19 +229,19 @@ const Partners = () => {
               <div style={customStyles.sectionBox}>
                 <div style={customStyles.sectionTitle}>Community partners</div>
                 <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
-                  We're announcing our first community partners on March 24th. If you're a coworking space, university, accelerator, media outlet, developer community or government organisation — get in touch. We'll get you onboarded quickly.
+                  We're announcing our first community partners soon. If you're a coworking space, university, accelerator, media outlet, developer community or government organisation — get in touch. We'll get you onboarded quickly.
                 </p>
                 <a href="mailto:andy@emergence.london" style={customStyles.email}>
                   andy@emergence.london
                 </a>
 
                 <div style={customStyles.logosGrid}>
-                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
-                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
-                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
-                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
-                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
-                  <div style={customStyles.logoBox}>Launches<br/>March 24th</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
                 </div>
               </div>
 
