@@ -80,305 +80,241 @@ const customStyles = {
     textTransform: 'uppercase',
     minHeight: '44px',
     minWidth: '44px',
-    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
   },
   scheduleHeader: {
-    padding: '24px 32px 16px 32px',
+    display: 'grid',
+    gridTemplateColumns: '1fr auto',
+    alignItems: 'center',
+    padding: '24px 32px',
+    borderBottom: '3px solid #251720',
+    background: '#FFFFFF',
+  },
+  scheduleTitleWrapper: {
     display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'flex-end',
+    flexDirection: 'column',
+    gap: '8px',
+  },
+  datePill: {
+    display: 'inline-flex',
+    alignItems: 'center',
+    padding: '4px 12px',
+    border: '2px solid #00D27F',
+    background: 'transparent',
+    color: '#00D27F',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.75rem',
+    fontWeight: 700,
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em',
+    width: 'fit-content',
   },
   scheduleTitle: {
     fontFamily: "'Epilogue', sans-serif",
-    fontSize: '2.5rem',
+    fontSize: 'clamp(2rem, 5vw, 3.5rem)',
     fontWeight: 900,
-    letterSpacing: '-0.05em',
+    textTransform: 'uppercase',
     lineHeight: 0.95,
+    letterSpacing: '-0.02em',
   },
   counterBox: {
     background: '#FFD600',
     border: '3px solid #251720',
-    padding: '12px 16px',
     boxShadow: '3px 3px 0px #251720',
-    fontFamily: "'JetBrains Mono', monospace",
-    textAlign: 'right',
+    padding: '16px 24px',
+    textAlign: 'center',
+    fontFamily: "'Epilogue', sans-serif",
+    fontWeight: 900,
+    minWidth: '80px',
+  },
+  eventsGridContainer: {
+    position: 'relative',
+    flex: 1,
+  },
+  diagonalOverlay: {
+    position: 'absolute',
+    inset: 0,
+    background: 'rgba(0, 210, 127, 0.85)',
+    zIndex: 10,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backdropFilter: 'blur(2px)',
+  },
+  overlayText: {
+    fontFamily: "'Epilogue', sans-serif",
+    fontSize: 'clamp(2rem, 6vw, 4rem)',
+    fontWeight: 900,
+    textTransform: 'uppercase',
+    color: '#251720',
+    textAlign: 'center',
+    lineHeight: 1.1,
+    letterSpacing: '-0.02em',
+    transform: 'rotate(-8deg)',
+    textShadow: '4px 4px 0px rgba(37,23,32,0.2)',
   },
   eventGrid: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
+    gridTemplateColumns: 'repeat(3, 1fr)',
     borderTop: '3px solid #251720',
   },
   eventCard: {
-    padding: '20px',
+    padding: '24px',
     borderRight: '3px solid #251720',
     borderBottom: '3px solid #251720',
-    display: 'flex',
-    flexDirection: 'column',
-    transition: 'background 0.2s',
-    cursor: 'pointer',
     background: '#FFFFFF',
-  },
-  eventCardHover: {
-    padding: '20px',
-    borderRight: '3px solid #251720',
-    borderBottom: '3px solid #251720',
     display: 'flex',
     flexDirection: 'column',
-    transition: 'background 0.2s',
+    gap: '12px',
     cursor: 'pointer',
-    background: '#EAF8F5',
+    transition: 'background 150ms ease',
+  },
+  eventCardLast: {
+    borderRight: 'none',
   },
   eventTime: {
     fontFamily: "'JetBrains Mono', monospace",
-    fontWeight: 700,
-    marginBottom: '4px',
-    display: 'flex',
-    justifyContent: 'space-between',
-    fontSize: '0.75rem',
-  },
-  eventTopic: {
-    color: '#00D27F',
-    fontSize: '0.65rem',
-    fontFamily: "'JetBrains Mono', monospace",
-    fontWeight: 700,
+    fontSize: '0.7rem',
+    color: '#5A4C55',
+    textTransform: 'uppercase',
+    letterSpacing: '0.1em',
   },
   eventTitle: {
     fontFamily: "'Epilogue', sans-serif",
     fontSize: '1.25rem',
     fontWeight: 900,
-    marginBottom: '8px',
-    lineHeight: 1.05,
+    textTransform: 'uppercase',
+    lineHeight: 1,
+    letterSpacing: '-0.02em',
   },
   eventDesc: {
+    fontSize: '0.9rem',
     color: '#5A4C55',
-    fontSize: '0.85rem',
-    marginBottom: '12px',
+    lineHeight: 1.4,
     flexGrow: 1,
-    lineHeight: 1.3,
   },
   eventMeta: {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
-    borderTop: '1px solid rgba(37, 23, 32, 0.15)',
-    paddingTop: '8px',
+    marginTop: 'auto',
   },
   eventLocation: {
     fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.7rem',
-    display: 'flex',
-    alignItems: 'center',
-    gap: '4px',
-  },
-  statusDot: {
-    width: '8px',
-    height: '8px',
-    borderRadius: '50%',
-    background: '#00D27F',
-    flexShrink: 0,
-  },
-  btnSm: {
-    fontFamily: "'JetBrains Mono', monospace",
     fontSize: '0.65rem',
-    fontWeight: 700,
-    padding: '6px 10px',
-    border: '2px solid #251720',
-    background: '#FFFFFF',
-    textTransform: 'uppercase',
-    boxShadow: '2px 2px 0px #251720',
-    cursor: 'pointer',
-    minHeight: '44px',
-    minWidth: '44px',
-    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
-  },
-  btnSmGold: {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.65rem',
-    fontWeight: 700,
-    padding: '6px 10px',
-    border: '2px solid #251720',
-    background: '#FFD600',
-    textTransform: 'uppercase',
-    boxShadow: '2px 2px 0px #251720',
-    cursor: 'pointer',
-    minHeight: '44px',
-    minWidth: '44px',
-    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
-  },
-  btnSmConfirmed: {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.65rem',
-    fontWeight: 700,
-    padding: '6px 10px',
-    border: '2px solid #00D27F',
-    background: '#00D27F',
-    color: '#251720',
-    textTransform: 'uppercase',
-    boxShadow: '2px 2px 0px #251720',
-    cursor: 'default',
-    minHeight: '44px',
-    minWidth: '44px',
-    transition: 'transform 100ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 100ms ease, background 100ms ease',
-  },
-  liveLabel: {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.75rem',
-    fontWeight: 700,
-    display: 'inline-block',
-    marginBottom: '8px',
-    border: '2px solid #00D27F',
-    padding: '4px 10px',
-    color: '#00D27F',
-    textTransform: 'uppercase',
-    letterSpacing: '0.1em',
-  },
-  footer: {
-    padding: '24px',
-    textAlign: 'center',
-    borderTop: '1px solid rgba(37, 23, 32, 0.15)',
-  },
-  footerText: {
-    fontFamily: "'JetBrains Mono', monospace",
-    fontSize: '0.75rem',
     color: '#5A4C55',
     textTransform: 'uppercase',
-    letterSpacing: '0.1em',
   },
-  eventsGridContainer: {
-    position: 'relative',
-  },
-  diagonalOverlay: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: 'linear-gradient(135deg, rgba(0, 210, 127, 0.95) 0%, rgba(0, 210, 127, 0.85) 100%)',
-    zIndex: 10,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    pointerEvents: 'none',
-  },
-  overlayText: {
-    fontFamily: "'Epilogue', sans-serif",
-    fontSize: '3rem',
-    fontWeight: 900,
-    color: '#251720',
+  confirmedBadge: {
+    padding: '4px 10px',
+    border: '2px solid #251720',
+    background: '#FFD600',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.65rem',
+    fontWeight: 700,
     textTransform: 'uppercase',
-    letterSpacing: '-0.02em',
-    textAlign: 'center',
-    padding: '40px',
-    lineHeight: 1.1,
-    transform: 'rotate(-12deg)',
-    textShadow: '4px 4px 0px rgba(37, 23, 32, 0.2)',
+    boxShadow: '2px 2px 0px #251720',
+  },
+  tentativeBadge: {
+    padding: '4px 10px',
+    border: '2px solid #251720',
+    background: '#EAF8F5',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.65rem',
+    fontWeight: 700,
+    textTransform: 'uppercase',
+    boxShadow: '2px 2px 0px #251720',
+  },
+  syncedBadge: {
+    padding: '4px 10px',
+    border: '2px solid #00D27F',
+    background: '#00D27F',
+    color: '#251720',
+    fontFamily: "'JetBrains Mono', monospace",
+    fontSize: '0.65rem',
+    fontWeight: 700,
+    textTransform: 'uppercase',
+    boxShadow: '2px 2px 0px #251720',
   },
 };
 
-const allEvents = [
+const events = [
   {
     id: 1,
     date: 'APR 28',
     time: '19:00',
-    topic: 'WEB3_BUILDERS',
-    topicCategory: 'WEB3',
     title: 'ENCODE CLUB: PROTOCOL BUILDERS',
     desc: 'Web3 developer community meetup. Building the next generation of decentralized apps.',
     location: 'SHOREDITCH, E1',
-    locationArea: 'SHOREDITCH',
-    btnLabel: 'CONFIRMED',
-    btnStyle: 'confirmed',
+    status: 'confirmed',
+    type: 'tech',
+    lumaUrl: 'https://lu.ma/encode-emergence',
   },
   {
     id: 2,
     date: 'APR 29',
     time: '18:00',
-    topic: 'SPACE_TECH',
-    topicCategory: 'SPACE',
     title: 'SPACE: ORBITAL INFRASTRUCTURE',
     desc: 'Space tech founders and investors. New space economy, satellite networks, launch systems.',
-    location: 'KING\'S CROSS, N1C',
-    locationArea: "KING'S CROSS",
-    btnLabel: 'CONFIRMED',
-    btnStyle: 'confirmed',
+    location: 'KING\'S CROSS, N1',
+    status: 'confirmed',
+    type: 'tech',
+    lumaUrl: 'https://lu.ma/space-emergence',
   },
   {
     id: 3,
     date: 'APR 29',
     time: '20:00',
-    topic: 'CREATIVE_TECH',
-    topicCategory: 'CREATIVE',
     title: 'RAUM: DIGITAL FUTURES',
     desc: 'Creative technologists, artists, and builders exploring new media and digital art.',
-    location: 'SHOREDITCH, E2',
-    locationArea: 'SHOREDITCH',
-    btnLabel: 'CONFIRMED',
-    btnStyle: 'confirmed',
+    location: 'SHOREDITCH, E1',
+    status: 'confirmed',
+    type: 'culture',
+    lumaUrl: 'https://lu.ma/raum-emergence',
   },
   {
     id: 4,
     date: 'APR 30',
     time: '22:00',
-    topic: 'NETWORK_SYNC',
-    topicCategory: 'SOCIAL',
     title: 'EMERGENCE AFTER PARTY',
     desc: 'Network consolidation. All nodes converge for final sync.',
     location: 'COAL DROPS YARD, N1C',
-    locationArea: "KING'S CROSS",
-    btnLabel: 'CONFIRMED',
-    btnStyle: 'confirmed',
+    status: 'confirmed',
+    type: 'social',
+    lumaUrl: 'https://lu.ma/emergence-afterparty',
   },
 ];
 
-const PillFilter = ({ label, active, onClick }) => {
-  const [hovered, setHovered] = useState(false);
-  const baseStyle = active ? customStyles.pillFilterActive : {
-    ...customStyles.pillFilterBase,
-    background: hovered ? 'rgba(255,255,255,0.1)' : 'transparent',
-  };
-  return (
-    <button
-      style={baseStyle}
-      onClick={onClick}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      {label}
-    </button>
-  );
-};
-
 const EventCard = ({ event, onSync }) => {
   const [hovered, setHovered] = useState(false);
-  const cardStyle = hovered ? customStyles.eventCardHover : customStyles.eventCard;
+  const [synced, setSynced] = useState(false);
+
+  const handleSync = (e) => {
+    e.stopPropagation();
+    setSynced(true);
+    if (onSync) onSync(event);
+  };
 
   return (
     <div
-      style={cardStyle}
+      style={{
+        ...customStyles.eventCard,
+        background: hovered ? 'rgba(255,255,255,0.1)' : 'transparent',
+      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div style={customStyles.eventTime}>
-        <span>{event.date} // {event.time}</span>
-        <span style={customStyles.eventTopic}>{event.topic}</span>
-      </div>
-      <h3 style={customStyles.eventTitle}>{event.title}</h3>
-      <p style={customStyles.eventDesc}>{event.desc}</p>
+      <div style={customStyles.eventTime}>{event.date} // {event.time}</div>
+      <div style={customStyles.eventTitle}>{event.title}</div>
+      <div style={customStyles.eventDesc}>{event.desc}</div>
       <div style={customStyles.eventMeta}>
-        <div style={customStyles.eventLocation}>
-          <div style={customStyles.statusDot}></div>
-          {event.location}
-        </div>
-        <button
-          style={
-            event.btnStyle === 'gold' ? customStyles.btnSmGold :
-            event.btnStyle === 'confirmed' ? customStyles.btnSmConfirmed :
-            customStyles.btnSm
-          }
-          onClick={() => event.btnStyle !== 'confirmed' && onSync(event)}
-        >
-          {event.btnLabel}
-        </button>
+        <span style={customStyles.eventLocation}>◎ {event.location}</span>
+        {synced ? (
+          <span style={customStyles.syncedBadge}>SYNCED</span>
+        ) : event.status === 'confirmed' ? (
+          <span style={customStyles.confirmedBadge}>CONFIRMED</span>
+        ) : (
+          <span style={customStyles.tentativeBadge}>TENTATIVE</span>
+        )}
       </div>
     </div>
   );
@@ -387,53 +323,66 @@ const EventCard = ({ event, onSync }) => {
 const Modal = ({ isOpen, onClose, event }) => {
   if (!isOpen || !event) return null;
   return (
-    <div
-      style={{
-        position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
-        background: 'rgba(37,23,32,0.7)', zIndex: 1000,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-        padding: '24px',
-      }}
-      onClick={onClose}
-    >
-      <div
-        style={{
-          background: '#FFFFFF',
-          border: '3px solid #251720',
-          boxShadow: '6px 6px 0px #251720',
-          maxWidth: '500px',
-          width: '100%',
-          padding: '40px',
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div style={{ ...customStyles.eventTime, marginBottom: '16px' }}>
-          <span>{event.date} // {event.time}</span>
-          <span style={customStyles.eventTopic}>{event.topic}</span>
+    <div style={{
+      position: 'fixed',
+      inset: 0,
+      background: 'rgba(37,23,32,0.8)',
+      zIndex: 100,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '24px',
+    }} onClick={onClose}>
+      <div style={{
+        background: '#FFFFFF',
+        border: '3px solid #251720',
+        boxShadow: '6px 6px 0px #251720',
+        padding: '32px',
+        maxWidth: '480px',
+        width: '100%',
+      }} onClick={e => e.stopPropagation()}>
+        <div style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: '0.7rem', color: '#00D27F', marginBottom: '8px' }}>
+          {event.date} // {event.time}
         </div>
-        <h3 style={{ ...customStyles.eventTitle, marginBottom: '12px' }}>{event.title}</h3>
-        <p style={{ ...customStyles.eventDesc, marginBottom: '16px' }}>{event.desc}</p>
-        <div style={customStyles.eventMeta}>
-          <div style={customStyles.eventLocation}>
-            <div style={customStyles.statusDot}></div>
-            {event.location}
-          </div>
-        </div>
-        <div style={{ marginTop: '24px', display: 'flex', gap: '12px' }}>
-          <button
+        <h2 style={{ fontFamily: "'Epilogue', sans-serif", fontWeight: 900, fontSize: '1.75rem', textTransform: 'uppercase', lineHeight: 1, marginBottom: '16px' }}>
+          {event.title}
+        </h2>
+        <p style={{ color: '#5A4C55', marginBottom: '24px', lineHeight: 1.6 }}>{event.desc}</p>
+        <div style={{ display: 'flex', gap: '12px' }}>
+          <a
+            href={event.lumaUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              ...customStyles.btnSm,
+              padding: '12px 24px',
               background: '#00D27F',
-              borderColor: '#251720',
+              border: '3px solid #251720',
+              boxShadow: '3px 3px 0px #251720',
+              fontFamily: "'Epilogue', sans-serif",
+              fontWeight: 900,
+              fontSize: '0.85rem',
+              textTransform: 'uppercase',
+              textDecoration: 'none',
               color: '#251720',
-              padding: '12px 20px',
             }}
           >
-            ✓ SYNCED TO CALENDAR
-          </button>
+            REGISTER ON LUMA
+          </a>
           <button
-            style={{ ...customStyles.btnSm, padding: '12px 20px' }}
             onClick={onClose}
+            style={{
+              padding: '12px 24px',
+              background: '#FFFFFF',
+              border: '3px solid #251720',
+              boxShadow: '3px 3px 0px #251720',
+              fontFamily: "'Epilogue', sans-serif",
+              fontWeight: 900,
+              fontSize: '0.85rem',
+              textTransform: 'uppercase',
+              cursor: 'pointer',
+              color: '#251720',
+              borderColor: '#251720',
+            }}
           >
             CLOSE
           </button>
@@ -444,186 +393,129 @@ const Modal = ({ isOpen, onClose, event }) => {
 };
 
 const Events = () => {
-  const [activeDay, setActiveDay] = useState('ALL DAYS');
-  const [activeTopic, setActiveTopic] = useState('ALL');
-  const [activeLocation, setActiveLocation] = useState('EVERYWHERE');
-  const [modalOpen, setModalOpen] = useState(false);
-  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [activeFilters, setActiveFilters] = useState({ date: 'ALL', type: 'ALL' });
+  const [modalEvent, setModalEvent] = useState(null);
+  const [syncedEvents, setSyncedEvents] = useState([]);
 
-  const dayFilters = ['ALL DAYS', 'APR 28', 'APR 29', 'APR 30'];
-  const topicFilters = ['ALL', 'AI', 'CRYPTO', 'HARDWARE', 'SOCIAL'];
-  const locationFilters = ['EVERYWHERE', 'SHOREDITCH', 'SOHO', 'HACKNEY', "KING'S CROSS"];
+  const toggleFilter = (category, value) => {
+    setActiveFilters(prev => ({
+      ...prev,
+      [category]: prev[category] === value ? 'ALL' : value,
+    }));
+  };
 
-  const filteredEvents = allEvents.filter((event) => {
-    const dayMatch = activeDay === 'ALL DAYS' || event.date === activeDay;
-    const topicMatch = activeTopic === 'ALL' || event.topicCategory === activeTopic;
-    const locationMatch = activeLocation === 'EVERYWHERE' || event.locationArea === activeLocation;
-    return dayMatch && topicMatch && locationMatch;
+  const filteredEvents = events.filter(event => {
+    if (activeFilters.date !== 'ALL' && event.date !== activeFilters.date) return false;
+    if (activeFilters.type !== 'ALL' && event.type !== activeFilters.type) return false;
+    return true;
   });
 
   const handleSync = (event) => {
-    setSelectedEvent(event);
-    setModalOpen(true);
+    setSyncedEvents(prev => [...prev, event.id]);
   };
 
   return (
     <>
       <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;700&family=Epilogue:wght@800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
         @media (max-width: 768px) {
-          /* Filter system mobile */
-          .filter-system-mobile {
-            padding: 20px 16px !important;
-          }
-
-          .filter-grid-mobile {
-            grid-template-columns: 1fr !important;
-            gap: 20px !important;
-          }
-
-          /* Schedule header mobile */
-          .schedule-header-mobile {
-            padding: 24px 16px !important;
-            flex-direction: column !important;
-            align-items: flex-start !important;
-            gap: 16px !important;
-          }
-
-          .schedule-title-mobile {
-            font-size: 2rem !important;
-          }
-
-          .counter-box-mobile {
-            align-self: flex-start !important;
-          }
-
-          /* No events message */
-          .no-events-mobile {
-            padding: 40px 16px !important;
-          }
-
-          /* Diagonal overlay mobile */
-          .overlay-text-mobile {
-            font-size: 1.75rem !important;
-            padding: 20px !important;
-          }
-        }
-        /* Focus indicators for keyboard navigation */
-        button:focus-visible,
-        a:focus-visible,
-        input:focus-visible {
-          outline: 3px solid #00D27F;
-          outline-offset: 4px;
-          border-radius: 2px;
-        }
-
-        /* Reduced motion support for accessibility */
-        @media (prefers-reduced-motion: reduce) {
-          *,
-          *::before,
-          *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
-          }
+          .filter-grid-mobile { grid-template-columns: 1fr !important; gap: 12px !important; }
+          .events-grid { grid-template-columns: 1fr !important; }
+          .events-grid > div { border-right: none !important; }
+          .schedule-header-mobile { flex-direction: column !important; align-items: flex-start !important; gap: 12px !important; }
+          .schedule-title-mobile { font-size: 2rem !important; }
+          .counter-box-mobile { align-self: flex-end !important; }
+          .overlay-text-mobile { font-size: 1.75rem !important; }
         }
       `}</style>
+
       <div style={customStyles.body}>
         <div style={customStyles.systemContainer}>
           <Header />
 
-        {/* Filter bar hidden for launch */}
-        {false && (
-        <div className="filter-system-mobile" style={customStyles.filterSystem}>
-          <div className="filter-grid-mobile" style={customStyles.filterGrid}>
-            <div>
-              <label style={customStyles.filterLabel}>CHRONO_INDEX</label>
-              <div style={customStyles.pillContainer}>
-                {dayFilters.map((day) => (
-                  <PillFilter
-                    key={day}
-                    label={day}
-                    active={activeDay === day}
-                    onClick={() => setActiveDay(day)}
-                  />
-                ))}
+          <div style={customStyles.filterSystem}>
+            <div className="filter-grid-mobile" style={customStyles.filterGrid}>
+              <div>
+                <span style={customStyles.filterLabel}>DATE_FILTER</span>
+                <div style={customStyles.pillContainer}>
+                  {['ALL', 'APR 28', 'APR 29', 'APR 30'].map(d => (
+                    <button
+                      key={d}
+                      style={activeFilters.date === d ? customStyles.pillFilterActive : customStyles.pillFilterBase}
+                      onClick={() => toggleFilter('date', d)}
+                    >
+                      {d}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <span style={customStyles.filterLabel}>TYPE_FILTER</span>
+                <div style={customStyles.pillContainer}>
+                  {['ALL', 'TECH', 'CULTURE', 'SOCIAL'].map(t => (
+                    <button
+                      key={t}
+                      style={activeFilters.type === t ? customStyles.pillFilterActive : customStyles.pillFilterBase}
+                      onClick={() => toggleFilter('type', t.toLowerCase())}
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <span style={customStyles.filterLabel}>STATUS</span>
+                <div style={customStyles.pillContainer}>
+                  <span style={{ ...customStyles.pillFilterBase, cursor: 'default', borderColor: '#00D27F', color: '#00D27F' }}>
+                    {filteredEvents.filter(e => e.status === 'confirmed').length} CONFIRMED
+                  </span>
+                </div>
               </div>
             </div>
-            <div>
-              <label style={customStyles.filterLabel}>TOPIC_FREQUENCY</label>
-              <div style={customStyles.pillContainer}>
-                {topicFilters.map((topic) => (
-                  <PillFilter
-                    key={topic}
-                    label={topic}
-                    active={activeTopic === topic}
-                    onClick={() => setActiveTopic(topic)}
-                  />
-                ))}
+          </div>
+
+          <div className="schedule-header-mobile" style={customStyles.scheduleHeader}>
+            <div style={customStyles.scheduleTitleWrapper}>
+              <span style={customStyles.datePill}>APR 28-30, 2026</span>
+              <h1 className="schedule-title-mobile" style={customStyles.scheduleTitle}>BROWSE EVENTS.</h1>
+            </div>
+            <div className="counter-box-mobile" style={customStyles.counterBox}>
+              <div style={{ fontSize: '2rem', fontWeight: 700, lineHeight: 1 }}>{filteredEvents.length}</div>
+              <div style={{ fontSize: '0.6rem', opacity: 0.7 }}>EVENTS</div>
+            </div>
+          </div>
+
+          <div style={customStyles.eventsGridContainer}>
+            <div style={customStyles.diagonalOverlay}>
+              <div className="overlay-text-mobile" style={customStyles.overlayText}>
+                FULL EVENTS LIST<br />LAUNCHES APRIL 1ST
               </div>
             </div>
-            <div>
-              <label style={customStyles.filterLabel}>LOC_COORDINATES</label>
-              <div style={customStyles.pillContainer}>
-                {locationFilters.map((loc) => (
-                  <PillFilter
-                    key={loc}
-                    label={loc}
-                    active={activeLocation === loc}
-                    onClick={() => setActiveLocation(loc)}
-                  />
-                ))}
-              </div>
+            <div className="events-grid" style={customStyles.eventGrid}>
+              {filteredEvents.length > 0 ? (
+                filteredEvents.map((event) => (
+                  <EventCard key={event.id} event={event} onSync={handleSync} />
+                ))
+              ) : (
+                <div className="no-events-mobile" style={{
+                  padding: '80px 40px',
+                  textAlign: 'center',
+                  gridColumn: '1 / -1',
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: '1rem',
+                  color: '#5A4C55',
+                }}>
+                  NO EVENTS MATCH FILTER
+                </div>
+              )}
             </div>
           </div>
         </div>
-        )}
-
-        <div className="schedule-header-mobile" style={customStyles.scheduleHeader}>
-          <div>
-            <span style={customStyles.liveLabel}>APR 28-30, 2026</span>
-            <h1 className="schedule-title-mobile" style={customStyles.scheduleTitle}>BROWSE EVENTS.</h1>
-          </div>
-          <div className="counter-box-mobile" style={customStyles.counterBox}>
-            <div style={{ fontSize: '2rem', fontWeight: 700, lineHeight: 1 }}>{filteredEvents.length}</div>
-            <div style={{ fontSize: '0.6rem', opacity: 0.7 }}>EVENTS</div>
-          </div>
-        </div>
-
-        <div style={customStyles.eventsGridContainer}>
-          <div style={customStyles.diagonalOverlay}>
-            <div className="overlay-text-mobile" style={customStyles.overlayText}>
-              FULL EVENTS LIST<br />LAUNCHES APRIL 1ST
-            </div>
-          </div>
-          <div className="events-grid" style={customStyles.eventGrid}>
-            {filteredEvents.length > 0 ? (
-              filteredEvents.map((event) => (
-                <EventCard key={event.id} event={event} onSync={handleSync} />
-              ))
-            ) : (
-              <div className="no-events-mobile" style={{
-                padding: '80px 40px',
-                textAlign: 'center',
-                gridColumn: '1 / -1',
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: '1rem',
-                color: '#5A4C55',
-              }}>
-                NO_NODES_FOUND — TRY ADJUSTING FILTERS
-              </div>
-            )}
-          </div>
-        </div>
-
-
-        <Modal
-          isOpen={modalOpen}
-          onClose={() => setModalOpen(false)}
-          event={selectedEvent}
-        />
       </div>
-    </div>
+
+      <Modal isOpen={!!modalEvent} onClose={() => setModalEvent(null)} event={modalEvent} />
     </>
   );
 };
