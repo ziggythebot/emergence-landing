@@ -270,13 +270,13 @@ const Host = () => {
                       HOW IT WORKS?
                     </div>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
-                      Create your event on <a href="https://lu.ma" target="_blank" rel="noopener noreferrer" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>Luma</a>.
+                      Create your event on <a href="https://lu.ma" target="_blank" rel="noopener noreferrer" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>Luma</a> or <a href="https://www.eventbrite.com" target="_blank" rel="noopener noreferrer" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>Eventbrite</a>.
                     </p>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px', color: '#251720' }}>
-                      Make <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> a co-host and we will pick it up automatically.
+                      Send <a href="mailto:events@emergence.london" style={{ color: '#00D27F', textDecoration: 'none', fontWeight: 700 }}>events@emergence.london</a> the event link (or submit below).
                     </p>
                     <p style={{ fontSize: '1rem', lineHeight: '1.7', marginBottom: '0', color: '#251720' }}>
-                      Alternatively fill in the form below to submit the event. Any questions drop us a line.
+                      That's it. We will add to calendar and amplify.
                     </p>
                   </div>
 

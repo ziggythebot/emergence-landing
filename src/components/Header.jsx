@@ -141,12 +141,12 @@ function Header() {
 
         {/* Desktop Nav */}
         <nav className="desktop-nav" style={customStyles.navLinks}>
-          <Link to="/host" style={customStyles.navLink}>HOST</Link>
+          <Link to="/host" style={customStyles.navLink}>HOST AN EVENT</Link>
           <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
           <Link to="/partners" style={customStyles.navLink}>PARTNERS</Link>
           <Link to="/map" style={customStyles.navLink}>MAP</Link>
           <Link to="/contact" style={customStyles.navLink}>CONTACT</Link>
-          <a href="https://x.com/emergenceldn" target="_blank" rel="noopener noreferrer" style={customStyles.navLink}>X</a>
+          <a href="https://x.com/emergenceldn" target="_blank" rel="noopener noreferrer" style={customStyles.navLink}>FOLLOW ON X</a>
         </nav>
 
         {/* Mobile Hamburger */}
@@ -181,7 +181,7 @@ function Header() {
           style={customStyles.mobileNavLink}
           onClick={closeMenu}
         >
-          HOST
+          HOST AN EVENT
         </Link>
         <Link
           to="/events"
@@ -218,7 +218,7 @@ function Header() {
           style={customStyles.mobileNavLink}
           onClick={closeMenu}
         >
-          X
+          FOLLOW ON X
         </a>
       </div>
     </>
