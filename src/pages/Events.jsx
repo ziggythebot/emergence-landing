@@ -490,7 +490,7 @@ const Events = () => {
           <div style={customStyles.eventsGridContainer}>
             <div style={customStyles.diagonalOverlay}>
               <div className="overlay-text-mobile" style={customStyles.overlayText}>
-                FULL EVENTS LIST<br />LAUNCHES APRIL 1ST
+                FULL EVENTS LIST<br />LAUNCHES MARCH 25TH
               </div>
             </div>
             <div className="events-grid" style={customStyles.eventGrid}>
