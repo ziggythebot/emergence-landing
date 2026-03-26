@@ -270,9 +270,57 @@ const Partners = () => {
                       style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }}
                     />
                   </a>
-                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
-                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
-                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <a
+                    href="https://x.com/SuperteamUK"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      ...customStyles.logoBox,
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <img
+                      src={new URL('../assets/partners/superteam-uk.jpg', import.meta.url).href}
+                      alt="Superteam UK"
+                      style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }}
+                    />
+                  </a>
+                  <a
+                    href="https://newspeak.house"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      ...customStyles.logoBox,
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <img
+                      src={new URL('../assets/partners/newspeak-house.jpg', import.meta.url).href}
+                      alt="Newspeak House"
+                      style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }}
+                    />
+                  </a>
+                  <a
+                    href="https://www.encodeclub.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      ...customStyles.logoBox,
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <img
+                      src={new URL('../assets/partners/encode-club.jpg', import.meta.url).href}
+                      alt="Encode Club"
+                      style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }}
+                    />
+                  </a>
                   <div style={customStyles.logoBox}>Coming<br/>Soon</div>
                 </div>
               </div>
