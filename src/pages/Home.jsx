@@ -162,6 +162,105 @@ const VenueSection = () => (
   </section>
 );
 
+const CommunityPartnersSection = () => {
+  const partners = [
+    {
+      name: 'Ramen Club',
+      logo: new URL('../assets/partners/ramen-club.jpg', import.meta.url).href,
+      url: 'https://ramenclub.so',
+      type: 'square'
+    },
+    {
+      name: 'ETHLondon',
+      logo: new URL('../assets/partners/ethlondon.jpg', import.meta.url).href,
+      url: 'https://ethlondon.com/',
+      type: 'wide'
+    }
+  ];
+
+  return (
+    <section style={{
+      padding: '80px 48px',
+      borderTop: '3px solid #251720',
+      background: '#FFFFFF'
+    }}>
+      <span style={{ ...customStyles.monoLabel, color: '#5A4C55', marginBottom: '16px', display: 'block' }}>
+        COMMUNITY_PARTNERS // NETWORK_NODES
+      </span>
+      <h2 style={{
+        fontFamily: "'Epilogue', sans-serif",
+        fontSize: '2.5rem',
+        textTransform: 'uppercase',
+        marginBottom: '48px',
+        color: '#251720'
+      }}>
+        BUILDING TOGETHER.
+      </h2>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+        gap: '32px',
+        alignItems: 'center'
+      }}>
+        {partners.map((partner, idx) => (
+          partner.url ? (
+            <a
+              key={idx}
+              href={partner.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '24px',
+                border: '3px solid #251720',
+                background: '#FFFFFF',
+                transition: 'all 0.2s',
+                textDecoration: 'none',
+                minHeight: '180px'
+              }}
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  display: 'block'
+                }}
+              />
+            </a>
+          ) : (
+            <div
+              key={idx}
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                padding: '24px',
+                border: '3px solid #251720',
+                background: '#FFFFFF',
+                minHeight: '180px'
+              }}
+            >
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                  display: 'block'
+                }}
+              />
+            </div>
+          )
+        ))}
+      </div>
+    </section>
+  );
+};
+
 const FooterCaptureSection = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -215,6 +314,7 @@ const Home = () => {
       <MechanicsSection />
       <StatsSection />
       <VenueSection />
+      <CommunityPartnersSection />
       <FooterCaptureSection />
     </>
   );
