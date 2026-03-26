@@ -236,8 +236,40 @@ const Partners = () => {
                 </a>
 
                 <div style={customStyles.logosGrid}>
-                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
-                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <a
+                    href="https://ramenclub.so"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      ...customStyles.logoBox,
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <img
+                      src={new URL('../assets/partners/ramen-club.jpg', import.meta.url).href}
+                      alt="Ramen Club"
+                      style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }}
+                    />
+                  </a>
+                  <a
+                    href="https://ethlondon.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      ...customStyles.logoBox,
+                      cursor: 'pointer',
+                      textDecoration: 'none',
+                      transition: 'all 0.2s ease',
+                    }}
+                  >
+                    <img
+                      src={new URL('../assets/partners/ethlondon.jpg', import.meta.url).href}
+                      alt="ETHLondon"
+                      style={{ maxWidth: '90%', maxHeight: '90%', objectFit: 'contain' }}
+                    />
+                  </a>
                   <div style={customStyles.logoBox}>Coming<br/>Soon</div>
                   <div style={customStyles.logoBox}>Coming<br/>Soon</div>
                   <div style={customStyles.logoBox}>Coming<br/>Soon</div>
