@@ -322,6 +322,12 @@ const Partners = () => {
                     />
                   </a>
                   <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
+                  <div style={customStyles.logoBox}>Coming<br/>Soon</div>
                 </div>
               </div>
 
