@@ -241,7 +241,7 @@ function EmergenceLanding() {
         {/* Hero */}
         <section style={customStyles.hero}>
           <div style={customStyles.heroContent}>
-            <span style={customStyles.pill}>APR_28-30_//=2026</span>
+            <span style={customStyles.pill}>Q3_2026</span>
             <h1 style={customStyles.h1}>
               London's tech scene,<br/>emerging.
             </h1>
@@ -425,8 +425,8 @@ function EmergenceLanding() {
               <span style={customStyles.statLabel}>AI funding raised<br/>(2025)</span>
             </div>
             <div style={{...customStyles.statBox, borderColor: '#251720'}}>
-              <span style={{...customStyles.statNumber, color: '#251720'}}>APR 28</span>
-              <span style={customStyles.statLabel}>Token Dubai cancelled.<br/>The gap is here.</span>
+              <span style={{...customStyles.statNumber, color: '#251720'}}>Q3</span>
+              <span style={customStyles.statLabel}>London's moment.<br/>The gap is here.</span>
             </div>
           </div>
 
@@ -498,7 +498,7 @@ function EmergenceLanding() {
           </div>
 
           <div style={{marginTop: '24px', fontSize: '0.75rem', color: '#5A4C55'}}>
-            © 2026 EMERGENCE_LONDON // APRIL_28-30_2026
+            © 2026 EMERGENCE_LONDON // Q3_2026
           </div>
         </footer>
 

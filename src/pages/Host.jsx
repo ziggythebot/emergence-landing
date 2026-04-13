@@ -11,7 +11,7 @@ const Host = () => {
           <h2 style={customStyles.explHeaderH2}>BECOME A NODE</h2>
         </div>
         <div style={customStyles.explContent}>
-          <p style={customStyles.explParagraph}>Already hosting an event April 28-30? Turn your space into part of the network.</p>
+          <p style={customStyles.explParagraph}>Already hosting an event in Q3 2026? Turn your space into part of the network.</p>
           <p style={customStyles.explParagraph}>Submit your event. We add it to the map. Thousands discover it. You run it however you want.</p>
           <p style={customStyles.explParagraph}>No fees. No commissions. Just visibility.</p>
         </div>
@@ -23,7 +23,7 @@ const Host = () => {
           <h2 style={customStyles.venueH2}>ELIGIBILITY</h2>
           <div style={customStyles.venueMeta}>
             <Pill>LONDON BASED</Pill>
-            <Pill>APRIL 28-30</Pill>
+            <Pill>Q3 2026</Pill>
             <Pill active>TECH FOCUSED</Pill>
           </div>
           <p style={{ fontSize: '1.25rem', color: '#5A4C55', marginBottom: '32px' }}>
