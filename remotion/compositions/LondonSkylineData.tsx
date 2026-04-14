@@ -179,7 +179,7 @@ export const LondonSkylineData: React.FC = () => {
               letterSpacing: '0.2em',
             }}
           >
-            APRIL 28-30, 2026
+            Q3 2026
           </p>
         </div>
 

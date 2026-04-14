@@ -102,7 +102,7 @@ export const EventShowcase: React.FC = () => {
               marginBottom: '24px',
             }}
           >
-            APRIL 28-30, 2026
+            Q3 2026
           </span>
           <h1
             style={{

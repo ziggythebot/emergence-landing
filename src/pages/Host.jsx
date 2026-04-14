@@ -235,7 +235,7 @@ const Host = () => {
     <div style={customStyles.body}>
       <Helmet>
         <title>Host an Event - Emergence London 2026</title>
-        <meta name="description" content="Submit your event to Emergence. April 28-30, 2026. London's AI and tech scene. Add us as co-host on Luma or fill in the form." />
+        <meta name="description" content="Submit your event to Emergence. Q3 2026. London's AI and tech scene. Add us as co-host on Luma or fill in the form." />
       </Helmet>
       <div style={customStyles.systemContainer}>
         <Header />
@@ -245,7 +245,7 @@ const Host = () => {
             <div>
               <h1 style={{ fontSize: '3.5rem', marginTop: '24px', color: '#251720', lineHeight: 1.1 }}>HOST AN EVENT.</h1>
               <p style={{ fontSize: '1.25rem', marginTop: '16px', color: '#00D27F', fontFamily: "'JetBrains Mono', monospace", fontWeight: 700 }}>
-                Calendar launches 1st of April.
+                Calendar coming soon — Q3 2026.
               </p>
             </div>
             <div style={{ marginTop: '40px', opacity: 0.8 }}>
@@ -337,13 +337,11 @@ const Host = () => {
                   </div>
 
                   <div style={customStyles.field}>
-                    <label htmlFor="eventDate" style={customStyles.label}>Event Date (April 28-30, 2026)</label>
+                    <label htmlFor="eventDate" style={customStyles.label}>Event Date (Q3 2026)</label>
                     <FocusableInput
                       type="date"
                       id="eventDate"
                       name="eventDate"
-                      min="2026-04-28"
-                      max="2026-04-30"
                       value={formData.eventDate}
                       onChange={handleChange}
                     />

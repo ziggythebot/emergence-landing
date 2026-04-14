@@ -309,7 +309,7 @@ const Sponsor = () => {
             <span style={styles.monoLabel}>SPONSORSHIP</span>
             <h1 style={styles.h1}>POWER THE NETWORK.</h1>
             <p style={{ fontSize: '1rem', color: '#5A4C55', maxWidth: '500px', lineHeight: '1.4' }}>
-              Support London's distributed tech ecosystem. April 28-30, 2026.
+              Support London's distributed tech ecosystem. Q3 2026.
             </p>
           </div>
           <div style={styles.visualWell}>

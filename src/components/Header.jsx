@@ -142,7 +142,6 @@ function Header() {
         {/* Desktop Nav */}
         <nav className="desktop-nav" style={customStyles.navLinks}>
           <Link to="/host" style={customStyles.navLink}>HOST AN EVENT</Link>
-          <Link to="/events" style={customStyles.navLink}>EVENTS</Link>
           <Link to="/partners" style={customStyles.navLink}>PARTNERS</Link>
           <Link to="/map" style={customStyles.navLink}>MAP</Link>
           <Link to="/contact" style={customStyles.navLink}>CONTACT</Link>
@@ -182,13 +181,6 @@ function Header() {
           onClick={closeMenu}
         >
           HOST AN EVENT
-        </Link>
-        <Link
-          to="/events"
-          style={customStyles.mobileNavLink}
-          onClick={closeMenu}
-        >
-          EVENTS
         </Link>
         <Link
           to="/partners"

@@ -163,9 +163,7 @@ export const EventCountdown: React.FC = () => {
             textShadow: '0 0 40px rgba(255, 214, 0, 0.4)',
           }}
         >
-          APRIL
-          <br />
-          28-30
+          Q3
         </div>
         <div
           style={{
@@ -200,7 +198,7 @@ export const EventCountdown: React.FC = () => {
             marginBottom: '32px',
           }}
         >
-          APRIL 28-30, 2026
+          Q3 2026
         </div>
 
         <div

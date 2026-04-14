@@ -581,7 +581,7 @@ const Events = () => {
 
         <div className="schedule-header-mobile" style={customStyles.scheduleHeader}>
           <div>
-            <span style={customStyles.liveLabel}>APR 28-30, 2026</span>
+            <span style={customStyles.liveLabel}>Q3 2026</span>
             <h1 className="schedule-title-mobile" style={customStyles.scheduleTitle}>BROWSE EVENTS.</h1>
           </div>
           <div className="counter-box-mobile" style={customStyles.counterBox}>

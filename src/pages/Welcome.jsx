@@ -246,7 +246,7 @@ const NextStepsGrid = () => (
       <div style={customStyles.stepNum}>02</div>
       <div>
         <h3 style={customStyles.stepH3}>DEFINE YOUR NODE</h3>
-        <p style={customStyles.stepP}>Keep an eye out for the 'Node Definition' form in May. You'll be able to claim your spot on the London network map.</p>
+        <p style={customStyles.stepP}>Keep an eye out for the 'Node Definition' form in Q3 2026. You'll be able to claim your spot on the London network map.</p>
       </div>
     </div>
   </div>

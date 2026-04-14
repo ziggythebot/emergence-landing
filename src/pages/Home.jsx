@@ -353,7 +353,7 @@ const HeroSection = () => (
   <section className="hero-grid" style={customStyles.hero}>
     <div style={customStyles.heroContent}>
       <span style={{ ...customStyles.monoLabel, marginBottom: '16px', display: 'block', color: '#00D27F', fontSize: '0.85rem' }}>
-        APRIL 28-30, 2026
+        Q3 2026
       </span>
       <h1 style={{ ...customStyles.h1, marginBottom: '16px' }}>
         <div style={{ fontSize: 'clamp(3rem, 7vw, 5rem)', marginBottom: '12px', fontWeight: 900 }}>A CITY EMERGES.</div>
@@ -393,7 +393,7 @@ const ExplanationSection = () => (
     </div>
     <div style={customStyles.explContent}>
       <p style={customStyles.explParagraph}>Not a conference. Not a single venue. Three days of London's AI and tech scene opening its doors.</p>
-      <p style={customStyles.explParagraph}>Events across London. April 28–30.</p>
+      <p style={customStyles.explParagraph}>Events across London. Q3 2026.</p>
       <p style={customStyles.explParagraph}>You host. We amplify.</p>
     </div>
   </section>
@@ -634,7 +634,7 @@ const App = () => {
   return (
     <>
       <Helmet>
-        <title>Emergence - London, April 28-30, 2026</title>
+        <title>Emergence - London, Q3 2026</title>
         <meta name="description" content="Three days. London's AI and tech scene opens its doors. Events across the city, one calendar. Host an event or find what's on." />
       </Helmet>
       <style>{`

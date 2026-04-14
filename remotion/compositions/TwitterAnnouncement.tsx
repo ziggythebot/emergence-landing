@@ -87,7 +87,7 @@ export const TwitterAnnouncement: React.FC = () => {
             letterSpacing: '0.1em',
           }}
         >
-          APRIL 28-30, 2026 // LONDON
+          Q3 2026 // LONDON
         </span>
       </div>
 

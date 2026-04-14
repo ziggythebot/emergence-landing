@@ -130,7 +130,7 @@ export const CaptionsOnly: React.FC = () => {
               color: '#FFFFFF',
             }}
           >
-            <span style={{ color: '#00D27F' }}>28-30 APRIL</span> 2026
+            <span style={{ color: '#00D27F' }}>Q3</span> 2026
           </div>
         )}
 

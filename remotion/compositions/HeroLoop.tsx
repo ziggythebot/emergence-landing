@@ -103,7 +103,7 @@ export const HeroLoop: React.FC = () => {
               marginBottom: '32px',
             }}
           >
-            APRIL 28-30, 2026 // LONDON
+            Q3 2026 // LONDON
           </span>
 
           <h1

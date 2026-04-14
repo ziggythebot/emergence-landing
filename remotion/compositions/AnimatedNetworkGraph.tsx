@@ -325,7 +325,7 @@ export const AnimatedNetworkGraph: React.FC = () => {
             letterSpacing: '0.2em',
           }}
         >
-          APRIL 28-30 // LONDON
+          Q3 2026 // LONDON
         </div>
       </div>
 

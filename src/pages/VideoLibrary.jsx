@@ -105,7 +105,7 @@ const VideoLibrary = () => {
     },
     {
       title: 'Event Countdown',
-      description: 'Kinetic countdown animation. "44 DAYS" → "APRIL 28-30" → "EMERGENCE". Dark theme with London landmarks.',
+      description: 'Kinetic countdown animation. "44 DAYS" → "Q3 2026" → "EMERGENCE". Dark theme with London landmarks.',
       format: '1080x1080 (1:1)',
       duration: '15 seconds',
       useCase: 'Instagram Post, Twitter',
